@@ -2,8 +2,13 @@
 #include "BasicCropField.h"
 #include "FertilizedField.h"
 #include "ExtraBarn.h"
+#include "FarmUnit.h"
+#include "FertilizerTruck.h"
+#include "DeliveryTruck.h"
+#include "NotificationSystem.h"
 
-void testBasicCropField() {
+void testBasicCropField() 
+{
     BasicCropField basicField;
     std::cout << "Testing Basic Crop Field:\n";
     std::cout << "Initial storage capacity: " << basicField.getLeftoverCapacity() << "\n";
@@ -13,7 +18,8 @@ void testBasicCropField() {
     std::cout << "------------------------\n";
 }
 
-void testFertilizedField() {
+void testFertilizedField() 
+{
     BasicCropField basicField;
     CropField* fertilizedField = new FertilizedField(&basicField);
 
@@ -27,7 +33,8 @@ void testFertilizedField() {
     delete fertilizedField;
 }
 
-void testExtraBarn() {
+void testExtraBarn() 
+{
     BasicCropField basicField;
     CropField* extraBarnField = new ExtraBarn(&basicField, 75);
 
@@ -41,7 +48,8 @@ void testExtraBarn() {
     delete extraBarnField;
 }
 
-void testFertilizedFieldWithExtraBarn() {
+void testFertilizedFieldWithExtraBarn() 
+{
     BasicCropField basicField;
     CropField* fertilizedField = new FertilizedField(&basicField);
     CropField* extraBarnField = new ExtraBarn(fertilizedField, 75);
@@ -56,7 +64,8 @@ void testFertilizedFieldWithExtraBarn() {
     delete extraBarnField;
 }
 
-void testMultipleDecorators() {
+void testMultipleDecorators() 
+{
     BasicCropField basicField;
     CropField* fertilizedField = new FertilizedField(&basicField);
     CropField* extraBarnField = new ExtraBarn(fertilizedField, 50);
@@ -72,8 +81,9 @@ void testMultipleDecorators() {
     delete fullyDecoratedField;
 }
 
-void testEmptyField() {
-    // Create a CropField with default values
+void testEmptyField() 
+{
+   
     BasicCropField emptyField;
     
     std::cout << "Testing Empty Crop Field:\n";
@@ -84,13 +94,125 @@ void testEmptyField() {
     std::cout << "------------------------\n";
 }
 
-int main() {
+void testTruckHierarchy() 
+{
+    std::cout << "=== Testing Truck Hierarchy ===" << std::endl;
+
+    Truck* fertilizerTruck = new FertilizerTruck();
+    Truck* deliveryTruck = new DeliveryTruck();
+
+    std::cout << "Starting Fertilizer Truck:" << std::endl;
+    fertilizerTruck->startEngine();
+
+    std::cout << "Starting Delivery Truck:" << std::endl;
+    deliveryTruck->startEngine();
+
+    delete fertilizerTruck;
+    delete deliveryTruck;
+
+    std::cout << "=== Truck Hierarchy Test Complete ===\n" << std::endl;
+}
+
+void testFarmUnit() 
+ {
+//     std::cout << "=== Testing FarmUnit ===" << std::endl;
+
+//     FarmUnit farm;
+//     Truck* fertilizerTruck = new FertilizerTruck();
+//     Truck* deliveryTruck = new DeliveryTruck();
+
+//     farm.buyTruck(fertilizerTruck);
+//     farm.buyTruck(deliveryTruck);
+
+//     std::cout << "Calling trucks from FarmUnit:" << std::endl;
+//     farm.callTruck();  // Should call the trucks to start their engines
+
+//     farm.sellTruck(fertilizerTruck);
+//     std::cout << "Calling trucks after selling FertilizerTruck:" << std::endl;
+//     farm.callTruck();  // Should only call the delivery truck
+
+//     delete fertilizerTruck;  // Cleanup
+//     delete deliveryTruck;
+
+//     std::cout << "=== FarmUnit Test Complete ===\n" << std::endl;
+}
+
+void testNotificationSystem() 
+{
+    std::cout << "=== Testing NotificationSystem ===" << std::endl;
+
+    NotificationSystem notificationSystem;
+    Truck* fertilizerTruck = new FertilizerTruck();
+    Truck* deliveryTruck = new DeliveryTruck();
+
+    notificationSystem.addObserver(fertilizerTruck);
+    notificationSystem.addObserver(deliveryTruck);
+
+    std::cout << "Notifying all trucks:" << std::endl;
+    notificationSystem.notifyAll();  // Should notify both trucks to start their engines
+
+    notificationSystem.removeObserver(fertilizerTruck);
+    std::cout << "Notifying after removing FertilizerTruck:" << std::endl;
+    notificationSystem.notifyAll();  // Should only notify the delivery truck
+
+    delete fertilizerTruck;  // Cleanup
+    delete deliveryTruck;
+
+    std::cout << "=== NotificationSystem Test Complete ===\n" << std::endl;
+}
+
+void testCompleteIntegration() 
+{
+    std::cout << "=== Testing Complete Integration ===\n";
+
+    FarmUnit farm;
+    NotificationSystem notificationSystem;
+
+    Truck* fertilizerTruck = new FertilizerTruck();
+    Truck* deliveryTruck = new DeliveryTruck();
+
+    
+    farm.buyTruck(fertilizerTruck);
+    farm.buyTruck(deliveryTruck);
+
+    notificationSystem.addObserver(fertilizerTruck);
+    notificationSystem.addObserver(deliveryTruck);
+
+    
+    std::cout << "FarmUnit calling trucks...\n";
+    farm.callTruck(); 
+
+    
+    std::cout << "Notifying trucks from NotificationSystem...\n";
+    notificationSystem.notifyAll();
+
+    
+    farm.sellTruck(fertilizerTruck);
+    notificationSystem.removeObserver(fertilizerTruck);
+
+    std::cout << "Final notification after removing FertilizerTruck...\n";
+    notificationSystem.notifyAll();  
+
+   
+    delete fertilizerTruck;  
+    delete deliveryTruck;
+
+    std::cout << "=== Complete Integration Testing Complete ===\n\n";
+}
+
+
+int main() 
+{
     testBasicCropField();
     testFertilizedField();
     testExtraBarn();
     testFertilizedFieldWithExtraBarn();
     testMultipleDecorators();
     testEmptyField();
-
+    
+    testFarmUnit();
+    testNotificationSystem();
+    testTruckHierarchy();
+    testCompleteIntegration();
     return 0;
 }

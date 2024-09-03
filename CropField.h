@@ -1,4 +1,3 @@
-// CropField.h
 #ifndef CROP_FIELD_H
 #define CROP_FIELD_H
 
