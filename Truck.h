@@ -6,9 +6,9 @@ class NotificationSystem;
 class Truck
 {
     public:
-    virtual ~Truck();
+    virtual ~Truck() {};
     Truck();
-    //These ARE GOING TO BE IMPLEMENTED inside trhe trucks classes
+    //These ARE GOING TO BE IMPLEMENTED inside the trucks classes
     virtual void startEngine() = 0;
     virtual void callTruck ()= 0;
 };
