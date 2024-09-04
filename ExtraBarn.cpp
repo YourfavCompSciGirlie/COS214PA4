@@ -1,58 +1,77 @@
-#include "CropField.h"
 #include "ExtraBarn.h"
-#include "CropFieldDecorator.h"
-
 #include <iostream>
 
-ExtraBarn::ExtraBarn(CropField* field, int extraCapacity)
+ExtraBarn::ExtraBarn(CropField* field, int extraCapacity) 
+    : CropFieldDecorator(field), extraStorageCapacity(extraCapacity) 
 {
-     this->field= field;
-     this->extraStorageCapacity = extraCapacity;
-     std::cout << "Extra barn constructed with additional capacity of " << extraCapacity << " units.\n";
-    
+    this->field = field;
 }
 
- void ExtraBarn:: increaseProduction()
+void ExtraBarn::increaseProduction()  
 {
-        std::cout << "Optimizing production with enhanced storage management...\n";
-        
-        field->increaseProduction();
-        
-        if (extraStorageCapacity > 0) {
-            std::cout << "The extra storage enables more efficient handling, slightly increasing productivity.\n";
-            field->increaseProduction(); 
-        } 
-        else {
-            std::cout << "No significant impact on production as storage is not extended.\n";
-        }
+    std::cout << "Increasing production with extra barn capacity...\n";
+    field->increaseProduction();
+    std::cout << "Extra barn helps enhance production.\n";
 }
 
-
-void ExtraBarn::harvest() 
+void ExtraBarn::harvest()
 {
-        std::cout << "Harvesting crops with enhanced storage capacity...\n";
-        
-        field->harvest();
-        
-        if (extraStorageCapacity > 0) {
-            std::cout << "The extra barn allows for collecting a greater amount of harvested crops.\n";
-        } else {
-            std::cout << "Harvested crops, but no additional storage was available.\n";
-        }
+    std::cout << "Harvesting from the field with extra barn storage...\n";
+    field->harvest();
+    std::cout << "Extra barn provides additional storage for harvested crops.\n";
 }
 
-
-int ExtraBarn::getLeftoverCapacity() 
+int ExtraBarn::getLeftoverCapacity()
 {
-        int baseCapacity = field->getLeftoverCapacity();
-        
-        // Log the current state of storage
-        std::cout << "Base storage capacity: " << baseCapacity << " units.\n";
-        std::cout << "Additional capacity from extra barn: " << extraStorageCapacity << " units.\n";
-        
-        // Total available capacity after adding extra storage
-        int totalCapacity = baseCapacity + extraStorageCapacity;
-        std::cout << "Total leftover storage capacity: " << totalCapacity << " units.\n";
-        
-        return totalCapacity;
+    int baseCapacity = field->getLeftoverCapacity();
+    std::cout << "Extra barn adds " << extraStorageCapacity << " units to the leftover capacity.\n";
+    return baseCapacity + extraStorageCapacity;
+}
+
+void ExtraBarn::buyTruck(Truck* truck)
+{
+    std::cout << "Adding a truck to the field with extra barn storage...\n";
+    field->buyTruck(truck);
+    std::cout << "Extra barn's enhanced storage can now be utilized with additional transportation.\n";
+}
+
+void ExtraBarn::sellTruck(Truck* truck)
+{
+    std::cout << "Removing a truck from the field with extra barn storage...\n";
+    field->sellTruck(truck);
+    std::cout << "Extra barn's transportation capacity adjusted.\n";
+}
+
+int ExtraBarn::getTotalCapacity()
+{
+    int baseCapacity = field->getTotalCapacity();
+    std::cout << "Extra barn provides " << extraStorageCapacity << " units of additional total capacity.\n";
+    return baseCapacity + extraStorageCapacity;
+}
+
+std::string ExtraBarn::getCropType()
+{
+    std::string baseCropType = field->getCropType();
+    std::cout << "Crop type in the extra barn is: " << baseCropType << ".\n";
+    return baseCropType;
+}
+
+std::string ExtraBarn::getSoilStateName()
+{
+    std::string baseSoilState = field->getSoilStateName();
+    std::cout << "Soil state with extra barn: " << baseSoilState << ".\n";
+    return baseSoilState;
+}
+
+int ExtraBarn::getCurrentAmount()
+{
+    int baseAmount = field->getCurrentAmount();
+    std::cout << "Current amount in the field with extra barn: " << baseAmount << ".\n";
+    return baseAmount;
+}
+
+void ExtraBarn::setCurrentAmount(int amount)
+{
+    std::cout << "Setting current amount in the field with extra barn to: " << amount << ".\n";
+    field->setCurrentAmount(amount);
 }
