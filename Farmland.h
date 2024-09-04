@@ -4,6 +4,7 @@
 #define FARMLAND_H
 
 #include "FarmUnit.h"
+#include "FarmIterator.h"
 
 #include <vector>
 #include <string>
@@ -16,29 +17,34 @@ class Farmland : public FarmUnit {
         vector<FarmUnit*> units; // Stores child FarmUnit objects
 
     public:
+        Farmland();
+        ~Farmland();
+
         // Methods to manage child FarmUnit objects
-        void add(FarmUnit* unit) override;
-        void remove(FarmUnit* unit) override;
+        void add(FarmUnit* unit);
+        void remove(FarmUnit* unit);
 
         // Methods to access information about the Farmland
-        int getTotalCapacity() override;
-        string getCropType() override;
-        string getSoilStateName() override;
+        int getTotalCapacity();
+        string getCropType();
+        string getSoilStateName();
 
         int getCurrentAmount();
         void setCurrentAmount(int amount);
 
-        ~Farmland();
-        Farmland();
-
-        // Nobuhle - Decorator functions
+        // Decorator pattern methods
         void increaseProduction() override;
         void harvest() override;
         int getLeftoverCapacity() override;
 
+        // Observer pattern methods
         void buyTruck(Truck* truck) override;
         void sellTruck(Truck* truck) override;
-        void callTruck() override;
+
+        // // Iterator pattern methods
+        // vector<FarmUnit*> getSubUnits() override;
+        // FarmIterator* createBFSIterator() override;
+        // FarmIterator* createDFSIterator() override;
 };
 
 #endif // FARMLAND_H

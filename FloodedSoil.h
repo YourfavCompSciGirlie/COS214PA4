@@ -10,12 +10,12 @@ using namespace std;
 class FloodedSoil : public SoilState {
     
     public:
-        int harvestCrops() const override;
-        void rain() override;
-        string getName() const override;
-
         FloodedSoil();
         ~FloodedSoil();
+
+        int harvestCrops() const;
+        void rain();
+        string getName() const;
 };
 
 #endif // FLOODEDSOIL_H

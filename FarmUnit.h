@@ -1,3 +1,5 @@
+// Class definition for Component 1 - Composite (Component)
+
 #ifndef FARMUNIT_H
 #define FARMUNIT_H
 
@@ -5,17 +7,17 @@
 #include <string>
 
 #include "Truck.h"
+#include "FarmIterator.h"
 
 using namespace std;
 
-class FarmUnit {
-    private:
-        std::vector<Truck*> trucks;
+class FarmIterator;
 
+class FarmUnit {
+    
     public:
-        virtual void buyTruck(Truck* truck) = 0;
-        virtual void sellTruck(Truck* truck) = 0;
-        virtual void callTruck() = 0;
+        FarmUnit();
+        virtual ~FarmUnit();
 
         virtual int getTotalCapacity() = 0;
         virtual string getCropType() = 0;
@@ -28,13 +30,22 @@ class FarmUnit {
         virtual int getCurrentAmount() = 0;
         virtual void setCurrentAmount(int amount) = 0;
 
-        virtual ~FarmUnit();
-        FarmUnit();
-
-        // Nobuhle - Decorator functions
+        // Decorator pattern methods
         virtual void increaseProduction() = 0;
         virtual void harvest() = 0;
         virtual int getLeftoverCapacity() = 0;
+
+        // Observer pattern methods
+        virtual void buyTruck(Truck* truck) = 0;
+        virtual void sellTruck(Truck* truck) = 0;
+
+        // // Create iterators for traversal
+        // // Iterator pattern methods
+        // virtual FarmIterator* createBFSIterator() = 0;
+        // virtual FarmIterator* createDFSIterator() = 0;
+
+        // // Return a list of sub-units (for composite)
+        // virtual vector<FarmUnit*> getSubUnits() = 0;
 };
 
 #endif // FARMUNIT_H
