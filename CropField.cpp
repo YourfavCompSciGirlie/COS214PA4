@@ -117,5 +117,5 @@ void harvest() {
 
 int getLeftoverCapacity() {
         return 50; // Assume a base capacity of 50 units
-    }
+}
 
