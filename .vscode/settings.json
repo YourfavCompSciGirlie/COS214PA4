@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.php": "php",
+        "iostream": "cpp",
+        "atomic": "cpp",
+        "*.tcc": "cpp",
+        "compare": "cpp",
+        "numeric": "cpp",
+        "sstream": "cpp",
+        "cmath": "cpp",
+        "new": "cpp"
+    }
+}
