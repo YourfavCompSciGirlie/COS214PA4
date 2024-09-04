@@ -46,9 +46,9 @@ class CropField : public FarmUnit {
         void harvest() override;
         int getLeftoverCapacity() override;
 
-        void buyTruck(Truck* truck);
-        void sellTruck(Truck* truck);
-        void callTruck();
+        void buyTruck(Truck* truck) override;
+        void sellTruck(Truck* truck) override;
+        void callTruck() override;
 };
 
 #endif // CROPFIELD_H

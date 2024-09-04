@@ -29,6 +29,10 @@ class Barn : public FarmUnit {
         void increaseProduction() override;
         void harvest() override;
         int getLeftoverCapacity() override;
+
+        void buyTruck(Truck* truck) override;
+        void sellTruck(Truck* truck) override;
+        void callTruck() override;
 };
 
 #endif // BARN_H
