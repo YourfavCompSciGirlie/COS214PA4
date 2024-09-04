@@ -125,6 +125,16 @@ int main() {
 
     cout << endl;
 
+    cout << "\n========================== Component 3: Decorator ================================\n" << endl;
+    testingDecorator();
+
+    cout << endl;
+
+    cout << "\n========================== Component 4: Strategy ================================\n" << endl;
+    testingStrategy();
+
+    cout << endl;
+
     
     return 0;
 }
