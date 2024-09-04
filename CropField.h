@@ -23,6 +23,7 @@ class CropField : public FarmUnit {
         SoilState* soilState;
 
     public:
+        CropField() {}
         CropField(const string& cropType, int totalCapacity, SoilState* initialState);
         virtual ~CropField();
 
@@ -41,6 +42,7 @@ class CropField : public FarmUnit {
         SoilState* getSoilState() const;
 
         // Nobuhle - Decorator functions
+<<<<<<< HEAD
         virtual void increaseProduction() = 0;
         virtual void harvest() = 0;
         virtual int getLeftoverCapacity() = 0;
@@ -49,6 +51,11 @@ class CropField : public FarmUnit {
         void sellTruck(Truck* truck);
         void callTruck();
 
+=======
+        void increaseProduction() override;
+        void harvest() override;
+        int getLeftoverCapacity() override;
+>>>>>>> 65170a403908ebc83eba818fe2a575f114c86ac7
 };
 
 #endif // CROPFIELD_H
