@@ -22,6 +22,7 @@ class FarmUnit {
         virtual int getTotalCapacity() = 0;
         virtual string getCropType() = 0;
         virtual string getSoilStateName() = 0;
+>>>>>>> 65170a403908ebc83eba818fe2a575f114c86ac7
 
         // Composite pattern methods
         virtual void add(FarmUnit* unit) {}
