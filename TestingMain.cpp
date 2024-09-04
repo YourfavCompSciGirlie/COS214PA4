@@ -30,10 +30,14 @@ void testingComposite() {
     SoilState* fruitfulSoil = new FruitfulSoil();
     SoilState* floodedSoil = new FloodedSoil();
 
+    cout << endl;
+
     // Create individual FarmUnit instances
     CropField wheatField("Wheat", 500, drySoil);
     CropField cornField("Corn", 300, fruitfulSoil);
-    Barn storageBarn(1000); // Capacity for 1000 units      
+    Barn storageBarn(1000); // Capacity for 1000 units   
+
+    cout << endl;   
 
     // Create composite Farmland
     Farmland mainFarmland;
@@ -45,40 +49,50 @@ void testingComposite() {
 
     // Add a nested Farmland to test hierarchy
     Farmland nestedFarmland;
+    cout << endl;
     CropField riceField("Rice", 400, drySoil);
     nestedFarmland.add(&riceField);
     mainFarmland.add(&nestedFarmland);
 
+    cout << endl;
+
     // Test getTotalCapacity() for Farmland and individual units
     cout << "Total Capacity of Main Farmland: " << mainFarmland.getTotalCapacity() << endl;
     cout << "Total Capacity of Wheat Field: " << wheatField.getTotalCapacity() << endl;
+
+    cout << endl;
 
     // Test getCropType() for CropFields and Greenhouse
     cout << "Crop Type of Wheat Field: " << wheatField.getCropType() << endl;
     cout << "Crop Type of Corn Field: " << cornField.getCropType() << endl;
     cout << "Crop Type of Rice Field: " << riceField.getCropType() << endl;
 
+    cout << endl;
+
     // Test getSoilStateName() for CropFields
     cout << "Soil State of Wheat Field: " << wheatField.getSoilStateName() << endl;
     cout << "Soil State of Corn Field: " << cornField.getSoilStateName() << endl;
     cout << "Soil State of Rice Field: " << riceField.getSoilStateName() << endl;
+
+    cout << endl;
 
     // Test getCurrentAmount() and setCurrentAmount() for CropField and Greenhouse
     cout << "Current Amount of Wheat Field: " << wheatField.getCurrentAmount() << endl;
     wheatField.setCurrentAmount(100); // Set new amount
     cout << "Updated Amount of Wheat Field: " << wheatField.getCurrentAmount() << endl;
 
+    cout << endl;
+
     // Test removal and getTotalCapacity() after removal
     mainFarmland.remove(&cornField);
     cout << "Total Capacity of Main Farmland after removing Corn Field: " << mainFarmland.getTotalCapacity() << endl;
 
+    cout << endl;
+
     // Test nested Farmland capacity
     cout << "Total Capacity of Nested Farmland: " << nestedFarmland.getTotalCapacity() << endl;
 
-    // Clean up
-    delete drySoil;         // Assuming SoilState objects are not managed elsewhere
-    delete fruitfulSoil;   // If managed by another class, avoid deleting here
-    delete floodedSoil;    // Avoid double deletion
+    cout << endl;
 }
 
 void testingState() {
@@ -121,7 +135,7 @@ void testingDecorator() {
 
     // // Apply fertilizer to the CropField to transition from DrySoil to FruitfulSoil
     // cout << "Initial Soil State: " << wheatField->getSoilStateName() << endl;
-    // FertilizerDecorator* fertilizedWheatField = new FertilizerDecorator(wheatField);
+    // FertilizedField* fertilizedWheatField = new FertilizedField(wheatField);
     // fertilizedWheatField->increaseProduction();
     // cout << "Soil State after fertilization: " << wheatField->getSoilStateName() << endl;
 
@@ -129,7 +143,7 @@ void testingDecorator() {
     // cout << "Harvesting after fertilization: " << fertilizedWheatField->harvest() << endl;
 
     // // Add an ExtraBarn to increase storage capacity
-    // ExtraBarnDecorator* barnEnhancedField = new ExtraBarnDecorator(wheatField, 200); // Adding 200 units of extra storage
+    // ExtraBarnD* barnEnhancedField = new ExtraBarn(wheatField, 200); // Adding 200 units of extra storage
     // cout << "Original Capacity: " << wheatField->getTotalCapacity() << endl;
     // cout << "Increased Capacity after adding ExtraBarn: " << barnEnhancedField->getTotalCapacity() << endl;
 
