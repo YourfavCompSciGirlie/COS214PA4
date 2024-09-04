@@ -9,3 +9,9 @@ void FertilizerTruck::startEngine()
         std::cout << "Fertilizer delivered. Crop field is now ready for increased production.\n";
 }
 
+
+void FertilizerTruck::callTruck()
+{
+   
+}
+

@@ -11,11 +11,9 @@ private:
     CropField* field;
 
 public:
-    
     FertilizedField(CropField* field);
-    void increaseProduction() override;
-    void harvest() override;
-    int getLeftoverCapacity() override;
+    void increaseProduction()override;
+    void harvest()override;
+    int getLeftoverCapacity()override;
 };
-
-#endif // FERTILIZED_FIELD_H
+#endif 

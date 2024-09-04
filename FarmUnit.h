@@ -12,13 +12,6 @@ class FarmUnit {
     private:
         std::vector<Truck*> trucks;
 
-<<<<<<< HEAD
-public:
-    
-    virtual int getTotalCapacity() = 0;
-    virtual string getCropType() = 0;
-    virtual string getSoilStateName() = 0;
-=======
     public:
         virtual void buyTruck(Truck* truck) = 0;
         virtual void sellTruck(Truck* truck) = 0;
@@ -27,7 +20,6 @@ public:
         virtual int getTotalCapacity() = 0;
         virtual string getCropType() = 0;
         virtual string getSoilStateName() = 0;
->>>>>>> 65170a403908ebc83eba818fe2a575f114c86ac7
 
         // Composite pattern methods
         virtual void add(FarmUnit* unit) {}

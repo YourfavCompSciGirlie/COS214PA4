@@ -3,32 +3,18 @@
 
 #include "CropField.h"
 
-
-class CropFieldDecorator : public CropField {
+class CropFieldDecorator : public FarmUnit {
 protected:
     CropField* field;  
 
 public:
     CropFieldDecorator() = default;
-    CropFieldDecorator(CropField* field) : field(field) {}
-
+    CropFieldDecorator(CropField* field);
     
-    virtual void increaseProduction() {
-        field->increaseProduction();
-    }
-
-    void harvest() override {
-        field->harvest();
-    }
-
-    int getLeftoverCapacity() override {
-        return field->getLeftoverCapacity();
-    }
-
+    virtual void increaseProduction() = 0; 
+    virtual void harvest() = 0;
+    virtual int getLeftoverCapacity() = 0; 
     
-    virtual ~CropFieldDecorator() {
-        delete field;  
-    }
 };
 
 #endif // CROP_FIELD_DECORATOR_H

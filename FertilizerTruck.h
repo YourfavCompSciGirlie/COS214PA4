@@ -3,10 +3,13 @@
 
 #include "Truck.h"
 
-class FertilizerTruck  : public Truck
+class FertilizerTruck : public Truck
 {
     public:
      void startEngine()override;
-        
+     void callTruck() override;
+
+     FertilizerTruck();
+     ~FertilizerTruck();   
 };
 #endif

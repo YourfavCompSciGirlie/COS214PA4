@@ -13,6 +13,6 @@ class DeliveryTruck  : public Truck
 
     public:
       void startEngine()override;
-        
+      void callTruck() override;       
 };
 #endif

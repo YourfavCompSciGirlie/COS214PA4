@@ -1,4 +1,3 @@
-// ExtraBarn.h
 #ifndef EXTRA_BARN_H
 #define EXTRA_BARN_H
 
@@ -14,8 +13,8 @@ private:
 public:
     ExtraBarn(CropField* field, int extraCapacity);
     void increaseProduction() override;
-    void harvest() override;
-    int getLeftoverCapacity() override;
+    void harvest()override;
+    int getLeftoverCapacity()override;
 };
 
-#endif // EXTRA_BARN_H
+#endif 
