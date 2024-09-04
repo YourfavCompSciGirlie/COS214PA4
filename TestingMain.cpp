@@ -32,7 +32,7 @@ void testingComposite() {
     CropField wheatField("Wheat", 500, drySoil);
     CropField cornField("Corn", 300, fruitfulSoil);
     Greenhouse tomatoGreenhouse(200); // Capacity for 200 tomatoes
-    Barn storageBarn(1000); // Capacity for 1000 units
+    Barn storageBarn(1000); // Capacity for 1000 units      
 
     // Create composite Farmland
     Farmland mainFarmland;

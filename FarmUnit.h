@@ -20,9 +20,9 @@ public:
     virtual string getSoilStateName() = 0;
 =======
     public:
-        void buyTruck(Truck* truck);
-        void sellTruck(Truck* truck);
-        void callTruck();
+        virtual void buyTruck(Truck* truck) = 0;
+        virtual void sellTruck(Truck* truck) = 0;
+        virtual void callTruck() = 0;
 
         virtual int getTotalCapacity() = 0;
         virtual string getCropType() = 0;
