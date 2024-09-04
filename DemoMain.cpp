@@ -113,30 +113,6 @@ void testTruckHierarchy()
     std::cout << "=== Truck Hierarchy Test Complete ===\n" << std::endl;
 }
 
-void testFarmUnit() 
- {
-    // std::cout << "=== Testing FarmUnit ===" << std::endl;
-
-   
-    // Truck* fertilizerTruck = new FertilizerTruck();
-    // Truck* deliveryTruck = new DeliveryTruck();
-
-    // farm.buyTruck(fertilizerTruck);
-    // farm.buyTruck(deliveryTruck);
-
-    // std::cout << "Calling trucks from FarmUnit:" << std::endl;
-    // farm.callTruck();  // Should call the trucks to start their engines
-
-    // farm.sellTruck(fertilizerTruck);
-    // std::cout << "Calling trucks after selling FertilizerTruck:" << std::endl;
-    // farm.callTruck();  // Should only call the delivery truck
-
-    // delete fertilizerTruck;  // Cleanup
-    // delete deliveryTruck;
-
-    // std::cout << "=== FarmUnit Test Complete ===\n" << std::endl;
-}
-
 void testNotificationSystem() 
 {
     std::cout << "=== Testing NotificationSystem ===" << std::endl;
@@ -209,8 +185,7 @@ int main()
     testFertilizedFieldWithExtraBarn();
     testMultipleDecorators();
     testEmptyField();
-    
-    testFarmUnit();
+
     testNotificationSystem();
     testTruckHierarchy();
     testCompleteIntegration();

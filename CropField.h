@@ -44,6 +44,11 @@ class CropField : public FarmUnit {
         virtual void increaseProduction() = 0;
         virtual void harvest() = 0;
         virtual int getLeftoverCapacity() = 0;
+
+        void buyTruck(Truck* truck);
+        void sellTruck(Truck* truck);
+        void callTruck();
+
 };
 
 #endif // CROPFIELD_H

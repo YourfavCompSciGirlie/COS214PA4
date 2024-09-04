@@ -10,10 +10,7 @@ private:
     std::vector<Truck*> trucks;
 
 public:
-    void buyTruck(Truck* truck);
-    void sellTruck(Truck* truck);
-    void callTruck();
-
+    
     virtual int getTotalCapacity() = 0;
     virtual string getCropType() = 0;
     virtual string getSoilStateName() = 0;
