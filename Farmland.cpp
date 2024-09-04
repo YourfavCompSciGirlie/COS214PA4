@@ -83,6 +83,41 @@ void Farmland::setCurrentAmount(int amount) {
     }
 }
 
+void Farmland::increaseProduction() {
+    // Implement or delegate to child units if needed
+    for (FarmUnit* unit : units) {
+        unit->increaseProduction();
+    }
+}
+
+void Farmland::harvest() {
+    // Implement or delegate to child units if needed
+    for (FarmUnit* unit : units) {
+        unit->harvest();
+    }
+}
+
+int Farmland::getLeftoverCapacity() {
+    int totalCapacity = getTotalCapacity();
+    int currentAmount = getCurrentAmount();
+    return totalCapacity - currentAmount;
+}
+
+void Farmland::buyTruck(Truck* truck) {
+    // Implement or delegate to child units if needed
+    for (FarmUnit* unit : units) {
+        unit->buyTruck(truck);
+    }
+}
+
+void Farmland::sellTruck(Truck* truck) {
+    // Implement or delegate to child units if needed
+    for (FarmUnit* unit : units) {
+        unit->sellTruck(truck);
+    }
+}
+
+
 // // Implementation of the iterator creation is deferred to subclasses
 // FarmIterator* Farmland::createBFSIterator() {
 //     return new BFFarmIterator(this);

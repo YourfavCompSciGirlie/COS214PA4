@@ -107,15 +107,15 @@ void CropField::sellTruck(Truck* truck)
 }
 
 //decorator functions 
-void increaseProduction() {
+void CropField::increaseProduction() {
         std::cout << "Increasing production in the crop field...\n";
     }
 
-void harvest() {
+void CropField::harvest() {
         std::cout << "Harvesting crops from the field...\n";
     }
 
-int getLeftoverCapacity() {
+int CropField::getLeftoverCapacity() {
         return 50; // Assume a base capacity of 50 units
 }
 

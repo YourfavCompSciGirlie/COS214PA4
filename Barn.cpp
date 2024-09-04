@@ -38,3 +38,27 @@ void Barn::setCurrentAmount(int amount) {
         cout << "[Barn] Error: Amount must be between 0 and " << totalCapacity << " units. 🚫" << endl;
     }
 }
+
+// Decorator pattern methods
+void Barn::increaseProduction() {
+    cout << "[Barn] Increase production is not applicable for a barn. No change in production. 🚫" << endl;
+}
+
+void Barn::harvest() {
+    cout << "[Barn] Harvesting is not applicable for a barn. No crops to harvest. 🚫" << endl;
+}
+
+int Barn::getLeftoverCapacity() {
+    return totalCapacity - currentAmount;
+}
+
+// Observer pattern methods
+void Barn::buyTruck(Truck* truck) {
+    // Implementation for buying a truck, if applicable
+    cout << "[Barn] Buying a truck is not typically associated with barns. 🚛" << endl;
+}
+
+void Barn::sellTruck(Truck* truck) {
+    // Implementation for selling a truck, if applicable
+    cout << "[Barn] Selling a truck is not typically associated with barns. 🚛" << endl;
+}
