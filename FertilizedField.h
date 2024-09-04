@@ -15,5 +15,15 @@ public:
     void increaseProduction()override;
     void harvest()override;
     int getLeftoverCapacity()override;
+
+    void buyTruck(Truck* truck)override;
+    void sellTruck(Truck* truck)override;
+
+    int getTotalCapacity()override;
+    string getCropType()override;
+    string getSoilStateName()override;
+
+    int getCurrentAmount()override;
+    void setCurrentAmount(int amount)override;
 };
 #endif 

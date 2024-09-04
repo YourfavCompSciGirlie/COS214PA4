@@ -93,12 +93,15 @@ SoilState* CropField::getSoilState() const
 void CropField::buyTruck(Truck* truck) 
 {
     NotificationSystem::addObserver(truck);
+
     std::cout << "Truck purchased! This " << cropType << " field now has a new truck." << std::endl;
 }
 
 void CropField::sellTruck(Truck* truck) 
 {
     NotificationSystem::removeObserver(truck);
+    FarmUnit::sellTruck(truck);
+
     std::cout << "Truck sold! This " << cropType << " field has one less truck now." << std::endl;
 }
 
