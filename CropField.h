@@ -1,15 +1,3 @@
-#ifndef CROP_FIELD_H
-#define CROP_FIELD_H
-
-class CropField {
-public:
-    virtual ~CropField() {}
-    virtual void increaseProduction() = 0;
-    virtual void harvest() = 0;
-    virtual int getLeftoverCapacity() = 0;
-};
-
-#endif // CROP_FIELD_H
 // Class definition for Component 1 - Composite (Leaf)
 // Class definition for Component 2 - State (Context)
 
@@ -51,6 +39,11 @@ class CropField : public FarmUnit {
 
         // Provide accessors for soilState
         SoilState* getSoilState() const;
+
+        // Nobuhle - Decorator functions
+        virtual void increaseProduction() = 0;
+        virtual void harvest() = 0;
+        virtual int getLeftoverCapacity() = 0;
 };
 
 #endif // CROPFIELD_H
