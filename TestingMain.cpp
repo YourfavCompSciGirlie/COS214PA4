@@ -130,8 +130,8 @@ int main() {
 
     cout << endl;
 
-    cout << "\n========================== Component 4: Strategy ================================\n" << endl;
-    // testingStrategy();
+    cout << "\n========================== Component 4: Observer ================================\n" << endl;
+    // testingObserver();
 
     cout << endl;
 
