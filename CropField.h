@@ -23,6 +23,7 @@ class CropField : public FarmUnit {
         SoilState* soilState;
 
     public:
+        CropField() {}
         CropField(const string& cropType, int totalCapacity, SoilState* initialState);
         virtual ~CropField();
 
@@ -41,9 +42,9 @@ class CropField : public FarmUnit {
         SoilState* getSoilState() const;
 
         // Nobuhle - Decorator functions
-        virtual void increaseProduction() = 0;
-        virtual void harvest() = 0;
-        virtual int getLeftoverCapacity() = 0;
+        void increaseProduction() override;
+        void harvest() override;
+        int getLeftoverCapacity() override;
 };
 
 #endif // CROPFIELD_H

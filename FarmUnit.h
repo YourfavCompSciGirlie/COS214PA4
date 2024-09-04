@@ -18,7 +18,7 @@ public:
     virtual string getCropType() = 0;
     virtual string getSoilStateName() = 0;
 
-        // Composite pattern methods
+    // Composite pattern methods
     virtual void add(FarmUnit* unit) {}
     virtual void remove(FarmUnit* unit) {}
 
@@ -27,5 +27,10 @@ public:
 
     virtual ~FarmUnit();
     FarmUnit();
+
+    // Nobuhle - Decorator functions
+    virtual void increaseProduction() = 0;
+    virtual void harvest() = 0;
+    virtual int getLeftoverCapacity() = 0;
 };
 #endif

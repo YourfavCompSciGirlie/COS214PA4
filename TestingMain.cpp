@@ -13,6 +13,13 @@
 #include "FloodedSoil.h"
 #include "SoilState.h"
 
+#include "BasicCropField.h"
+#include "FertilizedField.h"
+#include "ExtraBarn.h"
+#include "FertilizerTruck.h"
+#include "DeliveryTruck.h"
+#include "NotificationSystem.h"
+
 using namespace std;
 
 void testingComposite() {

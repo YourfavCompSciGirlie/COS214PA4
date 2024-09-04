@@ -30,6 +30,11 @@ class Farmland : public FarmUnit {
 
         ~Farmland();
         Farmland();
+
+        // Nobuhle - Decorator functions
+        void increaseProduction() override;
+        void harvest() override;
+        int getLeftoverCapacity() override;
 };
 
 #endif // FARMLAND_H

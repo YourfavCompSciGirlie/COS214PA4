@@ -24,6 +24,11 @@ class Barn : public FarmUnit {
 
         int getCurrentAmount();
         void setCurrentAmount(int amount);
+
+        // Nobuhle - Decorator functions
+        void increaseProduction() override;
+        void harvest() override;
+        int getLeftoverCapacity() override;
 };
 
 #endif // BARN_H
