@@ -15,14 +15,14 @@ class SoilState {
         CropField* context; // Pointer to the context (CropField) to manage state transitions
     
     public:
+        SoilState();
+        virtual ~SoilState();
+
         virtual int harvestCrops() const = 0; // Returns the amount of crops harvested
         virtual void rain() = 0; // Simulates the effect of rain on the soil
         virtual string getName() const = 0; // Returns the name of the soil state
 
         void setContext(class CropField* context);
-
-        virtual ~SoilState();
-        SoilState();
 };
 
 #endif // SOILSTATE_H

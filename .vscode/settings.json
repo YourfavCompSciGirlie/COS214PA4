@@ -8,6 +8,12 @@
         "numeric": "cpp",
         "sstream": "cpp",
         "cmath": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "cstdio": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "functional": "cpp",
+        "type_traits": "cpp"
     }
 }

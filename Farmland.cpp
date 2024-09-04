@@ -82,3 +82,16 @@ void Farmland::setCurrentAmount(int amount) {
         cout << "[Farmland] Warning: Not enough capacity to set the desired amount. Excess amount left: " << remainingAmount << endl;
     }
 }
+
+// // Implementation of the iterator creation is deferred to subclasses
+// FarmIterator* Farmland::createBFSIterator() {
+//     return new BFFarmIterator(this);
+// }
+
+// FarmIterator* Farmland::createDFSIterator() {
+//     return new DFFarmIterator(this);
+// }
+
+// std::vector<FarmUnit*> Farmland::getSubUnits() {
+//     return units;
+// }

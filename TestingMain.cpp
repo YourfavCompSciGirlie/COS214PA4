@@ -4,7 +4,6 @@
 
 #include "Farmland.h"
 #include "CropField.h"
-#include "Greenhouse.h"
 #include "Barn.h"
 #include "FarmUnit.h"
 
@@ -13,12 +12,17 @@
 #include "FloodedSoil.h"
 #include "SoilState.h"
 
-#include "BasicCropField.h"
-#include "FertilizedField.h"
-#include "ExtraBarn.h"
+#include "CropFieldDecorator.h"
+#include "FertilizerDecorator.h"
+#include "ExtraBarnDecorator.h"
+#include "Truck.h"
 #include "FertilizerTruck.h"
 #include "DeliveryTruck.h"
 #include "NotificationSystem.h"
+
+#include "FarmIterator.h"
+#include "DFFarmIterator.h"
+#include "BFFarmIterator.h"
 
 using namespace std;
 
@@ -31,7 +35,6 @@ void testingComposite() {
     // Create individual FarmUnit instances
     CropField wheatField("Wheat", 500, drySoil);
     CropField cornField("Corn", 300, fruitfulSoil);
-    Greenhouse tomatoGreenhouse(200); // Capacity for 200 tomatoes
     Barn storageBarn(1000); // Capacity for 1000 units      
 
     // Create composite Farmland
@@ -40,7 +43,6 @@ void testingComposite() {
     // Add CropFields, Greenhouse, and Barn to Farmland
     mainFarmland.add(&wheatField);
     mainFarmland.add(&cornField);
-    mainFarmland.add(&tomatoGreenhouse);
     mainFarmland.add(&storageBarn);
 
     // Add a nested Farmland to test hierarchy
@@ -52,12 +54,10 @@ void testingComposite() {
     // Test getTotalCapacity() for Farmland and individual units
     cout << "Total Capacity of Main Farmland: " << mainFarmland.getTotalCapacity() << endl;
     cout << "Total Capacity of Wheat Field: " << wheatField.getTotalCapacity() << endl;
-    cout << "Total Capacity of Tomato Greenhouse: " << tomatoGreenhouse.getTotalCapacity() << endl;
 
     // Test getCropType() for CropFields and Greenhouse
     cout << "Crop Type of Wheat Field: " << wheatField.getCropType() << endl;
     cout << "Crop Type of Corn Field: " << cornField.getCropType() << endl;
-    cout << "Crop Type of Tomato Greenhouse: " << tomatoGreenhouse.getCropType() << endl;
     cout << "Crop Type of Rice Field: " << riceField.getCropType() << endl;
 
     // Test getSoilStateName() for CropFields
@@ -69,10 +69,6 @@ void testingComposite() {
     cout << "Current Amount of Wheat Field: " << wheatField.getCurrentAmount() << endl;
     wheatField.setCurrentAmount(100); // Set new amount
     cout << "Updated Amount of Wheat Field: " << wheatField.getCurrentAmount() << endl;
-
-    cout << "Current Amount of Tomato Greenhouse: " << tomatoGreenhouse.getCurrentAmount() << endl;
-    tomatoGreenhouse.setCurrentAmount(150); // Set new amount
-    cout << "Updated Amount of Tomato Greenhouse: " << tomatoGreenhouse.getCurrentAmount() << endl;
 
     // Test removal and getTotalCapacity() after removal
     mainFarmland.remove(&cornField);
@@ -117,6 +113,79 @@ void testingState() {
     delete floodedSoil;
 }
 
+void testingDecorator() {
+    // Create SoilState instances
+    SoilState* drySoil = new DrySoil();
+    SoilState* fruitfulSoil = new FruitfulSoil();
+
+    // Create a basic CropField
+    CropField* wheatField = new CropField("Wheat", 500, drySoil);
+
+    // Apply fertilizer to the CropField to transition from DrySoil to FruitfulSoil
+    cout << "Initial Soil State: " << wheatField->getSoilStateName() << endl;
+    FertilizerDecorator* fertilizedWheatField = new FertilizerDecorator(wheatField);
+    fertilizedWheatField->increaseProduction();
+    cout << "Soil State after fertilization: " << wheatField->getSoilStateName() << endl;
+
+    // Harvest crops after applying fertilizer
+    cout << "Harvesting after fertilization: " << fertilizedWheatField->harvest() << endl;
+
+    // Add an ExtraBarn to increase storage capacity
+    ExtraBarnDecorator* barnEnhancedField = new ExtraBarnDecorator(wheatField, 200); // Adding 200 units of extra storage
+    cout << "Original Capacity: " << wheatField->getTotalCapacity() << endl;
+    cout << "Increased Capacity after adding ExtraBarn: " << barnEnhancedField->getTotalCapacity() << endl;
+
+    // Test leftover capacity after using some storage
+    cout << "Remaining Capacity after storing 100 units: " << barnEnhancedField->getLeftoverCapacity() << endl;
+
+    // Clean up
+    delete drySoil;
+    delete fruitfulSoil;
+    delete fertilizedWheatField; // Also deletes wheatField
+    delete barnEnhancedField; // Also deletes fertilizedWheatField
+}
+
+void testingObserver() {
+    // Create SoilState instances
+    SoilState* drySoil = new DrySoil();
+    SoilState* fruitfulSoil = new FruitfulSoil();
+
+    // Create a basic CropField
+    CropField* wheatField = new CropField("Wheat", 500, drySoil);
+
+    // Create trucks
+    FertilizerTruck* fertilizerTruck = new FertilizerTruck();
+    DeliveryTruck* deliveryTruck = new DeliveryTruck();
+
+    // Attach trucks to the CropField (subject)
+    wheatField->attach(fertilizerTruck);
+    wheatField->attach(deliveryTruck);
+
+    // Simulate fertilization event
+    cout << "Triggering fertilization event..." << endl;
+    wheatField->setSoilState(fruitfulSoil); // Transition to FruitfulSoil should trigger fertilizer delivery
+    wheatField->notifyTrucks(); // Manually notify for testing purposes
+
+    // Simulate harvest event and check if storage capacity triggers delivery truck
+    cout << "Simulating harvest and checking storage capacity..." << endl;
+    wheatField->setCurrentAmount(480); // Near the capacity
+    wheatField->notifyTrucks(); // Should trigger delivery truck due to nearing capacity
+
+    // Simulate buying and selling trucks
+    wheatField->buyTruck(fertilizerTruck);
+    wheatField->sellTruck(deliveryTruck);
+
+    // Start trucks' operations
+    fertilizerTruck->startEngine();
+    deliveryTruck->startEngine();
+
+    // Clean up
+    delete drySoil;
+    delete fruitfulSoil;
+    delete fertilizerTruck;
+    delete deliveryTruck;
+    delete wheatField;
+}
 
 
 
@@ -132,13 +201,13 @@ int main() {
 
     cout << endl;
 
-    cout << "\n========================== Component 3: Decorator ================================\n" << endl;
-    // testingDecorator();
+    cout << "\n========================== Component 3: Decorator =============================\n" << endl;
+    testingDecorator();
 
     cout << endl;
 
-    cout << "\n========================== Component 4: Observer ================================\n" << endl;
-    // testingObserver();
+    cout << "\n========================== Component 4: Observer ===============================\n" << endl;
+    testingObserver();
 
     cout << endl;
 

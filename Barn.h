@@ -10,7 +10,6 @@ using namespace std;
 class Barn : public FarmUnit {
     
     private:
-        string cropType;
         int totalCapacity;
         int currentAmount;
 
@@ -18,21 +17,21 @@ class Barn : public FarmUnit {
         Barn(int totalCapacity);
         ~Barn();
 
-        int getTotalCapacity() override;
-        string getCropType() override;
-        string getSoilStateName() override;
+        int getTotalCapacity();
+        string getCropType();
+        string getSoilStateName();
 
         int getCurrentAmount();
         void setCurrentAmount(int amount);
 
-        // Nobuhle - Decorator functions
+        // Decorator pattern methods
         void increaseProduction() override;
         void harvest() override;
         int getLeftoverCapacity() override;
 
+        // Observer pattern methods
         void buyTruck(Truck* truck) override;
         void sellTruck(Truck* truck) override;
-        void callTruck() override;
 };
 
 #endif // BARN_H

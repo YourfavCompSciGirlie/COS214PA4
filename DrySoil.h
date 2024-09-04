@@ -10,12 +10,12 @@ using namespace std;
 class DrySoil : public SoilState {
 
     public:
-        int harvestCrops() const override;
-        void rain() override;
-        string getName() const override;
-
         DrySoil();
         ~DrySoil();
+
+        int harvestCrops() const;
+        void rain();
+        string getName() const;
 };
 
 #endif // DRYSOIL_H
