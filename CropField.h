@@ -26,7 +26,7 @@ class CropField : public FarmUnit, public NotificationSystem {
         SoilState* soilState;
 
     public:
-        CropField();
+        CropField() {};
         CropField(const string& cropType, int totalCapacity, SoilState* initialState);
         virtual ~CropField();
 

@@ -12,10 +12,6 @@ Farmland::Farmland() {
 }
 
 Farmland::~Farmland() {
-    // Clean up dynamically allocated FarmUnit objects
-    for (FarmUnit* unit : units) {
-        delete unit;
-    }
     cout << "[Farmland] The farmland has been destroyed. 🌾" << endl;
 }
 

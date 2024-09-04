@@ -93,6 +93,12 @@ void testingComposite() {
     cout << "Total Capacity of Nested Farmland: " << nestedFarmland.getTotalCapacity() << endl;
 
     cout << endl;
+
+    delete drySoil;
+    delete fruitfulSoil;
+    delete floodedSoil;
+
+    cout << endl;
 }
 
 void testingState() {

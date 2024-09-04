@@ -2,9 +2,9 @@
 #include <iostream>
 
 ExtraBarn::ExtraBarn(CropField* field, int extraCapacity) 
-    : CropFieldDecorator(field), extraStorageCapacity(extraCapacity) 
 {
     this->field = field;
+    this->extraStorageCapacity = extraCapacity;
 }
 
 void ExtraBarn::increaseProduction()  

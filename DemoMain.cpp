@@ -1,55 +1,76 @@
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
+// #include <iostream>
+// #include <cstdlib>
+// #include <ctime>
+// #include <vector>
+// #include <string>
 
-#include "CropField.h"
-#include "FertilizedField.h"
-#include "ExtraBarn.h"
+// #include "Farmland.h"
+// #include "CropField.h"
+// #include "Barn.h"
+// #include "FarmUnit.h"
 
-int main() {
-    // Seed the random number generator
-    std::srand(std::time(nullptr));
+// #include "DrySoil.h"
+// #include "FruitfulSoil.h"
+// #include "FloodedSoil.h"
+// #include "SoilState.h"
 
-    // Create a basic CropField
-    CropField* basicField = new CropField();
+// #include "CropFieldDecorator.h"
+// #include "FertilizedField.h"
+// #include "ExtraBarn.h"
+// #include "Truck.h"
+// #include "FertilizerTruck.h"
+// #include "DeliveryTruck.h"
+// #include "NotificationSystem.h"
 
-    // Decorate the CropField with FertilizedField
-    CropFieldDecorator* fertilizedField ;
+// #include "FarmIterator.h"
 
-    // Further decorate the fertilized field with ExtraBarn
-    CropFieldDecorator* extraBarnField ;
+// using namespace std;
 
-    // Test the functionalities of the decorated CropField
-    std::cout << "Testing the CropField with FertilizedField and ExtraBarn:\n";
+// int main() {
+//     // Seed the random number generator
+//     std::srand(std::time(nullptr));
 
-    // Increase production
-    extraBarnField->increaseProduction();
-    std::cout << std::endl;
+//     SoilState* drySoil = new DrySoil();
 
-    // Harvest crops
-    extraBarnField->harvest();
-    std::cout << std::endl;
+//     // Create a basic CropField
+//     CropField wheatField("Wheat", 500, drySoil);
 
-    // Check leftover capacity
-    int capacity = extraBarnField->getLeftoverCapacity();
-    std::cout << "Leftover Capacity after operations: " << capacity << " units\n";
-    std::cout << std::endl;
+//     // Decorate the CropField with FertilizedField
+//     CropFieldDecorator* fertilizedField ;
 
-    // Additional creative testing
-    std::cout << "Running additional creative tests:\n";
-    for (int i = 0; i < 5; ++i) {
-        std::cout << "Cycle " << (i + 1) << ":\n";
-        extraBarnField->increaseProduction();
-        extraBarnField->harvest();
-        capacity = extraBarnField->getLeftoverCapacity();
-        std::cout << "Leftover Capacity: " << capacity << " units\n";
-        std::cout << std::endl;
-    }
+//     // Further decorate the fertilized field with ExtraBarn
+//     CropFieldDecorator* extraBarnField ;
 
-    // Clean up dynamically allocated memory
-    delete extraBarnField;
-    delete fertilizedField;
-    delete basicField;
+//     // Test the functionalities of the decorated CropField
+//     std::cout << "Testing the CropField with FertilizedField and ExtraBarn:\n";
 
-    return 0;
-}
+//     // Increase production
+//     extraBarnField->increaseProduction();
+//     std::cout << std::endl;
+
+//     // Harvest crops
+//     extraBarnField->harvest();
+//     std::cout << std::endl;
+
+//     // Check leftover capacity
+//     int capacity = extraBarnField->getLeftoverCapacity();
+//     std::cout << "Leftover Capacity after operations: " << capacity << " units\n";
+//     std::cout << std::endl;
+
+//     // Additional creative testing
+//     std::cout << "Running additional creative tests:\n";
+//     for (int i = 0; i < 5; ++i) {
+//         std::cout << "Cycle " << (i + 1) << ":\n";
+//         extraBarnField->increaseProduction();
+//         extraBarnField->harvest();
+//         capacity = extraBarnField->getLeftoverCapacity();
+//         std::cout << "Leftover Capacity: " << capacity << " units\n";
+//         std::cout << std::endl;
+//     }
+
+//     // Clean up dynamically allocated memory
+//     delete extraBarnField;
+//     delete fertilizedField;
+
+//     return 0;
+// }

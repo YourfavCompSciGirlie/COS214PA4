@@ -14,11 +14,6 @@ CropField::CropField(const string& cropType, int totalCapacity, SoilState* initi
 
 // Destructor
 CropField::~CropField() {
-    // Note: If SoilState is managed elsewhere, avoid deleting it here.
-    if (soilState) {
-        delete soilState; // Clean up soilState if CropField owns it
-    }
-
     cout << "[CropField] Destroyed the crop field for " << cropType << "." << endl;
 }
 
@@ -100,7 +95,6 @@ void CropField::buyTruck(Truck* truck)
 void CropField::sellTruck(Truck* truck) 
 {
     NotificationSystem::removeObserver(truck);
-    FarmUnit::sellTruck(truck);
 
     std::cout << "Truck sold! This " << cropType << " field has one less truck now." << std::endl;
 }
