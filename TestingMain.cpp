@@ -126,12 +126,12 @@ int main() {
     cout << endl;
 
     cout << "\n========================== Component 3: Decorator ================================\n" << endl;
-    testingDecorator();
+    // testingDecorator();
 
     cout << endl;
 
     cout << "\n========================== Component 4: Strategy ================================\n" << endl;
-    testingStrategy();
+    // testingStrategy();
 
     cout << endl;
 
