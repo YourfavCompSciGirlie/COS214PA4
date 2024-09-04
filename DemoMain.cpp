@@ -115,26 +115,26 @@ void testTruckHierarchy()
 
 void testFarmUnit() 
  {
-//     std::cout << "=== Testing FarmUnit ===" << std::endl;
+    // std::cout << "=== Testing FarmUnit ===" << std::endl;
 
-//     FarmUnit farm;
-//     Truck* fertilizerTruck = new FertilizerTruck();
-//     Truck* deliveryTruck = new DeliveryTruck();
+   
+    // Truck* fertilizerTruck = new FertilizerTruck();
+    // Truck* deliveryTruck = new DeliveryTruck();
 
-//     farm.buyTruck(fertilizerTruck);
-//     farm.buyTruck(deliveryTruck);
+    // farm.buyTruck(fertilizerTruck);
+    // farm.buyTruck(deliveryTruck);
 
-//     std::cout << "Calling trucks from FarmUnit:" << std::endl;
-//     farm.callTruck();  // Should call the trucks to start their engines
+    // std::cout << "Calling trucks from FarmUnit:" << std::endl;
+    // farm.callTruck();  // Should call the trucks to start their engines
 
-//     farm.sellTruck(fertilizerTruck);
-//     std::cout << "Calling trucks after selling FertilizerTruck:" << std::endl;
-//     farm.callTruck();  // Should only call the delivery truck
+    // farm.sellTruck(fertilizerTruck);
+    // std::cout << "Calling trucks after selling FertilizerTruck:" << std::endl;
+    // farm.callTruck();  // Should only call the delivery truck
 
-//     delete fertilizerTruck;  // Cleanup
-//     delete deliveryTruck;
+    // delete fertilizerTruck;  // Cleanup
+    // delete deliveryTruck;
 
-//     std::cout << "=== FarmUnit Test Complete ===\n" << std::endl;
+    // std::cout << "=== FarmUnit Test Complete ===\n" << std::endl;
 }
 
 void testNotificationSystem() 
