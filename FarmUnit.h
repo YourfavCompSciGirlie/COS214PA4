@@ -13,8 +13,12 @@ using namespace std;
 
 class FarmIterator;
 
-class FarmUnit {
-    
+class FarmUnit 
+{
+    private:
+    std::string name;
+    std::vector<FarmUnit*> subUnits;
+
     public:
         FarmUnit();
         virtual ~FarmUnit();
@@ -46,6 +50,21 @@ class FarmUnit {
 
         // // Return a list of sub-units (for composite)
         // virtual vector<FarmUnit*> getSubUnits() = 0;
+
+       //Iterator design pattern
+        FarmUnit(const std::string& name) : name(name) {}
+
+        void addSubUnit(FarmUnit* unit) {
+        subUnits.push_back(unit);
+       }
+
+        const std::string& getName() const {
+            return name;
+        }
+
+        const std::vector<FarmUnit*>& getSubUnits() const {
+            return subUnits;
+        }
 };
 
 #endif // FARMUNIT_H

@@ -1,24 +1,46 @@
-#ifndef DFFARMITERATOR_H
-#define DFFARMITERATOR_H
+#ifndef DFFAMITERATOR_H
+#define DFFAMITERATOR_H
 
-#include <stack>
 #include "FarmIterator.h"
-#include "FarmUnit.h" // Assuming this header defines the FarmUnit class
+#include <stack>
 
-class DFFarmIterator : public FarmIterator 
-{
-    private:
-        FarmUnit* current;
-        std::stack<FarmUnit*> stack;
-        bool done;
+class DFFarmIterator : public FarmIterator {
+private:
+    std::stack<FarmUnit*> stack;
+    FarmUnit* current = nullptr;
 
-   public:
-        DFFarmIterator(FarmUnit* start);
-        virtual FarmUnit* firstFarm() override;
-        virtual FarmUnit* next() override;
-        virtual bool isDone() override;
-        virtual FarmUnit* currentFarm() override;
+public:
+    DFFarmIterator(FarmUnit* rootFarm) {
+        if (rootFarm != nullptr) {
+            stack.push(rootFarm);
+        }
+    }
 
+    FarmUnit* firstFarm() override {
+        if (!stack.empty()) {
+            return stack.top();
+        }
+        return nullptr;
+    }
+
+    FarmUnit* next() override {
+        if (!isDone()) {
+            current = stack.top();
+            stack.pop();
+            const std::vector<FarmUnit*>& subUnits = current->getSubUnits();
+            for (auto it = subUnits.rbegin(); it != subUnits.rend(); ++it) {
+                stack.push(*it);
+            }
+        }
+        return current;
+    }
+
+    bool isDone() override {
+        return stack.empty();
+    }
+
+    FarmUnit* currentFarm() override {
+        return current;
+    }
 };
-
-#endif // DFFARMITERATOR_H
+#endif

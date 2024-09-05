@@ -1,27 +1,46 @@
 #ifndef BFFARMITERATOR_H
 #define BFFARMITERATOR_H
 
-#include <queue>
+
 #include "FarmIterator.h"
-#include "FarmUnit.h" // Assuming this header defines the FarmUnit class
+#include <queue>
 
-class BFFarmIterator : public FarmIterator 
-{
-    private:
-    FarmUnit* current;
-    int currentFarm;
-    std::queue<FarmUnit> queueFarm;
-    bool done;
-    
+class BFFarmIterator : public FarmIterator {
+private:
+    std::queue<FarmUnit*> queue;
+    FarmUnit* current = nullptr;
 
-   public:
-    BFFarmIterator(FarmUnit* start);
-    FarmUnit* firstFarm();
-    bool hasNext();
-    virtual FarmUnit* next() override; //need to implement
-    virtual bool isDone() override;
-    virtual FarmUnit* currentFarm() override; 
-    
+public:
+    BFFarmIterator(FarmUnit* rootFarm) {
+        if (rootFarm != nullptr) {
+            queue.push(rootFarm);
+        }
+    }
+
+    FarmUnit* firstFarm() override {
+        if (!queue.empty()) {
+            return queue.front();
+        }
+        return nullptr;
+    }
+
+    FarmUnit* next() override {
+        if (!isDone()) {
+            current = queue.front();
+            queue.pop();
+            for (FarmUnit* subUnit : current->getSubUnits()) {
+                queue.push(subUnit);
+            }
+        }
+        return current;
+    }
+
+    bool isDone() override {
+        return queue.empty();
+    }
+
+    FarmUnit* currentFarm() override {
+        return current;
+    }
 };
-
-#endif 
+#endif
