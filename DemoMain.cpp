@@ -22,255 +22,359 @@
 
 #include "FarmIterator.h"
 
+#include <thread>
+#include <chrono>
+
 using namespace std;
 
-void testingComposite() {
-    // Create SoilState instances (you should replace these with concrete implementations)
+void printColored(const std::string &text, const std::string &colorCode)
+{
+    std::cout << "\033[" << colorCode << "m" << text << "\033[0m";
+}
+
+// Function to add borders around headings
+void printWithBorders(const std::string &heading, const std::string &colorCode)
+{
+    std::string border = std::string(heading.length() + 4, '-');
+    printColored(border + "\n", colorCode);
+    printColored("| " + heading + " |\n", colorCode);
+    printColored(border + "\n", colorCode);
+}
+
+void rainEffect() {
+    std::cout << "\033[1;34m";
+    for (int i = 0; i < 3; ++i) {
+        std::cout << "        .     .  .       .     .  .      .   .     .\n";
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+        std::cout << "   .    .   .    .   .    .   .    .   .    .   .    .\n";
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+        std::cout << " .   .   .     .      .   .     .      .   .     .   .\n";
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+    }
+    std::cout << "\033[0m";
+}
+
+// Simulate a processing animation
+void processingAnimation(const std::string& task) {
+    std::cout << task;
+    std::cout << "\033[1;33m"; // Yellow color
+    for (int i = 0; i < 5; ++i) {
+        std::cout << ".";
+        std::cout.flush();
+        std::this_thread::sleep_for(std::chrono::milliseconds(300));
+    }
+    std::cout << "\033[0m" << std::endl;
+}
+
+// Function to print a field border with ASCII art
+void printFieldBorder(const std::string &heading, const std::string &colorCode) {
+    std::string border = std::string(heading.length() + 6, '=');
+    printColored(border + "\n", colorCode);
+    printColored("| * " + heading + " * |\n", colorCode);
+    printColored(border + "\n", colorCode);
+    std::cout << "   ( \\(\\ " << "       ( \\(\\ \n"
+              << "   (-.- )" << "      (-.- )\n"
+              << "o_(\")(\")" << " o_(\")(\")" << std::endl;
+    std::cout << std::endl;
+}
+
+
+void testingComposite() 
+{
+    // 🌟 Start of Testing Composite Design Pattern
+    printWithBorders("🌾 Testing Composite Design Pattern 🌾", "1;36");
+    
+    // 🌱 Create SoilState instances with meaningful soil types
     SoilState* drySoil = new DrySoil();
     SoilState* fruitfulSoil = new FruitfulSoil();
     SoilState* floodedSoil = new FloodedSoil();
 
-    cout << endl;
+    cout << "\n🌍 Initializing Farmland Environment...\n";
+    
+    // 🌾 Create individual FarmUnit instances
+    CropField wheatField("🌾 Wheat Field", 500, drySoil);
+    CropField cornField("🌽 Corn Field", 300, fruitfulSoil);
+    Barn storageBarn(1000); // 🏠 Barn with a capacity for 1000 units   
 
-    // Create individual FarmUnit instances
-    CropField wheatField("Wheat", 500, drySoil);
-    CropField cornField("Corn", 300, fruitfulSoil);
-    Barn storageBarn(1000); // Capacity for 1000 units   
+    cout << "🏡 Farm Units Initialized:\n";
+    cout << "   - " << wheatField.getName() << " (Capacity: 500 units)\n";
+    cout << "   - " << cornField.getName() << " (Capacity: 300 units)\n";
+    cout << "   - " << storageBarn.getName() << " (Capacity: 1000 units)\n";
 
-    cout << endl;   
+    cout << "\n🔗 Creating Composite Farmland...\n";
 
-    // Create composite Farmland
+    // 🌿 Create composite Farmland
     Farmland mainFarmland;
 
-    // Add CropFields, Greenhouse, and Barn to Farmland
+    // ➕ Add CropFields and Barn to Farmland
     mainFarmland.add(&wheatField);
     mainFarmland.add(&cornField);
     mainFarmland.add(&storageBarn);
 
-    // Add a nested Farmland to test hierarchy
+    cout << "🌱 Main Farmland contains:\n";
+    cout << "   - " << wheatField.getName() << "\n";
+    cout << "   - " << cornField.getName() << "\n";
+    cout << "   - " << storageBarn.getName() << "\n";
+
+    // 🌾 Add a nested Farmland to test hierarchy
     Farmland nestedFarmland;
-    cout << endl;
-    CropField riceField("Rice", 400, drySoil);
+    CropField riceField("🍚 Rice Field", 400, drySoil);
     nestedFarmland.add(&riceField);
     mainFarmland.add(&nestedFarmland);
 
-    cout << endl;
+    cout << "   - Nested Farmland contains:\n";
+    cout << "     - " << riceField.getName() << " (Capacity: 400 units)\n";
 
-    // Test getTotalCapacity() for Farmland and individual units
-    cout << "Total Capacity of Main Farmland: " << mainFarmland.getTotalCapacity() << endl;
-    cout << "Total Capacity of Wheat Field: " << wheatField.getTotalCapacity() << endl;
+    // 🧮 Test getTotalCapacity() for Farmland and individual units
+    cout << "\n📊 Testing Capacity Calculations:\n";
+    cout << "   🔹 Total Capacity of Main Farmland: " << mainFarmland.getTotalCapacity() << " units\n";
+    cout << "   🔹 Total Capacity of " << wheatField.getName() << ": " << wheatField.getTotalCapacity() << " units\n";
 
-    cout << endl;
+    // 🌾 Test getCropType() for CropFields
+    cout << "\n🌱 Testing Crop Types:\n";
+    cout << "   🌾 Crop Type of " << wheatField.getName() << ": " << wheatField.getCropType() << "\n";
+    cout << "   🌽 Crop Type of " << cornField.getName() << ": " << cornField.getCropType() << "\n";
+    cout << "   🍚 Crop Type of " << riceField.getName() << ": " << riceField.getCropType() << "\n";
 
-    // Test getCropType() for CropFields and Greenhouse
-    cout << "Crop Type of Wheat Field: " << wheatField.getCropType() << endl;
-    cout << "Crop Type of Corn Field: " << cornField.getCropType() << endl;
-    cout << "Crop Type of Rice Field: " << riceField.getCropType() << endl;
+    // 🧑‍🌾 Test getSoilStateName() for CropFields
+    cout << "\n🌍 Testing Soil States:\n";
+    cout << "   🌾 Soil State of " << wheatField.getName() << ": " << wheatField.getSoilStateName() << "\n";
+    cout << "   🌽 Soil State of " << cornField.getName() << ": " << cornField.getSoilStateName() << "\n";
+    cout << "   🍚 Soil State of " << riceField.getName() << ": " << riceField.getSoilStateName() << "\n";
 
-    cout << endl;
-
-    // Test getSoilStateName() for CropFields
-    cout << "Soil State of Wheat Field: " << wheatField.getSoilStateName() << endl;
-    cout << "Soil State of Corn Field: " << cornField.getSoilStateName() << endl;
-    cout << "Soil State of Rice Field: " << riceField.getSoilStateName() << endl;
-
-    cout << endl;
-
-    // Test getCurrentAmount() and setCurrentAmount() for CropField and Greenhouse
-    cout << "Current Amount of Wheat Field: " << wheatField.getCurrentAmount() << endl;
+    // 📦 Test getCurrentAmount() and setCurrentAmount() for CropField
+    cout << "\n📦 Testing Crop Amount Management:\n";
+    cout << "   📦 Current Amount of " << wheatField.getName() << ": " << wheatField.getCurrentAmount() << " units\n";
     wheatField.setCurrentAmount(100); // Set new amount
-    cout << "Updated Amount of Wheat Field: " << wheatField.getCurrentAmount() << endl;
+    cout << "   ✅ Updated Amount of " << wheatField.getName() << ": " << wheatField.getCurrentAmount() << " units\n";
 
-    cout << endl;
-
-    // Test removal and getTotalCapacity() after removal
+    // 🚜 Test removal and getTotalCapacity() after removal
     mainFarmland.remove(&cornField);
-    cout << "Total Capacity of Main Farmland after removing Corn Field: " << mainFarmland.getTotalCapacity() << endl;
+    cout << "\n🚜 Corn Field Removed! Testing Remaining Capacity:\n";
+    cout << "   🔹 Total Capacity of Main Farmland after removing Corn Field: " << mainFarmland.getTotalCapacity() << " units\n";
 
-    cout << endl;
+    // 🔁 Test nested Farmland capacity
+    cout << "\n🔁 Testing Nested Farmland Capacity:\n";
+    cout << "   🔹 Total Capacity of Nested Farmland: " << nestedFarmland.getTotalCapacity() << " units\n";
 
-    // Test nested Farmland capacity
-    cout << "Total Capacity of Nested Farmland: " << nestedFarmland.getTotalCapacity() << endl;
-
-    cout << endl;
-
+    // 🚮 Clean up
     delete drySoil;
     delete fruitfulSoil;
     delete floodedSoil;
 
-    cout << endl;
+    cout << "\n🌟 Composite Design Pattern Test Completed! 🌟\n\n";
 }
 
-void testingState() {
-    // Create SoilState instances
+void testingState() //Nobuhle's Version 
+{
+    // 🌟 Start of Testing State Design Pattern
+    printWithBorders("🌾 Testing State Design Pattern 🌾", "1;36");
+
+    // 🌱 Initialize Soil States
     SoilState* drySoil = new DrySoil();
     SoilState* fruitfulSoil = new FruitfulSoil();
     SoilState* floodedSoil = new FloodedSoil();
 
-    cout << endl;
+    // 🧑‍🌾 Display Initial Soil State
+    cout << "\n🌾 Initial Soil: " << endl;
+    printColored("🌵 Dry Soil: " + drySoil->getName() + "\n", "1;33");
 
-    // Create CropField with initial soil state
-    string cropType = "Wheat";
-    CropField wheatField(cropType, 500, drySoil);
+    // 🌾 Create a CropField with initial Dry Soil
+    CropField wheatField("🌾 Wheat Field", 500, drySoil);
+    cout << "🧑‍🌾 Current soil state of Wheat Field: " << wheatField.getSoilStateName() << endl;
 
-    // Test harvesting crops and soil state name
-    cout << "Harvesting crops from Wheat Field with Dry Soil: " << wheatField.getSoilState()->harvestCrops() << endl;
-    cout << "Current soil state: " << wheatField.getSoilStateName() << endl;
-
-    cout << endl;
-
-    // Change soil state to Fruitful
+    // 🌧️ Change Soil State to Fruitful
+    cout << "\n🌧️ Changing Soil State to 🌱 Fruitful Soil..." << endl;
     wheatField.setSoilState(fruitfulSoil);
-    cout << "Harvesting crops from Wheat Field with Fruitful Soil: " << wheatField.getSoilState()->harvestCrops() << endl;
-    cout << "Current soil state: " << wheatField.getSoilStateName() << endl;
+    cout << "🧑‍🌾 Current soil state of Wheat Field: " << wheatField.getSoilStateName() << endl;
 
-    cout << endl;
-
-    // Change soil state to Flooded
+    // 🌧️🌧️ Simulate Heavy Rain and Change Soil State to Flooded
+    cout << "\n🌧️🌧️🌧️ Simulating heavy rain... Flooding the soil..." << endl;
     wheatField.setSoilState(floodedSoil);
-    cout << "Harvesting crops from Wheat Field with Flooded Soil: " << wheatField.getSoilState()->harvestCrops() << endl;
-    cout << "Current soil state: " << wheatField.getSoilStateName() << endl;
+    printColored("🧑‍🌾 Current soil state of Wheat Field: " + wheatField.getSoilStateName() + "\n", "1;34");
 
-    cout << endl;
-
+    // 🚮 Clean up resources
     delete floodedSoil;
-
-    cout << endl;
+    cout << "\n🌟 State Design Pattern Test Completed! 🌟\n";
 }
 
-void testingDecorator() {
-    // Create SoilState instances
+void testingDecorator() // Nobuhle's Version
+{
+    printWithBorders("🌾 Testing Decorator Design Pattern 🌾", "1;35");
+
+    // 🌱 Initialize Soil States and Create Initial CropField
     SoilState* drySoil = new DrySoil();
     SoilState* fruitfulSoil = new FruitfulSoil();
+    CropField* wheatField = new CropField("🌾 Wheat Field", 500, drySoil);
 
-    cout << endl;
+    // 🏡 Display Initial Field State
+    cout << "\n🏡 Initial Field Setup: " << endl;
+    cout << "  _______" << endl;
+    cout << " |       |" << endl;
+    cout << " | Field | 🌾 " << wheatField->getCropType() << endl;
+    cout << " |_______|" << endl;
+    printColored(" Soil state: " + wheatField->getSoilStateName() + "\n", "1;35");
+    cout <<endl << endl;
 
-    // Create a basic CropField
-    CropField* wheatField = new CropField("Wheat", 500, drySoil);
-
-    cout << endl;
-
-    // Apply fertilizer to the CropField to transition from DrySoil to FruitfulSoil
-    cout << "Initial Soil State: " << wheatField->getSoilStateName() << endl;
-
-    cout << endl;
-
+    // 🌾 Apply Fertilizer Decorator
+    printColored("🌾 Fertilizing the Wheat Field...", "1;36");
+    cout<< endl;
     FertilizedField* fertilizedWheatField = new FertilizedField(wheatField);
-    cout << endl;
     fertilizedWheatField->increaseProduction();
-    cout << "Soil State after fertilization: " << wheatField->getSoilStateName() << endl;
+    cout <<endl;
+    printColored(" 🌱 Soil state after fertilization: " + fertilizedWheatField->getSoilStateName(), "1;33" );
+    
+    cout << endl <<endl;
 
-    cout << endl;
-
-    // Harvest crops after applying fertilizer
-    cout << "Harvesting after fertilization: ";
+    // 🚜 Harvest after Fertilization
+    printColored( "🚜 Harvesting after fertilization: ", "1;32");
+    cout <<endl;
     fertilizedWheatField->harvest();
-
     cout << endl;
 
-    // Add an ExtraBarn to increase storage capacity
-    ExtraBarn* barnEnhancedField = new ExtraBarn(wheatField, 200); // Adding 200 units of extra storage
-    cout << endl;
-    cout << "Original Capacity: " << wheatField->getTotalCapacity() << endl;
-    cout << "Increased Capacity after adding ExtraBarn: " << barnEnhancedField->getTotalCapacity() << endl;
+    // 🏚️ Apply Extra Barn Capacity Decorator
+    printColored("\n🏚️ Enhancing Field with Extra Barn Capacity...", "1;33" );
+    cout<< endl;
+    ExtraBarn* barnEnhancedField = new ExtraBarn(wheatField, 200);
+    cout << "📦 New storage capacity after adding ExtraBarn: " << barnEnhancedField->getTotalCapacity() << endl;
 
-    cout << endl;
+    cout << "📦 Remaining capacity: " << barnEnhancedField->getLeftoverCapacity() << endl;
 
-    // Test leftover capacity after using some storage
-    cout << "Remaining Capacity after storing 450 units: " << barnEnhancedField->getLeftoverCapacity() << endl;
-
-    cout << endl;
-
-    // Clean up
+    // 🚮 Clean up resources
+    delete barnEnhancedField;
+    delete fertilizedWheatField;
     delete fruitfulSoil;
     delete wheatField;
-    delete fertilizedWheatField; 
-    delete barnEnhancedField;
+
+    cout << "\n🌟 Decorator Design Pattern Test Completed! 🌟\n";
 }
 
-void testingObserver() {
-    // Create SoilState instances
+
+void testingObserver() // Nobuhle Version
+{
+    // 🟨 Start of Testing Observer Design Pattern
+    printWithBorders("🌟 Testing Observer Design Pattern 🌟", "1;33");
+
+    // 🌱 Initialize Soil States and Create Initial CropField
     SoilState* drySoil = new DrySoil();
     SoilState* fruitfulSoil = new FruitfulSoil();
+    CropField* wheatField = new CropField("🌾 Wheat Field", 500, drySoil);
 
-    cout << endl;
-
-    // Create a basic CropField
-    CropField* wheatField = new CropField("Wheat", 500, drySoil);
-
-    cout << endl;
-
-    // Create trucks
+    // 🚚 Initialize Trucks
     FertilizerTruck* fertilizerTruck = new FertilizerTruck();
     DeliveryTruck* deliveryTruck = new DeliveryTruck();
 
-    // Attach trucks to the CropField (subject)
+    // 🔄 Attach Observers to the Wheat Field
+    cout << "\n🚜 Fertilizer Truck and Delivery Truck are on standby..." << endl;
     wheatField->addObserver(fertilizerTruck);
     wheatField->addObserver(deliveryTruck);
 
-    cout << endl;
+    // 🌾 Change Soil State to Fruitful and Notify Observers
+    cout << "\n🌾 Fertilizing Wheat Field..." << endl;
+    wheatField->setSoilState(new FruitfulSoil());
+    printColored("🔔 Notifying all observers about the new soil state...", "1;32");
+    cout <<endl<<endl;
+    wheatField->notifyAll();
 
-    // Simulate fertilization event
-    cout << "Triggering fertilization event..." << endl;
-    wheatField->setSoilState(fruitfulSoil); // Transition to FruitfulSoil should trigger fertilizer delivery
-    wheatField->notifyAll(); // Manually notify for testing purposes
-
-    cout << endl;
-
-    // Simulate harvest event and check if storage capacity triggers delivery truck
-    cout << "Simulating harvest and checking storage capacity..." << endl;
+    // 🚚 Near-Capacity Field: Trigger Delivery Truck Notification
+    cout << "\n🚚 Delivery Truck activated for near-capacity field..." << endl;
     wheatField->setCurrentAmount(480); // Near the capacity
-    wheatField->notifyAll(); // Should trigger delivery truck due to nearing capacity
+    printColored("⚠️ Field nearing capacity: Delivering crops...", "1;31");
+    cout <<endl <<endl;
+    wheatField->notifyAll();
 
-    cout << endl;
-
-    // Simulate buying and selling trucks
+    // 🚛 Buying and Selling Truck Operations
+    cout << "\n🚚 WheatField buys a Fertilizer Truck..." << endl;
     wheatField->buyTruck(fertilizerTruck);
-    cout << endl;
+
+    cout << "\n🚜 WheatField sells a Delivery Truck..." << endl;
     wheatField->sellTruck(deliveryTruck);
 
-    cout << endl;
-
-    // Start trucks' operations
+    // 🚛 Truck Engine Operations Simulation
+    cout << "\n🔧 🚜 Fertilizer Truck Engine Starting..." << endl;
     fertilizerTruck->startEngine();
+
+    cout << "\n🔧 🚚 Delivery Truck Engine Starting..." << endl;
     deliveryTruck->startEngine();
 
-    cout << endl;
-
-    // Clean up
-    delete fruitfulSoil;
+    // 🧹 Clean up resources
     delete fertilizerTruck;
     delete deliveryTruck;
     delete wheatField;
+    delete fruitfulSoil;
+
+    // 🟨 End of Testing Observer Design Pattern
+    printWithBorders("🌟 Observer Design Pattern Test Completed! 🌟", "1;33");
 }
 
-void testingIterator() {
-    // // Create some FarmUnit objects and a farmland
+// void testingIterator() Malaika's Version
+//{
+//     printWithBorders("Testing Iterator Design Pattern", "1;31");
+//     // // Create some FarmUnit objects and a farmland
+//     // Farmland* farm1 = new Farmland();
+//     // Farmland* farm2 = new Farmland();
+//     // Farmland* farm3 = new Farmland();
+//     // FarmUnit* field1 = new CropField();
+//     // FarmUnit* field2 = new CropField();
+
+//     // // Build the farm hierarchy
+//     // farm1->addFarmUnit(farm2);
+//     // farm1->addFarmUnit(field1);
+//     // farm2->addFarmUnit(farm3);
+//     // farm2->addFarmUnit(field2);
+
+//     // // Create and test BFS iterator
+//     // FarmIterator* bfsIterator = farm1->createBFSIterator();
+//     // while (!bfsIterator->isDone()) {
+//     //     FarmUnit* currentFarm = bfsIterator->currentFarm();
+//     //     cout << "Visiting farm/field in BFS: " << currentFarm->getName() << endl;
+//     //     bfsIterator->next();
+//     // }
+
+//     // // Create and test DFS iterator
+//     // FarmIterator* dfsIterator = farm1->createDFSIterator();
+//     // while (!dfsIterator->isDone()) {
+//     //     FarmUnit* currentFarm = dfsIterator->currentFarm();
+//     //     cout << "Visiting farm/field in DFS: " << currentFarm->getName() << endl;
+//     //     dfsIterator->next();
+//     // }
+
+//     // // Clean up
+//     // delete bfsIterator;
+//     // delete dfsIterator;
+//     // delete farm1;
+//     // delete farm2;
+//     // delete farm3;
+//     // delete field1;
+//     // delete field2;
+
+    
+// }
+
+void testingIterator() //Nobuhle version 
+{
+    // printWithBorders("Testing Iterator Design Pattern", "1;31");
+
     // Farmland* farm1 = new Farmland();
-    // Farmland* farm2 = new Farmland();
-    // Farmland* farm3 = new Farmland();
-    // FarmUnit* field1 = new CropField();
-    // FarmUnit* field2 = new CropField();
+    // CropField* field1 = new CropField("Wheat", 300, new DrySoil());
+    // CropField* field2 = new CropField("Corn", 400, new FruitfulSoil());
 
-    // // Build the farm hierarchy
-    // farm1->addFarmUnit(farm2);
-    // farm1->addFarmUnit(field1);
-    // farm2->addFarmUnit(farm3);
-    // farm2->addFarmUnit(field2);
+    // farm1->add(field1);
+    // farm1->add(field2);
 
-    // // Create and test BFS iterator
+    // cout << "\n🌾 Traversing Farms in BFS Order..." << endl;
     // FarmIterator* bfsIterator = farm1->createBFSIterator();
     // while (!bfsIterator->isDone()) {
     //     FarmUnit* currentFarm = bfsIterator->currentFarm();
-    //     cout << "Visiting farm/field in BFS: " << currentFarm->getName() << endl;
+    //     cout << "Visiting farm/field: " << currentFarm->getName() << " 🚜" << endl;
     //     bfsIterator->next();
     // }
 
-    // // Create and test DFS iterator
+    // cout << "\n🌾 Traversing Farms in DFS Order..." << endl;
     // FarmIterator* dfsIterator = farm1->createDFSIterator();
     // while (!dfsIterator->isDone()) {
     //     FarmUnit* currentFarm = dfsIterator->currentFarm();
-    //     cout << "Visiting farm/field in DFS: " << currentFarm->getName() << endl;
+    //     cout << "Visiting farm/field: " << currentFarm->getName() << " 🚜" << endl;
     //     dfsIterator->next();
     // }
 
@@ -278,14 +382,9 @@ void testingIterator() {
     // delete bfsIterator;
     // delete dfsIterator;
     // delete farm1;
-    // delete farm2;
-    // delete farm3;
     // delete field1;
     // delete field2;
-
-    
 }
-
 
 
 int main() {

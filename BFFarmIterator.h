@@ -25,14 +25,14 @@ public:
     }
 
     FarmUnit* next() override {
-        if (!isDone()) {
-            current = queue.front();
-            queue.pop();
-            for (FarmUnit* subUnit : current->getSubUnits()) {
-                queue.push(subUnit);
-            }
-        }
-        return current;
+        // if (!isDone()) {
+        //     current = queue.front();
+        //     queue.pop();
+        //     for (FarmUnit* subUnit : current->getSubUnits()) {
+        //         queue.push(subUnit);
+        //     }
+        // }
+        // return current;
     }
 
     bool isDone() override {

@@ -3,6 +3,7 @@
 
 #include "FarmIterator.h"
 #include <stack>
+#include <vector>
 
 class DFFarmIterator : public FarmIterator {
 private:
@@ -24,15 +25,15 @@ public:
     }
 
     FarmUnit* next() override {
-        if (!isDone()) {
-            current = stack.top();
-            stack.pop();
-            const std::vector<FarmUnit*>& subUnits = current->getSubUnits();
-            for (auto it = subUnits.rbegin(); it != subUnits.rend(); ++it) {
-                stack.push(*it);
-            }
-        }
-        return current;
+        // if (!isDone()) {
+        //     current = stack.top();
+        //     stack.pop();
+        //     const std::vector<FarmUnit*>& subUnits = current->getSubUnits();
+        //     for (auto it = subUnits.rbegin(); it != subUnits.rend(); ++it) {
+        //         stack.push(*it);
+        //     }
+        // }
+        // return current;
     }
 
     bool isDone() override {

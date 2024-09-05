@@ -1,0 +1,30 @@
+==249206== Memcheck, a memory error detector
+==249206== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==249206== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==249206== Command: ./demo
+==249206== 
+==249206== 
+==249206== HEAP SUMMARY:
+==249206==     in use at exit: 32 bytes in 2 blocks
+==249206==   total heap usage: 88 allocs, 86 frees, 77,819 bytes allocated
+==249206== 
+==249206== 16 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==249206==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==249206==    by 0x114EFB: FertilizedField::increaseProduction() (FertilizedField.cpp:21)
+==249206==    by 0x10D9D0: testingDecorator() (DemoMain.cpp:223)
+==249206==    by 0x10EA6D: main (DemoMain.cpp:403)
+==249206== 
+==249206== 16 bytes in 1 blocks are definitely lost in loss record 2 of 2
+==249206==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==249206==    by 0x10E333: testingObserver() (DemoMain.cpp:274)
+==249206==    by 0x10EAB6: main (DemoMain.cpp:408)
+==249206== 
+==249206== LEAK SUMMARY:
+==249206==    definitely lost: 32 bytes in 2 blocks
+==249206==    indirectly lost: 0 bytes in 0 blocks
+==249206==      possibly lost: 0 bytes in 0 blocks
+==249206==    still reachable: 0 bytes in 0 blocks
+==249206==         suppressed: 0 bytes in 0 blocks
+==249206== 
+==249206== For lists of detected and suppressed errors, rerun with: -s
+==249206== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
