@@ -111,4 +111,3 @@ void CropField::harvest() {
 int CropField::getLeftoverCapacity() {
         return 50; // Assume a base capacity of 50 units
 }
-

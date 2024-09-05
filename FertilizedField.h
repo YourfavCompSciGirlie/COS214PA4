@@ -4,6 +4,10 @@
 
 #include "CropField.h"
 #include "CropFieldDecorator.h"
+#include "FertilizedField.h"
+#include "CropField.h"
+#include "FruitfulSoil.h"
+#include "FloodedSoil.h"
 
 class FertilizedField : public CropFieldDecorator
 {
