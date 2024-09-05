@@ -12,6 +12,9 @@ class DeliveryTruck  : public Truck
       int storageCapacity;
 
     public:
+      DeliveryTruck() {}
+      ~DeliveryTruck() {}
+
       void startEngine()override;
       void callTruck() override;       
 };

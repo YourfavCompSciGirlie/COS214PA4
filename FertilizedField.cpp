@@ -1,7 +1,8 @@
-#include "CropField.h"
 #include <iostream>
+
 #include "FertilizedField.h"
 #include "CropFieldDecorator.h"
+#include "CropField.h"
 
 FertilizedField::FertilizedField(CropField* field) 
 {
@@ -11,14 +12,39 @@ FertilizedField::FertilizedField(CropField* field)
 void FertilizedField::increaseProduction()  
 {
     std::cout << "Applying premium fertilizer to the crop field...\n";
-    field->increaseProduction();
-    std::cout << "The soil is being enriched with extra nutrients.\n";
+    
+    // Check current soil state and transition accordingly
+    std::string currentSoilState = field->getSoilStateName();
+
+    if (currentSoilState == "Dry") {
+        std::cout << "Current soil state is Dry. Transitioning to FruitfulSoil...\n";
+        field->setSoilState(new FruitfulSoil());  // Transition to FruitfulSoil
+    } 
+    else if (currentSoilState == "Fruitful") {
+        std::cout << "Current soil state is Fruitful. Transitioning to FloodedSoil...\n";
+        field->setSoilState(new FloodedSoil());  // Transition to FloodedSoil
+    } 
+    else if (currentSoilState == "Flooded") {
+        std::cout << "Soil is already in Flooded state. No further transition possible.\n";
+    }
+
+    int additionalYield = 0;
+    int newAmount = 0;
     
     if (field->getLeftoverCapacity() > 0) {
-        field->increaseProduction();
-        std::cout << "Crop yield has been supercharged! Additional increase in productivity.\n";
+        std::cout << "Field still has leftover capacity. Further increasing production.\n";
+        additionalYield = 10; // Additional increase for supercharged productivity
+        newAmount += additionalYield;
+        
+        if (newAmount > field->getTotalCapacity()) {
+            std::cout << "Supercharged yield limited by field capacity. Setting to max capacity.\n";
+            newAmount = field->getTotalCapacity();
+        }
+        
+        field->setCurrentAmount(newAmount);
+        std::cout << "Crop yield has been supercharged by an additional " << additionalYield << " units! Final crop amount: " << newAmount << "\n";
     } else {
-        std::cout << "Field already has maximum production capacity.\n";
+        std::cout << "Field has reached maximum production capacity.\n";
     }
 }
 

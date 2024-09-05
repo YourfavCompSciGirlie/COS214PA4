@@ -2,16 +2,43 @@
 #include <iostream>
 
 ExtraBarn::ExtraBarn(CropField* field, int extraCapacity) 
-    : CropFieldDecorator(field), extraStorageCapacity(extraCapacity) 
 {
     this->field = field;
+    this->extraStorageCapacity = extraCapacity;
 }
 
 void ExtraBarn::increaseProduction()  
 {
     std::cout << "Increasing production with extra barn capacity...\n";
+    
+    // Initial production increase
     field->increaseProduction();
-    std::cout << "Extra barn helps enhance production.\n";
+    std::cout << "The extra barn provides additional space, reducing waste and optimizing storage.\n";
+    
+    // Check if the current capacity allows for extra production
+    if (field->getLeftoverCapacity() > 0) {
+        std::cout << "The extra barn's capacity allows for a boost in production.\n";
+        
+        // Additional boost in production due to improved storage
+        field->increaseProduction();
+        std::cout << "Production boosted by the optimized storage space in the extra barn!\n";
+        
+        // Implementing a further increase in production due to increased efficiency
+        int efficiencyBoost = rand() % 20 + 10; // Random boost between 10 and 30
+        int currentAmount = field->getCurrentAmount();
+        field->setCurrentAmount(currentAmount + efficiencyBoost);
+        std::cout << "Production efficiency increased, adding " << efficiencyBoost << " units to the total production.\n";
+    } else {
+        std::cout << "The barn is at full capacity. No further production increase possible.\n";
+    }
+
+    // Simulate the barn having an effect on the soil state, e.g., preventing over-flooding
+    std::string currentSoilState = field->getSoilStateName();
+    if (currentSoilState == "FloodedSoil") {
+        std::cout << "The extra barn has a draining system, preventing further flooding and stabilizing the soil.\n";
+    } else {
+        std::cout << "The barn helps maintain optimal soil conditions.\n";
+    }
 }
 
 void ExtraBarn::harvest()

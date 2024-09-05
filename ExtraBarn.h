@@ -8,7 +8,7 @@ class ExtraBarn : public CropFieldDecorator
 {
 private:
     CropField* field;
-     int extraStorageCapacity;
+    int extraStorageCapacity;
 
 public:
     ExtraBarn(CropField* field, int extraCapacity);

@@ -14,11 +14,6 @@ CropField::CropField(const string& cropType, int totalCapacity, SoilState* initi
 
 // Destructor
 CropField::~CropField() {
-    // Note: If SoilState is managed elsewhere, avoid deleting it here.
-    if (soilState) {
-        delete soilState; // Clean up soilState if CropField owns it
-    }
-
     cout << "[CropField] Destroyed the crop field for " << cropType << "." << endl;
 }
 
@@ -80,7 +75,7 @@ void CropField::setCurrentAmount(int amount)
     } else {
         currentAmount = amount;
     }
-    cout << "[CropField] Current amount set to: " << currentAmount << "." << endl;
+    cout << "[CropField] Current amount set to: " << currentAmount << endl;
 }
 
 SoilState* CropField::getSoilState() const 
@@ -99,9 +94,7 @@ void CropField::buyTruck(Truck* truck)
 
 void CropField::sellTruck(Truck* truck) 
 {
-    
     NotificationSystem::removeObserver(truck);
-  
 
     std::cout << "Truck sold! This " << cropType << " field has one less truck now." << std::endl;
 }
@@ -118,4 +111,3 @@ void CropField::harvest() {
 int CropField::getLeftoverCapacity() {
         return 50; // Assume a base capacity of 50 units
 }
-
