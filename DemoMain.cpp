@@ -300,43 +300,6 @@ void testingObserver() // Nobuhle Version
 }
 
 
-void testingIterator() //Nobuhle version 
-{
-    printWithBorders("Testing Iterator Design Pattern", "1;31");
-
-    Farmland* farm1 = new Farmland();
-    CropField* field1 = new CropField("Wheat", 300, new DrySoil());
-    CropField* field2 = new CropField("Corn", 400, new FruitfulSoil());
-
-    farm1->add(field1);
-    farm1->add(field2);
-
-    cout << "\n🌾 Traversing Farms in BFS Order..." << endl;
-    FarmIterator* bfsIterator = farm1->createBFSIterator();
-    while (!bfsIterator->isDone()) {
-        FarmUnit* currentFarm = bfsIterator->currentFarm();
-        cout << "Visiting farm/field: " << currentFarm->getName() << " 🚜" << endl;
-        bfsIterator->next();
-    }
-
-    cout << "\n🌾 Traversing Farms in DFS Order..." << endl;
-    FarmIterator* dfsIterator = farm1->createDFSIterator();
-    while (!dfsIterator->isDone()) {
-        FarmUnit* currentFarm = dfsIterator->currentFarm();
-        cout << "Visiting farm/field: " << currentFarm->getName() << " 🚜" << endl;
-        dfsIterator->next();
-    }
-
-    // Clean up
-    delete bfsIterator;
-    delete dfsIterator;
-    delete farm1;
-    delete field1;
-    delete field2;
-
-    
-}
-
 void testingIterator() 
 {
     const string RED = "\033[31m";
