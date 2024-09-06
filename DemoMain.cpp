@@ -29,6 +29,14 @@
 
 using namespace std;
 
+void typeEffect(const std::string& text, int delay = 50) {
+    for (char c : text) {
+        std::cout << c << std::flush;
+        std::this_thread::sleep_for(std::chrono::milliseconds(delay));
+    }
+    std::cout << std::endl;
+}
+
 void printColored(const std::string &text, const std::string &colorCode)
 {
     std::cout << "\033[" << colorCode << "m" << text << "\033[0m";
@@ -99,6 +107,10 @@ void testingComposite()
     mainFarmland.add(&wheatField);
     mainFarmland.add(&cornField);
     mainFarmland.add(&storageBarn);
+
+    wheatField.setName("Wheat land");
+    cornField.setName("Corn Land");
+    storageBarn.setName("Barn House");
 
     cout << "🌱 Main Farmland contains:\n";
     cout << "   - " << wheatField.getName() << "\n";
@@ -362,7 +374,6 @@ void testingIterator()
     delete field2;
 }
 
-
 int main() 
 {
     const string red = "\033[31m";
@@ -374,14 +385,17 @@ int main()
 
     int choice;
     while (true) {
-        cout << red << "Design Patterns Demo Menu:\n";
-        cout << green << "1. Composite\n";
-        cout << yellow << "2. State\n";
-        cout << blue << "3. Decorator\n";
-        cout << magenta << "4. Observer\n";
-        cout << green << "5. Iterator\n";
-        cout << red << "6. Exit\n";
-        cout << red << "Enter your choice: " << reset;
+        // Display the menu heading with typewriter effect
+        typeEffect(red + "Design Patterns Demo Menu:\n");
+
+        // Display the menu options with typewriter effect
+        typeEffect(green + "1. Composite\n");
+        typeEffect(yellow + "2. State\n");
+        typeEffect(blue + "3. Decorator\n");
+        typeEffect(magenta + "4. Observer\n");
+        typeEffect(green + "5. Iterator\n");
+        typeEffect(red + "6. Exit\n");
+        typeEffect(red + "Enter your choice: " + reset, 25);  // Slightly faster typing for prompt
 
         if (!(cin >> choice)) {
             cout << "Invalid input. Please enter a number.\n";
