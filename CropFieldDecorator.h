@@ -9,7 +9,8 @@ protected:
     CropField* field;  
 
 public:
-    CropFieldDecorator() = default;
+    CropFieldDecorator();
+    ~CropFieldDecorator();
     CropFieldDecorator(CropField* field);
     
     virtual void increaseProduction() = 0; 

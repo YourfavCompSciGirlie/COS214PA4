@@ -6,14 +6,20 @@
 #include "BFFarmIterator.h"
 #include "DFFarmIterator.h"
 
-FertilizedField::FertilizedField(CropField* field) 
-{
-    this->field = field;
+FertilizedField::FertilizedField(CropField* field)
+    : CropFieldDecorator(field), field(field) {
+    std::cout << "🌿 FertilizedField created and ready to enhance crop production!\n";
+}
+
+
+FertilizedField::~FertilizedField() {
+    std::cout << "🌾 FertilizedField is being destroyed. Cleaning up...\n";
+   
 }
 
 void FertilizedField::increaseProduction()  
 {
-    std::cout << "Applying premium fertilizer to the crop field...\n";
+    std::cout << "📈 Increasing production in FertilizedField.\n";
     
     // Check current soil state and transition accordingly
     std::string currentSoilState = field->getSoilStateName();
@@ -52,7 +58,7 @@ void FertilizedField::increaseProduction()
 
 void FertilizedField::harvest()
 {
-    std::cout << "Harvesting enhanced crops from the fertilized field...\n";
+    std::cout << "🌾 Harvesting crops from FertilizedField.\n";
     field->harvest();
     
     if (rand() % 10 < 3) 
@@ -75,6 +81,7 @@ void FertilizedField::harvest()
 
 int FertilizedField::getLeftoverCapacity()
 {
+    std::cout << "🔢 Checking leftover capacity in FertilizedField.\n";
     int baseCapacity = field->getLeftoverCapacity();
     int bonusCapacity = 10; // Additional capacity due to advanced storage management
 
@@ -84,20 +91,21 @@ int FertilizedField::getLeftoverCapacity()
 
 void FertilizedField::buyTruck(Truck* truck)
 {
-    std::cout << "Adding a new truck to the fertilized field...\n";
+    std::cout << "🚚 Buying truck for FertilizedField.\n";
     field->buyTruck(truck);
     std::cout << "The field now has a new truck for enhanced harvest and transport operations.\n";
 }
 
 void FertilizedField::sellTruck(Truck* truck)
 {
-    std::cout << "Removing a truck from the fertilized field...\n";
+    std::cout << "🚛 Selling truck from FertilizedField.\n";
     field->sellTruck(truck);
     std::cout << "The field no longer has the truck. Transport operations might be affected.\n";
 }
 
 int FertilizedField::getTotalCapacity()
 {
+     std::cout << "🔢 Getting total capacity of FertilizedField.\n";
     int baseCapacity = field->getTotalCapacity();
     int bonusCapacity = 20; // Additional capacity due to improved field management
 
@@ -107,18 +115,21 @@ int FertilizedField::getTotalCapacity()
 
 std::string FertilizedField::getCropType()
 {
+     std::cout << "🌾 Getting crop type of FertilizedField.\n";
     std::string baseCropType = field->getCropType();
     return baseCropType + " (Fertilized)";
 }
 
 std::string FertilizedField::getSoilStateName()
-{
+{   
+    std::cout << "🌱 Getting soil state name of FertilizedField.\n";
     std::string baseSoilState = field->getSoilStateName();
     return baseSoilState + " (Enhanced with fertilizer)";
 }
 
 int FertilizedField::getCurrentAmount()
 {
+     std::cout << "🔢 Getting current amount of crops in FertilizedField.\n";
     int baseAmount = field->getCurrentAmount();
     int bonusAmount = 5; // Bonus amount due to better soil conditions
 
@@ -127,26 +138,30 @@ int FertilizedField::getCurrentAmount()
 
 void FertilizedField::setCurrentAmount(int amount)
 {
+    std::cout << "🔄 Setting current amount of crops in FertilizedField.\n";
     field->setCurrentAmount(amount);
     std::cout << "Current amount set to " << amount;
 }
 
 
 FarmIterator* FertilizedField::createBFSIterator() {
+    std::cout << "🔄 Creating BFS iterator for FertilizedField.\n";
     return new BFFarmIterator(this);
 }
 
 FarmIterator* FertilizedField::createDFSIterator() {
+    std::cout << "🔄 Creating DFS iterator for FertilizedField.\n";
     return new DFFarmIterator(this);
 }
 
 std::vector<FarmUnit*> FertilizedField::getSubUnits() {
-    // Return sub-units (if any) for fertilized field
+     std::cout << "📦 Getting sub-units of FertilizedField.\n"; // Return sub-units (if any) for fertilized field
     return std::vector<FarmUnit*>();
 }
 
 void FertilizedField::setName(const std::string& name) {
     this->name = name;
+    std::cout << "📝 Set name of FertilizedField to: " << name << '\n';
 }
 
 std::string FertilizedField::getName() const {

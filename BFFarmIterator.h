@@ -21,50 +21,15 @@ class BFFarmIterator : public FarmIterator {
         BFFarmIterator() {};
         ~BFFarmIterator() {};
         
-        BFFarmIterator(FarmUnit* rootFarm) : current(nullptr) {
-            if (rootFarm != nullptr) {
-                unitQueue.push(rootFarm);
-                visited.insert(rootFarm); // Mark root as visited
-            }
-        }
+        BFFarmIterator(FarmUnit* rootFarm);
 
-        FarmUnit* firstFarm() override {
-            if (!unitQueue.empty()) {
-                current = unitQueue.front();
-                return current;
-            }
-            return nullptr;
-        }
+        FarmUnit* firstFarm() override;
 
-        FarmUnit* next() override {
-            if (!isDone()) {
-                // Dequeue the front element
-                current = unitQueue.front();
-                unitQueue.pop();
+        FarmUnit* next() override;
 
-                // Check if the current node is a CompositeFarm and handle its sub-units
-                FarmUnit* composite = dynamic_cast<FarmUnit*>(current);
-                if (composite != nullptr) {
-                    const vector<FarmUnit*>& subUnits = composite->getSubUnits(); // Assuming this method exists
-                    for (FarmUnit* unit : subUnits) {
-                        if (unit != nullptr && visited.find(unit) == visited.end()) { // Check if not visited
-                            unitQueue.push(unit);
-                            visited.insert(unit); // Mark as visited
-                        }
-                    }
-                }
-            }
-            return current;
-        }
+        bool isDone() override;
 
-        bool isDone() override {
-            return unitQueue.empty();
-        }
-
-        FarmUnit* currentFarm() override {
-            return current;
-        }
-
+        FarmUnit* currentFarm();
 };
 
 #endif // BFFARMITERATOR_H

@@ -9,7 +9,7 @@ class FertilizerTruck : public Truck
      void startEngine()override;
      void callTruck() override;
 
-     FertilizerTruck() {};
-     ~FertilizerTruck() {};   
+     FertilizerTruck();
+     ~FertilizerTruck();   
 };
 #endif

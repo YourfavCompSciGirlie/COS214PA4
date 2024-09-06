@@ -2,6 +2,17 @@
 #include "Truck.h"
 
 #include <iostream>
+using namespace std;
+
+
+FertilizerTruck::FertilizerTruck() {
+    cout << "🌾 A new FertilizerTruck is ready to spread nutrients across the fields! 🚛" << endl;
+}
+
+
+FertilizerTruck::~FertilizerTruck() {
+    cout << "🌱 The FertilizerTruck has completed its mission and is heading back to the barn! 🏡" << endl;
+}
 
 void FertilizerTruck::startEngine()
 {

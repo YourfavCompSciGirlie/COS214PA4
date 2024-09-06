@@ -18,50 +18,18 @@ class DFFarmIterator : public FarmIterator {
         unordered_set<FarmUnit*> visited; // To keep track of visited nodes
 
     public:
-        DFFarmIterator() {};
-        ~DFFarmIterator() {};
+        DFFarmIterator(); 
+        ~DFFarmIterator();
 
-        DFFarmIterator(FarmUnit* rootFarm) : current(nullptr) {
-            if (rootFarm != nullptr) {
-                unitStack.push(rootFarm);
-                visited.insert(rootFarm);
-            }
-        }
+        DFFarmIterator(FarmUnit* rootFarm);
 
-        FarmUnit* firstFarm() override {
-            if (!unitStack.empty()) {
-                current = unitStack.top();
-                return current;
-            }
-            return nullptr;
-        }
+        FarmUnit* firstFarm() override;
 
-        FarmUnit* next() override {
-            if (!isDone()) {
-                current = unitStack.top();
-                unitStack.pop();
+        FarmUnit* next() override;
 
-                const vector<FarmUnit*>& subUnits = current->getSubUnits();
-                // Push children in reverse order to process the leftmost child first
-                for (auto it = subUnits.rbegin(); it != subUnits.rend(); ++it) {
-                    if (visited.find(*it) == visited.end()) { // Check if the unit has been visited
-                        unitStack.push(*it);
-                        visited.insert(*it);
-                    }
-                }
-                return current;
-            }
-            return nullptr;
-        }
+        bool isDone() override;
 
-        bool isDone() override {
-            return unitStack.empty();
-        }
-
-        FarmUnit* currentFarm() override {
-            return current;
-        }
-
+        FarmUnit* currentFarm() override;
 };
 
 #endif // DFFAMITERATOR_H
