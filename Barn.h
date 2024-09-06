@@ -7,6 +7,8 @@
 #include "BFFarmIterator.h"
 #include "DFFarmIterator.h"
 
+#include <algorithm>
+
 using namespace std;
 
 class Barn : public FarmUnit {
@@ -16,7 +18,6 @@ class Barn : public FarmUnit {
         int currentAmount;
 
         string name;
-        vector<FarmUnit*> units; // Stores child FarmUnit objects
 
     public:
         Barn(int totalCapacity);
@@ -29,23 +30,27 @@ class Barn : public FarmUnit {
         int getCurrentAmount();
         void setCurrentAmount(int amount);
 
+        // Composite pattern methods (not applicable for Barn)
+        void add(FarmUnit* unit);
+        void remove(FarmUnit* unit);
+
         // Decorator pattern methods
-        void increaseProduction() override;
-        void harvest() override;
-        int getLeftoverCapacity() override;
+        void increaseProduction();
+        void harvest();
+        int getLeftoverCapacity();
 
         // Observer pattern methods
-        void buyTruck(Truck* truck) override;
-        void sellTruck(Truck* truck) override;
+        void buyTruck(Truck* truck);
+        void sellTruck(Truck* truck);
 
         // Iterator pattern methods
-        vector<FarmUnit*> getSubUnits() override;
-        FarmIterator* createBFSIterator() override;
-        FarmIterator* createDFSIterator() override;
+        vector<FarmUnit*> getSubUnits();
+        FarmIterator* createBFSIterator();
+        FarmIterator* createDFSIterator();
 
         // Set and get the name of the farm unit
-        void setName(const string& unitName) override;
-        string getName() const override;
+        void setName(const string& unitName);
+        string getName() const;
 };
 
 #endif // BARN_H
