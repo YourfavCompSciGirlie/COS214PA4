@@ -298,7 +298,11 @@ void testingIterator() {
     delete field2;
 }
 
+
+
 // ------------------------------------- //
+
+
 
 void testFarmland() {
 
@@ -677,14 +681,16 @@ int main() {
     cout << "\n========================== Additional Testing for Coverage =======================\n" << endl;
     testFarmland();
     cout << endl;
+    
     testBarn();
     cout << endl;
+    
     testFertilizedField();
     cout << endl;
+    
     testExtraBarn();
     cout << endl;
 
-    
     return 0;
 }
 
