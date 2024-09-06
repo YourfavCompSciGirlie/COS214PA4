@@ -11,17 +11,9 @@ class FarmIterator {
         FarmIterator();
         
         virtual ~FarmIterator();
-
-        // Return the first farm/unit for traversal
         virtual FarmUnit* firstFarm() = 0;
-
-        // Move to the next farm/unit in the traversal
         virtual FarmUnit* next() = 0;
-
-        // Check if traversal is complete
         virtual bool isDone() = 0;
-
-        // Return the current farm/unit being visited
         virtual FarmUnit* currentFarm() = 0;
 };
 

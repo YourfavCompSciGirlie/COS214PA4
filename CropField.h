@@ -1,5 +1,6 @@
 // Class definition for Component 1 - Composite (Leaf)
 // Class definition for Component 2 - State (Context)
+// Class definition for Component 4 - Observer (ConcreteSubject)
 
 #ifndef CROPFIELD_H
 #define CROPFIELD_H
@@ -34,9 +35,9 @@ class CropField : public FarmUnit, public NotificationSystem {
         CropField(const string& cropType, int totalCapacity, SoilState* initialState);
         virtual ~CropField();
 
-        int getTotalCapacity() override;
-        string getCropType() override;
-        string getSoilStateName() override;
+        int getTotalCapacity();
+        string getCropType();
+        string getSoilStateName();
 
         void setSoilState(SoilState* newState);
         int harvestCrops();
@@ -53,22 +54,22 @@ class CropField : public FarmUnit, public NotificationSystem {
         SoilState* getSoilState() const;
 
         // Observer pattern methods
-        void buyTruck(Truck* truck) override;
-        void sellTruck(Truck* truck) override;
+        void buyTruck(Truck* truck);
+        void sellTruck(Truck* truck);
 
         // Decorator pattern methods
-        void increaseProduction() override;
-        void harvest() override;
-        int getLeftoverCapacity() override;  
+        void increaseProduction();
+        void harvest();
+        int getLeftoverCapacity();  
 
         // Iterator pattern methods
-        vector<FarmUnit*> getSubUnits() override;
-        FarmIterator* createBFSIterator() override;
-        FarmIterator* createDFSIterator() override;
+        vector<FarmUnit*> getSubUnits();
+        FarmIterator* createBFSIterator();
+        FarmIterator* createDFSIterator();
 
         // Set and get the name of the farm unit
-        void setName(const string& unitName) override;
-        string getName() const override;
+        void setName(const string& unitName);
+        string getName() const;
 };
 
 #endif // CROPFIELD_H

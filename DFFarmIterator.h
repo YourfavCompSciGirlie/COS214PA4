@@ -1,3 +1,5 @@
+// Class definition for Component 5 - Iterator (ConcreteIterator)
+
 #ifndef DFFAMITERATOR_H
 #define DFFAMITERATOR_H
 
@@ -22,14 +24,10 @@ class DFFarmIterator : public FarmIterator {
         ~DFFarmIterator();
 
         DFFarmIterator(FarmUnit* rootFarm);
-
-        FarmUnit* firstFarm() override;
-
-        FarmUnit* next() override;
-
-        bool isDone() override;
-
-        FarmUnit* currentFarm() override;
+        FarmUnit* firstFarm();
+        FarmUnit* next();
+        bool isDone();
+        FarmUnit* currentFarm();
 };
 
 #endif // DFFAMITERATOR_H

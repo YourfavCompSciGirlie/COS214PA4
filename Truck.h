@@ -1,3 +1,5 @@
+// Class definition for Component 4 - Observer (Observer)
+
 #ifndef TRUCK_H
 #define TRUCK_H
 

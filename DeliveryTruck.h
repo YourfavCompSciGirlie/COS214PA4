@@ -1,3 +1,5 @@
+// Class definition for Component 4 - Observer (ConcreteObserver)
+
 #ifndef DELIVERY_TRUCK_H
 #define DELIVERY_TRUCK_H
 
@@ -15,7 +17,7 @@ class DeliveryTruck  : public Truck
       DeliveryTruck();
       ~DeliveryTruck();
 
-      void startEngine()override;
-      void callTruck() override;       
+      void startEngine();
+      void callTruck();       
 };
 #endif

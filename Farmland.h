@@ -36,7 +36,7 @@ class Farmland : public FarmUnit {
 
         // Decorator pattern methods
         void increaseProduction();
-        void harvest() override;
+        void harvest();
         int getLeftoverCapacity();
 
         // Observer pattern methods
