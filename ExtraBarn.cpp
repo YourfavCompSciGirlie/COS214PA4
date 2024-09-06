@@ -124,3 +124,19 @@ void ExtraBarn::setName(const std::string& name) {
 std::string ExtraBarn::getName() const {
     return this->name;
 }
+
+void ExtraBarn::add(FarmUnit* unit) {
+    units.push_back(unit);
+    cout << "[ExtraBarn] Added a unit: " << unit->getName() << endl;
+}
+
+void ExtraBarn::remove(FarmUnit* unit) {
+    auto it = find(units.begin(), units.end(), unit);
+    
+    if (it != units.end()) {
+        units.erase(it);
+        cout << "[ExtraBarn] Removed a unit: " << unit->getName() << endl;
+    } else {
+        cout << "[ExtraBarn] Unit not found." << endl;
+    }
+}

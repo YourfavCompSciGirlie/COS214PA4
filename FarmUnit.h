@@ -1,4 +1,5 @@
 // Class definition for Component 1 - Composite (Component)
+// Class definition for Component 5 - Iterator (Aggregate)
 
 #ifndef FARMUNIT_H
 #define FARMUNIT_H
@@ -13,11 +14,11 @@ using namespace std;
 
 class FarmIterator;
 
-class FarmUnit 
-{
+class FarmUnit {
+    
     private:
     string name;
-    vector<FarmUnit*> subUnits;
+    vector<FarmUnit*> units;
 
     public:
         FarmUnit();
@@ -28,8 +29,8 @@ class FarmUnit
         virtual string getSoilStateName() = 0;
 
         // Composite pattern methods
-        virtual void add(FarmUnit* unit) {}
-        virtual void remove(FarmUnit* unit) {}
+        virtual void add(FarmUnit* unit) = 0;
+        virtual void remove(FarmUnit* unit) = 0;
 
         virtual int getCurrentAmount() = 0;
         virtual void setCurrentAmount(int amount) = 0;

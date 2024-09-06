@@ -9,6 +9,8 @@
 #include "FruitfulSoil.h"
 #include "FloodedSoil.h"
 
+#include "algorithm"
+
 class FertilizedField : public CropFieldDecorator
 {
 private:
@@ -42,6 +44,10 @@ public:
     // Set and get the name of the farm unit
     void setName(const string& unitName) override;
     string getName() const override;
+
+    // Composite pattern methods
+    void add(FarmUnit* unit);
+    void remove(FarmUnit* unit);
 
 };
 #endif 

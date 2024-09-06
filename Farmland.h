@@ -1,4 +1,5 @@
 // Class implementation for Component 1 - Composite (Composite)
+// Class implementation for Component 5 - Iterator (ConcreteAggregate)
 
 #ifndef FARMLAND_H
 #define FARMLAND_H
@@ -21,35 +22,35 @@ class Farmland : public FarmUnit {
         Farmland();
         ~Farmland();
 
-        // Methods to manage child FarmUnit objects
-        void add(FarmUnit* unit);
-        void remove(FarmUnit* unit);
-
         // Methods to access information about the Farmland
         int getTotalCapacity();
         string getCropType();
         string getSoilStateName();
 
+        // Methods to manage child FarmUnit objects
+        void add(FarmUnit* unit);
+        void remove(FarmUnit* unit);
+
         int getCurrentAmount();
         void setCurrentAmount(int amount);
 
         // Decorator pattern methods
-        void increaseProduction() override;
+        void increaseProduction();
         void harvest() override;
-        int getLeftoverCapacity() override;
+        int getLeftoverCapacity();
 
         // Observer pattern methods
-        void buyTruck(Truck* truck) override;
-        void sellTruck(Truck* truck) override;
+        void buyTruck(Truck* truck);
+        void sellTruck(Truck* truck);
 
         // Iterator pattern methods
-        vector<FarmUnit*> getSubUnits() override;
-        FarmIterator* createBFSIterator() override;
-        FarmIterator* createDFSIterator() override;
+        vector<FarmUnit*> getSubUnits();
+        FarmIterator* createBFSIterator();
+        FarmIterator* createDFSIterator();
 
         // Set and get the name of the farm unit
-        void setName(const string& unitName) override;
-        string getName() const override;
+        void setName(const string& unitName);
+        string getName() const;
 };
 
 #endif // FARMLAND_H

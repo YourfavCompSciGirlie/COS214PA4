@@ -167,3 +167,19 @@ void FertilizedField::setName(const std::string& name) {
 std::string FertilizedField::getName() const {
     return this->name;
 }
+
+void FertilizedField::add(FarmUnit* unit) {
+    units.push_back(unit);
+    cout << "[FertilizedField] Added a unit: " << unit->getName() << endl;
+}
+
+void FertilizedField::remove(FarmUnit* unit) {
+    auto it = find(units.begin(), units.end(), unit);
+    
+    if (it != units.end()) {
+        units.erase(it);
+        cout << "[FertilizedField] Removed a unit: " << unit->getName() << endl;
+    } else {
+        cout << "[FertilizedField] Unit not found." << endl;
+    }
+}

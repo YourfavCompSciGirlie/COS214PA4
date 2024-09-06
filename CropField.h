@@ -42,6 +42,10 @@ class CropField : public FarmUnit, public NotificationSystem {
         int harvestCrops();
         void rain();
 
+        // Composite pattern methods
+        void add(FarmUnit* unit);
+        void remove(FarmUnit* unit);
+
         int getCurrentAmount();
         void setCurrentAmount(int amount);
 

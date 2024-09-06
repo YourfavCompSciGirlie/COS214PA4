@@ -73,8 +73,8 @@ FarmIterator* Barn::createDFSIterator() {
 }
 
 vector<FarmUnit*> Barn::getSubUnits() {
-    // Return the sub-units of the barn
-    return units;
+    // Barn doesn't have sub-units, so return an empty vector
+    return vector<FarmUnit*>();
 }
 
 void Barn::setName(const std::string& name) {
@@ -83,4 +83,12 @@ void Barn::setName(const std::string& name) {
 
 std::string Barn::getName() const {
     return this->name;
+}
+
+void Barn::add(FarmUnit* unit) {
+    cout << "[Barn] Cannot add units to the barn. Barn cannot store units." << endl;
+}
+
+void Barn::remove(FarmUnit* unit) {
+    cout << "[Barn] Cannot remove units from the barn. Barn does not store units." << endl;
 }

@@ -1,4 +1,5 @@
 // Class implementation for Component 1 - Composite (Component) 
+// Class implementation for Component 5 - Iterator (Aggregate)
 
 #include "FarmUnit.h"
 

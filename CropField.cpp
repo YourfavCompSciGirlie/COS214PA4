@@ -133,3 +133,14 @@ std::vector<FarmUnit*> CropField::getSubUnits() {
     // Return sub-units for the crop field (if any)
     return std::vector<FarmUnit*>();
 }
+
+// Composite pattern methods
+void CropField::add(FarmUnit* unit) {
+    // CropField does not support adding sub-units
+    cout << "[CropField] Cannot add unit. CropField does not support sub-units." << endl;
+}
+
+void CropField::remove(FarmUnit* unit) {
+    // CropField does not support removing sub-units
+    cout << "[CropField] Cannot remove unit. CropField does not support sub-units." << endl;
+}

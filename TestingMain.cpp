@@ -286,44 +286,209 @@ void testingIterator() {
         std::cout << "Visiting farm/field: " << currentFarm->getName() << std::endl;
     }
 
+    cout << endl;
+
     // Clean up
-    // delete bfsIterator;
-    // delete dfsIterator;
-    // delete farm1;
-    // delete farm2;
-    // delete farm3;
-    // delete field1;
-    // delete field2;
+    delete bfsIterator;
+    delete dfsIterator;
+    delete farm1;
+    delete farm2;
+    delete farm3;
+    delete field1;
+    delete field2;
 }
+
+// ------------------------------------- //
+
+void testFarmland() {
+
+    // Create some SoilState instances
+    SoilState* dryState = new DrySoil();
+    SoilState* fruitfulState = new FruitfulSoil();
+
+    cout << endl;
+
+    // Create a Farmland instance
+    Farmland* farmland = new Farmland();
+    farmland->setName("Main Farmland");
+    
+    cout << endl;
+
+    // Create some CropField instances
+    CropField* field1 = new CropField("Wheat", 100, dryState);
+    CropField* field2 = new CropField("Corn", 150, fruitfulState);
+
+    // Add units to the farmland
+    farmland->add(field1);
+    farmland->add(field2);
+
+    cout << endl;
+
+    // Test basic methods
+    cout << "Testing Farmland methods:" << endl;
+    cout << "Name: " << farmland->getName() << endl;
+    cout << "Total Capacity: " << farmland->getTotalCapacity() << endl;
+    cout << "Current Amount: " << farmland->getCurrentAmount() << endl;
+    cout << "Leftover Capacity: " << farmland->getLeftoverCapacity() << endl;
+
+    cout << endl;
+
+    // Set current amount and test again
+    farmland->setCurrentAmount(120);
+    cout << "Updated Current Amount: " << farmland->getCurrentAmount() << endl;
+    cout << "Updated Leftover Capacity: " << farmland->getLeftoverCapacity() << endl;
+
+    cout << endl;
+
+    // Test iterators
+    FarmIterator* bfsIterator = farmland->createBFSIterator();
+
+    cout << "\nBreadth-First Traversal:" << endl;
+    for (FarmUnit* current = bfsIterator->firstFarm(); !bfsIterator->isDone(); current = bfsIterator->next()) {
+        cout << "Visiting farm/field: " << current->getName() << endl;
+    }
+
+    cout << endl;
+
+    FarmIterator* dfsIterator = farmland->createDFSIterator();
+    cout << "\nDepth-First Traversal:" << endl;
+    for (FarmUnit* current = dfsIterator->firstFarm(); !dfsIterator->isDone(); current = dfsIterator->next()) {
+        cout << "Visiting farm/field: " << current->getName() << endl;
+    }
+
+    cout << endl;
+
+    // Test adding and removing units
+    CropField* field3 = new CropField("Barley", 200, fruitfulState);
+    farmland->add(field3);
+    cout << "\nAfter Adding Field 3:" << endl;
+    cout << "Total Capacity: " << farmland->getTotalCapacity() << endl;
+
+    farmland->remove(field1);
+    cout << "\nAfter Removing Field 1:" << endl;
+    cout << "Total Capacity: " << farmland->getTotalCapacity() << endl;
+
+    cout << endl;
+
+    // Clean up
+    delete bfsIterator;
+    delete dfsIterator;
+    delete field1;
+    delete field2;
+    delete field3;
+    delete dryState;
+    delete fruitfulState;
+    delete farmland;
+}
+
+void testBarn() {
+    // Create a Barn instance
+    Barn* barn = new Barn(500); // Initialize barn with a total capacity of 500 units
+    barn->setName("Main Barn");
+
+    cout << endl;
+
+    // Test basic methods
+    cout << "Testing Barn methods:" << endl;
+    cout << "Name: " << barn->getName() << endl;
+    cout << "Total Capacity: " << barn->getTotalCapacity() << endl;
+    cout << "Current Amount: " << barn->getCurrentAmount() << endl;
+    cout << "Leftover Capacity: " << barn->getLeftoverCapacity() << endl;
+
+    cout << endl;
+
+    // Set current amount and test again
+    barn->setCurrentAmount(200);
+    cout << "Updated Current Amount: " << barn->getCurrentAmount() << endl;
+    cout << "Updated Leftover Capacity: " << barn->getLeftoverCapacity() << endl;
+
+    cout << endl;
+
+    // Test Decorator pattern methods
+    barn->increaseProduction();
+    barn->harvest();
+
+    cout << endl;
+
+    // Test Observer pattern methods
+    Truck* truck = new DeliveryTruck(); // Assuming Truck class is defined
+    cout << endl;
+    barn->buyTruck(truck);
+    barn->sellTruck(truck);
+
+    cout << endl;
+
+    SoilState* dryState = new DrySoil();
+
+    cout << endl;
+
+    // Test Composite pattern methods
+    CropField* field = new CropField("Wheat", 100, dryState);
+    barn->add(field); // Should indicate that adding units is not allowed
+    barn->remove(field); // Should indicate that removing units is not allowed
+
+    cout << endl;
+
+    // Test Iterator pattern methods
+    FarmIterator* bfsIterator = barn->createBFSIterator();
+    cout << endl;
+    cout << "\nBreadth-First Traversal:" << endl;
+    for (FarmUnit* current = bfsIterator->firstFarm(); !bfsIterator->isDone(); current = bfsIterator->next()) {
+        cout << "Visiting unit: " << current->getName() << endl;
+    }
+
+    FarmIterator* dfsIterator = barn->createDFSIterator();
+    cout << "\nDepth-First Traversal:" << endl;
+    for (FarmUnit* current = dfsIterator->firstFarm(); !dfsIterator->isDone(); current = dfsIterator->next()) {
+        cout << "Visiting unit: " << current->getName() << endl;
+    }
+
+    cout << endl;
+
+    // Clean up
+    delete bfsIterator;
+    delete dfsIterator;
+    delete field;
+    delete barn;
+    delete truck;
+    delete dryState;
+}
+
 
 
 
 
 int main() {
 
-    cout << "\n========================== Component 1: Composite ===========================\n" << endl;
-    testingComposite();
+    // cout << "\n========================== Component 1: Composite ===========================\n" << endl;
+    // testingComposite();
 
+    // cout << endl;
+
+    // cout << "\n========================== Component 2: State ================================\n" << endl;
+    // testingState();
+
+    // cout << endl;
+
+    // cout << "\n========================== Component 3: Decorator =============================\n" << endl;
+    // testingDecorator();
+
+    // cout << endl;
+
+    // cout << "\n========================== Component 4: Observer ===============================\n" << endl;
+    // testingObserver();
+
+    // cout << endl;
+
+    // cout << "\n========================== Component 5: Iterator ===============================\n" << endl;
+    // testingIterator();
+
+    // cout << endl;
+
+    cout << "\n========================== Additional Testing for Coverage =======================\n" << endl;
+    // testFarmland();
     cout << endl;
-
-    cout << "\n========================== Component 2: State ================================\n" << endl;
-    testingState();
-
-    cout << endl;
-
-    cout << "\n========================== Component 3: Decorator =============================\n" << endl;
-    testingDecorator();
-
-    cout << endl;
-
-    cout << "\n========================== Component 4: Observer ===============================\n" << endl;
-    testingObserver();
-
-    cout << endl;
-
-    cout << "\n========================== Component 5: Iterator ===============================\n" << endl;
-    testingIterator();
-
+    // testBarn();
     cout << endl;
 
     

@@ -1,11 +1,12 @@
 // Class implementation for Component 1 - Composite (Composite)
+// Class implementation for Component 5 - Iterator (ConcreteAggregate)
 
 #include "Farmland.h"
 #include "BFFarmIterator.h"
 #include "DFFarmIterator.h"
 
 #include <iostream>
-#include <algorithm> // Fvor std::find
+#include <algorithm> // For std::find
 
 using namespace std;
 
@@ -40,12 +41,10 @@ int Farmland::getTotalCapacity() {
 }
 
 std::string Farmland::getCropType() {
-    // Return "Mixed" as a placeholder or implement a specific approach
     return "Mixed";
 }
 
 std::string Farmland::getSoilStateName() {
-    // Return "Mixed" as a placeholder or implement a specific approach
     return "Mixed";
 }
 
