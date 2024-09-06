@@ -6,20 +6,23 @@
 #include "BFFarmIterator.h"
 #include "DFFarmIterator.h"
 
+using namespace std;
+
 FertilizedField::FertilizedField(CropField* field)
     : CropFieldDecorator(field), field(field) {
-    std::cout << "🌿 FertilizedField created and ready to enhance crop production!\n";
+    cout << "🌿 FertilizedField created and ready to enhance crop production!\n";
 }
 
 
+FertilizedField::~FertilizedField() {
+    cout << "🌾 FertilizedField is being destroyed. Cleaning up...\n";
 FertilizedField::~FertilizedField() 
 {
     std::cout << "🌾 FertilizedField is being destroyed. Cleaning up...\n";
    
 }
 
-void FertilizedField::increaseProduction()  
-{
+void FertilizedField::increaseProduction() {
     std::cout << "📈 Increasing production in FertilizedField.\n";
     
     // Check current soil state and transition accordingly
@@ -57,8 +60,7 @@ void FertilizedField::increaseProduction()
     }
 }
 
-void FertilizedField::harvest()
-{
+void FertilizedField::harvest() {
     std::cout << "🌾 Harvesting crops from FertilizedField.\n";
     field->harvest();
     
@@ -80,8 +82,7 @@ void FertilizedField::harvest()
     } 
 }
 
-int FertilizedField::getLeftoverCapacity()
-{
+int FertilizedField::getLeftoverCapacity() {
     std::cout << "🔢 Checking leftover capacity in FertilizedField.\n";
     int baseCapacity = field->getLeftoverCapacity();
     int bonusCapacity = 10; // Additional capacity due to advanced storage management
@@ -90,22 +91,19 @@ int FertilizedField::getLeftoverCapacity()
     return baseCapacity + bonusCapacity;
 }
 
-void FertilizedField::buyTruck(Truck* truck)
-{
+void FertilizedField::buyTruck(Truck* truck) {
     std::cout << "🚚 Buying truck for FertilizedField.\n";
     field->buyTruck(truck);
     std::cout << "The field now has a new truck for enhanced harvest and transport operations.\n";
 }
 
-void FertilizedField::sellTruck(Truck* truck)
-{
+void FertilizedField::sellTruck(Truck* truck) {
     std::cout << "🚛 Selling truck from FertilizedField.\n";
     field->sellTruck(truck);
     std::cout << "The field no longer has the truck. Transport operations might be affected.\n";
 }
 
-int FertilizedField::getTotalCapacity()
-{
+int FertilizedField::getTotalCapacity() {
      std::cout << "🔢 Getting total capacity of FertilizedField.\n";
     int baseCapacity = field->getTotalCapacity();
     int bonusCapacity = 20; // Additional capacity due to improved field management
@@ -114,22 +112,19 @@ int FertilizedField::getTotalCapacity()
     return baseCapacity + bonusCapacity;
 }
 
-std::string FertilizedField::getCropType()
-{
-     std::cout << "🌾 Getting crop type of FertilizedField.\n";
+std::string FertilizedField::getCropType() {
+    std::cout << "🌾 Getting crop type of FertilizedField.\n";
     std::string baseCropType = field->getCropType();
     return baseCropType + " (Fertilized)";
 }
 
-std::string FertilizedField::getSoilStateName()
-{   
+std::string FertilizedField::getSoilStateName() {   
     std::cout << "🌱 Getting soil state name of FertilizedField.\n";
     std::string baseSoilState = field->getSoilStateName();
     return baseSoilState + " (Enhanced with fertilizer)";
 }
 
-int FertilizedField::getCurrentAmount()
-{
+int FertilizedField::getCurrentAmount() {
      std::cout << "🔢 Getting current amount of crops in FertilizedField.\n";
     int baseAmount = field->getCurrentAmount();
     int bonusAmount = 5; // Bonus amount due to better soil conditions
@@ -137,8 +132,7 @@ int FertilizedField::getCurrentAmount()
     return baseAmount + bonusAmount;
 }
 
-void FertilizedField::setCurrentAmount(int amount)
-{
+void FertilizedField::setCurrentAmount(int amount) {
     std::cout << "🔄 Setting current amount of crops in FertilizedField.\n";
     field->setCurrentAmount(amount);
     std::cout << "Current amount set to " << amount;
@@ -156,8 +150,8 @@ FarmIterator* FertilizedField::createDFSIterator() {
 }
 
 std::vector<FarmUnit*> FertilizedField::getSubUnits() {
-     std::cout << "📦 Getting sub-units of FertilizedField.\n"; // Return sub-units (if any) for fertilized field
-    return std::vector<FarmUnit*>();
+    cout << "📦 FertilizedField has no sub-units.\n";
+    return vector<FarmUnit*>();  // Return empty vector since FertilizedField has no sub-units
 }
 
 void FertilizedField::setName(const std::string& name) {
@@ -170,17 +164,9 @@ std::string FertilizedField::getName() const {
 }
 
 void FertilizedField::add(FarmUnit* unit) {
-    units.push_back(unit);
-    cout << "[FertilizedField] Added a unit: " << unit->getName() << endl;
+    cout << "[FertilizedField] Cannot add units. FertilizedField does not store units.\n";
 }
 
 void FertilizedField::remove(FarmUnit* unit) {
-    auto it = find(units.begin(), units.end(), unit);
-    
-    if (it != units.end()) {
-        units.erase(it);
-        cout << "[FertilizedField] Removed a unit: " << unit->getName() << endl;
-    } else {
-        cout << "[FertilizedField] Unit not found." << endl;
-    }
+    cout << "[FertilizedField] Cannot remove units. FertilizedField does not store units.\n";
 }

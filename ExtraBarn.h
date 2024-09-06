@@ -1,50 +1,53 @@
-#ifndef EXTRA_BARN_H
-#define EXTRA_BARN_H
+// Class defintion for Component 3 - Decorator (ConcreteDecorator)
+
+#ifndef EXTRABARN_H
+#define EXTRABARN_H
 
 #include "CropField.h"
 #include "CropFieldDecorator.h"
 
 #include <algorithm>
 
-class ExtraBarn : public CropFieldDecorator
-{
-private:
-    CropField* field;
-    int extraStorageCapacity;
+using namespace std;
 
-    string name;
-    vector<FarmUnit*> units; // Stores child FarmUnit objects
+class ExtraBarn : public CropFieldDecorator {
+    
+    private:
+        CropField* field;
+        int extraStorageCapacity;
 
+        string name;
 
-public:
-    ExtraBarn(CropField* field, int extraCapacity);
-    void increaseProduction() override;
-    void harvest()override;
-    int getLeftoverCapacity()override;
+    public:
+        ExtraBarn(CropField* field, int extraCapacity);
+        ~ExtraBarn();
 
-    void buyTruck(Truck* truck)override;
-    void sellTruck(Truck* truck)override;
+        void increaseProduction();
+        void harvest();
+        int getLeftoverCapacity();
 
-    int getTotalCapacity()override;
-    string getCropType()override;
-    string getSoilStateName()override;
+        void buyTruck(Truck* truck);
+        void sellTruck(Truck* truck);
 
-    int getCurrentAmount()override;
-    void setCurrentAmount(int amount)override;
+        int getTotalCapacity();
+        string getCropType();
+        string getSoilStateName();
 
-    // Iterator pattern methods
-    vector<FarmUnit*> getSubUnits() override;
-    FarmIterator* createBFSIterator() override;
-    FarmIterator* createDFSIterator() override;
+        int getCurrentAmount();
+        void setCurrentAmount(int amount);
 
-    // Set and get the name of the farm unit
-    void setName(const string& unitName) override;
-    string getName() const override;
+        // Iterator pattern methods
+        vector<FarmUnit*> getSubUnits();
+        FarmIterator* createBFSIterator();
+        FarmIterator* createDFSIterator();
 
-    // Composite pattern methods
-    void add(FarmUnit* unit);
-    void remove(FarmUnit* unit);
+        // Set and get the name of the farm unit
+        void setName(const string& unitName);
+        string getName() const;
 
+        // Composite pattern methods
+        void add(FarmUnit* unit);
+        void remove(FarmUnit* unit);
 };
 
-#endif 
+#endif // EXTRABARN_H

@@ -1,6 +1,7 @@
-// FertilizedField.h
-#ifndef FERTILIZED_FIELD_H
-#define FERTILIZED_FIELD_H
+// Class defintion for Component 3 - Decorator (ConcreteDecorator)
+
+#ifndef FERTILIZEDFIELD_H
+#define FERTILIZEDFIELD_H
 
 #include "CropField.h"
 #include "CropFieldDecorator.h"
@@ -9,46 +10,47 @@
 #include "FruitfulSoil.h"
 #include "FloodedSoil.h"
 
-#include "algorithm"
+#include <algorithm>
 
-class FertilizedField : public CropFieldDecorator
-{
-private:
-    CropField* field;
+using namespace std;
 
-    string name;
-    vector<FarmUnit*> units; // Stores child FarmUnit objects
+class FertilizedField : public CropFieldDecorator {
+    
+    private:
+        CropField* field;  // Wrapped CropField object
+        string name;
 
+    public:
+        FertilizedField(CropField* field);
+        ~FertilizedField();
 
-public:
-    ~FertilizedField();
-    FertilizedField(CropField* field);
-    void increaseProduction()override;
-    void harvest()override;
-    int getLeftoverCapacity()override;
+        void increaseProduction();
+        void harvest();
+        int getLeftoverCapacity();
 
-    void buyTruck(Truck* truck)override;
-    void sellTruck(Truck* truck)override;
+        void buyTruck(Truck* truck);
+        void sellTruck(Truck* truck);
 
-    int getTotalCapacity()override;
-    string getCropType()override;
-    string getSoilStateName()override;
+        int getTotalCapacity();
+        string getCropType();
+        string getSoilStateName();
 
-    int getCurrentAmount()override;
-    void setCurrentAmount(int amount)override;
+        int getCurrentAmount();
+        void setCurrentAmount(int amount);
 
-    // Iterator pattern methods
-    vector<FarmUnit*> getSubUnits() override;
-    FarmIterator* createBFSIterator() override;
-    FarmIterator* createDFSIterator() override;
+        // Iterator pattern methods
+        vector<FarmUnit*> getSubUnits();
+        FarmIterator* createBFSIterator();
+        FarmIterator* createDFSIterator();
 
-    // Set and get the name of the farm unit
-    void setName(const string& unitName) override;
-    string getName() const override;
+        // Set and get the name of the farm unit
+        void setName(const string& unitName);
+        string getName() const;
 
-    // Composite pattern methods
-    void add(FarmUnit* unit);
-    void remove(FarmUnit* unit);
+        // Composite pattern methods
+        void add(FarmUnit* unit);
+        void remove(FarmUnit* unit);
 
 };
-#endif 
+
+#endif // FERTILIZEDFIELD_H

@@ -5,7 +5,7 @@ using namespace std;
 
 DeliveryTruck::DeliveryTruck() : soilTexture("Unknown"), storageCapacity(0) {
     cout << "🚚 A new DeliveryTruck has been assembled and is ready to hit the road! 🚜" << endl;
-    cout << "🛢️ Soil Texture: " << soilTexture << " | Storage Capacity: " << storageCapacity << " tons" << endl;
+    cout << "Storage Capacity: " << storageCapacity << " tons" << endl;
 }
 
 // Destructor
