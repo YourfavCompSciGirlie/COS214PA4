@@ -1,7 +1,10 @@
+// Class implementation for Component 4 - Observer (ConcreteObserver)
+
 #include "FertilizerTruck.h"
 #include "Truck.h"
 
 #include <iostream>
+
 using namespace std;
 
 

@@ -1,5 +1,6 @@
 // Class definition for Component 1 - Composite (Leaf)
 // Class definition for Component 2 - State (Context)
+// Class definition for Component 4 - Observer (ConcreteSubject)
 
 #include "CropField.h"
 

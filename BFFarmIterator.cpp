@@ -1,4 +1,4 @@
-
+// Class defintion for Component 5 - Iterator (ConcreteIterator)
 
 #include "FarmIterator.h"
 #include "FarmUnit.h"
@@ -8,6 +8,7 @@
 #include <queue>
 #include <unordered_set>
 #include <iostream>
+
 using namespace std;
 
 BFFarmIterator::BFFarmIterator() {

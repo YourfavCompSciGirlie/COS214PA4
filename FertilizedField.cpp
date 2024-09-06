@@ -1,3 +1,5 @@
+// Class implementation for Component 3 - Decorator (ConcreteDecorator)
+
 #include <iostream>
 
 #include "FertilizedField.h"

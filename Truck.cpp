@@ -1,4 +1,7 @@
+// Class implementation for Component 4 - Observer (Observer)
+
 #include "Truck.h"
+
 #include <iostream>
 
 using namespace std;

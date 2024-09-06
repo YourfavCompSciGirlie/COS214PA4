@@ -1,5 +1,8 @@
+// Class implementation for Component 4 - Observer (Subject)
+
 #include "NotificationSystem.h"
 
+using namespace std;
 
 NotificationSystem::NotificationSystem() {
     std::cout << "🔔 Notification System is up and running! Ready to keep the trucks in check! 🚛" << std::endl;

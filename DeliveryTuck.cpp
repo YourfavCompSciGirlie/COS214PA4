@@ -1,6 +1,9 @@
+// Class implementation for Component 4 - Observer (ConcreteObserver)
+
 #include "DeliveryTruck.h"
 #include "Truck.h"
 #include <iostream>
+
 using namespace std;
 
 DeliveryTruck::DeliveryTruck() : soilTexture("Unknown"), storageCapacity(0) {
@@ -12,6 +15,7 @@ DeliveryTruck::DeliveryTruck() : soilTexture("Unknown"), storageCapacity(0) {
 DeliveryTruck::~DeliveryTruck() {
     cout << "🔧 The DeliveryTruck is retiring from service. Time to unload and rest! 🌙" << endl;
 }
+
 void DeliveryTruck::startEngine()
 {
         std::cout << "Delivery truck engine started. Heading to crop field for harvest collection...\n";
