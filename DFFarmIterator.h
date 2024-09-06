@@ -18,6 +18,9 @@ class DFFarmIterator : public FarmIterator {
         unordered_set<FarmUnit*> visited; // To keep track of visited nodes
 
     public:
+        DFFarmIterator() {};
+        ~DFFarmIterator() {};
+
         DFFarmIterator(FarmUnit* rootFarm) : current(nullptr) {
             if (rootFarm != nullptr) {
                 unitStack.push(rootFarm);

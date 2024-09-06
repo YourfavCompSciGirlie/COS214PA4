@@ -18,6 +18,9 @@ class BFFarmIterator : public FarmIterator {
         unordered_set<FarmUnit*> visited; // Set to track visited nodes
 
     public:
+        BFFarmIterator() {};
+        ~BFFarmIterator() {};
+        
         BFFarmIterator(FarmUnit* rootFarm) : current(nullptr) {
             if (rootFarm != nullptr) {
                 unitQueue.push(rootFarm);
