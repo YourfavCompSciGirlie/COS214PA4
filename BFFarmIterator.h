@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <queue>
+#include <unordered_set>
 
 using namespace std;
 
@@ -14,11 +15,13 @@ class BFFarmIterator : public FarmIterator {
     private:
         queue<FarmUnit*> unitQueue;
         FarmUnit* current = nullptr;
+        unordered_set<FarmUnit*> visited; // Set to track visited nodes
 
     public:
-        BFFarmIterator(FarmUnit* rootFarm) {
+        BFFarmIterator(FarmUnit* rootFarm) : current(nullptr) {
             if (rootFarm != nullptr) {
                 unitQueue.push(rootFarm);
+                visited.insert(rootFarm); // Mark root as visited
             }
         }
 
@@ -32,11 +35,20 @@ class BFFarmIterator : public FarmIterator {
 
         FarmUnit* next() override {
             if (!isDone()) {
+                // Dequeue the front element
                 current = unitQueue.front();
                 unitQueue.pop();
-                const vector<FarmUnit*>& subUnits = current->getSubUnits();  // Assuming FarmUnit has getSubUnits() method.
-                for (FarmUnit* unit : subUnits) {
-                    unitQueue.push(unit);
+
+                // Check if the current node is a CompositeFarm and handle its sub-units
+                FarmUnit* composite = dynamic_cast<FarmUnit*>(current);
+                if (composite != nullptr) {
+                    const vector<FarmUnit*>& subUnits = composite->getSubUnits(); // Assuming this method exists
+                    for (FarmUnit* unit : subUnits) {
+                        if (unit != nullptr && visited.find(unit) == visited.end()) { // Check if not visited
+                            unitQueue.push(unit);
+                            visited.insert(unit); // Mark as visited
+                        }
+                    }
                 }
             }
             return current;
