@@ -454,41 +454,234 @@ void testBarn() {
     delete dryState;
 }
 
+void testFertilizedField() {
+    // Step 1: Create a base CropField
+    cout << "=== Step 1: Create a base CropField ===\n";
+    CropField* baseField = new CropField("Corn", 200, new DrySoil());
 
+    cout << "Crop Type: " << baseField->getCropType() << endl;
+    cout << "Soil State: " << baseField->getSoilStateName() << endl;
+    cout << "Total Capacity: " << baseField->getTotalCapacity() << endl;
+
+    // Step 2: Decorate with FertilizedField
+    cout << "\n=== Step 2: Decorate with FertilizedField ===\n";
+    FertilizedField* fertilizedField = new FertilizedField(baseField);
+
+    cout << "Crop Type (FertilizedField): " << fertilizedField->getCropType() << endl;
+    cout << "Soil State (FertilizedField): " << fertilizedField->getSoilStateName() << endl;
+    cout << "Total Capacity (FertilizedField): " << fertilizedField->getTotalCapacity() << endl;
+
+    // Step 3: Test increaseProduction and harvest
+    cout << "\n=== Step 3: Test increaseProduction and harvest ===\n";
+    fertilizedField->increaseProduction();
+    fertilizedField->harvest();
+
+    // Step 4: Test add() and remove() (should be non-functional)
+    cout << "\n=== Step 4: Test add() and remove() ===\n";
+    FarmUnit* dummyUnit = nullptr;  // Simulate a farm unit
+    fertilizedField->add(dummyUnit);
+    fertilizedField->remove(dummyUnit);
+
+    // Step 5: Test Truck logistics (buy and sell truck)
+    cout << "\n=== Step 5: Test Truck Logistics ===\n";
+    Truck* fertilizerTruck = new FertilizerTruck();
+    fertilizedField->buyTruck(fertilizerTruck);
+    fertilizedField->sellTruck(fertilizerTruck);
+
+    // Step 6: Test setting and getting crop amounts
+    cout << "\n=== Step 6: Test setting and getting crop amounts ===\n";
+    fertilizedField->setCurrentAmount(100);
+    cout << "Current Crop Amount: " << fertilizedField->getCurrentAmount() << endl;
+
+    // Step 7: Test leftover capacity
+    cout << "\n=== Step 7: Test getLeftoverCapacity() ===\n";
+    cout << "Leftover Capacity: " << fertilizedField->getLeftoverCapacity() << endl;
+
+    // Step 8: Test soil state transition after rain
+    cout << "\n=== Step 8: Test soil state transition after rain ===\n";
+    baseField->rain();  // Transition DrySoil to FruitfulSoil
+    cout << "New Soil State: " << fertilizedField->getSoilStateName() << endl;
+
+    // Step 9: Test Iterator methods (BFS and DFS)
+    cout << "\n=== Step 9: Test BFS and DFS Iterators ===\n";
+    FarmIterator* bfsIterator = fertilizedField->createBFSIterator();
+    FarmIterator* dfsIterator = fertilizedField->createDFSIterator();
+
+    // Iterate over the fields using BFS iterator
+    cout << "Iterating with BFS Iterator:\n";
+    for (bfsIterator->firstFarm(); !bfsIterator->isDone(); bfsIterator->next()) {
+        cout << "Farm Unit: " << bfsIterator->currentFarm()->getName() << endl;
+    }
+
+    // Iterate over the fields using DFS iterator
+    cout << "Iterating with DFS Iterator:\n";
+    for (dfsIterator->firstFarm(); !dfsIterator->isDone(); dfsIterator->next()) {
+        cout << "Farm Unit: " << dfsIterator->currentFarm()->getName() << endl;
+    }
+
+    // Step 10: Clean up
+    cout << "\n=== Step 10: Clean up ===\n";
+    delete baseField;
+    delete fertilizedField;
+    delete fertilizerTruck;
+    delete bfsIterator;
+    delete dfsIterator;
+ 
+}
+
+void testExtraBarn() {
+    // Create a base CropField with a FruitfulSoil
+    CropField* baseField = new CropField("Wheat", 100, new FruitfulSoil());
+    
+    // Wrap the baseField with an ExtraBarn
+    ExtraBarn* extraBarn = new ExtraBarn(baseField, 50);
+    
+    // Output test header
+    std::cout << "\nTesting ExtraBarn functionality...\n";
+
+    cout << endl;
+    
+    // Test increaseProduction
+    std::cout << "Testing increaseProduction:\n";
+    extraBarn->increaseProduction();
+
+    cout << endl;
+    
+    // Test harvest
+    std::cout << "Testing harvest:\n";
+    extraBarn->harvest();
+
+    cout << endl;
+    
+    // Test getLeftoverCapacity
+    std::cout << "Testing getLeftoverCapacity:\n";
+    int leftoverCapacity = extraBarn->getLeftoverCapacity();
+    std::cout << "Leftover capacity: " << leftoverCapacity << std::endl;
+
+    cout << endl;
+    
+    // Test buyTruck
+    Truck* truck = new DeliveryTruck();
+    std::cout << "Testing buyTruck:\n";
+    extraBarn->buyTruck(truck);
+
+    cout << endl;
+    
+    // Test sellTruck
+    std::cout << "Testing sellTruck:\n";
+    extraBarn->sellTruck(truck);
+
+    cout << endl;
+    
+    // Test getTotalCapacity
+    std::cout << "Testing getTotalCapacity:\n";
+    int totalCapacity = extraBarn->getTotalCapacity();
+    std::cout << "Total capacity: " << totalCapacity << std::endl;
+
+    cout << endl;
+    
+    // Test getCropType
+    std::cout << "Testing getCropType:\n";
+    std::string cropType = extraBarn->getCropType();
+    std::cout << "Crop type: " << cropType << std::endl;
+
+    cout << endl;
+    
+    // Test getSoilStateName
+    std::cout << "Testing getSoilStateName:\n";
+    std::string soilState = extraBarn->getSoilStateName();
+    std::cout << "Soil state: " << soilState << std::endl;
+
+    cout << endl;
+    
+    // Test getCurrentAmount
+    std::cout << "Testing getCurrentAmount:\n";
+    int currentAmount = extraBarn->getCurrentAmount();
+    std::cout << "Current amount: " << currentAmount << std::endl;
+
+    cout << endl;
+    
+    // Test setCurrentAmount
+    std::cout << "Testing setCurrentAmount:\n";
+    extraBarn->setCurrentAmount(150);
+    currentAmount = extraBarn->getCurrentAmount();
+    std::cout << "Current amount after setting: " << currentAmount << std::endl;
+
+    cout << endl;
+    
+    // Test getSubUnits
+    std::cout << "Testing getSubUnits:\n";
+    std::vector<FarmUnit*> subUnits = extraBarn->getSubUnits();
+    std::cout << "Number of sub-units: " << subUnits.size() << std::endl;
+
+    cout << endl;
+
+    // Test Iterator pattern methods
+    FarmIterator* bfsIterator = extraBarn->createBFSIterator();
+    FarmIterator* dfsIterator = extraBarn->createDFSIterator();
+
+    // Test setName and getName
+    extraBarn->setName("My Extra Barn");
+    cout << "Barn Name: " << extraBarn->getName() << endl;
+
+    cout << endl;
+    
+    // Test add and remove functionality
+    std::cout << "Testing add and remove:\n";
+    FarmUnit* unit = new CropField("Corn", 200, new FloodedSoil());  // Dummy unit for testing
+    extraBarn->add(unit);
+    extraBarn->remove(unit);
+
+    cout << endl;
+    
+    // Clean up
+    delete bfsIterator;
+    delete dfsIterator;
+    delete baseField;
+    delete extraBarn;
+    delete truck;
+    delete unit;
+
+    cout << "Finished testing ExtraBarn.\n";
+}
 
 
 
 int main() {
 
-    // cout << "\n========================== Component 1: Composite ===========================\n" << endl;
-    // testingComposite();
+    cout << "\n========================== Component 1: Composite ===========================\n" << endl;
+    testingComposite();
 
-    // cout << endl;
+    cout << endl;
 
-    // cout << "\n========================== Component 2: State ================================\n" << endl;
-    // testingState();
+    cout << "\n========================== Component 2: State ================================\n" << endl;
+    testingState();
 
-    // cout << endl;
+    cout << endl;
 
-    // cout << "\n========================== Component 3: Decorator =============================\n" << endl;
-    // testingDecorator();
+    cout << "\n========================== Component 3: Decorator =============================\n" << endl;
+    testingDecorator();
 
-    // cout << endl;
+    cout << endl;
 
-    // cout << "\n========================== Component 4: Observer ===============================\n" << endl;
-    // testingObserver();
+    cout << "\n========================== Component 4: Observer ===============================\n" << endl;
+    testingObserver();
 
-    // cout << endl;
+    cout << endl;
 
-    // cout << "\n========================== Component 5: Iterator ===============================\n" << endl;
-    // testingIterator();
+    cout << "\n========================== Component 5: Iterator ===============================\n" << endl;
+    testingIterator();
 
-    // cout << endl;
+    cout << endl;
 
     cout << "\n========================== Additional Testing for Coverage =======================\n" << endl;
-    // testFarmland();
+    testFarmland();
     cout << endl;
-    // testBarn();
+    testBarn();
+    cout << endl;
+    testFertilizedField();
+    cout << endl;
+    testExtraBarn();
     cout << endl;
 
     

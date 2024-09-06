@@ -1,14 +1,23 @@
+// Class implementation for Component 3 - Decorator (ConcreteDecorator)
+
 #include "ExtraBarn.h"
 #include <iostream>
 
-ExtraBarn::ExtraBarn(CropField* field, int extraCapacity) 
-{
+using namespace std;
+
+ExtraBarn::ExtraBarn(CropField* field, int extraCapacity) {
     this->field = field;
     this->extraStorageCapacity = extraCapacity;
+
+    std::cout << "[ExtraBarn] A new extra barn is built, ready to boost your farm's storage by " 
+              << extraCapacity << " units!" << std::endl;
 }
 
-void ExtraBarn::increaseProduction()  
-{
+ExtraBarn::~ExtraBarn() {
+    cout << "[ExtraBarn] The extra barn is being torn down. Farewell to the days of extra storage!" << endl;
+}
+
+void ExtraBarn::increaseProduction() {
     std::cout << "Increasing production with extra barn capacity...\n";
     
     // Initial production increase
@@ -41,64 +50,55 @@ void ExtraBarn::increaseProduction()
     }
 }
 
-void ExtraBarn::harvest()
-{
+void ExtraBarn::harvest() {
     std::cout << "Harvesting from the field with extra barn storage...\n";
     field->harvest();
     std::cout << "Extra barn provides additional storage for harvested crops.\n";
 }
 
-int ExtraBarn::getLeftoverCapacity()
-{
+int ExtraBarn::getLeftoverCapacity() {
     int baseCapacity = field->getLeftoverCapacity();
     std::cout << "Extra barn adds " << extraStorageCapacity << " units to the leftover capacity.\n";
     return baseCapacity + extraStorageCapacity;
 }
 
-void ExtraBarn::buyTruck(Truck* truck)
-{
+void ExtraBarn::buyTruck(Truck* truck) {
     std::cout << "Adding a truck to the field with extra barn storage...\n";
     field->buyTruck(truck);
     std::cout << "Extra barn's enhanced storage can now be utilized with additional transportation.\n";
 }
 
-void ExtraBarn::sellTruck(Truck* truck)
-{
+void ExtraBarn::sellTruck(Truck* truck) {
     std::cout << "Removing a truck from the field with extra barn storage...\n";
     field->sellTruck(truck);
     std::cout << "Extra barn's transportation capacity adjusted.\n";
 }
 
-int ExtraBarn::getTotalCapacity()
-{
+int ExtraBarn::getTotalCapacity() {
     int baseCapacity = field->getTotalCapacity();
     std::cout << "Extra barn provides " << extraStorageCapacity << " units of additional total capacity.\n";
     return baseCapacity + extraStorageCapacity;
 }
 
-std::string ExtraBarn::getCropType()
-{
+std::string ExtraBarn::getCropType() {
     std::string baseCropType = field->getCropType();
     std::cout << "Crop type in the extra barn is: " << baseCropType << ".\n";
     return baseCropType;
 }
 
-std::string ExtraBarn::getSoilStateName()
-{
+std::string ExtraBarn::getSoilStateName() {
     std::string baseSoilState = field->getSoilStateName();
     std::cout << "Soil state with extra barn: " << baseSoilState << ".\n";
     return baseSoilState;
 }
 
-int ExtraBarn::getCurrentAmount()
-{
+int ExtraBarn::getCurrentAmount() {
     int baseAmount = field->getCurrentAmount();
     std::cout << "Current amount in the field with extra barn: " << baseAmount << ".\n";
     return baseAmount;
 }
 
-void ExtraBarn::setCurrentAmount(int amount)
-{
+void ExtraBarn::setCurrentAmount(int amount) {
     std::cout << "Setting current amount in the field with extra barn to: " << amount << ".\n";
     field->setCurrentAmount(amount);
 }
@@ -113,8 +113,9 @@ FarmIterator* ExtraBarn::createDFSIterator() {
 }
 
 std::vector<FarmUnit*> ExtraBarn::getSubUnits() {
-    // Return the sub-units of the extra barn
-    return units;
+    // ExtraBarn doesn't have sub-units, so return an empty vector
+    cout << "[ExtraBarn] This barn does not have any sub-units." << endl;
+    return vector<FarmUnit*>();
 }
 
 void ExtraBarn::setName(const std::string& name) {
@@ -126,17 +127,9 @@ std::string ExtraBarn::getName() const {
 }
 
 void ExtraBarn::add(FarmUnit* unit) {
-    units.push_back(unit);
-    cout << "[ExtraBarn] Added a unit: " << unit->getName() << endl;
+    cout << "[ExtraBarn] Cannot add units to the barn. Barn cannot store units." << endl;
 }
 
 void ExtraBarn::remove(FarmUnit* unit) {
-    auto it = find(units.begin(), units.end(), unit);
-    
-    if (it != units.end()) {
-        units.erase(it);
-        cout << "[ExtraBarn] Removed a unit: " << unit->getName() << endl;
-    } else {
-        cout << "[ExtraBarn] Unit not found." << endl;
-    }
+    cout << "[ExtraBarn] Cannot remove units from the barn. Barn does not store units." << endl;
 }

@@ -10,7 +10,7 @@ class FarmIterator {
     public:
         FarmIterator();
         
-        virtual ~FarmIterator() {};
+        virtual ~FarmIterator();
 
         // Return the first farm/unit for traversal
         virtual FarmUnit* firstFarm() = 0;
