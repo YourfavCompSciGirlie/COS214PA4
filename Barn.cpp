@@ -62,3 +62,25 @@ void Barn::sellTruck(Truck* truck) {
     // Implementation for selling a truck, if applicable
     cout << "[Barn] Selling a truck is not typically associated with barns. 🚛" << endl;
 }
+
+// Iterator pattern methods
+FarmIterator* Barn::createBFSIterator() {
+    return new BFFarmIterator(this);
+}
+
+FarmIterator* Barn::createDFSIterator() {
+    return new DFFarmIterator(this);
+}
+
+vector<FarmUnit*> Barn::getSubUnits() {
+    // Return the sub-units of the barn
+    return units;
+}
+
+void Barn::setName(const std::string& name) {
+    this->name = name;
+}
+
+std::string Barn::getName() const {
+    return this->name;
+}

@@ -14,6 +14,7 @@ using namespace std;
 class Farmland : public FarmUnit {
     
     private:
+        string name;
         vector<FarmUnit*> units; // Stores child FarmUnit objects
 
     public:
@@ -41,10 +42,14 @@ class Farmland : public FarmUnit {
         void buyTruck(Truck* truck) override;
         void sellTruck(Truck* truck) override;
 
-        // // Iterator pattern methods
-        // vector<FarmUnit*> getSubUnits() override;
-        // FarmIterator* createBFSIterator() override;
-        // FarmIterator* createDFSIterator() override;
+        // Iterator pattern methods
+        vector<FarmUnit*> getSubUnits() override;
+        FarmIterator* createBFSIterator() override;
+        FarmIterator* createDFSIterator() override;
+
+        // Set and get the name of the farm unit
+        void setName(const string& unitName) override;
+        string getName() const override;
 };
 
 #endif // FARMLAND_H

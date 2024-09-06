@@ -111,3 +111,25 @@ void CropField::harvest() {
 int CropField::getLeftoverCapacity() {
         return 50; // Assume a base capacity of 50 units
 }
+
+// Iterator methods
+void CropField::setName(const string& unitName) { 
+    name = unitName; 
+}
+
+string CropField::getName() const { 
+    return name; 
+}
+
+FarmIterator* CropField::createBFSIterator() {
+    return new BFFarmIterator(this);
+}
+
+FarmIterator* CropField::createDFSIterator() {
+    return new DFFarmIterator(this);
+}
+
+std::vector<FarmUnit*> CropField::getSubUnits() {
+    // Return sub-units for the crop field (if any)
+    return std::vector<FarmUnit*>();
+}

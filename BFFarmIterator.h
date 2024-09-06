@@ -3,44 +3,65 @@
 
 
 #include "FarmIterator.h"
+#include "FarmUnit.h"
+
+#include <vector>
 #include <queue>
+#include <unordered_set>
+
+using namespace std;
 
 class BFFarmIterator : public FarmIterator {
-private:
-    std::queue<FarmUnit*> queue;
-    FarmUnit* current = nullptr;
+    private:
+        queue<FarmUnit*> unitQueue;
+        FarmUnit* current = nullptr;
+        unordered_set<FarmUnit*> visited; // Set to track visited nodes
 
-public:
-    BFFarmIterator(FarmUnit* rootFarm) {
-        if (rootFarm != nullptr) {
-            queue.push(rootFarm);
+    public:
+        BFFarmIterator(FarmUnit* rootFarm) : current(nullptr) {
+            if (rootFarm != nullptr) {
+                unitQueue.push(rootFarm);
+                visited.insert(rootFarm); // Mark root as visited
+            }
         }
-    }
 
-    FarmUnit* firstFarm() override {
-        if (!queue.empty()) {
-            return queue.front();
+        FarmUnit* firstFarm() override {
+            if (!unitQueue.empty()) {
+                current = unitQueue.front();
+                return current;
+            }
+            return nullptr;
         }
-        return nullptr;
-    }
 
-    FarmUnit* next() override {
-        // if (!isDone()) {
-        //     current = queue.front();
-        //     queue.pop();
-        //     for (FarmUnit* subUnit : current->getSubUnits()) {
-        //         queue.push(subUnit);
-        //     }
-        // }
-        // return current;
-    }
+        FarmUnit* next() override {
+            if (!isDone()) {
+                // Dequeue the front element
+                current = unitQueue.front();
+                unitQueue.pop();
 
-    bool isDone() override {
-        return queue.empty();
-    }
+                // Check if the current node is a CompositeFarm and handle its sub-units
+                FarmUnit* composite = dynamic_cast<FarmUnit*>(current);
+                if (composite != nullptr) {
+                    const vector<FarmUnit*>& subUnits = composite->getSubUnits(); // Assuming this method exists
+                    for (FarmUnit* unit : subUnits) {
+                        if (unit != nullptr && visited.find(unit) == visited.end()) { // Check if not visited
+                            unitQueue.push(unit);
+                            visited.insert(unit); // Mark as visited
+                        }
+                    }
+                }
+            }
+            return current;
+        }
 
-    FarmUnit* currentFarm() override {
-        return current;
-    }
+        bool isDone() override {
+            return unitQueue.empty();
+        }
+
+        FarmUnit* currentFarm() override {
+            return current;
+        }
+
 };
-#endif
+
+#endif // BFFARMITERATOR_H

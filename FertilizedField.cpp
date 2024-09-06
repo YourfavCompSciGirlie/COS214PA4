@@ -3,6 +3,8 @@
 #include "FertilizedField.h"
 #include "CropFieldDecorator.h"
 #include "CropField.h"
+#include "BFFarmIterator.h"
+#include "DFFarmIterator.h"
 
 FertilizedField::FertilizedField(CropField* field) 
 {
@@ -127,4 +129,26 @@ void FertilizedField::setCurrentAmount(int amount)
 {
     field->setCurrentAmount(amount);
     std::cout << "Current amount set to " << amount;
+}
+
+
+FarmIterator* FertilizedField::createBFSIterator() {
+    return new BFFarmIterator(this);
+}
+
+FarmIterator* FertilizedField::createDFSIterator() {
+    return new DFFarmIterator(this);
+}
+
+std::vector<FarmUnit*> FertilizedField::getSubUnits() {
+    // Return sub-units (if any) for fertilized field
+    return std::vector<FarmUnit*>();
+}
+
+void FertilizedField::setName(const std::string& name) {
+    this->name = name;
+}
+
+std::string FertilizedField::getName() const {
+    return this->name;
 }

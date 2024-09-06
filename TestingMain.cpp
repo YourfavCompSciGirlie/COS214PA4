@@ -21,6 +21,8 @@
 #include "NotificationSystem.h"
 
 #include "FarmIterator.h"
+#include "BFFarmIterator.h"
+#include "DFFarmIterator.h"
 
 using namespace std;
 
@@ -245,36 +247,43 @@ void testingObserver() {
 }
 
 void testingIterator() {
-    // // Create some FarmUnit objects and a farmland
-    // Farmland* farm1 = new Farmland();
-    // Farmland* farm2 = new Farmland();
-    // Farmland* farm3 = new Farmland();
-    // FarmUnit* field1 = new CropField();
-    // FarmUnit* field2 = new CropField();
+    // Create some FarmUnit objects and a farmland
+    Farmland* farm1 = new Farmland();
+    Farmland* farm2 = new Farmland();
+    Farmland* farm3 = new Farmland();
+    FarmUnit* field1 = new CropField();
+    FarmUnit* field2 = new CropField();
 
-    // // Build the farm hierarchy
-    // farm1->addFarmUnit(farm2);
-    // farm1->addFarmUnit(field1);
-    // farm2->addFarmUnit(farm3);
-    // farm2->addFarmUnit(field2);
+    cout << endl;
 
-    // // Create and test BFS iterator
-    // FarmIterator* bfsIterator = farm1->createBFSIterator();
-    // while (!bfsIterator->isDone()) {
-    //     FarmUnit* currentFarm = bfsIterator->currentFarm();
-    //     cout << "Visiting farm/field in BFS: " << currentFarm->getName() << endl;
-    //     bfsIterator->next();
-    // }
+    // Assign names to the farms and crop fields for display purposes
+    farm1->setName("Main Farm");
+    farm2->setName("North Farm");
+    farm3->setName("East Farm");
+    field1->setName("Wheat Field");
+    field2->setName("Corn Field");
 
-    // // Create and test DFS iterator
-    // FarmIterator* dfsIterator = farm1->createDFSIterator();
-    // while (!dfsIterator->isDone()) {
-    //     FarmUnit* currentFarm = dfsIterator->currentFarm();
-    //     cout << "Visiting farm/field in DFS: " << currentFarm->getName() << endl;
-    //     dfsIterator->next();
-    // }
+    // Build the farm hierarchy
+    farm1->add(farm2);
+    farm1->add(field1);
+    farm2->add(farm3);
+    farm2->add(field2);
 
-    // // Clean up
+    // Test BFS iterator
+    FarmIterator* bfsIterator = farm1->createBFSIterator();
+    std::cout << "Breadth-First Traversal:" << std::endl;
+    for (FarmUnit* currentFarm = bfsIterator->firstFarm(); !bfsIterator->isDone(); currentFarm = bfsIterator->next()) {
+        std::cout << "Visiting farm/field: " << currentFarm->getName() << std::endl;
+    }
+
+    // Test DFS iterator
+    FarmIterator* dfsIterator = farm1->createDFSIterator();
+    std::cout << "\nDepth-First Traversal:" << std::endl;
+    for (FarmUnit* currentFarm = dfsIterator->firstFarm(); !dfsIterator->isDone(); currentFarm = dfsIterator->next()) {
+        std::cout << "Visiting farm/field: " << currentFarm->getName() << std::endl;
+    }
+
+    // Clean up
     // delete bfsIterator;
     // delete dfsIterator;
     // delete farm1;
@@ -286,27 +295,28 @@ void testingIterator() {
 
 
 
+
 int main() {
 
-    cout << "\n========================== Component 1: Composite ===========================\n" << endl;
-    testingComposite();
+    // cout << "\n========================== Component 1: Composite ===========================\n" << endl;
+    // testingComposite();
 
-    cout << endl;
+    // cout << endl;
 
-    cout << "\n========================== Component 2: State ================================\n" << endl;
-    testingState();
+    // cout << "\n========================== Component 2: State ================================\n" << endl;
+    // testingState();
 
-    cout << endl;
+    // cout << endl;
 
-    cout << "\n========================== Component 3: Decorator =============================\n" << endl;
-    testingDecorator();
+    // cout << "\n========================== Component 3: Decorator =============================\n" << endl;
+    // testingDecorator();
 
-    cout << endl;
+    // cout << endl;
 
-    cout << "\n========================== Component 4: Observer ===============================\n" << endl;
-    testingObserver();
+    // cout << "\n========================== Component 4: Observer ===============================\n" << endl;
+    // testingObserver();
 
-    cout << endl;
+    // cout << endl;
 
     cout << "\n========================== Component 5: Iterator ===============================\n" << endl;
     testingIterator();

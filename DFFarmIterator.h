@@ -2,46 +2,63 @@
 #define DFFAMITERATOR_H
 
 #include "FarmIterator.h"
+#include "FarmUnit.h"
+
 #include <stack>
 #include <vector>
+#include <unordered_set>
+
+using namespace std;
 
 class DFFarmIterator : public FarmIterator {
-private:
-    std::stack<FarmUnit*> stack;
-    FarmUnit* current = nullptr;
+    
+    private:
+        stack<FarmUnit*> unitStack;
+        FarmUnit* current = nullptr;
+        unordered_set<FarmUnit*> visited; // To keep track of visited nodes
 
-public:
-    DFFarmIterator(FarmUnit* rootFarm) {
-        if (rootFarm != nullptr) {
-            stack.push(rootFarm);
+    public:
+        DFFarmIterator(FarmUnit* rootFarm) : current(nullptr) {
+            if (rootFarm != nullptr) {
+                unitStack.push(rootFarm);
+                visited.insert(rootFarm);
+            }
         }
-    }
 
-    FarmUnit* firstFarm() override {
-        if (!stack.empty()) {
-            return stack.top();
+        FarmUnit* firstFarm() override {
+            if (!unitStack.empty()) {
+                current = unitStack.top();
+                return current;
+            }
+            return nullptr;
         }
-        return nullptr;
-    }
 
-    FarmUnit* next() override {
-        // if (!isDone()) {
-        //     current = stack.top();
-        //     stack.pop();
-        //     const std::vector<FarmUnit*>& subUnits = current->getSubUnits();
-        //     for (auto it = subUnits.rbegin(); it != subUnits.rend(); ++it) {
-        //         stack.push(*it);
-        //     }
-        // }
-        // return current;
-    }
+        FarmUnit* next() override {
+            if (!isDone()) {
+                current = unitStack.top();
+                unitStack.pop();
 
-    bool isDone() override {
-        return stack.empty();
-    }
+                const vector<FarmUnit*>& subUnits = current->getSubUnits();
+                // Push children in reverse order to process the leftmost child first
+                for (auto it = subUnits.rbegin(); it != subUnits.rend(); ++it) {
+                    if (visited.find(*it) == visited.end()) { // Check if the unit has been visited
+                        unitStack.push(*it);
+                        visited.insert(*it);
+                    }
+                }
+                return current;
+            }
+            return nullptr;
+        }
 
-    FarmUnit* currentFarm() override {
-        return current;
-    }
+        bool isDone() override {
+            return unitStack.empty();
+        }
+
+        FarmUnit* currentFarm() override {
+            return current;
+        }
+
 };
-#endif
+
+#endif // DFFAMITERATOR_H
