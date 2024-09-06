@@ -392,34 +392,48 @@ void testingIterator() //Nobuhle version
 }
 
 
+
 int main() {
+    const std::string red = "\033[31m";
+    const std::string green = "\033[32m";
+    const std::string yellow = "\033[33m";
+    const std::string blue = "\033[34m";
+    const std::string magenta = "\033[35m";
+    const std::string reset = "\033[0m";
 
-    cout << "\n========================== Component 1: Composite ===========================\n" << endl;
-    testingComposite();
+    int choice;
+    while (true) {
+        std::cout << red << "Design Patterns Demo Menu:\n";
+        std::cout << green << "1. Composite\n";
+        std::cout << yellow << "2. State\n";
+        std::cout << blue << "3. Decorator\n";
+        std::cout << magenta << "4. Observer\n";
+	std::cout << green << "5. Iterator\n";
+        std::cout << red << "6. Exit\n";
+        std::cout << red << "Enter your choice: " << reset;
+        std::cin >> choice;
 
-    cout << endl;
-
-    cout << "\n========================== Component 2: State ================================\n" << endl;
-    testingState();
-
-    cout << endl;
-
-    cout << "\n========================== Component 3: Decorator =============================\n" << endl;
-    testingDecorator();
-
-    cout << endl;
-
-    cout << "\n========================== Component 4: Observer ===============================\n" << endl;
-    testingObserver();
-
-    cout << endl;
-
-    cout << "\n========================== Component 5: Iterator ===============================\n" << endl;
-    testingIterator();
-
-    cout << endl;
-
-    
-    return 0;
+        switch (choice) {
+            case 1:
+                testingComposite();
+                break;
+            case 2:
+                testingDecorator();
+                break;
+            case 3:
+                testingState();
+                break;
+            case 4:
+                testingIterator();
+                break;
+            case 5:
+                testingObserver();
+                break;
+	case 6:
+                std::cout << "Exiting the demo. Goodbye!\n";
+                return 0;
+            default:
+                std::cout << "Invalid choice. Please try again.\n";
+        }
+    }
 }
-
