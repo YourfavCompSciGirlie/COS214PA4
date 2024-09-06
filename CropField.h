@@ -8,6 +8,8 @@
 #include "SoilState.h"
 #include "NotificationSystem.h"
 #include "Truck.h"
+#include "BFFarmIterator.h"
+#include "DFFarmIterator.h"
 
 #include <string>
 #include <vector>
@@ -22,6 +24,8 @@ class CropField : public FarmUnit, public NotificationSystem {
         string cropType;
         int totalCapacity;
         int currentAmount;
+
+        string name;
 
         SoilState* soilState;
 
@@ -52,6 +56,15 @@ class CropField : public FarmUnit, public NotificationSystem {
         void increaseProduction() override;
         void harvest() override;
         int getLeftoverCapacity() override;  
+
+        // Iterator pattern methods
+        vector<FarmUnit*> getSubUnits() override;
+        FarmIterator* createBFSIterator() override;
+        FarmIterator* createDFSIterator() override;
+
+        // Set and get the name of the farm unit
+        void setName(const string& unitName) override;
+        string getName() const override;
 };
 
 #endif // CROPFIELD_H

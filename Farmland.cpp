@@ -1,9 +1,11 @@
 // Class implementation for Component 1 - Composite (Composite)
 
 #include "Farmland.h"
+#include "BFFarmIterator.h"
+#include "DFFarmIterator.h"
 
 #include <iostream>
-#include <algorithm> // For std::find
+#include <algorithm> // Fvor std::find
 
 using namespace std;
 
@@ -114,15 +116,25 @@ void Farmland::sellTruck(Truck* truck) {
 }
 
 
-// // Implementation of the iterator creation is deferred to subclasses
-// FarmIterator* Farmland::createBFSIterator() {
-//     return new BFFarmIterator(this);
-// }
+// Implementation of the iterator creation is deferred to subclasses
+// Creates a breadth-first search iterator for the farmland
+FarmIterator* Farmland::createBFSIterator() {
+    return new BFFarmIterator(this);
+}
 
-// FarmIterator* Farmland::createDFSIterator() {
-//     return new DFFarmIterator(this);
-// }
+// Creates a depth-first search iterator for the farmland
+FarmIterator* Farmland::createDFSIterator() {
+    return new DFFarmIterator(this);
+}
 
-// std::vector<FarmUnit*> Farmland::getSubUnits() {
-//     return units;
-// }
+vector<FarmUnit*> Farmland::getSubUnits() {
+    return units;
+}
+
+void Farmland::setName(const string& unitName) { 
+    name = unitName; 
+}
+
+string Farmland::getName() const { 
+    return name; 
+}

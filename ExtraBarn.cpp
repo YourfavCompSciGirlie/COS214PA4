@@ -102,3 +102,25 @@ void ExtraBarn::setCurrentAmount(int amount)
     std::cout << "Setting current amount in the field with extra barn to: " << amount << ".\n";
     field->setCurrentAmount(amount);
 }
+
+
+FarmIterator* ExtraBarn::createBFSIterator() {
+    return new BFFarmIterator(this);
+}
+
+FarmIterator* ExtraBarn::createDFSIterator() {
+    return new DFFarmIterator(this);
+}
+
+std::vector<FarmUnit*> ExtraBarn::getSubUnits() {
+    // Return the sub-units of the extra barn
+    return units;
+}
+
+void ExtraBarn::setName(const std::string& name) {
+    this->name = name;
+}
+
+std::string ExtraBarn::getName() const {
+    return this->name;
+}

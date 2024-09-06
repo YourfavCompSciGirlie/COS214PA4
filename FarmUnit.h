@@ -16,8 +16,8 @@ class FarmIterator;
 class FarmUnit 
 {
     private:
-    std::string name;
-    std::vector<FarmUnit*> subUnits;
+    string name;
+    vector<FarmUnit*> subUnits;
 
     public:
         FarmUnit();
@@ -43,28 +43,18 @@ class FarmUnit
         virtual void buyTruck(Truck* truck) = 0;
         virtual void sellTruck(Truck* truck) = 0;
 
-        // // Create iterators for traversal
-        // // Iterator pattern methods
-        // virtual FarmIterator* createBFSIterator() = 0;
-        // virtual FarmIterator* createDFSIterator() = 0;
+        // Create iterators for traversal
+        // Iterator pattern methods
+        virtual FarmIterator* createBFSIterator() = 0;
+        virtual FarmIterator* createDFSIterator() = 0;
 
-        // // Return a list of sub-units (for composite)
-        // virtual vector<FarmUnit*> getSubUnits() = 0;
+        // Return a list of sub-units (for composite)
+        virtual vector<FarmUnit*> getSubUnits() = 0;
 
-       //Iterator design pattern
-        FarmUnit(const std::string& name) : name(name) {}
+        // Set and get the name of the farm unit
+        virtual void setName(const string& unitName) = 0;
+        virtual string getName() const = 0;
 
-        void addSubUnit(FarmUnit* unit) {
-        subUnits.push_back(unit);
-       }
-
-        const std::string& getName() const {
-            return name;
-        }
-
-        const std::vector<FarmUnit*>& getSubUnits() const {
-            return subUnits;
-        }
 };
 
 #endif // FARMUNIT_H

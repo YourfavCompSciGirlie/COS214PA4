@@ -10,6 +10,10 @@ private:
     CropField* field;
     int extraStorageCapacity;
 
+    string name;
+    vector<FarmUnit*> units; // Stores child FarmUnit objects
+
+
 public:
     ExtraBarn(CropField* field, int extraCapacity);
     void increaseProduction() override;
@@ -25,6 +29,16 @@ public:
 
     int getCurrentAmount()override;
     void setCurrentAmount(int amount)override;
+
+    // Iterator pattern methods
+    vector<FarmUnit*> getSubUnits() override;
+    FarmIterator* createBFSIterator() override;
+    FarmIterator* createDFSIterator() override;
+
+    // Set and get the name of the farm unit
+    void setName(const string& unitName) override;
+    string getName() const override;
+
 };
 
 #endif 

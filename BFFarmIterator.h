@@ -3,44 +3,53 @@
 
 
 #include "FarmIterator.h"
+#include "FarmUnit.h"
+
+#include <vector>
 #include <queue>
 
+using namespace std;
+
 class BFFarmIterator : public FarmIterator {
-private:
-    std::queue<FarmUnit*> queue;
-    FarmUnit* current = nullptr;
+    private:
+        queue<FarmUnit*> unitQueue;
+        FarmUnit* current = nullptr;
 
-public:
-    BFFarmIterator(FarmUnit* rootFarm) {
-        if (rootFarm != nullptr) {
-            queue.push(rootFarm);
+    public:
+        BFFarmIterator(FarmUnit* rootFarm) {
+            if (rootFarm != nullptr) {
+                unitQueue.push(rootFarm);
+            }
         }
-    }
 
-    FarmUnit* firstFarm() override {
-        if (!queue.empty()) {
-            return queue.front();
+        FarmUnit* firstFarm() override {
+            if (!unitQueue.empty()) {
+                current = unitQueue.front();
+                return current;
+            }
+            return nullptr;
         }
-        return nullptr;
-    }
 
-    FarmUnit* next() override {
-        // if (!isDone()) {
-        //     current = queue.front();
-        //     queue.pop();
-        //     for (FarmUnit* subUnit : current->getSubUnits()) {
-        //         queue.push(subUnit);
-        //     }
-        // }
-        // return current;
-    }
+        FarmUnit* next() override {
+            if (!isDone()) {
+                current = unitQueue.front();
+                unitQueue.pop();
+                const vector<FarmUnit*>& subUnits = current->getSubUnits();  // Assuming FarmUnit has getSubUnits() method.
+                for (FarmUnit* unit : subUnits) {
+                    unitQueue.push(unit);
+                }
+            }
+            return current;
+        }
 
-    bool isDone() override {
-        return queue.empty();
-    }
+        bool isDone() override {
+            return unitQueue.empty();
+        }
 
-    FarmUnit* currentFarm() override {
-        return current;
-    }
+        FarmUnit* currentFarm() override {
+            return current;
+        }
+
 };
-#endif
+
+#endif // BFFARMITERATOR_H
