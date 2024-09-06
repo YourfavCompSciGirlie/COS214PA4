@@ -8,6 +8,8 @@ class FarmUnit;
 class FarmIterator {
 
     public:
+        FarmIterator();
+        
         virtual ~FarmIterator() {};
 
         // Return the first farm/unit for traversal

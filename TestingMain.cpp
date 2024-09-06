@@ -271,10 +271,13 @@ void testingIterator() {
 
     // Test BFS iterator
     FarmIterator* bfsIterator = farm1->createBFSIterator();
+    cout << endl;
     std::cout << "Breadth-First Traversal:" << std::endl;
     for (FarmUnit* currentFarm = bfsIterator->firstFarm(); !bfsIterator->isDone(); currentFarm = bfsIterator->next()) {
         std::cout << "Visiting farm/field: " << currentFarm->getName() << std::endl;
     }
+
+    cout << endl;
 
     // Test DFS iterator
     FarmIterator* dfsIterator = farm1->createDFSIterator();
@@ -298,25 +301,25 @@ void testingIterator() {
 
 int main() {
 
-    // cout << "\n========================== Component 1: Composite ===========================\n" << endl;
-    // testingComposite();
+    cout << "\n========================== Component 1: Composite ===========================\n" << endl;
+    testingComposite();
 
-    // cout << endl;
+    cout << endl;
 
-    // cout << "\n========================== Component 2: State ================================\n" << endl;
-    // testingState();
+    cout << "\n========================== Component 2: State ================================\n" << endl;
+    testingState();
 
-    // cout << endl;
+    cout << endl;
 
-    // cout << "\n========================== Component 3: Decorator =============================\n" << endl;
-    // testingDecorator();
+    cout << "\n========================== Component 3: Decorator =============================\n" << endl;
+    testingDecorator();
 
-    // cout << endl;
+    cout << endl;
 
-    // cout << "\n========================== Component 4: Observer ===============================\n" << endl;
-    // testingObserver();
+    cout << "\n========================== Component 4: Observer ===============================\n" << endl;
+    testingObserver();
 
-    // cout << endl;
+    cout << endl;
 
     cout << "\n========================== Component 5: Iterator ===============================\n" << endl;
     testingIterator();
