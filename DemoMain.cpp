@@ -393,47 +393,55 @@ void testingIterator() //Nobuhle version
 
 
 
-int main() {
-    const std::string red = "\033[31m";
-    const std::string green = "\033[32m";
-    const std::string yellow = "\033[33m";
-    const std::string blue = "\033[34m";
-    const std::string magenta = "\033[35m";
-    const std::string reset = "\033[0m";
+int main() 
+{
+    const string red = "\033[31m";
+    const string green = "\033[32m";
+    const string yellow = "\033[33m";
+    const string blue = "\033[34m";
+    const string magenta = "\033[35m";
+    const string reset = "\033[0m";
 
     int choice;
     while (true) {
-        std::cout << red << "Design Patterns Demo Menu:\n";
-        std::cout << green << "1. Composite\n";
-        std::cout << yellow << "2. State\n";
-        std::cout << blue << "3. Decorator\n";
-        std::cout << magenta << "4. Observer\n";
-	std::cout << green << "5. Iterator\n";
-        std::cout << red << "6. Exit\n";
-        std::cout << red << "Enter your choice: " << reset;
-        std::cin >> choice;
+        cout << red << "Design Patterns Demo Menu:\n";
+        cout << green << "1. Composite\n";
+        cout << yellow << "2. State\n";
+        cout << blue << "3. Decorator\n";
+        cout << magenta << "4. Observer\n";
+        cout << green << "5. Iterator\n";
+        cout << red << "6. Exit\n";
+        cout << red << "Enter your choice: " << reset;
+
+        if (!(cin >> choice)) {
+            cout << "Invalid input. Please enter a number.\n";
+            cin.clear(); // Clear the error flag on cin
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Discard invalid input
+            continue; // Skip to the next iteration of the loop
+        }
 
         switch (choice) {
             case 1:
                 testingComposite();
                 break;
             case 2:
-                testingDecorator();
-                break;
-            case 3:
                 testingState();
                 break;
-            case 4:
-                testingIterator();
+            case 3:
+                testingDecorator();
                 break;
-            case 5:
+            case 4:
                 testingObserver();
                 break;
-	case 6:
-                std::cout << "Exiting the demo. Goodbye!\n";
+            case 5:
+                testingIterator();
+                break;
+            case 6:
+                cout << "Exiting the demo. Goodbye!\n";
                 return 0;
             default:
-                std::cout << "Invalid choice. Please try again.\n";
+                cout << "Invalid choice. Please try again.\n";
+                break;
         }
     }
 }
