@@ -1,3 +1,5 @@
+//Class implementation for Component 5  - Iterator(ConcreteIterator)
+
 #ifndef BFFARMITERATOR_H
 #define BFFARMITERATOR_H
 
@@ -20,15 +22,10 @@ class BFFarmIterator : public FarmIterator {
     public:
         BFFarmIterator();
         ~BFFarmIterator();
-        
         BFFarmIterator(FarmUnit* rootFarm);
-
-        FarmUnit* firstFarm() override;
-
-        FarmUnit* next() override;
-
-        bool isDone() override;
-
+        FarmUnit* firstFarm();
+        FarmUnit* next();
+        bool isDone();
         FarmUnit* currentFarm();
 };
 
