@@ -1,14 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <iostream>
-#include <vector>
-#include <string>
 
-#include "Farmland.h"
-#include "CropField.h"
-#include "Barn.h"
-#include "FarmUnit.h"
 #include "Farmland.h"
 #include "CropField.h"
 #include "Barn.h"
@@ -26,33 +19,16 @@
 #include "FertilizerTruck.h"
 #include "DeliveryTruck.h"
 #include "NotificationSystem.h"
-#include "CropFieldDecorator.h"
-#include "FertilizedField.h"
-#include "ExtraBarn.h"
-#include "Truck.h"
-#include "FertilizerTruck.h"
-#include "DeliveryTruck.h"
-#include "NotificationSystem.h"
 
-#include "FarmIterator.h"
-#include "BFFarmIterator.h"
-#include "DFFarmIterator.h"
 #include "FarmIterator.h"
 #include "BFFarmIterator.h"
 #include "DFFarmIterator.h"
 
 #include <thread>
 #include <chrono>
-#include <thread>
-#include <chrono>
 
 using namespace std;
-using namespace std;
 
-void printColored(const std::string &text, const std::string &colorCode)
-{
-    std::cout << "\033[" << colorCode << "m" << text << "\033[0m";
-}
 void printColored(const std::string &text, const std::string &colorCode)
 {
     std::cout << "\033[" << colorCode << "m" << text << "\033[0m";
@@ -66,27 +42,7 @@ void printWithBorders(const std::string &heading, const std::string &colorCode)
     printColored("| " + heading + " |\n", colorCode);
     printColored(border + "\n", colorCode);
 }
-// Function to add borders around headings
-void printWithBorders(const std::string &heading, const std::string &colorCode)
-{
-    std::string border = std::string(heading.length() + 4, '-');
-    printColored(border + "\n", colorCode);
-    printColored("| " + heading + " |\n", colorCode);
-    printColored(border + "\n", colorCode);
-}
 
-void rainEffect() {
-    std::cout << "\033[1;34m";
-    for (int i = 0; i < 3; ++i) {
-        std::cout << "        .     .  .       .     .  .      .   .     .\n";
-        std::this_thread::sleep_for(std::chrono::milliseconds(200));
-        std::cout << "   .    .   .    .   .    .   .    .   .    .   .    .\n";
-        std::this_thread::sleep_for(std::chrono::milliseconds(200));
-        std::cout << " .   .   .     .      .   .     .      .   .     .   .\n";
-        std::this_thread::sleep_for(std::chrono::milliseconds(200));
-    }
-    std::cout << "\033[0m";
-}
 void rainEffect() {
     std::cout << "\033[1;34m";
     for (int i = 0; i < 3; ++i) {
@@ -396,37 +352,95 @@ void testingObserver() // Nobuhle Version
 //     // delete farm3;
 //     // delete field1;
 //     // delete field2;
-// }
-
-
-// int main() {
-
-//     cout << "\n========================== Component 1: Composite ===========================\n" << endl;
-//     testingComposite();
-
-//     cout << endl;
-
-//     cout << "\n========================== Component 2: State ================================\n" << endl;
-//     testingState();
-
-//     cout << endl;
-
-//     cout << "\n========================== Component 3: Decorator =============================\n" << endl;
-//     testingDecorator();
-
-//     cout << endl;
-
-//     cout << "\n========================== Component 4: Observer ===============================\n" << endl;
-//     testingObserver();
-
-//     cout << endl;
-
-//     cout << "\n========================== Component 5: Iterator ===============================\n" << endl;
-//     testingIterator();
-
-//     cout << endl;
 
     
-//     return 0;
 // }
 
+void testingIterator() //Nobuhle version 
+{
+    // printWithBorders("Testing Iterator Design Pattern", "1;31");
+
+    // Farmland* farm1 = new Farmland();
+    // CropField* field1 = new CropField("Wheat", 300, new DrySoil());
+    // CropField* field2 = new CropField("Corn", 400, new FruitfulSoil());
+
+    // farm1->add(field1);
+    // farm1->add(field2);
+
+    // cout << "\n🌾 Traversing Farms in BFS Order..." << endl;
+    // FarmIterator* bfsIterator = farm1->createBFSIterator();
+    // while (!bfsIterator->isDone()) {
+    //     FarmUnit* currentFarm = bfsIterator->currentFarm();
+    //     cout << "Visiting farm/field: " << currentFarm->getName() << " 🚜" << endl;
+    //     bfsIterator->next();
+    // }
+
+    // cout << "\n🌾 Traversing Farms in DFS Order..." << endl;
+    // FarmIterator* dfsIterator = farm1->createDFSIterator();
+    // while (!dfsIterator->isDone()) {
+    //     FarmUnit* currentFarm = dfsIterator->currentFarm();
+    //     cout << "Visiting farm/field: " << currentFarm->getName() << " 🚜" << endl;
+    //     dfsIterator->next();
+    // }
+
+    // // Clean up
+    // delete bfsIterator;
+    // delete dfsIterator;
+    // delete farm1;
+    // delete field1;
+    // delete field2;
+}
+
+
+int main() 
+{
+    const string red = "\033[31m";
+    const string green = "\033[32m";
+    const string yellow = "\033[33m";
+    const string blue = "\033[34m";
+    const string magenta = "\033[35m";
+    const string reset = "\033[0m";
+
+    int choice;
+    while (true) {
+        cout << red << "Design Patterns Demo Menu:\n";
+        cout << green << "1. Composite\n";
+        cout << yellow << "2. State\n";
+        cout << blue << "3. Decorator\n";
+        cout << magenta << "4. Observer\n";
+        cout << green << "5. Iterator\n";
+        cout << red << "6. Exit\n";
+        cout << red << "Enter your choice: " << reset;
+
+        if (!(cin >> choice)) {
+            cout << "Invalid input. Please enter a number.\n";
+            cin.clear(); // Clear the error flag on cin
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Discard invalid input
+            continue; // Skip to the next iteration of the loop
+        }
+
+        switch (choice) {
+            case 1:
+                testingComposite();
+                break;
+            case 2:
+                testingState();
+                break;
+            case 3:
+                testingDecorator();
+                break;
+            case 4:
+                testingObserver();
+                break;
+            case 5:
+                testingIterator();
+                break;
+            case 6:
+                cout << "Exiting the demo. Goodbye!\n";
+                return 0;
+            default:
+                cout << "Invalid choice. Please try again.\n";
+                break;
+        }
+    }
+}
