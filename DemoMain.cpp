@@ -68,19 +68,6 @@ void processingAnimation(const std::string& task) {
     std::cout << "\033[0m" << std::endl;
 }
 
-// Function to print a field border with ASCII art
-void printFieldBorder(const std::string &heading, const std::string &colorCode) {
-    std::string border = std::string(heading.length() + 6, '=');
-    printColored(border + "\n", colorCode);
-    printColored("| * " + heading + " * |\n", colorCode);
-    printColored(border + "\n", colorCode);
-    std::cout << "   ( \\(\\ " << "       ( \\(\\ \n"
-              << "   (-.- )" << "      (-.- )\n"
-              << "o_(\")(\")" << " o_(\")(\")" << std::endl;
-    std::cout << std::endl;
-}
-
-
 void testingComposite() 
 {
     // 🌟 Start of Testing Composite Design Pattern
@@ -356,39 +343,66 @@ void testingObserver() // Nobuhle Version
     
 // }
 
-void testingIterator() //Nobuhle version 
+void testingIterator() 
 {
-    // printWithBorders("Testing Iterator Design Pattern", "1;31");
+    const string RED = "\033[31m";
+    const string GREEN = "\033[32m";
+    const string YELLOW = "\033[33m";
+    const string BLUE = "\033[34m";
+    const string MAGENTA = "\033[35m";
+    const string CYAN = "\033[36m";
+    const string WHITE = "\033[37m";
+    const string BOLD = "\033[1m";
+    const string RESET = "\033[0m";
+    // Create some FarmUnit objects and a farmland
+    Farmland* farm1 = new Farmland();
+    Farmland* farm2 = new Farmland();
+    Farmland* farm3 = new Farmland();
+    FarmUnit* field1 = new CropField();
+    FarmUnit* field2 = new CropField();
 
-    // Farmland* farm1 = new Farmland();
-    // CropField* field1 = new CropField("Wheat", 300, new DrySoil());
-    // CropField* field2 = new CropField("Corn", 400, new FruitfulSoil());
+    cout << endl;
 
-    // farm1->add(field1);
-    // farm1->add(field2);
+    // Assign names to the farms and crop fields for display purposes
+    farm1->setName("Main Farm");
+    farm2->setName("North Farm");
+    farm3->setName("East Farm");
+    field1->setName("Wheat Field");
+    field2->setName("Corn Field");
 
-    // cout << "\n🌾 Traversing Farms in BFS Order..." << endl;
-    // FarmIterator* bfsIterator = farm1->createBFSIterator();
-    // while (!bfsIterator->isDone()) {
-    //     FarmUnit* currentFarm = bfsIterator->currentFarm();
-    //     cout << "Visiting farm/field: " << currentFarm->getName() << " 🚜" << endl;
-    //     bfsIterator->next();
-    // }
+    // Build the farm hierarchy
+    farm1->add(farm2);
+    farm1->add(field1);
+    farm2->add(farm3);
+    farm2->add(field2);
 
-    // cout << "\n🌾 Traversing Farms in DFS Order..." << endl;
-    // FarmIterator* dfsIterator = farm1->createDFSIterator();
-    // while (!dfsIterator->isDone()) {
-    //     FarmUnit* currentFarm = dfsIterator->currentFarm();
-    //     cout << "Visiting farm/field: " << currentFarm->getName() << " 🚜" << endl;
-    //     dfsIterator->next();
-    // }
+    // Test BFS iterator
+    FarmIterator* bfsIterator = farm1->createBFSIterator();
+    cout << endl;
+    std::cout << BOLD << CYAN << "🌾🌟 Breadth-First Traversal 🌟🌾" << RESET << std::endl;
+    for (FarmUnit* currentFarm = bfsIterator->firstFarm(); !bfsIterator->isDone(); currentFarm = bfsIterator->next()) {
+        cout << GREEN << "🌿 Visiting farm/field: " << BOLD << currentFarm->getName() << RESET << std::endl;
+    }
 
-    // // Clean up
-    // delete bfsIterator;
-    // delete dfsIterator;
-    // delete farm1;
-    // delete field1;
-    // delete field2;
+    cout << endl;
+
+    // Test DFS iterator
+    FarmIterator* dfsIterator = farm1->createDFSIterator();
+    std::cout << BOLD << MAGENTA << "\n🌻🚀 Depth-First Traversal 🚀🌻" << RESET << std::endl;
+    for (FarmUnit* currentFarm = dfsIterator->firstFarm(); !dfsIterator->isDone(); currentFarm = dfsIterator->next()) {
+        cout << YELLOW << "🌱 Visiting farm/field: " << BOLD << currentFarm->getName() << RESET << std::endl;
+    }
+
+    cout << endl;
+
+    // Clean up
+    delete bfsIterator;
+    delete dfsIterator;
+    delete farm1;
+    delete farm2;
+    delete farm3;
+    delete field1;
+    delete field2;
 }
 
 

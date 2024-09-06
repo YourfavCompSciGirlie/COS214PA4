@@ -21,6 +21,7 @@ private:
 
 
 public:
+    ~FertilizedField();
     FertilizedField(CropField* field);
     void increaseProduction()override;
     void harvest()override;

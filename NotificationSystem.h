@@ -12,6 +12,8 @@ class NotificationSystem
         std::vector<Truck*> observers;
 
     public:
+        NotificationSystem();
+        ~NotificationSystem();
         void addObserver(Truck* truck);
         void removeObserver(Truck* truck);
         void notifyAll();

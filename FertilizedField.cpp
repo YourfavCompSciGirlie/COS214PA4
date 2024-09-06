@@ -12,7 +12,8 @@ FertilizedField::FertilizedField(CropField* field)
 }
 
 
-FertilizedField::~FertilizedField() {
+FertilizedField::~FertilizedField() 
+{
     std::cout << "🌾 FertilizedField is being destroyed. Cleaning up...\n";
    
 }
