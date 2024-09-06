@@ -181,18 +181,21 @@ void testingState() //Nobuhle's Version
 
     // 🌾 Create a CropField with initial Dry Soil
     CropField wheatField("🌾 Wheat Field", 500, drySoil);
-    cout << "🧑‍🌾 Current soil state of Wheat Field: " << wheatField.getSoilStateName() << endl;
-
+     printColored("🧑‍🌾 Current soil state of Wheat Field: " + wheatField.getSoilStateName() + "\n", "1;34");
+     cout << endl;
     // 🌧️ Change Soil State to Fruitful
     cout << "\n🌧️ Changing Soil State to 🌱 Fruitful Soil..." << endl;
     wheatField.setSoilState(fruitfulSoil);
-    cout << "🧑‍🌾 Current soil state of Wheat Field: " << wheatField.getSoilStateName() << endl;
+    printColored("🧑‍🌾 Current soil state of Wheat Field: " + wheatField.getSoilStateName() + "\n", "1;34");
+    //rainEffect();
+    cout << endl;
 
     // 🌧️🌧️ Simulate Heavy Rain and Change Soil State to Flooded
     cout << "\n🌧️🌧️🌧️ Simulating heavy rain... Flooding the soil..." << endl;
     wheatField.setSoilState(floodedSoil);
     printColored("🧑‍🌾 Current soil state of Wheat Field: " + wheatField.getSoilStateName() + "\n", "1;34");
-
+    rainEffect();
+    cout << endl;
     // 🚮 Clean up resources
     delete floodedSoil;
     cout << "\n🌟 State Design Pattern Test Completed! 🌟\n";

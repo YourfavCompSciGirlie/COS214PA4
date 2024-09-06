@@ -12,6 +12,6 @@ void FertilizerTruck::startEngine()
 
 void FertilizerTruck::callTruck()
 {
-   
+   startEngine();
 }
 

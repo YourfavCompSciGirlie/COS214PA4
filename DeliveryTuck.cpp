@@ -10,5 +10,5 @@ void DeliveryTruck::startEngine()
 
 void DeliveryTruck::callTruck()
 {
-   
+   startEngine();
 }
