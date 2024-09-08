@@ -1,0 +1,245 @@
+\hypertarget{classFarmUnit}{}\doxysection{Farm\+Unit Class Reference}
+\label{classFarmUnit}\index{FarmUnit@{FarmUnit}}
+
+
+{\ttfamily \#include $<$Farm\+Unit.\+h$>$}
+
+
+
+Inheritance diagram for Farm\+Unit\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFarmUnit_aacf9e2c268522112111518d478a6d057}{Farm\+Unit}} ()
+\item 
+virtual \mbox{\hyperlink{classFarmUnit_a27f47dcdc8757e3bf5121b686d140bdc}{$\sim$\+Farm\+Unit}} ()
+\item 
+virtual int \mbox{\hyperlink{classFarmUnit_adcf972c220e9b3eebb2b94d9c6bec321}{get\+Total\+Capacity}} ()=0
+\item 
+virtual string \mbox{\hyperlink{classFarmUnit_add66c341a2010e7f0491196b19d63c35}{get\+Crop\+Type}} ()=0
+\item 
+virtual string \mbox{\hyperlink{classFarmUnit_a5a4dd34e283ed90d1f710072cbddaa01}{get\+Soil\+State\+Name}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classFarmUnit_a13923b257012a31a9ca67f22598e4347}{add}} (\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$unit)=0
+\item 
+virtual void \mbox{\hyperlink{classFarmUnit_ab5dec88c0ffb58f4cfb2815c9b6cba2c}{remove}} (\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$unit)=0
+\item 
+virtual int \mbox{\hyperlink{classFarmUnit_a65bf5424abc22955aac85233275e72f8}{get\+Current\+Amount}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classFarmUnit_ac3bfba7485281bd97686c4e80a1aedcd}{set\+Current\+Amount}} (int amount)=0
+\item 
+virtual void \mbox{\hyperlink{classFarmUnit_a317de75b254d4f88980841dbbaca3e05}{increase\+Production}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classFarmUnit_a277e393e05439c80ad61ce6145d46002}{harvest}} ()=0
+\item 
+virtual int \mbox{\hyperlink{classFarmUnit_afcff64a7e13d0682b57d2da35c70a3ee}{get\+Leftover\+Capacity}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classFarmUnit_ac0565356da2cc0e863e30f665a95c236}{buy\+Truck}} (\mbox{\hyperlink{classTruck}{Truck}} $\ast$truck)=0
+\item 
+virtual void \mbox{\hyperlink{classFarmUnit_a382d18736aea94cf4a73db54d7461746}{sell\+Truck}} (\mbox{\hyperlink{classTruck}{Truck}} $\ast$truck)=0
+\item 
+virtual \mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ \mbox{\hyperlink{classFarmUnit_a92c1628b0e297ea97121b48cd3355c09}{create\+BFSIterator}} ()=0
+\item 
+virtual \mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ \mbox{\hyperlink{classFarmUnit_aef3e9a6d04ac8aa1cd828433b974a37e}{create\+DFSIterator}} ()=0
+\item 
+virtual vector$<$ \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ $>$ \mbox{\hyperlink{classFarmUnit_a29356181ac3c11890ae60b6827e430fe}{get\+Sub\+Units}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classFarmUnit_aa60881cb73f51b3975c03cd27ca7cf54}{set\+Name}} (const string \&unit\+Name)=0
+\item 
+virtual string \mbox{\hyperlink{classFarmUnit_a609f48740a45829170b708386c1f1e64}{get\+Name}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFarmUnit_aacf9e2c268522112111518d478a6d057}\label{classFarmUnit_aacf9e2c268522112111518d478a6d057}} 
+\index{FarmUnit@{FarmUnit}!FarmUnit@{FarmUnit}}
+\index{FarmUnit@{FarmUnit}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{FarmUnit()}{FarmUnit()}}
+{\footnotesize\ttfamily Farm\+Unit\+::\+Farm\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classFarmUnit_a27f47dcdc8757e3bf5121b686d140bdc}\label{classFarmUnit_a27f47dcdc8757e3bf5121b686d140bdc}} 
+\index{FarmUnit@{FarmUnit}!````~FarmUnit@{$\sim$FarmUnit}}
+\index{````~FarmUnit@{$\sim$FarmUnit}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{$\sim$FarmUnit()}{~FarmUnit()}}
+{\footnotesize\ttfamily Farm\+Unit\+::$\sim$\+Farm\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFarmUnit_a13923b257012a31a9ca67f22598e4347}\label{classFarmUnit_a13923b257012a31a9ca67f22598e4347}} 
+\index{FarmUnit@{FarmUnit}!add@{add}}
+\index{add@{add}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily virtual void Farm\+Unit\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_a188698549df53d4587c40d7a3bbe1bef}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_a86ef1c3dd6e8ddedb422e2aea43f059c}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_a41c40ee771c3b4fff18e8908c062b0d3}{Farmland}}, \mbox{\hyperlink{classExtraBarn_a242bec1f3dc6ec42ec011b69f5da0ad1}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_a398d73cbf2c6cf57d23404ea20cefbb8}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_a07e8528faba4def018a738164006c2bb}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_ac0565356da2cc0e863e30f665a95c236}\label{classFarmUnit_ac0565356da2cc0e863e30f665a95c236}} 
+\index{FarmUnit@{FarmUnit}!buyTruck@{buyTruck}}
+\index{buyTruck@{buyTruck}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{buyTruck()}{buyTruck()}}
+{\footnotesize\ttfamily virtual void Farm\+Unit\+::buy\+Truck (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTruck}{Truck}} $\ast$}]{truck }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_a3e3eb3d49b405b0873fd495e6b6a2c07}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_a78f3e44bb8a7aed965ae816b9956fb36}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_a002ff578825b2f5cf1781db1e777d7cd}{Farmland}}, \mbox{\hyperlink{classExtraBarn_ad1a0559331a5bde0353f3ae74a79a550}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_a8bc17b31ad39a5333a11a5fd13ea3fd3}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_ab87729ba6ce0597ee32a5f6d79eeb4ba}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_a92c1628b0e297ea97121b48cd3355c09}\label{classFarmUnit_a92c1628b0e297ea97121b48cd3355c09}} 
+\index{FarmUnit@{FarmUnit}!createBFSIterator@{createBFSIterator}}
+\index{createBFSIterator@{createBFSIterator}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{createBFSIterator()}{createBFSIterator()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}}$\ast$ Farm\+Unit\+::create\+BFSIterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_a9bc99d14bfcb405e6168355e92bda57e}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_a0e941a5657876ebf6e1dfc84a604bb56}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_a61703c0d36bcca4dc102832dc3dd36f7}{Farmland}}, \mbox{\hyperlink{classExtraBarn_a4e716ee4d556e9f7908a0b371b663e78}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_a21504dc5d2d42d8f855522b02fd1ca75}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_a6887eb27aaa8883c3e6c56a7422f0e9e}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_aef3e9a6d04ac8aa1cd828433b974a37e}\label{classFarmUnit_aef3e9a6d04ac8aa1cd828433b974a37e}} 
+\index{FarmUnit@{FarmUnit}!createDFSIterator@{createDFSIterator}}
+\index{createDFSIterator@{createDFSIterator}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{createDFSIterator()}{createDFSIterator()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}}$\ast$ Farm\+Unit\+::create\+DFSIterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_a5be101141927dae4815a1b9b9e3d55b6}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_a3b5afb50cfa81a9b64ba01fb197ba1c2}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_a1ee00e01ad8b647380eed705da3cabc8}{Farmland}}, \mbox{\hyperlink{classExtraBarn_a4719e1c7cfc236b71c42d50c9d40e618}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_adff5dcb8087a254a8075aa9b2ec9d01a}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_ab74b7627a69032c03aa3afd17a79eee7}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_add66c341a2010e7f0491196b19d63c35}\label{classFarmUnit_add66c341a2010e7f0491196b19d63c35}} 
+\index{FarmUnit@{FarmUnit}!getCropType@{getCropType}}
+\index{getCropType@{getCropType}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{getCropType()}{getCropType()}}
+{\footnotesize\ttfamily virtual string Farm\+Unit\+::get\+Crop\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_aff7e4b010c38aa771612e2164efbdc69}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_a110dbbf6895a3d058e69bb9b31ca2b62}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_aa17d4234e7b19246559c97eafc18b396}{Farmland}}, \mbox{\hyperlink{classExtraBarn_ae3a3f7a0603378dcc9aa3deac1ecf174}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_ad7f590642f9af8aa232fb733d16d5e18}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_afb22d521162b79e88128829eabde427b}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_a65bf5424abc22955aac85233275e72f8}\label{classFarmUnit_a65bf5424abc22955aac85233275e72f8}} 
+\index{FarmUnit@{FarmUnit}!getCurrentAmount@{getCurrentAmount}}
+\index{getCurrentAmount@{getCurrentAmount}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{getCurrentAmount()}{getCurrentAmount()}}
+{\footnotesize\ttfamily virtual int Farm\+Unit\+::get\+Current\+Amount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_a36d1170fccf678969fa1a3f134b819d8}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_ad1c6dd0b10d0850f7c9c6d2d295acf6b}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_a0adbae224f5c8b70f789bc2acc4ebf2e}{Farmland}}, \mbox{\hyperlink{classExtraBarn_ae726aa07c63fceb0665523ba2d46ef42}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_adddb019d62ec3a29b2979604116600be}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_a33007eb7ff42d1a96e61a00027c0ea85}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_afcff64a7e13d0682b57d2da35c70a3ee}\label{classFarmUnit_afcff64a7e13d0682b57d2da35c70a3ee}} 
+\index{FarmUnit@{FarmUnit}!getLeftoverCapacity@{getLeftoverCapacity}}
+\index{getLeftoverCapacity@{getLeftoverCapacity}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{getLeftoverCapacity()}{getLeftoverCapacity()}}
+{\footnotesize\ttfamily virtual int Farm\+Unit\+::get\+Leftover\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_affc1ca780dacfa6c6cf6c407e8038530}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_a7f9bea91beee215ea68ae368c4cc75d5}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_a997792d574db0eba9901adc2e7467d63}{Farmland}}, \mbox{\hyperlink{classExtraBarn_a413883461feb33c78a28253eb882d999}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_a06b6500195737199c1e9a587c8e28e0e}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_a0d2db64c4db2134fbfe4bbb177677667}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_a609f48740a45829170b708386c1f1e64}\label{classFarmUnit_a609f48740a45829170b708386c1f1e64}} 
+\index{FarmUnit@{FarmUnit}!getName@{getName}}
+\index{getName@{getName}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily virtual string Farm\+Unit\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_a1fcb8066e5dc52d90e631115abc44d48}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_aa97a16edc9a488249f596232dc639ec8}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_ae55dde276f6f58e8cd716b08f640fbae}{Farmland}}, \mbox{\hyperlink{classExtraBarn_ac94cfaf27c42913983893f0f988f9e3d}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_a19528137c71e17e637fb8d0cef719301}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_abd4f5df9443360eec5e917aac82320b7}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_a5a4dd34e283ed90d1f710072cbddaa01}\label{classFarmUnit_a5a4dd34e283ed90d1f710072cbddaa01}} 
+\index{FarmUnit@{FarmUnit}!getSoilStateName@{getSoilStateName}}
+\index{getSoilStateName@{getSoilStateName}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{getSoilStateName()}{getSoilStateName()}}
+{\footnotesize\ttfamily virtual string Farm\+Unit\+::get\+Soil\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_a5deb76caf68bddb98f9de7b168776efc}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_a264439051c8b26650cf7de0a08b8763c}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_aaf799601f20e5b2859120aa0a5f35144}{Farmland}}, \mbox{\hyperlink{classExtraBarn_a2f222cc175f979b956490f319d9e5f12}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_aae62374e9a1dc8cbf9e0fb2780892c13}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_a4c35fcf61f69e5f2c0c46d95292f52ea}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_a29356181ac3c11890ae60b6827e430fe}\label{classFarmUnit_a29356181ac3c11890ae60b6827e430fe}} 
+\index{FarmUnit@{FarmUnit}!getSubUnits@{getSubUnits}}
+\index{getSubUnits@{getSubUnits}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{getSubUnits()}{getSubUnits()}}
+{\footnotesize\ttfamily virtual vector$<$\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}}$\ast$$>$ Farm\+Unit\+::get\+Sub\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_a54d9b39d1523eed43933f94574c856f5}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_aa2c1fd581ae1a396ae40c04f2bb7961c}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_aa6adb5203174465a5c9582148cc4f1a6}{Farmland}}, \mbox{\hyperlink{classExtraBarn_ab832ca638b6e51da60c9dfec9948f001}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_ae8dd4759fa80342fd965a6d62fb6b9bd}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_a956a9b6f51660fe44596b3037355625b}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_adcf972c220e9b3eebb2b94d9c6bec321}\label{classFarmUnit_adcf972c220e9b3eebb2b94d9c6bec321}} 
+\index{FarmUnit@{FarmUnit}!getTotalCapacity@{getTotalCapacity}}
+\index{getTotalCapacity@{getTotalCapacity}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{getTotalCapacity()}{getTotalCapacity()}}
+{\footnotesize\ttfamily virtual int Farm\+Unit\+::get\+Total\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_a6a531ad6ad93b90e2af159afe75216b9}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_a37c8fb72f35f91e3f9b2cb3d3c3d8d25}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_ac7d0eefe20a41feb8cbfc05ddf2bc769}{Farmland}}, \mbox{\hyperlink{classExtraBarn_a804ced03e53e919cfb85ee793a326db6}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_a7212b3be83b3603dcd1e6cb8e35dc3cc}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_a9353622aefdfdb73136888414ea6bdd1}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_a277e393e05439c80ad61ce6145d46002}\label{classFarmUnit_a277e393e05439c80ad61ce6145d46002}} 
+\index{FarmUnit@{FarmUnit}!harvest@{harvest}}
+\index{harvest@{harvest}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{harvest()}{harvest()}}
+{\footnotesize\ttfamily virtual void Farm\+Unit\+::harvest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_a4720ecc82e1bfbeec90adf1758942862}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_add44b14f8e95fd44f74fa5497e744c4d}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_a5fb30869953d86f024021afd81956676}{Farmland}}, \mbox{\hyperlink{classExtraBarn_a4a652a90bbe5fc4f42318d220dc03787}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_ad56dc1c23145837705de1fc7de4aa8cd}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_a4a23f7c5b8b3370b5416cbb389d913e4}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_a317de75b254d4f88980841dbbaca3e05}\label{classFarmUnit_a317de75b254d4f88980841dbbaca3e05}} 
+\index{FarmUnit@{FarmUnit}!increaseProduction@{increaseProduction}}
+\index{increaseProduction@{increaseProduction}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{increaseProduction()}{increaseProduction()}}
+{\footnotesize\ttfamily virtual void Farm\+Unit\+::increase\+Production (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_a9a6efc93d1e709d61ebd26c3f20dfd50}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_a30daada1613d1b164647c7863681ba92}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_ae1aa22e6de4e76083e1542c8ff72e0f7}{Farmland}}, \mbox{\hyperlink{classExtraBarn_ac912975090224a9a00dabb1760e60a64}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_a2f6a9dff3a8749114782e6cb9aad29ea}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_ac5ba0cd53e8dd61200edacf39b18dcfa}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_ab5dec88c0ffb58f4cfb2815c9b6cba2c}\label{classFarmUnit_ab5dec88c0ffb58f4cfb2815c9b6cba2c}} 
+\index{FarmUnit@{FarmUnit}!remove@{remove}}
+\index{remove@{remove}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily virtual void Farm\+Unit\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_a1e1299a75830401e6be3467721b8ef09}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_a7f3340b4ad8c08b3ca576d95442669b2}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_ae31d08b603a185be536e884940acdfee}{Farmland}}, \mbox{\hyperlink{classExtraBarn_a4e677a6743836d7415a75ee7b158d7b8}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_a521956d9962c0b253a1a308916fb7d9d}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_af8a7502602efa77d31fa5f8a4926114a}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_a382d18736aea94cf4a73db54d7461746}\label{classFarmUnit_a382d18736aea94cf4a73db54d7461746}} 
+\index{FarmUnit@{FarmUnit}!sellTruck@{sellTruck}}
+\index{sellTruck@{sellTruck}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{sellTruck()}{sellTruck()}}
+{\footnotesize\ttfamily virtual void Farm\+Unit\+::sell\+Truck (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTruck}{Truck}} $\ast$}]{truck }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_a0960e3671a8bc5aced5daa1ae79e7a5c}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_aef13e38b926511e6510ea29d8bb95708}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_a011465cef78ab93c1324beb3a7cf73c1}{Farmland}}, \mbox{\hyperlink{classExtraBarn_ae0bae1b304b1abc036ec6a18898d13e5}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_a7e670b4e689e6e2af73d139d5f875f76}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_ae9744b7a703331f2c8c279e39f58b9a6}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_ac3bfba7485281bd97686c4e80a1aedcd}\label{classFarmUnit_ac3bfba7485281bd97686c4e80a1aedcd}} 
+\index{FarmUnit@{FarmUnit}!setCurrentAmount@{setCurrentAmount}}
+\index{setCurrentAmount@{setCurrentAmount}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{setCurrentAmount()}{setCurrentAmount()}}
+{\footnotesize\ttfamily virtual void Farm\+Unit\+::set\+Current\+Amount (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_aa04d7d2b3e45a86e898de310809342e6}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_a90bf69b115a0426b80c3302ab8e4fb4e}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_a5293be8f496f9b095e2ce16a37553581}{Farmland}}, \mbox{\hyperlink{classExtraBarn_aa91f0d5f5d4e5ab2f1cce4fcc062c15d}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_a7f0221d17d1eca301b776ab59ed5f134}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_a21ab4461d451d24407078aacac753fed}{Barn}}.
+
+\mbox{\Hypertarget{classFarmUnit_aa60881cb73f51b3975c03cd27ca7cf54}\label{classFarmUnit_aa60881cb73f51b3975c03cd27ca7cf54}} 
+\index{FarmUnit@{FarmUnit}!setName@{setName}}
+\index{setName@{setName}!FarmUnit@{FarmUnit}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily virtual void Farm\+Unit\+::set\+Name (\begin{DoxyParamCaption}\item[{const string \&}]{unit\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCropFieldDecorator_afd1d10fd95540677e1bad1fb22c27d55}{Crop\+Field\+Decorator}}, \mbox{\hyperlink{classFertilizedField_affca7cbe4b4389bc53f2303319b73ed7}{Fertilized\+Field}}, \mbox{\hyperlink{classFarmland_ae8212dcfedcfc50681e3c4cc50a9695d}{Farmland}}, \mbox{\hyperlink{classExtraBarn_a48b65abc95333521bd7efa7b8b892aee}{Extra\+Barn}}, \mbox{\hyperlink{classCropField_a949b8b89ef8365058e1c5762956b96c7}{Crop\+Field}}, and \mbox{\hyperlink{classBarn_aa5ea5f7a2dd8a3866ee87ad69f955270}{Barn}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{FarmUnit_8h}{Farm\+Unit.\+h}}\item 
+\mbox{\hyperlink{FarmUnit_8cpp}{Farm\+Unit.\+cpp}}\end{DoxyCompactItemize}

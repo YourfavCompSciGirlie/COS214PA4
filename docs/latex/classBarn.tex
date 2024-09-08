@@ -1,0 +1,397 @@
+\hypertarget{classBarn}{}\doxysection{Barn Class Reference}
+\label{classBarn}\index{Barn@{Barn}}
+
+
+Represents a storage facility for farm produce.  
+
+
+
+
+{\ttfamily \#include $<$Barn.\+h$>$}
+
+
+
+Inheritance diagram for Barn\+:
+% FIG 0
+
+
+Collaboration diagram for Barn\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBarn_aa7391a5433e48b6f355c3bdf98c3c63f}{Barn}} (int total\+Capacity)
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classBarn}{Barn}} object with a given capacity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBarn_a24235aae94c8da869b27b02c07f2420e}{$\sim$\+Barn}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classBarn}{Barn}} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classBarn_a9353622aefdfdb73136888414ea6bdd1}{get\+Total\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total storage capacity of the barn. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classBarn_afb22d521162b79e88128829eabde427b}{get\+Crop\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Returns the crop type for this farm unit. Always returns \char`\"{}\+N/\+A\char`\"{} for a barn. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classBarn_a4c35fcf61f69e5f2c0c46d95292f52ea}{get\+Soil\+State\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns the soil state for this farm unit. Always returns \char`\"{}\+N/\+A\char`\"{} for a barn. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classBarn_a33007eb7ff42d1a96e61a00027c0ea85}{get\+Current\+Amount}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current amount of produce stored in the barn. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBarn_a21ab4461d451d24407078aacac753fed}{set\+Current\+Amount}} (int amount)
+\begin{DoxyCompactList}\small\item\em Sets the current amount of produce in the barn. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBarn_a07e8528faba4def018a738164006c2bb}{add}} (\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$unit)
+\begin{DoxyCompactList}\small\item\em Adds a farm unit to the barn. Not applicable to barns. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBarn_af8a7502602efa77d31fa5f8a4926114a}{remove}} (\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$unit)
+\begin{DoxyCompactList}\small\item\em Removes a farm unit from the barn. Not applicable to barns. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBarn_ac5ba0cd53e8dd61200edacf39b18dcfa}{increase\+Production}} ()
+\begin{DoxyCompactList}\small\item\em Increases production, not applicable for a barn. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBarn_a4a23f7c5b8b3370b5416cbb389d913e4}{harvest}} ()
+\begin{DoxyCompactList}\small\item\em Harvest crops, not applicable for a barn. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classBarn_a0d2db64c4db2134fbfe4bbb177677667}{get\+Leftover\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the remaining storage capacity in the barn. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBarn_ab87729ba6ce0597ee32a5f6d79eeb4ba}{buy\+Truck}} (\mbox{\hyperlink{classTruck}{Truck}} $\ast$truck)
+\begin{DoxyCompactList}\small\item\em Buys a truck for logistics purposes. Generally not applicable for barns. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBarn_ae9744b7a703331f2c8c279e39f58b9a6}{sell\+Truck}} (\mbox{\hyperlink{classTruck}{Truck}} $\ast$truck)
+\begin{DoxyCompactList}\small\item\em Sells a truck. Generally not applicable for barns. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ $>$ \mbox{\hyperlink{classBarn_a956a9b6f51660fe44596b3037355625b}{get\+Sub\+Units}} ()
+\begin{DoxyCompactList}\small\item\em Returns the sub-\/units of the farm. Not applicable for barns. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ \mbox{\hyperlink{classBarn_a6887eb27aaa8883c3e6c56a7422f0e9e}{create\+BFSIterator}} ()
+\begin{DoxyCompactList}\small\item\em Creates a breadth-\/first search iterator for the farm. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ \mbox{\hyperlink{classBarn_ab74b7627a69032c03aa3afd17a79eee7}{create\+DFSIterator}} ()
+\begin{DoxyCompactList}\small\item\em Creates a depth-\/first search iterator for the farm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBarn_aa5ea5f7a2dd8a3866ee87ad69f955270}{set\+Name}} (const string \&unit\+Name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the barn. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classBarn_abd4f5df9443360eec5e917aac82320b7}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the barn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a storage facility for farm produce. 
+
+The \mbox{\hyperlink{classBarn}{Barn}} class manages the storage of farm produce. It does not handle crops directly or participate in the production process. Implements Iterator and Observer patterns for logistics. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBarn_aa7391a5433e48b6f355c3bdf98c3c63f}\label{classBarn_aa7391a5433e48b6f355c3bdf98c3c63f}} 
+\index{Barn@{Barn}!Barn@{Barn}}
+\index{Barn@{Barn}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{Barn()}{Barn()}}
+{\footnotesize\ttfamily Barn\+::\+Barn (\begin{DoxyParamCaption}\item[{int}]{total\+Capacity }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \mbox{\hyperlink{classBarn}{Barn}} object with a given capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+Capacity} & The total storage capacity of the barn. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBarn_a24235aae94c8da869b27b02c07f2420e}\label{classBarn_a24235aae94c8da869b27b02c07f2420e}} 
+\index{Barn@{Barn}!````~Barn@{$\sim$Barn}}
+\index{````~Barn@{$\sim$Barn}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{$\sim$Barn()}{~Barn()}}
+{\footnotesize\ttfamily Barn\+::$\sim$\+Barn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classBarn}{Barn}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBarn_a07e8528faba4def018a738164006c2bb}\label{classBarn_a07e8528faba4def018a738164006c2bb}} 
+\index{Barn@{Barn}!add@{add}}
+\index{add@{add}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Barn\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds a farm unit to the barn. Not applicable to barns. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & Pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} being added. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a13923b257012a31a9ca67f22598e4347}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_ab87729ba6ce0597ee32a5f6d79eeb4ba}\label{classBarn_ab87729ba6ce0597ee32a5f6d79eeb4ba}} 
+\index{Barn@{Barn}!buyTruck@{buyTruck}}
+\index{buyTruck@{buyTruck}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{buyTruck()}{buyTruck()}}
+{\footnotesize\ttfamily void Barn\+::buy\+Truck (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTruck}{Truck}} $\ast$}]{truck }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Buys a truck for logistics purposes. Generally not applicable for barns. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & Pointer to the \mbox{\hyperlink{classTruck}{Truck}} object being purchased. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_ac0565356da2cc0e863e30f665a95c236}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_a6887eb27aaa8883c3e6c56a7422f0e9e}\label{classBarn_a6887eb27aaa8883c3e6c56a7422f0e9e}} 
+\index{Barn@{Barn}!createBFSIterator@{createBFSIterator}}
+\index{createBFSIterator@{createBFSIterator}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{createBFSIterator()}{createBFSIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ Barn\+::create\+BFSIterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a breadth-\/first search iterator for the farm. 
+
+\begin{DoxyReturn}{Returns}
+Farm\+Iterator$\ast$ Pointer to the BFS iterator. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a92c1628b0e297ea97121b48cd3355c09}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_ab74b7627a69032c03aa3afd17a79eee7}\label{classBarn_ab74b7627a69032c03aa3afd17a79eee7}} 
+\index{Barn@{Barn}!createDFSIterator@{createDFSIterator}}
+\index{createDFSIterator@{createDFSIterator}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{createDFSIterator()}{createDFSIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ Barn\+::create\+DFSIterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a depth-\/first search iterator for the farm. 
+
+\begin{DoxyReturn}{Returns}
+Farm\+Iterator$\ast$ Pointer to the DFS iterator. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_aef3e9a6d04ac8aa1cd828433b974a37e}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_afb22d521162b79e88128829eabde427b}\label{classBarn_afb22d521162b79e88128829eabde427b}} 
+\index{Barn@{Barn}!getCropType@{getCropType}}
+\index{getCropType@{getCropType}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{getCropType()}{getCropType()}}
+{\footnotesize\ttfamily std\+::string Barn\+::get\+Crop\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the crop type for this farm unit. Always returns \char`\"{}\+N/\+A\char`\"{} for a barn. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string \char`\"{}\+N/\+A\char`\"{} since barns do not store crops directly. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_add66c341a2010e7f0491196b19d63c35}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_a33007eb7ff42d1a96e61a00027c0ea85}\label{classBarn_a33007eb7ff42d1a96e61a00027c0ea85}} 
+\index{Barn@{Barn}!getCurrentAmount@{getCurrentAmount}}
+\index{getCurrentAmount@{getCurrentAmount}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{getCurrentAmount()}{getCurrentAmount()}}
+{\footnotesize\ttfamily int Barn\+::get\+Current\+Amount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the current amount of produce stored in the barn. 
+
+\begin{DoxyReturn}{Returns}
+int The current amount stored in the barn. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a65bf5424abc22955aac85233275e72f8}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_a0d2db64c4db2134fbfe4bbb177677667}\label{classBarn_a0d2db64c4db2134fbfe4bbb177677667}} 
+\index{Barn@{Barn}!getLeftoverCapacity@{getLeftoverCapacity}}
+\index{getLeftoverCapacity@{getLeftoverCapacity}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{getLeftoverCapacity()}{getLeftoverCapacity()}}
+{\footnotesize\ttfamily int Barn\+::get\+Leftover\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the remaining storage capacity in the barn. 
+
+\begin{DoxyReturn}{Returns}
+int The remaining capacity available. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_afcff64a7e13d0682b57d2da35c70a3ee}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_abd4f5df9443360eec5e917aac82320b7}\label{classBarn_abd4f5df9443360eec5e917aac82320b7}} 
+\index{Barn@{Barn}!getName@{getName}}
+\index{getName@{getName}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Barn\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the name of the barn. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The name of the barn. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a609f48740a45829170b708386c1f1e64}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_a4c35fcf61f69e5f2c0c46d95292f52ea}\label{classBarn_a4c35fcf61f69e5f2c0c46d95292f52ea}} 
+\index{Barn@{Barn}!getSoilStateName@{getSoilStateName}}
+\index{getSoilStateName@{getSoilStateName}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{getSoilStateName()}{getSoilStateName()}}
+{\footnotesize\ttfamily std\+::string Barn\+::get\+Soil\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the soil state for this farm unit. Always returns \char`\"{}\+N/\+A\char`\"{} for a barn. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string \char`\"{}\+N/\+A\char`\"{} since barns do not manage soil. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a5a4dd34e283ed90d1f710072cbddaa01}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_a956a9b6f51660fe44596b3037355625b}\label{classBarn_a956a9b6f51660fe44596b3037355625b}} 
+\index{Barn@{Barn}!getSubUnits@{getSubUnits}}
+\index{getSubUnits@{getSubUnits}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{getSubUnits()}{getSubUnits()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ $>$ Barn\+::get\+Sub\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the sub-\/units of the farm. Not applicable for barns. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Farm\+Unit$\ast$$>$ An empty vector as barns do not have sub-\/units. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a29356181ac3c11890ae60b6827e430fe}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_a9353622aefdfdb73136888414ea6bdd1}\label{classBarn_a9353622aefdfdb73136888414ea6bdd1}} 
+\index{Barn@{Barn}!getTotalCapacity@{getTotalCapacity}}
+\index{getTotalCapacity@{getTotalCapacity}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{getTotalCapacity()}{getTotalCapacity()}}
+{\footnotesize\ttfamily int Barn\+::get\+Total\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the total storage capacity of the barn. 
+
+\begin{DoxyReturn}{Returns}
+int The total capacity of the barn. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_adcf972c220e9b3eebb2b94d9c6bec321}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_a4a23f7c5b8b3370b5416cbb389d913e4}\label{classBarn_a4a23f7c5b8b3370b5416cbb389d913e4}} 
+\index{Barn@{Barn}!harvest@{harvest}}
+\index{harvest@{harvest}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{harvest()}{harvest()}}
+{\footnotesize\ttfamily void Barn\+::harvest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Harvest crops, not applicable for a barn. 
+
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a277e393e05439c80ad61ce6145d46002}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_ac5ba0cd53e8dd61200edacf39b18dcfa}\label{classBarn_ac5ba0cd53e8dd61200edacf39b18dcfa}} 
+\index{Barn@{Barn}!increaseProduction@{increaseProduction}}
+\index{increaseProduction@{increaseProduction}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{increaseProduction()}{increaseProduction()}}
+{\footnotesize\ttfamily void Barn\+::increase\+Production (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Increases production, not applicable for a barn. 
+
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a317de75b254d4f88980841dbbaca3e05}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_af8a7502602efa77d31fa5f8a4926114a}\label{classBarn_af8a7502602efa77d31fa5f8a4926114a}} 
+\index{Barn@{Barn}!remove@{remove}}
+\index{remove@{remove}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Barn\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes a farm unit from the barn. Not applicable to barns. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & Pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} being removed. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_ab5dec88c0ffb58f4cfb2815c9b6cba2c}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_ae9744b7a703331f2c8c279e39f58b9a6}\label{classBarn_ae9744b7a703331f2c8c279e39f58b9a6}} 
+\index{Barn@{Barn}!sellTruck@{sellTruck}}
+\index{sellTruck@{sellTruck}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{sellTruck()}{sellTruck()}}
+{\footnotesize\ttfamily void Barn\+::sell\+Truck (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTruck}{Truck}} $\ast$}]{truck }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sells a truck. Generally not applicable for barns. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & Pointer to the \mbox{\hyperlink{classTruck}{Truck}} object being sold. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a382d18736aea94cf4a73db54d7461746}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_a21ab4461d451d24407078aacac753fed}\label{classBarn_a21ab4461d451d24407078aacac753fed}} 
+\index{Barn@{Barn}!setCurrentAmount@{setCurrentAmount}}
+\index{setCurrentAmount@{setCurrentAmount}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{setCurrentAmount()}{setCurrentAmount()}}
+{\footnotesize\ttfamily void Barn\+::set\+Current\+Amount (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the current amount of produce in the barn. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The new amount of produce to set, must be within the barn\textquotesingle{}s capacity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_ac3bfba7485281bd97686c4e80a1aedcd}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classBarn_aa5ea5f7a2dd8a3866ee87ad69f955270}\label{classBarn_aa5ea5f7a2dd8a3866ee87ad69f955270}} 
+\index{Barn@{Barn}!setName@{setName}}
+\index{setName@{setName}!Barn@{Barn}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Barn\+::set\+Name (\begin{DoxyParamCaption}\item[{const string \&}]{unit\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the name of the barn. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit\+Name} & The name to set for the barn. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_aa60881cb73f51b3975c03cd27ca7cf54}{Farm\+Unit}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Barn_8h}{Barn.\+h}}\item 
+\mbox{\hyperlink{Barn_8cpp}{Barn.\+cpp}}\end{DoxyCompactItemize}

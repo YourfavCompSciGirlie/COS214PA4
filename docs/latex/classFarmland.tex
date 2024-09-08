@@ -1,0 +1,392 @@
+\hypertarget{classFarmland}{}\doxysection{Farmland Class Reference}
+\label{classFarmland}\index{Farmland@{Farmland}}
+
+
+Represents a composite farm unit that can contain other farm units.  
+
+
+
+
+{\ttfamily \#include $<$Farmland.\+h$>$}
+
+
+
+Inheritance diagram for Farmland\+:
+% FIG 0
+
+
+Collaboration diagram for Farmland\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFarmland_a2b134ee099d606e483121599f7f22de5}{Farmland}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classFarmland}{Farmland}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFarmland_adbce7e18a2917deece97f01e35714af4}{$\sim$\+Farmland}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classFarmland}{Farmland}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classFarmland_ac7d0eefe20a41feb8cbfc05ddf2bc769}{get\+Total\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total capacity of the farmland. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classFarmland_aa17d4234e7b19246559c97eafc18b396}{get\+Crop\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the crop type of the farmland. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classFarmland_aaf799601f20e5b2859120aa0a5f35144}{get\+Soil\+State\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the soil state of the farmland. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFarmland_a41c40ee771c3b4fff18e8908c062b0d3}{add}} (\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$unit)
+\begin{DoxyCompactList}\small\item\em Adds a child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to the \mbox{\hyperlink{classFarmland}{Farmland}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFarmland_ae31d08b603a185be536e884940acdfee}{remove}} (\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$unit)
+\begin{DoxyCompactList}\small\item\em Removes a child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} from the \mbox{\hyperlink{classFarmland}{Farmland}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classFarmland_a0adbae224f5c8b70f789bc2acc4ebf2e}{get\+Current\+Amount}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current amount of resources in the \mbox{\hyperlink{classFarmland}{Farmland}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFarmland_a5293be8f496f9b095e2ce16a37553581}{set\+Current\+Amount}} (int amount)
+\begin{DoxyCompactList}\small\item\em Sets the current amount of resources in the \mbox{\hyperlink{classFarmland}{Farmland}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFarmland_ae1aa22e6de4e76083e1542c8ff72e0f7}{increase\+Production}} ()
+\begin{DoxyCompactList}\small\item\em Increases production capacity for the \mbox{\hyperlink{classFarmland}{Farmland}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFarmland_a5fb30869953d86f024021afd81956676}{harvest}} ()
+\begin{DoxyCompactList}\small\item\em Harvests crops from the \mbox{\hyperlink{classFarmland}{Farmland}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classFarmland_a997792d574db0eba9901adc2e7467d63}{get\+Leftover\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the leftover capacity in the \mbox{\hyperlink{classFarmland}{Farmland}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFarmland_a002ff578825b2f5cf1781db1e777d7cd}{buy\+Truck}} (\mbox{\hyperlink{classTruck}{Truck}} $\ast$truck)
+\begin{DoxyCompactList}\small\item\em Adds a truck to the notification system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFarmland_a011465cef78ab93c1324beb3a7cf73c1}{sell\+Truck}} (\mbox{\hyperlink{classTruck}{Truck}} $\ast$truck)
+\begin{DoxyCompactList}\small\item\em Removes a truck from the notification system. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ $>$ \mbox{\hyperlink{classFarmland_aa6adb5203174465a5c9582148cc4f1a6}{get\+Sub\+Units}} ()
+\begin{DoxyCompactList}\small\item\em Gets the child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} objects contained within this \mbox{\hyperlink{classFarmland}{Farmland}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ \mbox{\hyperlink{classFarmland_a61703c0d36bcca4dc102832dc3dd36f7}{create\+BFSIterator}} ()
+\begin{DoxyCompactList}\small\item\em Creates a Breadth-\/\+First Search (BFS) iterator for the \mbox{\hyperlink{classFarmland}{Farmland}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ \mbox{\hyperlink{classFarmland_a1ee00e01ad8b647380eed705da3cabc8}{create\+DFSIterator}} ()
+\begin{DoxyCompactList}\small\item\em Creates a Depth-\/\+First Search (DFS) iterator for the \mbox{\hyperlink{classFarmland}{Farmland}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFarmland_ae8212dcfedcfc50681e3c4cc50a9695d}{set\+Name}} (const string \&unit\+Name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the \mbox{\hyperlink{classFarmland}{Farmland}}. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classFarmland_ae55dde276f6f58e8cd716b08f640fbae}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the \mbox{\hyperlink{classFarmland}{Farmland}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a composite farm unit that can contain other farm units. 
+
+The \mbox{\hyperlink{classFarmland}{Farmland}} class implements the Composite pattern to manage a collection of \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} objects. It also implements the Iterator pattern to provide access to its children elements. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFarmland_a2b134ee099d606e483121599f7f22de5}\label{classFarmland_a2b134ee099d606e483121599f7f22de5}} 
+\index{Farmland@{Farmland}!Farmland@{Farmland}}
+\index{Farmland@{Farmland}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{Farmland()}{Farmland()}}
+{\footnotesize\ttfamily Farmland\+::\+Farmland (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+\mbox{\Hypertarget{classFarmland_adbce7e18a2917deece97f01e35714af4}\label{classFarmland_adbce7e18a2917deece97f01e35714af4}} 
+\index{Farmland@{Farmland}!````~Farmland@{$\sim$Farmland}}
+\index{````~Farmland@{$\sim$Farmland}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{$\sim$Farmland()}{~Farmland()}}
+{\footnotesize\ttfamily Farmland\+::$\sim$\+Farmland (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFarmland_a41c40ee771c3b4fff18e8908c062b0d3}\label{classFarmland_a41c40ee771c3b4fff18e8908c062b0d3}} 
+\index{Farmland@{Farmland}!add@{add}}
+\index{add@{add}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Farmland\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds a child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to the \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & A pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a13923b257012a31a9ca67f22598e4347}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_a002ff578825b2f5cf1781db1e777d7cd}\label{classFarmland_a002ff578825b2f5cf1781db1e777d7cd}} 
+\index{Farmland@{Farmland}!buyTruck@{buyTruck}}
+\index{buyTruck@{buyTruck}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{buyTruck()}{buyTruck()}}
+{\footnotesize\ttfamily void Farmland\+::buy\+Truck (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTruck}{Truck}} $\ast$}]{truck }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds a truck to the notification system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & A pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_ac0565356da2cc0e863e30f665a95c236}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_a61703c0d36bcca4dc102832dc3dd36f7}\label{classFarmland_a61703c0d36bcca4dc102832dc3dd36f7}} 
+\index{Farmland@{Farmland}!createBFSIterator@{createBFSIterator}}
+\index{createBFSIterator@{createBFSIterator}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{createBFSIterator()}{createBFSIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ Farmland\+::create\+BFSIterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a Breadth-\/\+First Search (BFS) iterator for the \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the BFS iterator. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a92c1628b0e297ea97121b48cd3355c09}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_a1ee00e01ad8b647380eed705da3cabc8}\label{classFarmland_a1ee00e01ad8b647380eed705da3cabc8}} 
+\index{Farmland@{Farmland}!createDFSIterator@{createDFSIterator}}
+\index{createDFSIterator@{createDFSIterator}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{createDFSIterator()}{createDFSIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ Farmland\+::create\+DFSIterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a Depth-\/\+First Search (DFS) iterator for the \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the DFS iterator. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_aef3e9a6d04ac8aa1cd828433b974a37e}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_aa17d4234e7b19246559c97eafc18b396}\label{classFarmland_aa17d4234e7b19246559c97eafc18b396}} 
+\index{Farmland@{Farmland}!getCropType@{getCropType}}
+\index{getCropType@{getCropType}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{getCropType()}{getCropType()}}
+{\footnotesize\ttfamily std\+::string Farmland\+::get\+Crop\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the crop type of the farmland. 
+
+\begin{DoxyReturn}{Returns}
+The crop type as a string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_add66c341a2010e7f0491196b19d63c35}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_a0adbae224f5c8b70f789bc2acc4ebf2e}\label{classFarmland_a0adbae224f5c8b70f789bc2acc4ebf2e}} 
+\index{Farmland@{Farmland}!getCurrentAmount@{getCurrentAmount}}
+\index{getCurrentAmount@{getCurrentAmount}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{getCurrentAmount()}{getCurrentAmount()}}
+{\footnotesize\ttfamily int Farmland\+::get\+Current\+Amount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the current amount of resources in the \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+\begin{DoxyReturn}{Returns}
+The current amount as an integer. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a65bf5424abc22955aac85233275e72f8}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_a997792d574db0eba9901adc2e7467d63}\label{classFarmland_a997792d574db0eba9901adc2e7467d63}} 
+\index{Farmland@{Farmland}!getLeftoverCapacity@{getLeftoverCapacity}}
+\index{getLeftoverCapacity@{getLeftoverCapacity}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{getLeftoverCapacity()}{getLeftoverCapacity()}}
+{\footnotesize\ttfamily int Farmland\+::get\+Leftover\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the leftover capacity in the \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+\begin{DoxyReturn}{Returns}
+The leftover capacity as an integer. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_afcff64a7e13d0682b57d2da35c70a3ee}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_ae55dde276f6f58e8cd716b08f640fbae}\label{classFarmland_ae55dde276f6f58e8cd716b08f640fbae}} 
+\index{Farmland@{Farmland}!getName@{getName}}
+\index{getName@{getName}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Farmland\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the name of the \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+\begin{DoxyReturn}{Returns}
+The name of the \mbox{\hyperlink{classFarmland}{Farmland}} as a string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a609f48740a45829170b708386c1f1e64}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_aaf799601f20e5b2859120aa0a5f35144}\label{classFarmland_aaf799601f20e5b2859120aa0a5f35144}} 
+\index{Farmland@{Farmland}!getSoilStateName@{getSoilStateName}}
+\index{getSoilStateName@{getSoilStateName}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{getSoilStateName()}{getSoilStateName()}}
+{\footnotesize\ttfamily std\+::string Farmland\+::get\+Soil\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the name of the soil state of the farmland. 
+
+\begin{DoxyReturn}{Returns}
+The soil state name as a string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a5a4dd34e283ed90d1f710072cbddaa01}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_aa6adb5203174465a5c9582148cc4f1a6}\label{classFarmland_aa6adb5203174465a5c9582148cc4f1a6}} 
+\index{Farmland@{Farmland}!getSubUnits@{getSubUnits}}
+\index{getSubUnits@{getSubUnits}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{getSubUnits()}{getSubUnits()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ $>$ Farmland\+::get\+Sub\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} objects contained within this \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+\begin{DoxyReturn}{Returns}
+A vector of pointers to the child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} objects. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a29356181ac3c11890ae60b6827e430fe}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_ac7d0eefe20a41feb8cbfc05ddf2bc769}\label{classFarmland_ac7d0eefe20a41feb8cbfc05ddf2bc769}} 
+\index{Farmland@{Farmland}!getTotalCapacity@{getTotalCapacity}}
+\index{getTotalCapacity@{getTotalCapacity}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{getTotalCapacity()}{getTotalCapacity()}}
+{\footnotesize\ttfamily int Farmland\+::get\+Total\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the total capacity of the farmland. 
+
+\begin{DoxyReturn}{Returns}
+The total capacity of the farmland. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_adcf972c220e9b3eebb2b94d9c6bec321}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_a5fb30869953d86f024021afd81956676}\label{classFarmland_a5fb30869953d86f024021afd81956676}} 
+\index{Farmland@{Farmland}!harvest@{harvest}}
+\index{harvest@{harvest}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{harvest()}{harvest()}}
+{\footnotesize\ttfamily void Farmland\+::harvest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Harvests crops from the \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+This method is applicable to the Decorator pattern but may not have an effect in \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+Implements \mbox{\hyperlink{classFarmUnit_a277e393e05439c80ad61ce6145d46002}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_ae1aa22e6de4e76083e1542c8ff72e0f7}\label{classFarmland_ae1aa22e6de4e76083e1542c8ff72e0f7}} 
+\index{Farmland@{Farmland}!increaseProduction@{increaseProduction}}
+\index{increaseProduction@{increaseProduction}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{increaseProduction()}{increaseProduction()}}
+{\footnotesize\ttfamily void Farmland\+::increase\+Production (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Increases production capacity for the \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+This method is applicable to the Decorator pattern but may not have an effect in \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+Implements \mbox{\hyperlink{classFarmUnit_a317de75b254d4f88980841dbbaca3e05}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_ae31d08b603a185be536e884940acdfee}\label{classFarmland_ae31d08b603a185be536e884940acdfee}} 
+\index{Farmland@{Farmland}!remove@{remove}}
+\index{remove@{remove}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Farmland\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes a child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} from the \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & A pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_ab5dec88c0ffb58f4cfb2815c9b6cba2c}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_a011465cef78ab93c1324beb3a7cf73c1}\label{classFarmland_a011465cef78ab93c1324beb3a7cf73c1}} 
+\index{Farmland@{Farmland}!sellTruck@{sellTruck}}
+\index{sellTruck@{sellTruck}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{sellTruck()}{sellTruck()}}
+{\footnotesize\ttfamily void Farmland\+::sell\+Truck (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTruck}{Truck}} $\ast$}]{truck }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes a truck from the notification system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & A pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a382d18736aea94cf4a73db54d7461746}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_a5293be8f496f9b095e2ce16a37553581}\label{classFarmland_a5293be8f496f9b095e2ce16a37553581}} 
+\index{Farmland@{Farmland}!setCurrentAmount@{setCurrentAmount}}
+\index{setCurrentAmount@{setCurrentAmount}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{setCurrentAmount()}{setCurrentAmount()}}
+{\footnotesize\ttfamily void Farmland\+::set\+Current\+Amount (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the current amount of resources in the \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_ac3bfba7485281bd97686c4e80a1aedcd}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classFarmland_ae8212dcfedcfc50681e3c4cc50a9695d}\label{classFarmland_ae8212dcfedcfc50681e3c4cc50a9695d}} 
+\index{Farmland@{Farmland}!setName@{setName}}
+\index{setName@{setName}!Farmland@{Farmland}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Farmland\+::set\+Name (\begin{DoxyParamCaption}\item[{const string \&}]{unit\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the name of the \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit\+Name} & The name to set. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_aa60881cb73f51b3975c03cd27ca7cf54}{Farm\+Unit}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Farmland_8h}{Farmland.\+h}}\item 
+\mbox{\hyperlink{Farmland_8cpp}{Farmland.\+cpp}}\end{DoxyCompactItemize}

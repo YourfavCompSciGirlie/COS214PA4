@@ -1,0 +1,103 @@
+\hypertarget{classSoilState}{}\doxysection{Soil\+State Class Reference}
+\label{classSoilState}\index{SoilState@{SoilState}}
+
+
+{\ttfamily \#include $<$Soil\+State.\+h$>$}
+
+
+
+Inheritance diagram for Soil\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Soil\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSoilState_a3e090495e8579ce7bf4c16510194cd90}{Soil\+State}} ()
+\item 
+virtual \mbox{\hyperlink{classSoilState_a669eb5bfbadb6c5063a2a51c213a1c33}{$\sim$\+Soil\+State}} ()
+\item 
+virtual int \mbox{\hyperlink{classSoilState_a6a80c2ce33212e9fe574374aaa284f19}{harvest\+Crops}} () const =0
+\item 
+virtual void \mbox{\hyperlink{classSoilState_a57b6a5f4f5d26bd2f7e291cd26a505b8}{rain}} ()=0
+\item 
+virtual string \mbox{\hyperlink{classSoilState_abb74dcac07f24949223eb4446fb536b3}{get\+Name}} () const =0
+\item 
+void \mbox{\hyperlink{classSoilState_a0e04330f821feaec0523ace45a02ca2b}{set\+Context}} (class \mbox{\hyperlink{classCropField}{Crop\+Field}} $\ast$\mbox{\hyperlink{classSoilState_a0ff50f950fa2edd27ef78b355da655c3}{context}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCropField}{Crop\+Field}} $\ast$ \mbox{\hyperlink{classSoilState_a0ff50f950fa2edd27ef78b355da655c3}{context}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSoilState_a3e090495e8579ce7bf4c16510194cd90}\label{classSoilState_a3e090495e8579ce7bf4c16510194cd90}} 
+\index{SoilState@{SoilState}!SoilState@{SoilState}}
+\index{SoilState@{SoilState}!SoilState@{SoilState}}
+\doxysubsubsection{\texorpdfstring{SoilState()}{SoilState()}}
+{\footnotesize\ttfamily Soil\+State\+::\+Soil\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSoilState_a669eb5bfbadb6c5063a2a51c213a1c33}\label{classSoilState_a669eb5bfbadb6c5063a2a51c213a1c33}} 
+\index{SoilState@{SoilState}!````~SoilState@{$\sim$SoilState}}
+\index{````~SoilState@{$\sim$SoilState}!SoilState@{SoilState}}
+\doxysubsubsection{\texorpdfstring{$\sim$SoilState()}{~SoilState()}}
+{\footnotesize\ttfamily Soil\+State\+::$\sim$\+Soil\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSoilState_abb74dcac07f24949223eb4446fb536b3}\label{classSoilState_abb74dcac07f24949223eb4446fb536b3}} 
+\index{SoilState@{SoilState}!getName@{getName}}
+\index{getName@{getName}!SoilState@{SoilState}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily virtual string Soil\+State\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classFruitfulSoil_a3e517cb630da79141ca9bdd2b24dbef6}{Fruitful\+Soil}}, \mbox{\hyperlink{classFloodedSoil_ae018ee08286833cd79789607cebf330b}{Flooded\+Soil}}, and \mbox{\hyperlink{classDrySoil_af8214ecc1455e5caf46c758ca829a8c1}{Dry\+Soil}}.
+
+\mbox{\Hypertarget{classSoilState_a6a80c2ce33212e9fe574374aaa284f19}\label{classSoilState_a6a80c2ce33212e9fe574374aaa284f19}} 
+\index{SoilState@{SoilState}!harvestCrops@{harvestCrops}}
+\index{harvestCrops@{harvestCrops}!SoilState@{SoilState}}
+\doxysubsubsection{\texorpdfstring{harvestCrops()}{harvestCrops()}}
+{\footnotesize\ttfamily virtual int Soil\+State\+::harvest\+Crops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classFruitfulSoil_a49c9d6a6815de4e9eb75f37c802dd8c4}{Fruitful\+Soil}}, \mbox{\hyperlink{classFloodedSoil_a67020132fb97962e7509bf43363e9df1}{Flooded\+Soil}}, and \mbox{\hyperlink{classDrySoil_ac89e5d19265d4bd11cb46e1aba9fa214}{Dry\+Soil}}.
+
+\mbox{\Hypertarget{classSoilState_a57b6a5f4f5d26bd2f7e291cd26a505b8}\label{classSoilState_a57b6a5f4f5d26bd2f7e291cd26a505b8}} 
+\index{SoilState@{SoilState}!rain@{rain}}
+\index{rain@{rain}!SoilState@{SoilState}}
+\doxysubsubsection{\texorpdfstring{rain()}{rain()}}
+{\footnotesize\ttfamily virtual void Soil\+State\+::rain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classFruitfulSoil_a56942389eb0450cbedcf54cf0efa4460}{Fruitful\+Soil}}, \mbox{\hyperlink{classFloodedSoil_a7f6dc00c1f4cc3c3889bd27d88ec5188}{Flooded\+Soil}}, and \mbox{\hyperlink{classDrySoil_acd2186aa4038cd458f15a71eec9656e1}{Dry\+Soil}}.
+
+\mbox{\Hypertarget{classSoilState_a0e04330f821feaec0523ace45a02ca2b}\label{classSoilState_a0e04330f821feaec0523ace45a02ca2b}} 
+\index{SoilState@{SoilState}!setContext@{setContext}}
+\index{setContext@{setContext}!SoilState@{SoilState}}
+\doxysubsubsection{\texorpdfstring{setContext()}{setContext()}}
+{\footnotesize\ttfamily void Soil\+State\+::set\+Context (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{classCropField}{Crop\+Field}} $\ast$}]{context }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSoilState_a0ff50f950fa2edd27ef78b355da655c3}\label{classSoilState_a0ff50f950fa2edd27ef78b355da655c3}} 
+\index{SoilState@{SoilState}!context@{context}}
+\index{context@{context}!SoilState@{SoilState}}
+\doxysubsubsection{\texorpdfstring{context}{context}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCropField}{Crop\+Field}}$\ast$ Soil\+State\+::context\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SoilState_8h}{Soil\+State.\+h}}\item 
+\mbox{\hyperlink{SoilState_8cpp}{Soil\+State.\+cpp}}\end{DoxyCompactItemize}

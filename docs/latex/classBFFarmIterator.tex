@@ -1,0 +1,156 @@
+\hypertarget{classBFFarmIterator}{}\doxysection{BFFarm\+Iterator Class Reference}
+\label{classBFFarmIterator}\index{BFFarmIterator@{BFFarmIterator}}
+
+
+Concrete iterator implementing Breadth-\/\+First Traversal for farm units.  
+
+
+
+
+{\ttfamily \#include $<$BFFarm\+Iterator.\+h$>$}
+
+
+
+Inheritance diagram for BFFarm\+Iterator\+:
+% FIG 0
+
+
+Collaboration diagram for BFFarm\+Iterator\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBFFarmIterator_ab204debd911a3686542258bd53ab067b}{BFFarm\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classBFFarmIterator}{BFFarm\+Iterator}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBFFarmIterator_a173c38f8a7f33e8ac4ebaf214023d7e7}{$\sim$\+BFFarm\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classBFFarmIterator}{BFFarm\+Iterator}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBFFarmIterator_a021509faba120fdffd52f2e61157469c}{BFFarm\+Iterator}} (\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$root\+Farm)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the iterator with the root farm unit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ \mbox{\hyperlink{classBFFarmIterator_ace9e8dc6346a185e2c4a86a68bbc7553}{first\+Farm}} ()
+\begin{DoxyCompactList}\small\item\em Starts the BFS traversal and returns the first farm unit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ \mbox{\hyperlink{classBFFarmIterator_a870c658de97b38bd15b85bbc5804a663}{next}} ()
+\begin{DoxyCompactList}\small\item\em Moves to the next farm unit in the BFS traversal. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBFFarmIterator_afd0b4006e7c3d0950677ac27d28a9af9}{is\+Done}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the traversal is complete. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ \mbox{\hyperlink{classBFFarmIterator_ae1628064f6c743db33d210156daea50c}{current\+Farm}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current farm unit in the traversal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete iterator implementing Breadth-\/\+First Traversal for farm units. 
+
+This class provides the functionality to traverse a farm\textquotesingle{}s structure using the Breadth-\/\+First Search (BFS) algorithm. It maintains a queue to track the next farm units to visit and a set to track visited units. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBFFarmIterator_ab204debd911a3686542258bd53ab067b}\label{classBFFarmIterator_ab204debd911a3686542258bd53ab067b}} 
+\index{BFFarmIterator@{BFFarmIterator}!BFFarmIterator@{BFFarmIterator}}
+\index{BFFarmIterator@{BFFarmIterator}!BFFarmIterator@{BFFarmIterator}}
+\doxysubsubsection{\texorpdfstring{BFFarmIterator()}{BFFarmIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily BFFarm\+Iterator\+::\+BFFarm\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classBFFarmIterator}{BFFarm\+Iterator}}. 
+
+\mbox{\Hypertarget{classBFFarmIterator_a173c38f8a7f33e8ac4ebaf214023d7e7}\label{classBFFarmIterator_a173c38f8a7f33e8ac4ebaf214023d7e7}} 
+\index{BFFarmIterator@{BFFarmIterator}!````~BFFarmIterator@{$\sim$BFFarmIterator}}
+\index{````~BFFarmIterator@{$\sim$BFFarmIterator}!BFFarmIterator@{BFFarmIterator}}
+\doxysubsubsection{\texorpdfstring{$\sim$BFFarmIterator()}{~BFFarmIterator()}}
+{\footnotesize\ttfamily BFFarm\+Iterator\+::$\sim$\+BFFarm\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classBFFarmIterator}{BFFarm\+Iterator}}. 
+
+\mbox{\Hypertarget{classBFFarmIterator_a021509faba120fdffd52f2e61157469c}\label{classBFFarmIterator_a021509faba120fdffd52f2e61157469c}} 
+\index{BFFarmIterator@{BFFarmIterator}!BFFarmIterator@{BFFarmIterator}}
+\index{BFFarmIterator@{BFFarmIterator}!BFFarmIterator@{BFFarmIterator}}
+\doxysubsubsection{\texorpdfstring{BFFarmIterator()}{BFFarmIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily BFFarm\+Iterator\+::\+BFFarm\+Iterator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$}]{root\+Farm }\end{DoxyParamCaption})}
+
+
+
+Constructor that initializes the iterator with the root farm unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root\+Farm} & Pointer to the root farm unit for the BFS traversal. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBFFarmIterator_ae1628064f6c743db33d210156daea50c}\label{classBFFarmIterator_ae1628064f6c743db33d210156daea50c}} 
+\index{BFFarmIterator@{BFFarmIterator}!currentFarm@{currentFarm}}
+\index{currentFarm@{currentFarm}!BFFarmIterator@{BFFarmIterator}}
+\doxysubsubsection{\texorpdfstring{currentFarm()}{currentFarm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ BFFarm\+Iterator\+::current\+Farm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the current farm unit in the traversal. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current farm unit. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmIterator_a5776ade70077fd0e4d2f300b287a1342}{Farm\+Iterator}}.
+
+\mbox{\Hypertarget{classBFFarmIterator_ace9e8dc6346a185e2c4a86a68bbc7553}\label{classBFFarmIterator_ace9e8dc6346a185e2c4a86a68bbc7553}} 
+\index{BFFarmIterator@{BFFarmIterator}!firstFarm@{firstFarm}}
+\index{firstFarm@{firstFarm}!BFFarmIterator@{BFFarmIterator}}
+\doxysubsubsection{\texorpdfstring{firstFarm()}{firstFarm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ BFFarm\+Iterator\+::first\+Farm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Starts the BFS traversal and returns the first farm unit. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the first farm unit in the traversal. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmIterator_a7fab61ea47a49997b64833934a3e194c}{Farm\+Iterator}}.
+
+\mbox{\Hypertarget{classBFFarmIterator_afd0b4006e7c3d0950677ac27d28a9af9}\label{classBFFarmIterator_afd0b4006e7c3d0950677ac27d28a9af9}} 
+\index{BFFarmIterator@{BFFarmIterator}!isDone@{isDone}}
+\index{isDone@{isDone}!BFFarmIterator@{BFFarmIterator}}
+\doxysubsubsection{\texorpdfstring{isDone()}{isDone()}}
+{\footnotesize\ttfamily bool BFFarm\+Iterator\+::is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the traversal is complete. 
+
+\begin{DoxyReturn}{Returns}
+true if there are no more farm units to visit, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmIterator_ae46182184982f10b72418424b0c22959}{Farm\+Iterator}}.
+
+\mbox{\Hypertarget{classBFFarmIterator_a870c658de97b38bd15b85bbc5804a663}\label{classBFFarmIterator_a870c658de97b38bd15b85bbc5804a663}} 
+\index{BFFarmIterator@{BFFarmIterator}!next@{next}}
+\index{next@{next}!BFFarmIterator@{BFFarmIterator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ BFFarm\+Iterator\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves to the next farm unit in the BFS traversal. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the next farm unit in the traversal. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmIterator_afc74989768dfe051db0ed1181dcbcb34}{Farm\+Iterator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{BFFarmIterator_8h}{BFFarm\+Iterator.\+h}}\item 
+\mbox{\hyperlink{BFFarmIterator_8cpp}{BFFarm\+Iterator.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,121 @@
+\hypertarget{DemoMain_8cpp}{}\doxysection{Demo\+Main.\+cpp File Reference}
+\label{DemoMain_8cpp}\index{DemoMain.cpp@{DemoMain.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Farmland.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Crop\+Field.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Barn.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Farm\+Unit.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dry\+Soil.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Fruitful\+Soil.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Flooded\+Soil.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Soil\+State.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Crop\+Field\+Decorator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Fertilized\+Field.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Extra\+Barn.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Truck.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Fertilizer\+Truck.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Delivery\+Truck.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Notification\+System.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Farm\+Iterator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}BFFarm\+Iterator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}DFFarm\+Iterator.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+Include dependency graph for Demo\+Main.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{DemoMain_8cpp_a1e584a2f06080914ebc9e0c4f86bd358}{type\+Effect}} (const std\+::string \&text, int delay=50)
+\item 
+void \mbox{\hyperlink{DemoMain_8cpp_acabbe3c5c7d4f1a3bea7a1024bc99543}{print\+Colored}} (const std\+::string \&text, const std\+::string \&color\+Code)
+\item 
+void \mbox{\hyperlink{DemoMain_8cpp_abece50bc884557b6a5c517cfc9ba2535}{print\+With\+Borders}} (const std\+::string \&heading, const std\+::string \&color\+Code)
+\item 
+void \mbox{\hyperlink{DemoMain_8cpp_ae162da19cd71cca894b3345c65c69fd0}{rain\+Effect}} ()
+\item 
+void \mbox{\hyperlink{DemoMain_8cpp_afd33a38796f5dcb607d3e41c2bcbbe1a}{processing\+Animation}} (const std\+::string \&task)
+\item 
+void \mbox{\hyperlink{DemoMain_8cpp_ad52af1c9087d1f5a215dee9e0de60a1b}{testing\+Composite}} ()
+\item 
+void \mbox{\hyperlink{DemoMain_8cpp_a778d284f9e5b7eb132ba9b43876ec824}{testing\+State}} ()
+\item 
+void \mbox{\hyperlink{DemoMain_8cpp_adcefe0a2c2702833a5c914c16a7d2274}{testing\+Decorator}} ()
+\item 
+void \mbox{\hyperlink{DemoMain_8cpp_aa1eae1e4f032909f6d493eac5477f154}{testing\+Observer}} ()
+\item 
+void \mbox{\hyperlink{DemoMain_8cpp_ad1bd6eddda9d44a19fe7109a6e3321f0}{testing\+Iterator}} ()
+\item 
+int \mbox{\hyperlink{DemoMain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{DemoMain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{DemoMain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{DemoMain.cpp@{DemoMain.cpp}!main@{main}}
+\index{main@{main}!DemoMain.cpp@{DemoMain.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DemoMain_8cpp_acabbe3c5c7d4f1a3bea7a1024bc99543}\label{DemoMain_8cpp_acabbe3c5c7d4f1a3bea7a1024bc99543}} 
+\index{DemoMain.cpp@{DemoMain.cpp}!printColored@{printColored}}
+\index{printColored@{printColored}!DemoMain.cpp@{DemoMain.cpp}}
+\doxysubsubsection{\texorpdfstring{printColored()}{printColored()}}
+{\footnotesize\ttfamily void print\+Colored (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const std\+::string \&}]{color\+Code }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DemoMain_8cpp_abece50bc884557b6a5c517cfc9ba2535}\label{DemoMain_8cpp_abece50bc884557b6a5c517cfc9ba2535}} 
+\index{DemoMain.cpp@{DemoMain.cpp}!printWithBorders@{printWithBorders}}
+\index{printWithBorders@{printWithBorders}!DemoMain.cpp@{DemoMain.cpp}}
+\doxysubsubsection{\texorpdfstring{printWithBorders()}{printWithBorders()}}
+{\footnotesize\ttfamily void print\+With\+Borders (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{heading,  }\item[{const std\+::string \&}]{color\+Code }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DemoMain_8cpp_afd33a38796f5dcb607d3e41c2bcbbe1a}\label{DemoMain_8cpp_afd33a38796f5dcb607d3e41c2bcbbe1a}} 
+\index{DemoMain.cpp@{DemoMain.cpp}!processingAnimation@{processingAnimation}}
+\index{processingAnimation@{processingAnimation}!DemoMain.cpp@{DemoMain.cpp}}
+\doxysubsubsection{\texorpdfstring{processingAnimation()}{processingAnimation()}}
+{\footnotesize\ttfamily void processing\+Animation (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{task }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DemoMain_8cpp_ae162da19cd71cca894b3345c65c69fd0}\label{DemoMain_8cpp_ae162da19cd71cca894b3345c65c69fd0}} 
+\index{DemoMain.cpp@{DemoMain.cpp}!rainEffect@{rainEffect}}
+\index{rainEffect@{rainEffect}!DemoMain.cpp@{DemoMain.cpp}}
+\doxysubsubsection{\texorpdfstring{rainEffect()}{rainEffect()}}
+{\footnotesize\ttfamily void rain\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DemoMain_8cpp_ad52af1c9087d1f5a215dee9e0de60a1b}\label{DemoMain_8cpp_ad52af1c9087d1f5a215dee9e0de60a1b}} 
+\index{DemoMain.cpp@{DemoMain.cpp}!testingComposite@{testingComposite}}
+\index{testingComposite@{testingComposite}!DemoMain.cpp@{DemoMain.cpp}}
+\doxysubsubsection{\texorpdfstring{testingComposite()}{testingComposite()}}
+{\footnotesize\ttfamily void testing\+Composite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DemoMain_8cpp_adcefe0a2c2702833a5c914c16a7d2274}\label{DemoMain_8cpp_adcefe0a2c2702833a5c914c16a7d2274}} 
+\index{DemoMain.cpp@{DemoMain.cpp}!testingDecorator@{testingDecorator}}
+\index{testingDecorator@{testingDecorator}!DemoMain.cpp@{DemoMain.cpp}}
+\doxysubsubsection{\texorpdfstring{testingDecorator()}{testingDecorator()}}
+{\footnotesize\ttfamily void testing\+Decorator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DemoMain_8cpp_ad1bd6eddda9d44a19fe7109a6e3321f0}\label{DemoMain_8cpp_ad1bd6eddda9d44a19fe7109a6e3321f0}} 
+\index{DemoMain.cpp@{DemoMain.cpp}!testingIterator@{testingIterator}}
+\index{testingIterator@{testingIterator}!DemoMain.cpp@{DemoMain.cpp}}
+\doxysubsubsection{\texorpdfstring{testingIterator()}{testingIterator()}}
+{\footnotesize\ttfamily void testing\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DemoMain_8cpp_aa1eae1e4f032909f6d493eac5477f154}\label{DemoMain_8cpp_aa1eae1e4f032909f6d493eac5477f154}} 
+\index{DemoMain.cpp@{DemoMain.cpp}!testingObserver@{testingObserver}}
+\index{testingObserver@{testingObserver}!DemoMain.cpp@{DemoMain.cpp}}
+\doxysubsubsection{\texorpdfstring{testingObserver()}{testingObserver()}}
+{\footnotesize\ttfamily void testing\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DemoMain_8cpp_a778d284f9e5b7eb132ba9b43876ec824}\label{DemoMain_8cpp_a778d284f9e5b7eb132ba9b43876ec824}} 
+\index{DemoMain.cpp@{DemoMain.cpp}!testingState@{testingState}}
+\index{testingState@{testingState}!DemoMain.cpp@{DemoMain.cpp}}
+\doxysubsubsection{\texorpdfstring{testingState()}{testingState()}}
+{\footnotesize\ttfamily void testing\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DemoMain_8cpp_a1e584a2f06080914ebc9e0c4f86bd358}\label{DemoMain_8cpp_a1e584a2f06080914ebc9e0c4f86bd358}} 
+\index{DemoMain.cpp@{DemoMain.cpp}!typeEffect@{typeEffect}}
+\index{typeEffect@{typeEffect}!DemoMain.cpp@{DemoMain.cpp}}
+\doxysubsubsection{\texorpdfstring{typeEffect()}{typeEffect()}}
+{\footnotesize\ttfamily void type\+Effect (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{int}]{delay = {\ttfamily 50} }\end{DoxyParamCaption})}
+

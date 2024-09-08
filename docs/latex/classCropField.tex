@@ -1,0 +1,472 @@
+\hypertarget{classCropField}{}\doxysection{Crop\+Field Class Reference}
+\label{classCropField}\index{CropField@{CropField}}
+
+
+Represents a crop field unit in the farm system.  
+
+
+
+
+{\ttfamily \#include $<$Crop\+Field.\+h$>$}
+
+
+
+Inheritance diagram for Crop\+Field\+:
+% FIG 0
+
+
+Collaboration diagram for Crop\+Field\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCropField_ab9a5656ea5af4c6e72b5b9f1e4c0b0b6}{Crop\+Field}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCropField_a6aa31596759d38db94e89f737068d6ef}{Crop\+Field}} (const string \&crop\+Type, int total\+Capacity, \mbox{\hyperlink{classSoilState}{Soil\+State}} $\ast$initial\+State)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCropField_a3650366847c5ab679905acc348593112}{$\sim$\+Crop\+Field}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCropField_a7212b3be83b3603dcd1e6cb8e35dc3cc}{get\+Total\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total capacity of the crop field. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classCropField_ad7f590642f9af8aa232fb733d16d5e18}{get\+Crop\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of crop grown in the field. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classCropField_aae62374e9a1dc8cbf9e0fb2780892c13}{get\+Soil\+State\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the current soil state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCropField_a47c1b216733805d0eaf3c625244eb1a4}{set\+Soil\+State}} (\mbox{\hyperlink{classSoilState}{Soil\+State}} $\ast$new\+State)
+\begin{DoxyCompactList}\small\item\em Sets a new soil state for the crop field. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCropField_a8231094689458548b7a7164581e1a20a}{harvest\+Crops}} ()
+\begin{DoxyCompactList}\small\item\em Harvests the crops from the field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCropField_aa89a0cf85108686582f52ea5465d85de}{rain}} ()
+\begin{DoxyCompactList}\small\item\em Simulates rainfall and triggers soil state transitions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCropField_a398d73cbf2c6cf57d23404ea20cefbb8}{add}} (\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$unit)
+\begin{DoxyCompactList}\small\item\em Adds a new farm unit to the crop field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCropField_a521956d9962c0b253a1a308916fb7d9d}{remove}} (\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$unit)
+\begin{DoxyCompactList}\small\item\em Removes a farm unit from the crop field. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCropField_adddb019d62ec3a29b2979604116600be}{get\+Current\+Amount}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current amount of crops in the field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCropField_a7f0221d17d1eca301b776ab59ed5f134}{set\+Current\+Amount}} (int amount)
+\begin{DoxyCompactList}\small\item\em Sets the current amount of crops in the field. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSoilState}{Soil\+State}} $\ast$ \mbox{\hyperlink{classCropField_ad536f7bdecf12d12759ad668a082aba2}{get\+Soil\+State}} () const
+\begin{DoxyCompactList}\small\item\em Provides access to the current soil state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCropField_a8bc17b31ad39a5333a11a5fd13ea3fd3}{buy\+Truck}} (\mbox{\hyperlink{classTruck}{Truck}} $\ast$truck)
+\begin{DoxyCompactList}\small\item\em Purchases a truck for the crop field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCropField_a7e670b4e689e6e2af73d139d5f875f76}{sell\+Truck}} (\mbox{\hyperlink{classTruck}{Truck}} $\ast$truck)
+\begin{DoxyCompactList}\small\item\em Sells a truck from the crop field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCropField_a2f6a9dff3a8749114782e6cb9aad29ea}{increase\+Production}} ()
+\begin{DoxyCompactList}\small\item\em Increases the production of crops. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCropField_ad56dc1c23145837705de1fc7de4aa8cd}{harvest}} ()
+\begin{DoxyCompactList}\small\item\em Harvests crops (decorator pattern method). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCropField_a06b6500195737199c1e9a587c8e28e0e}{get\+Leftover\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the leftover capacity of the crop field. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ $>$ \mbox{\hyperlink{classCropField_ae8dd4759fa80342fd965a6d62fb6b9bd}{get\+Sub\+Units}} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of sub-\/units of the crop field. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ \mbox{\hyperlink{classCropField_a21504dc5d2d42d8f855522b02fd1ca75}{create\+BFSIterator}} ()
+\begin{DoxyCompactList}\small\item\em Creates a Breadth-\/\+First Search iterator for the crop field. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ \mbox{\hyperlink{classCropField_adff5dcb8087a254a8075aa9b2ec9d01a}{create\+DFSIterator}} ()
+\begin{DoxyCompactList}\small\item\em Creates a Depth-\/\+First Search iterator for the crop field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCropField_a949b8b89ef8365058e1c5762956b96c7}{set\+Name}} (const string \&unit\+Name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the crop field. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classCropField_a19528137c71e17e637fb8d0cef719301}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the crop field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a crop field unit in the farm system. 
+
+This class acts as a leaf in the composite pattern, handles state transitions using the state design pattern, and notifies observers about truck-\/related events via the observer pattern. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCropField_ab9a5656ea5af4c6e72b5b9f1e4c0b0b6}\label{classCropField_ab9a5656ea5af4c6e72b5b9f1e4c0b0b6}} 
+\index{CropField@{CropField}!CropField@{CropField}}
+\index{CropField@{CropField}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{CropField()}{CropField()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Crop\+Field\+::\+Crop\+Field (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+\mbox{\Hypertarget{classCropField_a6aa31596759d38db94e89f737068d6ef}\label{classCropField_a6aa31596759d38db94e89f737068d6ef}} 
+\index{CropField@{CropField}!CropField@{CropField}}
+\index{CropField@{CropField}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{CropField()}{CropField()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Crop\+Field\+::\+Crop\+Field (\begin{DoxyParamCaption}\item[{const string \&}]{crop\+Type,  }\item[{int}]{total\+Capacity,  }\item[{\mbox{\hyperlink{classSoilState}{Soil\+State}} $\ast$}]{initial\+State }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em crop\+Type} & Type of crop grown in the field. \\
+\hline
+{\em total\+Capacity} & Total capacity of the crop field. \\
+\hline
+{\em initial\+State} & Initial soil state of the field. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCropField_a3650366847c5ab679905acc348593112}\label{classCropField_a3650366847c5ab679905acc348593112}} 
+\index{CropField@{CropField}!````~CropField@{$\sim$CropField}}
+\index{````~CropField@{$\sim$CropField}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{$\sim$CropField()}{~CropField()}}
+{\footnotesize\ttfamily Crop\+Field\+::$\sim$\+Crop\+Field (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor for \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCropField_a398d73cbf2c6cf57d23404ea20cefbb8}\label{classCropField_a398d73cbf2c6cf57d23404ea20cefbb8}} 
+\index{CropField@{CropField}!add@{add}}
+\index{add@{add}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Crop\+Field\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds a new farm unit to the crop field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & Pointer to the farm unit to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a13923b257012a31a9ca67f22598e4347}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_a8bc17b31ad39a5333a11a5fd13ea3fd3}\label{classCropField_a8bc17b31ad39a5333a11a5fd13ea3fd3}} 
+\index{CropField@{CropField}!buyTruck@{buyTruck}}
+\index{buyTruck@{buyTruck}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{buyTruck()}{buyTruck()}}
+{\footnotesize\ttfamily void Crop\+Field\+::buy\+Truck (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTruck}{Truck}} $\ast$}]{truck }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Purchases a truck for the crop field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & Pointer to the truck to be purchased. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_ac0565356da2cc0e863e30f665a95c236}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_a21504dc5d2d42d8f855522b02fd1ca75}\label{classCropField_a21504dc5d2d42d8f855522b02fd1ca75}} 
+\index{CropField@{CropField}!createBFSIterator@{createBFSIterator}}
+\index{createBFSIterator@{createBFSIterator}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{createBFSIterator()}{createBFSIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ Crop\+Field\+::create\+BFSIterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a Breadth-\/\+First Search iterator for the crop field. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the BFS iterator. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a92c1628b0e297ea97121b48cd3355c09}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_adff5dcb8087a254a8075aa9b2ec9d01a}\label{classCropField_adff5dcb8087a254a8075aa9b2ec9d01a}} 
+\index{CropField@{CropField}!createDFSIterator@{createDFSIterator}}
+\index{createDFSIterator@{createDFSIterator}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{createDFSIterator()}{createDFSIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ Crop\+Field\+::create\+DFSIterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a Depth-\/\+First Search iterator for the crop field. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the DFS iterator. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_aef3e9a6d04ac8aa1cd828433b974a37e}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_ad7f590642f9af8aa232fb733d16d5e18}\label{classCropField_ad7f590642f9af8aa232fb733d16d5e18}} 
+\index{CropField@{CropField}!getCropType@{getCropType}}
+\index{getCropType@{getCropType}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{getCropType()}{getCropType()}}
+{\footnotesize\ttfamily string Crop\+Field\+::get\+Crop\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of crop grown in the field. 
+
+\begin{DoxyReturn}{Returns}
+The type of crop. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_add66c341a2010e7f0491196b19d63c35}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_adddb019d62ec3a29b2979604116600be}\label{classCropField_adddb019d62ec3a29b2979604116600be}} 
+\index{CropField@{CropField}!getCurrentAmount@{getCurrentAmount}}
+\index{getCurrentAmount@{getCurrentAmount}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{getCurrentAmount()}{getCurrentAmount()}}
+{\footnotesize\ttfamily int Crop\+Field\+::get\+Current\+Amount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the current amount of crops in the field. 
+
+\begin{DoxyReturn}{Returns}
+The current crop amount. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a65bf5424abc22955aac85233275e72f8}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_a06b6500195737199c1e9a587c8e28e0e}\label{classCropField_a06b6500195737199c1e9a587c8e28e0e}} 
+\index{CropField@{CropField}!getLeftoverCapacity@{getLeftoverCapacity}}
+\index{getLeftoverCapacity@{getLeftoverCapacity}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{getLeftoverCapacity()}{getLeftoverCapacity()}}
+{\footnotesize\ttfamily int Crop\+Field\+::get\+Leftover\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the leftover capacity of the crop field. 
+
+\begin{DoxyReturn}{Returns}
+The leftover capacity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_afcff64a7e13d0682b57d2da35c70a3ee}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_a19528137c71e17e637fb8d0cef719301}\label{classCropField_a19528137c71e17e637fb8d0cef719301}} 
+\index{CropField@{CropField}!getName@{getName}}
+\index{getName@{getName}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Crop\+Field\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the name of the crop field. 
+
+\begin{DoxyReturn}{Returns}
+The name of the crop field. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a609f48740a45829170b708386c1f1e64}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_ad536f7bdecf12d12759ad668a082aba2}\label{classCropField_ad536f7bdecf12d12759ad668a082aba2}} 
+\index{CropField@{CropField}!getSoilState@{getSoilState}}
+\index{getSoilState@{getSoilState}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{getSoilState()}{getSoilState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSoilState}{Soil\+State}} $\ast$ Crop\+Field\+::get\+Soil\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Provides access to the current soil state. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current soil state. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCropField_aae62374e9a1dc8cbf9e0fb2780892c13}\label{classCropField_aae62374e9a1dc8cbf9e0fb2780892c13}} 
+\index{CropField@{CropField}!getSoilStateName@{getSoilStateName}}
+\index{getSoilStateName@{getSoilStateName}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{getSoilStateName()}{getSoilStateName()}}
+{\footnotesize\ttfamily string Crop\+Field\+::get\+Soil\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the name of the current soil state. 
+
+\begin{DoxyReturn}{Returns}
+The name of the current soil state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a5a4dd34e283ed90d1f710072cbddaa01}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_ae8dd4759fa80342fd965a6d62fb6b9bd}\label{classCropField_ae8dd4759fa80342fd965a6d62fb6b9bd}} 
+\index{CropField@{CropField}!getSubUnits@{getSubUnits}}
+\index{getSubUnits@{getSubUnits}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{getSubUnits()}{getSubUnits()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ $>$ Crop\+Field\+::get\+Sub\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the list of sub-\/units of the crop field. 
+
+\begin{DoxyReturn}{Returns}
+A vector containing pointers to sub-\/units. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a29356181ac3c11890ae60b6827e430fe}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_a7212b3be83b3603dcd1e6cb8e35dc3cc}\label{classCropField_a7212b3be83b3603dcd1e6cb8e35dc3cc}} 
+\index{CropField@{CropField}!getTotalCapacity@{getTotalCapacity}}
+\index{getTotalCapacity@{getTotalCapacity}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{getTotalCapacity()}{getTotalCapacity()}}
+{\footnotesize\ttfamily int Crop\+Field\+::get\+Total\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the total capacity of the crop field. 
+
+\begin{DoxyReturn}{Returns}
+The total capacity of the crop field. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_adcf972c220e9b3eebb2b94d9c6bec321}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_ad56dc1c23145837705de1fc7de4aa8cd}\label{classCropField_ad56dc1c23145837705de1fc7de4aa8cd}} 
+\index{CropField@{CropField}!harvest@{harvest}}
+\index{harvest@{harvest}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{harvest()}{harvest()}}
+{\footnotesize\ttfamily void Crop\+Field\+::harvest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Harvests crops (decorator pattern method). 
+
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a277e393e05439c80ad61ce6145d46002}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_a8231094689458548b7a7164581e1a20a}\label{classCropField_a8231094689458548b7a7164581e1a20a}} 
+\index{CropField@{CropField}!harvestCrops@{harvestCrops}}
+\index{harvestCrops@{harvestCrops}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{harvestCrops()}{harvestCrops()}}
+{\footnotesize\ttfamily int Crop\+Field\+::harvest\+Crops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Harvests the crops from the field. 
+
+\begin{DoxyReturn}{Returns}
+The number of crops harvested. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCropField_a2f6a9dff3a8749114782e6cb9aad29ea}\label{classCropField_a2f6a9dff3a8749114782e6cb9aad29ea}} 
+\index{CropField@{CropField}!increaseProduction@{increaseProduction}}
+\index{increaseProduction@{increaseProduction}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{increaseProduction()}{increaseProduction()}}
+{\footnotesize\ttfamily void Crop\+Field\+::increase\+Production (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Increases the production of crops. 
+
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a317de75b254d4f88980841dbbaca3e05}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_aa89a0cf85108686582f52ea5465d85de}\label{classCropField_aa89a0cf85108686582f52ea5465d85de}} 
+\index{CropField@{CropField}!rain@{rain}}
+\index{rain@{rain}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{rain()}{rain()}}
+{\footnotesize\ttfamily void Crop\+Field\+::rain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Simulates rainfall and triggers soil state transitions. 
+
+\mbox{\Hypertarget{classCropField_a521956d9962c0b253a1a308916fb7d9d}\label{classCropField_a521956d9962c0b253a1a308916fb7d9d}} 
+\index{CropField@{CropField}!remove@{remove}}
+\index{remove@{remove}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Crop\+Field\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes a farm unit from the crop field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & Pointer to the farm unit to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_ab5dec88c0ffb58f4cfb2815c9b6cba2c}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_a7e670b4e689e6e2af73d139d5f875f76}\label{classCropField_a7e670b4e689e6e2af73d139d5f875f76}} 
+\index{CropField@{CropField}!sellTruck@{sellTruck}}
+\index{sellTruck@{sellTruck}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{sellTruck()}{sellTruck()}}
+{\footnotesize\ttfamily void Crop\+Field\+::sell\+Truck (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTruck}{Truck}} $\ast$}]{truck }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sells a truck from the crop field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & Pointer to the truck to be sold. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_a382d18736aea94cf4a73db54d7461746}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_a7f0221d17d1eca301b776ab59ed5f134}\label{classCropField_a7f0221d17d1eca301b776ab59ed5f134}} 
+\index{CropField@{CropField}!setCurrentAmount@{setCurrentAmount}}
+\index{setCurrentAmount@{setCurrentAmount}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{setCurrentAmount()}{setCurrentAmount()}}
+{\footnotesize\ttfamily void Crop\+Field\+::set\+Current\+Amount (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the current amount of crops in the field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The new current amount of crops. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_ac3bfba7485281bd97686c4e80a1aedcd}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_a949b8b89ef8365058e1c5762956b96c7}\label{classCropField_a949b8b89ef8365058e1c5762956b96c7}} 
+\index{CropField@{CropField}!setName@{setName}}
+\index{setName@{setName}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Crop\+Field\+::set\+Name (\begin{DoxyParamCaption}\item[{const string \&}]{unit\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the name of the crop field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit\+Name} & The name to be set for the crop field. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classFarmUnit_aa60881cb73f51b3975c03cd27ca7cf54}{Farm\+Unit}}.
+
+\mbox{\Hypertarget{classCropField_a47c1b216733805d0eaf3c625244eb1a4}\label{classCropField_a47c1b216733805d0eaf3c625244eb1a4}} 
+\index{CropField@{CropField}!setSoilState@{setSoilState}}
+\index{setSoilState@{setSoilState}!CropField@{CropField}}
+\doxysubsubsection{\texorpdfstring{setSoilState()}{setSoilState()}}
+{\footnotesize\ttfamily void Crop\+Field\+::set\+Soil\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSoilState}{Soil\+State}} $\ast$}]{new\+State }\end{DoxyParamCaption})}
+
+
+
+Sets a new soil state for the crop field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+State} & Pointer to the new soil state. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CropField_8h}{Crop\+Field.\+h}}\item 
+\mbox{\hyperlink{CropField_8cpp}{Crop\+Field.\+cpp}}\end{DoxyCompactItemize}
