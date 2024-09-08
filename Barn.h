@@ -1,5 +1,10 @@
 // Class definition for Component 1 - Composite (Leaf)
 
+/**
+ * @file Barn.h
+ * @brief Class definition for Component 1 - Composite (Leaf)
+ */
+
 #ifndef BARN_H
 #define BARN_H
 

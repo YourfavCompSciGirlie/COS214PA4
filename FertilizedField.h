@@ -1,5 +1,10 @@
 // Class defintion for Component 3 - Decorator (ConcreteDecorator)
 
+/**
+ * @file FertilizedField.h
+ * @brief Class defintion for Component 3 - Decorator (ConcreteDecorator)
+ */
+
 #ifndef FERTILIZEDFIELD_H
 #define FERTILIZEDFIELD_H
 

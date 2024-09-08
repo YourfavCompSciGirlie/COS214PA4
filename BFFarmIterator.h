@@ -1,4 +1,9 @@
-//Class implementation for Component 5  - Iterator(ConcreteIterator)
+//Class defintion for Component 5  - Iterator(ConcreteIterator)
+
+/**
+ * @file BFFarmIterator.h
+ * @brief Class definition for Component 5  - Iterator(ConcreteIterator)
+ */
 
 #ifndef BFFARMITERATOR_H
 #define BFFARMITERATOR_H
