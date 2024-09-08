@@ -1,0 +1,35 @@
+digraph "DFFarmIterator.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="DFFarmIterator.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Class definition for Component 5 - Iterator (ConcreteIterator)"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Barn.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Barn_8h.html",tooltip="Class definition for Component 1 - Composite (Leaf)"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="CropField.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CropField_8h.html",tooltip="Class definition for Component 1 - Composite (Leaf), Class definition for Component 2 - State (Contex..."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="CropField.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CropField_8cpp.html",tooltip="Implementation of the CropField class."];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="CropFieldDecorator.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CropFieldDecorator_8h.html",tooltip="Class definition for Component 3 - Decorator (Decorator)"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="CropFieldDecorator.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CropFieldDecorator_8cpp.html",tooltip="Implementation of the CropFieldDecorator class."];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="ExtraBarn.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ExtraBarn_8h.html",tooltip="Class definition for Component 3 - Decorator (ConcreteDecorator)"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="ExtraBarn.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ExtraBarn_8cpp.html",tooltip="Implementation of the ExtraBarn class, a concrete decorator for the CropField class."];
+  Node5 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="FertilizedField.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8cpp.html",tooltip="Class implementation for Component 3 - Decorator (ConcreteDecorator)"];
+  Node5 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="FertilizedField.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8h.html",tooltip="Class defintion for Component 3 - Decorator (ConcreteDecorator)"];
+  Node10 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="DrySoil.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$DrySoil_8cpp.html",tooltip="Implementation of the DrySoil class, a concrete state in the State design pattern."];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="DFFarmIterator.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$DFFarmIterator_8cpp.html",tooltip="Implementation of the DFFarmIterator class."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

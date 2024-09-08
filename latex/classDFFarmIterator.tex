@@ -1,0 +1,176 @@
+\hypertarget{classDFFarmIterator}{}\doxysection{DFFarm\+Iterator Class Reference}
+\label{classDFFarmIterator}\index{DFFarmIterator@{DFFarmIterator}}
+
+
+Implements the depth-\/first traversal iterator for farm units.  
+
+
+
+
+{\ttfamily \#include $<$DFFarm\+Iterator.\+h$>$}
+
+
+
+Inheritance diagram for DFFarm\+Iterator\+:
+% FIG 0
+
+
+Collaboration diagram for DFFarm\+Iterator\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDFFarmIterator_a9b7dd4b4f167d9cfb6806faa75a2c174}{DFFarm\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classDFFarmIterator}{DFFarm\+Iterator}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDFFarmIterator_a3f4ab93dd5c4988fb0e262606b068cdd}{$\sim$\+DFFarm\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classDFFarmIterator}{DFFarm\+Iterator}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDFFarmIterator_ace837a34eba36fac76ef182fa3494c7a}{DFFarm\+Iterator}} (\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$root\+Farm)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the DFS iterator with a root farm unit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ \mbox{\hyperlink{classDFFarmIterator_a2a773a515bf3e821bad845be62b08e48}{first\+Farm}} ()
+\begin{DoxyCompactList}\small\item\em Returns the first farm unit in the DFS traversal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ \mbox{\hyperlink{classDFFarmIterator_ae53ddd9869732bf7be79fc28036a6687}{next}} ()
+\begin{DoxyCompactList}\small\item\em Moves to the next farm unit in the DFS traversal. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDFFarmIterator_aa34c0c37697750236b35a99019271b56}{is\+Done}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the DFS traversal is complete. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ \mbox{\hyperlink{classDFFarmIterator_a2818145473406bf555a73108c442619a}{current\+Farm}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current farm unit in the DFS traversal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the depth-\/first traversal iterator for farm units. 
+
+This class allows traversal of farm units using the depth-\/first search (DFS) strategy. It maintains a stack to keep track of the current path during the traversal and an unordered set to track visited farm units, ensuring that each unit is processed only once. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDFFarmIterator_a9b7dd4b4f167d9cfb6806faa75a2c174}\label{classDFFarmIterator_a9b7dd4b4f167d9cfb6806faa75a2c174}} 
+\index{DFFarmIterator@{DFFarmIterator}!DFFarmIterator@{DFFarmIterator}}
+\index{DFFarmIterator@{DFFarmIterator}!DFFarmIterator@{DFFarmIterator}}
+\doxysubsubsection{\texorpdfstring{DFFarmIterator()}{DFFarmIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily DFFarm\+Iterator\+::\+DFFarm\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classDFFarmIterator}{DFFarm\+Iterator}}. 
+
+Default constructor. Initializes the depth-\/first farm iterator. \mbox{\Hypertarget{classDFFarmIterator_a3f4ab93dd5c4988fb0e262606b068cdd}\label{classDFFarmIterator_a3f4ab93dd5c4988fb0e262606b068cdd}} 
+\index{DFFarmIterator@{DFFarmIterator}!````~DFFarmIterator@{$\sim$DFFarmIterator}}
+\index{````~DFFarmIterator@{$\sim$DFFarmIterator}!DFFarmIterator@{DFFarmIterator}}
+\doxysubsubsection{\texorpdfstring{$\sim$DFFarmIterator()}{~DFFarmIterator()}}
+{\footnotesize\ttfamily DFFarm\+Iterator\+::$\sim$\+DFFarm\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classDFFarmIterator}{DFFarm\+Iterator}}. 
+
+Destructor. Cleans up resources used by the depth-\/first farm iterator. \mbox{\Hypertarget{classDFFarmIterator_ace837a34eba36fac76ef182fa3494c7a}\label{classDFFarmIterator_ace837a34eba36fac76ef182fa3494c7a}} 
+\index{DFFarmIterator@{DFFarmIterator}!DFFarmIterator@{DFFarmIterator}}
+\index{DFFarmIterator@{DFFarmIterator}!DFFarmIterator@{DFFarmIterator}}
+\doxysubsubsection{\texorpdfstring{DFFarmIterator()}{DFFarmIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily DFFarm\+Iterator\+::\+DFFarm\+Iterator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$}]{root\+Farm }\end{DoxyParamCaption})}
+
+
+
+Constructor that initializes the DFS iterator with a root farm unit. 
+
+Constructor that initializes the iterator starting from the given root farm unit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em root\+Farm} & The root farm unit for starting the DFS traversal.\\
+\hline
+{\em root\+Farm} & Pointer to the root \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to start the depth-\/first search. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDFFarmIterator_a2818145473406bf555a73108c442619a}\label{classDFFarmIterator_a2818145473406bf555a73108c442619a}} 
+\index{DFFarmIterator@{DFFarmIterator}!currentFarm@{currentFarm}}
+\index{currentFarm@{currentFarm}!DFFarmIterator@{DFFarmIterator}}
+\doxysubsubsection{\texorpdfstring{currentFarm()}{currentFarm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ DFFarm\+Iterator\+::current\+Farm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the current farm unit in the DFS traversal. 
+
+Returns the current \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} in the traversal.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current farm unit being traversed.
+
+Pointer to the current \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmIterator_a5776ade70077fd0e4d2f300b287a1342}{Farm\+Iterator}}.
+
+\mbox{\Hypertarget{classDFFarmIterator_a2a773a515bf3e821bad845be62b08e48}\label{classDFFarmIterator_a2a773a515bf3e821bad845be62b08e48}} 
+\index{DFFarmIterator@{DFFarmIterator}!firstFarm@{firstFarm}}
+\index{firstFarm@{firstFarm}!DFFarmIterator@{DFFarmIterator}}
+\doxysubsubsection{\texorpdfstring{firstFarm()}{firstFarm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ DFFarm\+Iterator\+::first\+Farm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the first farm unit in the DFS traversal. 
+
+Returns the first \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} in the depth-\/first traversal.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the first farm unit in the traversal.
+
+Pointer to the first \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}}, or nullptr if the farm is empty. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmIterator_a7fab61ea47a49997b64833934a3e194c}{Farm\+Iterator}}.
+
+\mbox{\Hypertarget{classDFFarmIterator_aa34c0c37697750236b35a99019271b56}\label{classDFFarmIterator_aa34c0c37697750236b35a99019271b56}} 
+\index{DFFarmIterator@{DFFarmIterator}!isDone@{isDone}}
+\index{isDone@{isDone}!DFFarmIterator@{DFFarmIterator}}
+\doxysubsubsection{\texorpdfstring{isDone()}{isDone()}}
+{\footnotesize\ttfamily bool DFFarm\+Iterator\+::is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the DFS traversal is complete. 
+
+Checks if the traversal is complete.
+
+\begin{DoxyReturn}{Returns}
+True if all farm units have been visited, false otherwise.
+
+true if there are no more Farm\+Units to traverse, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmIterator_ae46182184982f10b72418424b0c22959}{Farm\+Iterator}}.
+
+\mbox{\Hypertarget{classDFFarmIterator_ae53ddd9869732bf7be79fc28036a6687}\label{classDFFarmIterator_ae53ddd9869732bf7be79fc28036a6687}} 
+\index{DFFarmIterator@{DFFarmIterator}!next@{next}}
+\index{next@{next}!DFFarmIterator@{DFFarmIterator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ DFFarm\+Iterator\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves to the next farm unit in the DFS traversal. 
+
+Advances the iterator to the next \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} in the depth-\/first traversal.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the next farm unit in the traversal.
+
+Pointer to the next \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}}, or nullptr if traversal is complete. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFarmIterator_afc74989768dfe051db0ed1181dcbcb34}{Farm\+Iterator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DFFarmIterator_8h}{DFFarm\+Iterator.\+h}}\item 
+\mbox{\hyperlink{DFFarmIterator_8cpp}{DFFarm\+Iterator.\+cpp}}\end{DoxyCompactItemize}

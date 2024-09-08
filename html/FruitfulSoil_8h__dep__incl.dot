@@ -1,0 +1,14 @@
+digraph "FruitfulSoil.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="FruitfulSoil.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Class definition for Component 2 - State (ConcreteState)"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="DrySoil.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$DrySoil_8cpp.html",tooltip="Implementation of the DrySoil class, a concrete state in the State design pattern."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="FertilizedField.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8h.html",tooltip="Class defintion for Component 3 - Decorator (ConcreteDecorator)"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="FertilizedField.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8cpp.html",tooltip="Class implementation for Component 3 - Decorator (ConcreteDecorator)"];
+  Node3 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

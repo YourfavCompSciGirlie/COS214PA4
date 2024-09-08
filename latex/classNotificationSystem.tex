@@ -1,0 +1,153 @@
+\hypertarget{classNotificationSystem}{}\doxysection{Notification\+System Class Reference}
+\label{classNotificationSystem}\index{NotificationSystem@{NotificationSystem}}
+
+
+Implements the Subject role in the Observer design pattern.  
+
+
+
+
+{\ttfamily \#include $<$Notification\+System.\+h$>$}
+
+
+
+Inheritance diagram for Notification\+System\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNotificationSystem_a114442a93e095c2b8c0e80b10084a926}{Notification\+System}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classNotificationSystem}{Notification\+System}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNotificationSystem_a0f48f431baacbe6b08b86fff2402314f}{$\sim$\+Notification\+System}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classNotificationSystem}{Notification\+System}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNotificationSystem_a9206291417bc48a88c493aaa3506188d}{add\+Observer}} (\mbox{\hyperlink{classTruck}{Truck}} $\ast$truck)
+\begin{DoxyCompactList}\small\item\em Adds an observer to the notification system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNotificationSystem_a35035dccc8d1b1bef542d8f8a47ba016}{remove\+Observer}} (\mbox{\hyperlink{classTruck}{Truck}} $\ast$truck)
+\begin{DoxyCompactList}\small\item\em Removes an observer from the notification system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNotificationSystem_a9b9d2c98cb6ccf28cd781dffb2fcc869}{notify\+All}} ()
+\begin{DoxyCompactList}\small\item\em Notifies all observers of a general event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNotificationSystem_a1ceb687f083355ab54e616782f7a5f49}{notify\+Fertilizer\+Needed}} ()
+\begin{DoxyCompactList}\small\item\em Notifies all observers when fertilizer is needed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNotificationSystem_a2c99bf67d982355360eaf88985f54407}{notify\+Storage\+Capacity\+Reached}} ()
+\begin{DoxyCompactList}\small\item\em Notifies all observers when storage capacity is reached. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the Subject role in the Observer design pattern. 
+
+The \mbox{\hyperlink{classNotificationSystem}{Notification\+System}} class maintains a list of observers (trucks) and notifies them of important events such as fertilizer requirements or when storage capacity is reached. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNotificationSystem_a114442a93e095c2b8c0e80b10084a926}\label{classNotificationSystem_a114442a93e095c2b8c0e80b10084a926}} 
+\index{NotificationSystem@{NotificationSystem}!NotificationSystem@{NotificationSystem}}
+\index{NotificationSystem@{NotificationSystem}!NotificationSystem@{NotificationSystem}}
+\doxysubsubsection{\texorpdfstring{NotificationSystem()}{NotificationSystem()}}
+{\footnotesize\ttfamily Notification\+System\+::\+Notification\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classNotificationSystem}{Notification\+System}} object. 
+
+Constructor for the \mbox{\hyperlink{classNotificationSystem}{Notification\+System}} class.
+
+Initializes the \mbox{\hyperlink{classNotificationSystem}{Notification\+System}} with a message indicating its readiness to manage notifications. \mbox{\Hypertarget{classNotificationSystem_a0f48f431baacbe6b08b86fff2402314f}\label{classNotificationSystem_a0f48f431baacbe6b08b86fff2402314f}} 
+\index{NotificationSystem@{NotificationSystem}!````~NotificationSystem@{$\sim$NotificationSystem}}
+\index{````~NotificationSystem@{$\sim$NotificationSystem}!NotificationSystem@{NotificationSystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$NotificationSystem()}{~NotificationSystem()}}
+{\footnotesize\ttfamily Notification\+System\+::$\sim$\+Notification\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classNotificationSystem}{Notification\+System}}. 
+
+Destructor for the \mbox{\hyperlink{classNotificationSystem}{Notification\+System}} class.
+
+Cleans up the \mbox{\hyperlink{classNotificationSystem}{Notification\+System}} with a message indicating its shutdown. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNotificationSystem_a9206291417bc48a88c493aaa3506188d}\label{classNotificationSystem_a9206291417bc48a88c493aaa3506188d}} 
+\index{NotificationSystem@{NotificationSystem}!addObserver@{addObserver}}
+\index{addObserver@{addObserver}!NotificationSystem@{NotificationSystem}}
+\doxysubsubsection{\texorpdfstring{addObserver()}{addObserver()}}
+{\footnotesize\ttfamily void Notification\+System\+::add\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTruck}{Truck}} $\ast$}]{truck }\end{DoxyParamCaption})}
+
+
+
+Adds an observer to the notification system. 
+
+Adds a \mbox{\hyperlink{classTruck}{Truck}} to the notification system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & A pointer to a \mbox{\hyperlink{classTruck}{Truck}} object to be added to the observer list.\\
+\hline
+{\em truck} & Pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be added as an observer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNotificationSystem_a9b9d2c98cb6ccf28cd781dffb2fcc869}\label{classNotificationSystem_a9b9d2c98cb6ccf28cd781dffb2fcc869}} 
+\index{NotificationSystem@{NotificationSystem}!notifyAll@{notifyAll}}
+\index{notifyAll@{notifyAll}!NotificationSystem@{NotificationSystem}}
+\doxysubsubsection{\texorpdfstring{notifyAll()}{notifyAll()}}
+{\footnotesize\ttfamily void Notification\+System\+::notify\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifies all observers of a general event. 
+
+Notifies all registered \mbox{\hyperlink{classTruck}{Truck}} observers.
+
+This method calls the {\ttfamily call\+Truck()} method of all registered \mbox{\hyperlink{classTruck}{Truck}} observers.
+
+Calls the start\+Engine method on all \mbox{\hyperlink{classTruck}{Truck}} objects currently registered as observers. \mbox{\Hypertarget{classNotificationSystem_a1ceb687f083355ab54e616782f7a5f49}\label{classNotificationSystem_a1ceb687f083355ab54e616782f7a5f49}} 
+\index{NotificationSystem@{NotificationSystem}!notifyFertilizerNeeded@{notifyFertilizerNeeded}}
+\index{notifyFertilizerNeeded@{notifyFertilizerNeeded}!NotificationSystem@{NotificationSystem}}
+\doxysubsubsection{\texorpdfstring{notifyFertilizerNeeded()}{notifyFertilizerNeeded()}}
+{\footnotesize\ttfamily void Notification\+System\+::notify\+Fertilizer\+Needed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifies all observers when fertilizer is needed. 
+
+Notifies all registered \mbox{\hyperlink{classTruck}{Truck}} observers that fertilizer is needed.
+
+This method is used to alert trucks that fertilization is required on the farm.
+
+Calls the notify\+All method to alert all trucks that the soil is dry. \mbox{\Hypertarget{classNotificationSystem_a2c99bf67d982355360eaf88985f54407}\label{classNotificationSystem_a2c99bf67d982355360eaf88985f54407}} 
+\index{NotificationSystem@{NotificationSystem}!notifyStorageCapacityReached@{notifyStorageCapacityReached}}
+\index{notifyStorageCapacityReached@{notifyStorageCapacityReached}!NotificationSystem@{NotificationSystem}}
+\doxysubsubsection{\texorpdfstring{notifyStorageCapacityReached()}{notifyStorageCapacityReached()}}
+{\footnotesize\ttfamily void Notification\+System\+::notify\+Storage\+Capacity\+Reached (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifies all observers when storage capacity is reached. 
+
+Notifies all registered \mbox{\hyperlink{classTruck}{Truck}} observers that storage capacity is reached.
+
+This method alerts trucks when the farm\textquotesingle{}s storage capacity is full and crops need to be transported.
+
+Calls the notify\+All method to alert all trucks that the storage capacity is nearing its limit. \mbox{\Hypertarget{classNotificationSystem_a35035dccc8d1b1bef542d8f8a47ba016}\label{classNotificationSystem_a35035dccc8d1b1bef542d8f8a47ba016}} 
+\index{NotificationSystem@{NotificationSystem}!removeObserver@{removeObserver}}
+\index{removeObserver@{removeObserver}!NotificationSystem@{NotificationSystem}}
+\doxysubsubsection{\texorpdfstring{removeObserver()}{removeObserver()}}
+{\footnotesize\ttfamily void Notification\+System\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTruck}{Truck}} $\ast$}]{truck }\end{DoxyParamCaption})}
+
+
+
+Removes an observer from the notification system. 
+
+Removes a \mbox{\hyperlink{classTruck}{Truck}} from the notification system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & A pointer to a \mbox{\hyperlink{classTruck}{Truck}} object to be removed from the observer list.\\
+\hline
+{\em truck} & Pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be removed from the observers list. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{NotificationSystem_8h}{Notification\+System.\+h}}\item 
+\mbox{\hyperlink{NotificationSystem_8cpp}{Notification\+System.\+cpp}}\end{DoxyCompactItemize}

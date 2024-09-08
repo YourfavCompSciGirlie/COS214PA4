@@ -1,0 +1,135 @@
+\hypertarget{classSoilState}{}\doxysection{Soil\+State Class Reference}
+\label{classSoilState}\index{SoilState@{SoilState}}
+
+
+Abstract base class for representing different states of soil.  
+
+
+
+
+{\ttfamily \#include $<$Soil\+State.\+h$>$}
+
+
+
+Inheritance diagram for Soil\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Soil\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSoilState_a3e090495e8579ce7bf4c16510194cd90}{Soil\+State}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classSoilState}{Soil\+State}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSoilState_a669eb5bfbadb6c5063a2a51c213a1c33}{$\sim$\+Soil\+State}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \mbox{\hyperlink{classSoilState}{Soil\+State}}. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classSoilState_a6a80c2ce33212e9fe574374aaa284f19}{harvest\+Crops}} () const =0
+\begin{DoxyCompactList}\small\item\em Harvests crops from the soil. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSoilState_a57b6a5f4f5d26bd2f7e291cd26a505b8}\label{classSoilState_a57b6a5f4f5d26bd2f7e291cd26a505b8}} 
+virtual void \mbox{\hyperlink{classSoilState_a57b6a5f4f5d26bd2f7e291cd26a505b8}{rain}} ()=0
+\begin{DoxyCompactList}\small\item\em Handles the rain event, which may affect the soil state. This method may trigger a transition to a different soil state. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classSoilState_abb74dcac07f24949223eb4446fb536b3}{get\+Name}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the name of the soil state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSoilState_a0e04330f821feaec0523ace45a02ca2b}{set\+Context}} (class \mbox{\hyperlink{classCropField}{Crop\+Field}} $\ast$\mbox{\hyperlink{classSoilState_a0ff50f950fa2edd27ef78b355da655c3}{context}})
+\begin{DoxyCompactList}\small\item\em Sets the context for the soil state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSoilState_a0ff50f950fa2edd27ef78b355da655c3}\label{classSoilState_a0ff50f950fa2edd27ef78b355da655c3}} 
+\mbox{\hyperlink{classCropField}{Crop\+Field}} $\ast$ \mbox{\hyperlink{classSoilState_a0ff50f950fa2edd27ef78b355da655c3}{context}}
+\begin{DoxyCompactList}\small\item\em Pointer to the context (\mbox{\hyperlink{classCropField}{Crop\+Field}}) to manage state transitions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for representing different states of soil. 
+
+This class serves as the base class for all concrete soil state classes. It defines the interface for interacting with different soil states and provides a mechanism for transitioning between states. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSoilState_a3e090495e8579ce7bf4c16510194cd90}\label{classSoilState_a3e090495e8579ce7bf4c16510194cd90}} 
+\index{SoilState@{SoilState}!SoilState@{SoilState}}
+\index{SoilState@{SoilState}!SoilState@{SoilState}}
+\doxysubsubsection{\texorpdfstring{SoilState()}{SoilState()}}
+{\footnotesize\ttfamily Soil\+State\+::\+Soil\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classSoilState}{Soil\+State}}. 
+
+Constructor for the \mbox{\hyperlink{classSoilState}{Soil\+State}} class.
+
+Initializes the \mbox{\hyperlink{classSoilState}{Soil\+State}} object with a message indicating the creation of the soil foundation. \mbox{\Hypertarget{classSoilState_a669eb5bfbadb6c5063a2a51c213a1c33}\label{classSoilState_a669eb5bfbadb6c5063a2a51c213a1c33}} 
+\index{SoilState@{SoilState}!````~SoilState@{$\sim$SoilState}}
+\index{````~SoilState@{$\sim$SoilState}!SoilState@{SoilState}}
+\doxysubsubsection{\texorpdfstring{$\sim$SoilState()}{~SoilState()}}
+{\footnotesize\ttfamily Soil\+State\+::$\sim$\+Soil\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor for \mbox{\hyperlink{classSoilState}{Soil\+State}}. 
+
+Destructor for the \mbox{\hyperlink{classSoilState}{Soil\+State}} class.
+
+Cleans up the \mbox{\hyperlink{classSoilState}{Soil\+State}} object with a message indicating its destruction. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSoilState_abb74dcac07f24949223eb4446fb536b3}\label{classSoilState_abb74dcac07f24949223eb4446fb536b3}} 
+\index{SoilState@{SoilState}!getName@{getName}}
+\index{getName@{getName}!SoilState@{SoilState}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily virtual string Soil\+State\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the name of the soil state. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the soil state. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classFruitfulSoil_a3e517cb630da79141ca9bdd2b24dbef6}{Fruitful\+Soil}}, \mbox{\hyperlink{classFloodedSoil_ae018ee08286833cd79789607cebf330b}{Flooded\+Soil}}, and \mbox{\hyperlink{classDrySoil_af8214ecc1455e5caf46c758ca829a8c1}{Dry\+Soil}}.
+
+\mbox{\Hypertarget{classSoilState_a6a80c2ce33212e9fe574374aaa284f19}\label{classSoilState_a6a80c2ce33212e9fe574374aaa284f19}} 
+\index{SoilState@{SoilState}!harvestCrops@{harvestCrops}}
+\index{harvestCrops@{harvestCrops}!SoilState@{SoilState}}
+\doxysubsubsection{\texorpdfstring{harvestCrops()}{harvestCrops()}}
+{\footnotesize\ttfamily virtual int Soil\+State\+::harvest\+Crops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Harvests crops from the soil. 
+
+\begin{DoxyReturn}{Returns}
+An integer representing the amount of crops harvested. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classFruitfulSoil_a49c9d6a6815de4e9eb75f37c802dd8c4}{Fruitful\+Soil}}, \mbox{\hyperlink{classFloodedSoil_a67020132fb97962e7509bf43363e9df1}{Flooded\+Soil}}, and \mbox{\hyperlink{classDrySoil_ac89e5d19265d4bd11cb46e1aba9fa214}{Dry\+Soil}}.
+
+\mbox{\Hypertarget{classSoilState_a0e04330f821feaec0523ace45a02ca2b}\label{classSoilState_a0e04330f821feaec0523ace45a02ca2b}} 
+\index{SoilState@{SoilState}!setContext@{setContext}}
+\index{setContext@{setContext}!SoilState@{SoilState}}
+\doxysubsubsection{\texorpdfstring{setContext()}{setContext()}}
+{\footnotesize\ttfamily void Soil\+State\+::set\+Context (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{classCropField}{Crop\+Field}} $\ast$}]{context }\end{DoxyParamCaption})}
+
+
+
+Sets the context for the soil state. 
+
+Sets the context (\mbox{\hyperlink{classCropField}{Crop\+Field}}) for the \mbox{\hyperlink{classSoilState}{Soil\+State}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Pointer to the \mbox{\hyperlink{classCropField}{Crop\+Field}} object that manages state transitions.\\
+\hline
+{\em ctx} & Pointer to the \mbox{\hyperlink{classCropField}{Crop\+Field}} object that this \mbox{\hyperlink{classSoilState}{Soil\+State}} will be associated with. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SoilState_8h}{Soil\+State.\+h}}\item 
+\mbox{\hyperlink{SoilState_8cpp}{Soil\+State.\+cpp}}\end{DoxyCompactItemize}
