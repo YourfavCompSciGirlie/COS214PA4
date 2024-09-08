@@ -1,5 +1,10 @@
 // Class definition for Component 4 - Observer (ConcreteObserver)
 
+/**
+ * @file DeliveryTruck.h
+ * @brief Class definition for Component 4 - Observer (ConcreteObserver)
+ */
+
 #ifndef DELIVERY_TRUCK_H
 #define DELIVERY_TRUCK_H
 

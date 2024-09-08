@@ -1,5 +1,10 @@
 // Class definition for Component 2 - State (ConcreteState)
 
+/**
+ * @file DrySoil.h
+ * @brief Class definition for Component 2 - State (ConcreteState)
+ */
+
 #ifndef DRYSOIL_H
 #define DRYSOIL_H
 

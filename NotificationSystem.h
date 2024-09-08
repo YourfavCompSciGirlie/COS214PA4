@@ -1,5 +1,10 @@
 // Class definition for Component 4 - Observer (Subject)
 
+/**
+ * @file NotificationSystem.h
+ * @brief Class definition for Component 4 - Observer (Subject)
+ */
+
 #ifndef NOTIFICATION_SYSTEM_H
 #define NOTIFICATION_SYSTEM_H
 

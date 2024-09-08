@@ -2,6 +2,11 @@
 // Class definition for Component 2 - State (Context)
 // Class definition for Component 4 - Observer (ConcreteSubject)
 
+/**
+ * @file CropField.h
+ * @brief Class definition for Component 1 - Composite (Leaf), Class definition for Component 2 - State (Context) and Class definition for Component 4 - Observer (ConcreteSubject)
+ */
+
 #ifndef CROPFIELD_H
 #define CROPFIELD_H
 

@@ -1,6 +1,11 @@
 // Class implementation for Component 1 - Composite (Composite)
 // Class implementation for Component 5 - Iterator (ConcreteAggregate)
 
+/**
+ * @file Farmland.h
+ * @brief Class implementation for Component 1 - Composite (Composite) and Class implementation for Component 5 - Iterator (ConcreteAggregate)
+ */
+
 #ifndef FARMLAND_H
 #define FARMLAND_H
 
