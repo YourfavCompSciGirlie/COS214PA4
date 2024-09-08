@@ -10,7 +10,7 @@ digraph "FloodedSoil.h"
   Node3 [label="FertilizedField.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8h.html",tooltip="Class defintion for Component 3 - Decorator (ConcreteDecorator)"];
   Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node4 [label="FertilizedField.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8cpp.html",tooltip=" "];
+  Node4 [label="FertilizedField.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8cpp.html",tooltip="Class implementation for Component 3 - Decorator (ConcreteDecorator)"];
   Node3 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node5 [label="TestingMain.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$TestingMain_8cpp.html",tooltip=" "];

@@ -48,7 +48,9 @@ The \mbox{\hyperlink{classNotificationSystem}{Notification\+System}} class maint
 
 Constructs a \mbox{\hyperlink{classNotificationSystem}{Notification\+System}} object. 
 
-\mbox{\Hypertarget{classNotificationSystem_a0f48f431baacbe6b08b86fff2402314f}\label{classNotificationSystem_a0f48f431baacbe6b08b86fff2402314f}} 
+Constructor for the \mbox{\hyperlink{classNotificationSystem}{Notification\+System}} class.
+
+Initializes the \mbox{\hyperlink{classNotificationSystem}{Notification\+System}} with a message indicating its readiness to manage notifications. \mbox{\Hypertarget{classNotificationSystem_a0f48f431baacbe6b08b86fff2402314f}\label{classNotificationSystem_a0f48f431baacbe6b08b86fff2402314f}} 
 \index{NotificationSystem@{NotificationSystem}!````~NotificationSystem@{$\sim$NotificationSystem}}
 \index{````~NotificationSystem@{$\sim$NotificationSystem}!NotificationSystem@{NotificationSystem}}
 \doxysubsubsection{\texorpdfstring{$\sim$NotificationSystem()}{~NotificationSystem()}}
@@ -58,7 +60,9 @@ Constructs a \mbox{\hyperlink{classNotificationSystem}{Notification\+System}} ob
 
 Destructor for \mbox{\hyperlink{classNotificationSystem}{Notification\+System}}. 
 
+Destructor for the \mbox{\hyperlink{classNotificationSystem}{Notification\+System}} class.
 
+Cleans up the \mbox{\hyperlink{classNotificationSystem}{Notification\+System}} with a message indicating its shutdown. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classNotificationSystem_a9206291417bc48a88c493aaa3506188d}\label{classNotificationSystem_a9206291417bc48a88c493aaa3506188d}} 
@@ -71,9 +75,13 @@ Destructor for \mbox{\hyperlink{classNotificationSystem}{Notification\+System}}.
 
 Adds an observer to the notification system. 
 
+Adds a \mbox{\hyperlink{classTruck}{Truck}} to the notification system.
+
 
 \begin{DoxyParams}{Parameters}
-{\em truck} & A pointer to a \mbox{\hyperlink{classTruck}{Truck}} object to be added to the observer list. \\
+{\em truck} & A pointer to a \mbox{\hyperlink{classTruck}{Truck}} object to be added to the observer list.\\
+\hline
+{\em truck} & Pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be added as an observer. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classNotificationSystem_a9b9d2c98cb6ccf28cd781dffb2fcc869}\label{classNotificationSystem_a9b9d2c98cb6ccf28cd781dffb2fcc869}} 
@@ -86,7 +94,11 @@ Adds an observer to the notification system.
 
 Notifies all observers of a general event. 
 
-This method calls the {\ttfamily call\+Truck()} method of all registered \mbox{\hyperlink{classTruck}{Truck}} observers. \mbox{\Hypertarget{classNotificationSystem_a1ceb687f083355ab54e616782f7a5f49}\label{classNotificationSystem_a1ceb687f083355ab54e616782f7a5f49}} 
+Notifies all registered \mbox{\hyperlink{classTruck}{Truck}} observers.
+
+This method calls the {\ttfamily call\+Truck()} method of all registered \mbox{\hyperlink{classTruck}{Truck}} observers.
+
+Calls the start\+Engine method on all \mbox{\hyperlink{classTruck}{Truck}} objects currently registered as observers. \mbox{\Hypertarget{classNotificationSystem_a1ceb687f083355ab54e616782f7a5f49}\label{classNotificationSystem_a1ceb687f083355ab54e616782f7a5f49}} 
 \index{NotificationSystem@{NotificationSystem}!notifyFertilizerNeeded@{notifyFertilizerNeeded}}
 \index{notifyFertilizerNeeded@{notifyFertilizerNeeded}!NotificationSystem@{NotificationSystem}}
 \doxysubsubsection{\texorpdfstring{notifyFertilizerNeeded()}{notifyFertilizerNeeded()}}
@@ -96,7 +108,11 @@ This method calls the {\ttfamily call\+Truck()} method of all registered \mbox{\
 
 Notifies all observers when fertilizer is needed. 
 
-This method is used to alert trucks that fertilization is required on the farm. \mbox{\Hypertarget{classNotificationSystem_a2c99bf67d982355360eaf88985f54407}\label{classNotificationSystem_a2c99bf67d982355360eaf88985f54407}} 
+Notifies all registered \mbox{\hyperlink{classTruck}{Truck}} observers that fertilizer is needed.
+
+This method is used to alert trucks that fertilization is required on the farm.
+
+Calls the notify\+All method to alert all trucks that the soil is dry. \mbox{\Hypertarget{classNotificationSystem_a2c99bf67d982355360eaf88985f54407}\label{classNotificationSystem_a2c99bf67d982355360eaf88985f54407}} 
 \index{NotificationSystem@{NotificationSystem}!notifyStorageCapacityReached@{notifyStorageCapacityReached}}
 \index{notifyStorageCapacityReached@{notifyStorageCapacityReached}!NotificationSystem@{NotificationSystem}}
 \doxysubsubsection{\texorpdfstring{notifyStorageCapacityReached()}{notifyStorageCapacityReached()}}
@@ -106,7 +122,11 @@ This method is used to alert trucks that fertilization is required on the farm. 
 
 Notifies all observers when storage capacity is reached. 
 
-This method alerts trucks when the farm\textquotesingle{}s storage capacity is full and crops need to be transported. \mbox{\Hypertarget{classNotificationSystem_a35035dccc8d1b1bef542d8f8a47ba016}\label{classNotificationSystem_a35035dccc8d1b1bef542d8f8a47ba016}} 
+Notifies all registered \mbox{\hyperlink{classTruck}{Truck}} observers that storage capacity is reached.
+
+This method alerts trucks when the farm\textquotesingle{}s storage capacity is full and crops need to be transported.
+
+Calls the notify\+All method to alert all trucks that the storage capacity is nearing its limit. \mbox{\Hypertarget{classNotificationSystem_a35035dccc8d1b1bef542d8f8a47ba016}\label{classNotificationSystem_a35035dccc8d1b1bef542d8f8a47ba016}} 
 \index{NotificationSystem@{NotificationSystem}!removeObserver@{removeObserver}}
 \index{removeObserver@{removeObserver}!NotificationSystem@{NotificationSystem}}
 \doxysubsubsection{\texorpdfstring{removeObserver()}{removeObserver()}}
@@ -116,9 +136,13 @@ This method alerts trucks when the farm\textquotesingle{}s storage capacity is f
 
 Removes an observer from the notification system. 
 
+Removes a \mbox{\hyperlink{classTruck}{Truck}} from the notification system.
+
 
 \begin{DoxyParams}{Parameters}
-{\em truck} & A pointer to a \mbox{\hyperlink{classTruck}{Truck}} object to be removed from the observer list. \\
+{\em truck} & A pointer to a \mbox{\hyperlink{classTruck}{Truck}} object to be removed from the observer list.\\
+\hline
+{\em truck} & Pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be removed from the observers list. \\
 \hline
 \end{DoxyParams}
 

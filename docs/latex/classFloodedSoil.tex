@@ -49,7 +49,9 @@ This class inherits from \mbox{\hyperlink{classSoilState}{Soil\+State}} and repr
 
 Default constructor for \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}}. 
 
-\mbox{\Hypertarget{classFloodedSoil_a9423ebb179229efedea6214cff61a126}\label{classFloodedSoil_a9423ebb179229efedea6214cff61a126}} 
+Constructs a new \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}}.
+
+Initializes the \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}} with a message indicating it is saturated and unyielding. \mbox{\Hypertarget{classFloodedSoil_a9423ebb179229efedea6214cff61a126}\label{classFloodedSoil_a9423ebb179229efedea6214cff61a126}} 
 \index{FloodedSoil@{FloodedSoil}!````~FloodedSoil@{$\sim$FloodedSoil}}
 \index{````~FloodedSoil@{$\sim$FloodedSoil}!FloodedSoil@{FloodedSoil}}
 \doxysubsubsection{\texorpdfstring{$\sim$FloodedSoil()}{~FloodedSoil()}}
@@ -59,7 +61,9 @@ Default constructor for \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}}.
 
 Destructor for \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}}. 
 
+Destructs the \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}}.
 
+Outputs a message when the \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}} is destroyed, indicating it is waterlogged. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classFloodedSoil_ae018ee08286833cd79789607cebf330b}\label{classFloodedSoil_ae018ee08286833cd79789607cebf330b}} 
@@ -72,8 +76,12 @@ Destructor for \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}}.
 
 Gets the name of the soil state. 
 
+Gets the name of the \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}} state.
+
 \begin{DoxyReturn}{Returns}
-A string representing the name of the soil state. 
+A string representing the name of the soil state.
+
+string The name of the soil state, which is \char`\"{}\+Flooded\char`\"{}. 
 \end{DoxyReturn}
 
 
@@ -89,8 +97,15 @@ Implements \mbox{\hyperlink{classSoilState_abb74dcac07f24949223eb4446fb536b3}{So
 
 Harvests crops from the soil. 
 
+Harvests crops from the \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}}.
+
 \begin{DoxyReturn}{Returns}
-An integer representing the amount of crops harvested. 
+An integer representing the amount of crops harvested.
+\end{DoxyReturn}
+Indicates that the waterlogged soil yields no crops and returns 0.
+
+\begin{DoxyReturn}{Returns}
+int The amount of crops harvested, which is 0. 
 \end{DoxyReturn}
 
 
@@ -106,7 +121,9 @@ Implements \mbox{\hyperlink{classSoilState_a6a80c2ce33212e9fe574374aaa284f19}{So
 
 Handles the rain event, which may affect the soil state. This method may transition the soil to a different state depending on the system\textquotesingle{}s rules. 
 
+Simulates the effect of rain on the \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}}.
 
+Since the soil is already drenched, additional rain deepens the flood but does not change the state. 
 
 Implements \mbox{\hyperlink{classSoilState_a57b6a5f4f5d26bd2f7e291cd26a505b8}{Soil\+State}}.
 

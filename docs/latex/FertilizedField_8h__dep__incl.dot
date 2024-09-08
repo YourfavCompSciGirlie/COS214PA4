@@ -7,7 +7,7 @@ digraph "FertilizedField.h"
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node2 [label="DemoMain.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$DemoMain_8cpp.html",tooltip=" "];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node3 [label="FertilizedField.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8cpp.html",tooltip=" "];
+  Node3 [label="FertilizedField.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8cpp.html",tooltip="Class implementation for Component 3 - Decorator (ConcreteDecorator)"];
   Node1 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node4 [label="TestingMain.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$TestingMain_8cpp.html",tooltip=" "];

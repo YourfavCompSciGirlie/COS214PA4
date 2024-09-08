@@ -55,7 +55,9 @@ This class serves as the base class for all concrete soil state classes. It defi
 
 Default constructor for \mbox{\hyperlink{classSoilState}{Soil\+State}}. 
 
-\mbox{\Hypertarget{classSoilState_a669eb5bfbadb6c5063a2a51c213a1c33}\label{classSoilState_a669eb5bfbadb6c5063a2a51c213a1c33}} 
+Constructor for the \mbox{\hyperlink{classSoilState}{Soil\+State}} class.
+
+Initializes the \mbox{\hyperlink{classSoilState}{Soil\+State}} object with a message indicating the creation of the soil foundation. \mbox{\Hypertarget{classSoilState_a669eb5bfbadb6c5063a2a51c213a1c33}\label{classSoilState_a669eb5bfbadb6c5063a2a51c213a1c33}} 
 \index{SoilState@{SoilState}!````~SoilState@{$\sim$SoilState}}
 \index{````~SoilState@{$\sim$SoilState}!SoilState@{SoilState}}
 \doxysubsubsection{\texorpdfstring{$\sim$SoilState()}{~SoilState()}}
@@ -65,7 +67,9 @@ Default constructor for \mbox{\hyperlink{classSoilState}{Soil\+State}}.
 
 Virtual destructor for \mbox{\hyperlink{classSoilState}{Soil\+State}}. 
 
+Destructor for the \mbox{\hyperlink{classSoilState}{Soil\+State}} class.
 
+Cleans up the \mbox{\hyperlink{classSoilState}{Soil\+State}} object with a message indicating its destruction. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classSoilState_abb74dcac07f24949223eb4446fb536b3}\label{classSoilState_abb74dcac07f24949223eb4446fb536b3}} 
@@ -126,9 +130,13 @@ Implemented in \mbox{\hyperlink{classFruitfulSoil_a56942389eb0450cbedcf54cf0efa4
 
 Sets the context for the soil state. 
 
+Sets the context (\mbox{\hyperlink{classCropField}{Crop\+Field}}) for the \mbox{\hyperlink{classSoilState}{Soil\+State}}.
+
 
 \begin{DoxyParams}{Parameters}
-{\em context} & Pointer to the \mbox{\hyperlink{classCropField}{Crop\+Field}} object that manages state transitions. \\
+{\em context} & Pointer to the \mbox{\hyperlink{classCropField}{Crop\+Field}} object that manages state transitions.\\
+\hline
+{\em ctx} & Pointer to the \mbox{\hyperlink{classCropField}{Crop\+Field}} object that this \mbox{\hyperlink{classSoilState}{Soil\+State}} will be associated with. \\
 \hline
 \end{DoxyParams}
 

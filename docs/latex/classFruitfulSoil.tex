@@ -49,7 +49,9 @@ This class inherits from \mbox{\hyperlink{classSoilState}{Soil\+State}} and repr
 
 Default constructor for \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}}. 
 
-\mbox{\Hypertarget{classFruitfulSoil_a1d6f303ead4c809ebda0a32e7229dbf9}\label{classFruitfulSoil_a1d6f303ead4c809ebda0a32e7229dbf9}} 
+Constructs a new \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}}.
+
+Initializes the \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}} with a message indicating it is rich and ready for a bountiful harvest. \mbox{\Hypertarget{classFruitfulSoil_a1d6f303ead4c809ebda0a32e7229dbf9}\label{classFruitfulSoil_a1d6f303ead4c809ebda0a32e7229dbf9}} 
 \index{FruitfulSoil@{FruitfulSoil}!````~FruitfulSoil@{$\sim$FruitfulSoil}}
 \index{````~FruitfulSoil@{$\sim$FruitfulSoil}!FruitfulSoil@{FruitfulSoil}}
 \doxysubsubsection{\texorpdfstring{$\sim$FruitfulSoil()}{~FruitfulSoil()}}
@@ -59,7 +61,9 @@ Default constructor for \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}}.
 
 Destructor for \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}}. 
 
+Destructs the \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}}.
 
+Outputs a message when the \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}} is destroyed, indicating it was once lush and fertile. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classFruitfulSoil_a3e517cb630da79141ca9bdd2b24dbef6}\label{classFruitfulSoil_a3e517cb630da79141ca9bdd2b24dbef6}} 
@@ -72,8 +76,12 @@ Destructor for \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}}.
 
 Gets the name of the soil state. 
 
+Gets the name of the \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}} state.
+
 \begin{DoxyReturn}{Returns}
-A string representing the name of the soil state. 
+A string representing the name of the soil state.
+
+string The name of the soil state, which is \char`\"{}\+Fruitful\char`\"{}. 
 \end{DoxyReturn}
 
 
@@ -89,8 +97,15 @@ Implements \mbox{\hyperlink{classSoilState_abb74dcac07f24949223eb4446fb536b3}{So
 
 Harvests crops from the soil. 
 
+Harvests crops from the \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}}.
+
 \begin{DoxyReturn}{Returns}
-An integer representing the amount of crops harvested. 
+An integer representing the amount of crops harvested.
+\end{DoxyReturn}
+Indicates that the rich, fertile soil yields a high amount of crops, representing a bountiful harvest.
+
+\begin{DoxyReturn}{Returns}
+int The amount of crops harvested, which is 3. 
 \end{DoxyReturn}
 
 
@@ -106,7 +121,9 @@ Implements \mbox{\hyperlink{classSoilState_a6a80c2ce33212e9fe574374aaa284f19}{So
 
 Handles the rain event, which may affect the soil state. This method may transition the soil to a different state depending on the system\textquotesingle{}s rules. 
 
+Simulates the effect of rain on the \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}}.
 
+Transitions the soil state to \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}} as the rain nurtures it to its peak vitality. 
 
 Implements \mbox{\hyperlink{classSoilState_a57b6a5f4f5d26bd2f7e291cd26a505b8}{Soil\+State}}.
 

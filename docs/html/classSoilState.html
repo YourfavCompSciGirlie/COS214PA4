@@ -132,6 +132,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default constructor for <a class="el" href="classSoilState.html" title="Abstract base class for representing different states of soil.">SoilState</a>. </p>
+<p>Constructor for the <a class="el" href="classSoilState.html" title="Abstract base class for representing different states of soil.">SoilState</a> class.</p>
+<p>Initializes the <a class="el" href="classSoilState.html" title="Abstract base class for representing different states of soil.">SoilState</a> object with a message indicating the creation of the soil foundation. </p>
 
 </div>
 </div>
@@ -159,6 +161,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Virtual destructor for <a class="el" href="classSoilState.html" title="Abstract base class for representing different states of soil.">SoilState</a>. </p>
+<p>Destructor for the <a class="el" href="classSoilState.html" title="Abstract base class for representing different states of soil.">SoilState</a> class.</p>
+<p>Cleans up the <a class="el" href="classSoilState.html" title="Abstract base class for representing different states of soil.">SoilState</a> object with a message indicating its destruction. </p>
 
 </div>
 </div>
@@ -269,9 +273,11 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets the context for the soil state. </p>
+<p>Sets the context (<a class="el" href="classCropField.html" title="Represents a crop field unit in the farm system.">CropField</a>) for the <a class="el" href="classSoilState.html" title="Abstract base class for representing different states of soil.">SoilState</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">context</td><td>Pointer to the <a class="el" href="classCropField.html" title="Represents a crop field unit in the farm system.">CropField</a> object that manages state transitions. </td></tr>
+    <tr><td class="paramname">context</td><td>Pointer to the <a class="el" href="classCropField.html" title="Represents a crop field unit in the farm system.">CropField</a> object that manages state transitions.</td></tr>
+    <tr><td class="paramname">ctx</td><td>Pointer to the <a class="el" href="classCropField.html" title="Represents a crop field unit in the farm system.">CropField</a> object that this <a class="el" href="classSoilState.html" title="Abstract base class for representing different states of soil.">SoilState</a> will be associated with. </td></tr>
   </table>
   </dd>
 </dl>

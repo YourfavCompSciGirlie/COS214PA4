@@ -20,7 +20,7 @@ digraph "CropField.h"
   Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node8 [label="TestingMain.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$TestingMain_8cpp.html",tooltip=" "];
   Node3 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="FertilizedField.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8cpp.html",tooltip=" "];
+  Node9 [label="FertilizedField.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8cpp.html",tooltip="Class implementation for Component 3 - Decorator (ConcreteDecorator)"];
   Node3 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node10 [label="FertilizedField.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8h.html",tooltip="Class defintion for Component 3 - Decorator (ConcreteDecorator)"];
   Node10 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

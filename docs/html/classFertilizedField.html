@@ -195,9 +195,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor for <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>. </p>
+<p>Constructs a new <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a> object.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">field</td><td>A pointer to the <a class="el" href="classCropField.html" title="Represents a crop field unit in the farm system.">CropField</a> being decorated. </td></tr>
+    <tr><td class="paramname">field</td><td>A pointer to the <a class="el" href="classCropField.html" title="Represents a crop field unit in the farm system.">CropField</a> being decorated.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Initializes a new instance of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a> class with the given <a class="el" href="classCropField.html" title="Represents a crop field unit in the farm system.">CropField</a> and outputs a message indicating its creation. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">field</td><td>Pointer to the <a class="el" href="classCropField.html" title="Represents a crop field unit in the farm system.">CropField</a> to be decorated. </td></tr>
   </table>
   </dd>
 </dl>
@@ -220,6 +227,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor for <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>. </p>
+<p>Destroys the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a> object.</p>
+<p>Cleans up resources and outputs a message indicating the destruction of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>. </p>
 
 </div>
 </div>
@@ -249,10 +258,17 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds a child <a class="el" href="classFarmUnit.html" title="Abstract class representing a unit in the farm.">FarmUnit</a> to the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>. </p>
+<p>Adds a <a class="el" href="classFarmUnit.html" title="Abstract class representing a unit in the farm.">FarmUnit</a> to the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
 <p>This method is part of the Composite pattern but may not have an effect in <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unit</td><td>A pointer to the <a class="el" href="classFarmUnit.html" title="Abstract class representing a unit in the farm.">FarmUnit</a> to be added. </td></tr>
+    <tr><td class="paramname">unit</td><td>A pointer to the <a class="el" href="classFarmUnit.html" title="Abstract class representing a unit in the farm.">FarmUnit</a> to be added.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This method does not perform any action as the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a> does not store units. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">unit</td><td>Pointer to the <a class="el" href="classFarmUnit.html" title="Abstract class representing a unit in the farm.">FarmUnit</a> to be added. </td></tr>
   </table>
   </dd>
 </dl>
@@ -286,9 +302,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds a truck to the notification system. </p>
+<p>Buys a truck for the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">truck</td><td>A pointer to the <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> object to be added. </td></tr>
+    <tr><td class="paramname">truck</td><td>A pointer to the <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> object to be added.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Adds a truck to the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a> and outputs a message about the purchase. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">truck</td><td>Pointer to the <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> object to be added. </td></tr>
   </table>
   </dd>
 </dl>
@@ -321,7 +344,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a Breadth-First Search (BFS) iterator for the fertilized field. </p>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the BFS iterator. </dd></dl>
+<p>Creates a BFS iterator for the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the BFS iterator.</dd></dl>
+<p>Generates a Breadth-First Search iterator to traverse the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>. </p><dl class="section return"><dt>Returns</dt><dd>A pointer to a new <a class="el" href="classBFFarmIterator.html" title="Concrete iterator implementing Breadth-First Traversal for farm units.">BFFarmIterator</a>. </dd></dl>
 
 <p>Implements <a class="el" href="classCropFieldDecorator.html#a9bc99d14bfcb405e6168355e92bda57e">CropFieldDecorator</a>.</p>
 
@@ -351,7 +376,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a Depth-First Search (DFS) iterator for the fertilized field. </p>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the DFS iterator. </dd></dl>
+<p>Creates a DFS iterator for the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the DFS iterator.</dd></dl>
+<p>Generates a Depth-First Search iterator to traverse the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>. </p><dl class="section return"><dt>Returns</dt><dd>A pointer to a new <a class="el" href="classDFFarmIterator.html" title="Implements the depth-first traversal iterator for farm units.">DFFarmIterator</a>. </dd></dl>
 
 <p>Implements <a class="el" href="classCropFieldDecorator.html#a5be101141927dae4815a1b9b9e3d55b6">CropFieldDecorator</a>.</p>
 
@@ -381,7 +408,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the crop type of the fertilized field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The crop type as a string. </dd></dl>
+<p>Gets the crop type of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>The crop type as a string.</dd></dl>
+<p>Retrieves the crop type of the decorated <a class="el" href="classCropField.html" title="Represents a crop field unit in the farm system.">CropField</a> and appends "(Fertilized)". </p><dl class="section return"><dt>Returns</dt><dd>The crop type of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>. </dd></dl>
 
 <p>Implements <a class="el" href="classCropFieldDecorator.html#aff7e4b010c38aa771612e2164efbdc69">CropFieldDecorator</a>.</p>
 
@@ -411,7 +440,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the current amount of resources in the fertilized field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The current amount as an integer. </dd></dl>
+<p>Gets the current amount of crops in the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>The current amount as an integer.</dd></dl>
+<p>Retrieves the current amount of crops including a bonus amount due to better soil conditions. </p><dl class="section return"><dt>Returns</dt><dd>The current amount of crops including bonus. </dd></dl>
 
 <p>Implements <a class="el" href="classCropFieldDecorator.html#a36d1170fccf678969fa1a3f134b819d8">CropFieldDecorator</a>.</p>
 
@@ -441,7 +472,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the leftover capacity of the fertilized field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The leftover capacity as an integer. </dd></dl>
+<p>Gets the leftover capacity of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>The leftover capacity as an integer.</dd></dl>
+<p>Calculates the leftover capacity including bonus capacity from advanced storage management. </p><dl class="section return"><dt>Returns</dt><dd>The total leftover capacity including bonus. </dd></dl>
 
 <p>Implements <a class="el" href="classCropFieldDecorator.html#affc1ca780dacfa6c6cf6c407e8038530">CropFieldDecorator</a>.</p>
 
@@ -471,7 +504,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the name of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The name of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The name of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</dd></dl>
+<p>Retrieves the name of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>. </p><dl class="section return"><dt>Returns</dt><dd>The name of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>. </dd></dl>
 
 <p>Implements <a class="el" href="classCropFieldDecorator.html#a1fcb8066e5dc52d90e631115abc44d48">CropFieldDecorator</a>.</p>
 
@@ -501,7 +535,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the soil state name of the fertilized field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The soil state name as a string. </dd></dl>
+<p>Gets the soil state name of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>The soil state name as a string.</dd></dl>
+<p>Retrieves the soil state name of the decorated <a class="el" href="classCropField.html" title="Represents a crop field unit in the farm system.">CropField</a> and appends "(Enhanced with fertilizer)". </p><dl class="section return"><dt>Returns</dt><dd>The soil state name of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>. </dd></dl>
 
 <p>Implements <a class="el" href="classCropFieldDecorator.html#a5deb76caf68bddb98f9de7b168776efc">CropFieldDecorator</a>.</p>
 
@@ -531,7 +567,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the child <a class="el" href="classFarmUnit.html" title="Abstract class representing a unit in the farm.">FarmUnit</a> objects contained within the fertilized field. </p>
-<dl class="section return"><dt>Returns</dt><dd>A vector of pointers to the child <a class="el" href="classFarmUnit.html" title="Abstract class representing a unit in the farm.">FarmUnit</a> objects. </dd></dl>
+<p>Gets the sub-units of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>A vector of pointers to the child <a class="el" href="classFarmUnit.html" title="Abstract class representing a unit in the farm.">FarmUnit</a> objects.</dd></dl>
+<p>Returns an empty vector as the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a> does not contain sub-units. </p><dl class="section return"><dt>Returns</dt><dd>An empty vector of <a class="el" href="classFarmUnit.html" title="Abstract class representing a unit in the farm.">FarmUnit</a> pointers. </dd></dl>
 
 <p>Implements <a class="el" href="classCropFieldDecorator.html#a54d9b39d1523eed43933f94574c856f5">CropFieldDecorator</a>.</p>
 
@@ -561,7 +599,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the total capacity of the fertilized field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The total capacity as an integer. </dd></dl>
+<p>Gets the total capacity of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>The total capacity as an integer.</dd></dl>
+<p>Calculates the total capacity including bonus capacity from improved field management. </p><dl class="section return"><dt>Returns</dt><dd>The total capacity including bonus. </dd></dl>
 
 <p>Implements <a class="el" href="classCropFieldDecorator.html#a6a531ad6ad93b90e2af159afe75216b9">CropFieldDecorator</a>.</p>
 
@@ -591,6 +631,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Harvests crops from the fertilized field. </p>
+<p>Harvests crops from the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
+<p>Performs the harvest operation and may include bonus crops based on soil conditions. Outputs messages about the harvest. </p>
 
 <p>Implements <a class="el" href="classCropFieldDecorator.html#a4720ecc82e1bfbeec90adf1758942862">CropFieldDecorator</a>.</p>
 
@@ -620,6 +662,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Increases the production capacity of the fertilized field. </p>
+<p>Increases crop production in the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
+<p>Enhances crop production by transitioning soil states and adjusting crop amounts. Outputs messages about the changes. </p>
 
 <p>Implements <a class="el" href="classCropFieldDecorator.html#a9a6efc93d1e709d61ebd26c3f20dfd50">CropFieldDecorator</a>.</p>
 
@@ -650,10 +694,17 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Removes a child <a class="el" href="classFarmUnit.html" title="Abstract class representing a unit in the farm.">FarmUnit</a> from the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>. </p>
+<p>Removes a <a class="el" href="classFarmUnit.html" title="Abstract class representing a unit in the farm.">FarmUnit</a> from the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
 <p>This method is part of the Composite pattern but may not have an effect in <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unit</td><td>A pointer to the <a class="el" href="classFarmUnit.html" title="Abstract class representing a unit in the farm.">FarmUnit</a> to be removed. </td></tr>
+    <tr><td class="paramname">unit</td><td>A pointer to the <a class="el" href="classFarmUnit.html" title="Abstract class representing a unit in the farm.">FarmUnit</a> to be removed.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This method does not perform any action as the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a> does not store units. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">unit</td><td>Pointer to the <a class="el" href="classFarmUnit.html" title="Abstract class representing a unit in the farm.">FarmUnit</a> to be removed. </td></tr>
   </table>
   </dd>
 </dl>
@@ -687,9 +738,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Removes a truck from the notification system. </p>
+<p>Sells a truck from the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">truck</td><td>A pointer to the <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> object to be removed. </td></tr>
+    <tr><td class="paramname">truck</td><td>A pointer to the <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> object to be removed.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Removes a truck from the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a> and outputs a message about the sale. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">truck</td><td>Pointer to the <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> object to be removed. </td></tr>
   </table>
   </dd>
 </dl>
@@ -723,9 +781,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets the current amount of resources in the fertilized field. </p>
+<p>Sets the current amount of crops in the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">amount</td><td>The amount to set. </td></tr>
+    <tr><td class="paramname">amount</td><td>The amount to set.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Updates the current amount of crops and outputs a message about the change. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amount</td><td>The new amount of crops to set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -759,9 +824,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets the name of the fertilized field. </p>
+<p>Sets the name of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">unitName</td><td>The name to set. </td></tr>
+    <tr><td class="paramname">unitName</td><td>The name to set.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Updates the name of the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a> and outputs a message about the change. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The new name to set for the <a class="el" href="classFertilizedField.html" title="A concrete decorator for CropField that adds fertilization functionality.">FertilizedField</a>. </td></tr>
   </table>
   </dd>
 </dl>

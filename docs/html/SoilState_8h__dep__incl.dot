@@ -22,7 +22,7 @@ digraph "SoilState.h"
   Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 [label="TestingMain.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$TestingMain_8cpp.html",tooltip=" "];
   Node4 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node10 [label="FertilizedField.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8cpp.html",tooltip=" "];
+  Node10 [label="FertilizedField.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8cpp.html",tooltip="Class implementation for Component 3 - Decorator (ConcreteDecorator)"];
   Node4 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node11 [label="FertilizedField.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FertilizedField_8h.html",tooltip="Class defintion for Component 3 - Decorator (ConcreteDecorator)"];
   Node11 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -61,6 +61,6 @@ digraph "SoilState.h"
   Node17 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node17 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node18 [label="SoilState.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$SoilState_8cpp.html",tooltip=" "];
+  Node18 [label="SoilState.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$SoilState_8cpp.html",tooltip="Implementation of the SoilState class (State in the State Pattern)."];
   Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

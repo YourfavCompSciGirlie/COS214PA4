@@ -77,9 +77,16 @@ The \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}} class enhances a 
 
 Constructor for \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}. 
 
+Constructs a new \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}} object.
+
 
 \begin{DoxyParams}{Parameters}
-{\em field} & A pointer to the \mbox{\hyperlink{classCropField}{Crop\+Field}} being decorated. \\
+{\em field} & A pointer to the \mbox{\hyperlink{classCropField}{Crop\+Field}} being decorated.\\
+\hline
+\end{DoxyParams}
+Initializes a new instance of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}} class with the given \mbox{\hyperlink{classCropField}{Crop\+Field}} and outputs a message indicating its creation. 
+\begin{DoxyParams}{Parameters}
+{\em field} & Pointer to the \mbox{\hyperlink{classCropField}{Crop\+Field}} to be decorated. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classFertilizedField_adce27b1418c43199597810eca525f358}\label{classFertilizedField_adce27b1418c43199597810eca525f358}} 
@@ -92,7 +99,9 @@ Constructor for \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
 
 Destructor for \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}. 
 
+Destroys the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}} object.
 
+Cleans up resources and outputs a message indicating the destruction of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classFertilizedField_a86ef1c3dd6e8ddedb422e2aea43f059c}\label{classFertilizedField_a86ef1c3dd6e8ddedb422e2aea43f059c}} 
@@ -105,11 +114,18 @@ Destructor for \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
 
 Adds a child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}. 
 
+Adds a \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+
 This method is part of the Composite pattern but may not have an effect in \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
 
 
 \begin{DoxyParams}{Parameters}
-{\em unit} & A pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be added. \\
+{\em unit} & A pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be added.\\
+\hline
+\end{DoxyParams}
+This method does not perform any action as the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}} does not store units. 
+\begin{DoxyParams}{Parameters}
+{\em unit} & Pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be added. \\
 \hline
 \end{DoxyParams}
 
@@ -126,9 +142,16 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_a188698549df53d4587c40d7a3bb
 
 Adds a truck to the notification system. 
 
+Buys a truck for the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+
 
 \begin{DoxyParams}{Parameters}
-{\em truck} & A pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be added. \\
+{\em truck} & A pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be added.\\
+\hline
+\end{DoxyParams}
+Adds a truck to the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}} and outputs a message about the purchase. 
+\begin{DoxyParams}{Parameters}
+{\em truck} & Pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be added. \\
 \hline
 \end{DoxyParams}
 
@@ -145,8 +168,13 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_a3e3eb3d49b405b0873fd495e6b6
 
 Creates a Breadth-\/\+First Search (BFS) iterator for the fertilized field. 
 
+Creates a BFS iterator for the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+
 \begin{DoxyReturn}{Returns}
-A pointer to the BFS iterator. 
+A pointer to the BFS iterator.
+\end{DoxyReturn}
+Generates a Breadth-\/\+First Search iterator to traverse the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}. \begin{DoxyReturn}{Returns}
+A pointer to a new \mbox{\hyperlink{classBFFarmIterator}{BFFarm\+Iterator}}. 
 \end{DoxyReturn}
 
 
@@ -162,8 +190,13 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_a9bc99d14bfcb405e6168355e92b
 
 Creates a Depth-\/\+First Search (DFS) iterator for the fertilized field. 
 
+Creates a DFS iterator for the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+
 \begin{DoxyReturn}{Returns}
-A pointer to the DFS iterator. 
+A pointer to the DFS iterator.
+\end{DoxyReturn}
+Generates a Depth-\/\+First Search iterator to traverse the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}. \begin{DoxyReturn}{Returns}
+A pointer to a new \mbox{\hyperlink{classDFFarmIterator}{DFFarm\+Iterator}}. 
 \end{DoxyReturn}
 
 
@@ -179,8 +212,13 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_a5be101141927dae4815a1b9b9e3
 
 Gets the crop type of the fertilized field. 
 
+Gets the crop type of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+
 \begin{DoxyReturn}{Returns}
-The crop type as a string. 
+The crop type as a string.
+\end{DoxyReturn}
+Retrieves the crop type of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}} and appends \char`\"{}(\+Fertilized)\char`\"{}. \begin{DoxyReturn}{Returns}
+The crop type of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}. 
 \end{DoxyReturn}
 
 
@@ -196,8 +234,13 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_aff7e4b010c38aa771612e2164ef
 
 Gets the current amount of resources in the fertilized field. 
 
+Gets the current amount of crops in the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+
 \begin{DoxyReturn}{Returns}
-The current amount as an integer. 
+The current amount as an integer.
+\end{DoxyReturn}
+Retrieves the current amount of crops including a bonus amount due to better soil conditions. \begin{DoxyReturn}{Returns}
+The current amount of crops including bonus. 
 \end{DoxyReturn}
 
 
@@ -213,8 +256,13 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_a36d1170fccf678969fa1a3f134b
 
 Gets the leftover capacity of the fertilized field. 
 
+Gets the leftover capacity of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+
 \begin{DoxyReturn}{Returns}
-The leftover capacity as an integer. 
+The leftover capacity as an integer.
+\end{DoxyReturn}
+Calculates the leftover capacity including bonus capacity from advanced storage management. \begin{DoxyReturn}{Returns}
+The total leftover capacity including bonus. 
 \end{DoxyReturn}
 
 
@@ -231,6 +279,9 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_affc1ca780dacfa6c6cf6c407e80
 Gets the name of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}. 
 
 \begin{DoxyReturn}{Returns}
+The name of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+\end{DoxyReturn}
+Retrieves the name of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}. \begin{DoxyReturn}{Returns}
 The name of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}. 
 \end{DoxyReturn}
 
@@ -247,8 +298,13 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_a1fcb8066e5dc52d90e631115abc
 
 Gets the soil state name of the fertilized field. 
 
+Gets the soil state name of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+
 \begin{DoxyReturn}{Returns}
-The soil state name as a string. 
+The soil state name as a string.
+\end{DoxyReturn}
+Retrieves the soil state name of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}} and appends \char`\"{}(\+Enhanced with fertilizer)\char`\"{}. \begin{DoxyReturn}{Returns}
+The soil state name of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}. 
 \end{DoxyReturn}
 
 
@@ -264,8 +320,13 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_a5deb76caf68bddb98f9de7b1687
 
 Gets the child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} objects contained within the fertilized field. 
 
+Gets the sub-\/units of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+
 \begin{DoxyReturn}{Returns}
-A vector of pointers to the child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} objects. 
+A vector of pointers to the child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} objects.
+\end{DoxyReturn}
+Returns an empty vector as the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}} does not contain sub-\/units. \begin{DoxyReturn}{Returns}
+An empty vector of \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} pointers. 
 \end{DoxyReturn}
 
 
@@ -281,8 +342,13 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_a54d9b39d1523eed43933f94574c
 
 Gets the total capacity of the fertilized field. 
 
+Gets the total capacity of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+
 \begin{DoxyReturn}{Returns}
-The total capacity as an integer. 
+The total capacity as an integer.
+\end{DoxyReturn}
+Calculates the total capacity including bonus capacity from improved field management. \begin{DoxyReturn}{Returns}
+The total capacity including bonus. 
 \end{DoxyReturn}
 
 
@@ -298,7 +364,9 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_a6a531ad6ad93b90e2af159afe75
 
 Harvests crops from the fertilized field. 
 
+Harvests crops from the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
 
+Performs the harvest operation and may include bonus crops based on soil conditions. Outputs messages about the harvest. 
 
 Implements \mbox{\hyperlink{classCropFieldDecorator_a4720ecc82e1bfbeec90adf1758942862}{Crop\+Field\+Decorator}}.
 
@@ -312,7 +380,9 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_a4720ecc82e1bfbeec90adf17589
 
 Increases the production capacity of the fertilized field. 
 
+Increases crop production in the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
 
+Enhances crop production by transitioning soil states and adjusting crop amounts. Outputs messages about the changes. 
 
 Implements \mbox{\hyperlink{classCropFieldDecorator_a9a6efc93d1e709d61ebd26c3f20dfd50}{Crop\+Field\+Decorator}}.
 
@@ -326,11 +396,18 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_a9a6efc93d1e709d61ebd26c3f20
 
 Removes a child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} from the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}. 
 
+Removes a \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} from the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+
 This method is part of the Composite pattern but may not have an effect in \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
 
 
 \begin{DoxyParams}{Parameters}
-{\em unit} & A pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be removed. \\
+{\em unit} & A pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be removed.\\
+\hline
+\end{DoxyParams}
+This method does not perform any action as the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}} does not store units. 
+\begin{DoxyParams}{Parameters}
+{\em unit} & Pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be removed. \\
 \hline
 \end{DoxyParams}
 
@@ -347,9 +424,16 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_a1e1299a75830401e6be3467721b
 
 Removes a truck from the notification system. 
 
+Sells a truck from the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+
 
 \begin{DoxyParams}{Parameters}
-{\em truck} & A pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be removed. \\
+{\em truck} & A pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be removed.\\
+\hline
+\end{DoxyParams}
+Removes a truck from the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}} and outputs a message about the sale. 
+\begin{DoxyParams}{Parameters}
+{\em truck} & Pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be removed. \\
 \hline
 \end{DoxyParams}
 
@@ -366,9 +450,16 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_a0960e3671a8bc5aced5daa1ae79
 
 Sets the current amount of resources in the fertilized field. 
 
+Sets the current amount of crops in the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+
 
 \begin{DoxyParams}{Parameters}
-{\em amount} & The amount to set. \\
+{\em amount} & The amount to set.\\
+\hline
+\end{DoxyParams}
+Updates the current amount of crops and outputs a message about the change. 
+\begin{DoxyParams}{Parameters}
+{\em amount} & The new amount of crops to set. \\
 \hline
 \end{DoxyParams}
 
@@ -385,9 +476,16 @@ Implements \mbox{\hyperlink{classCropFieldDecorator_aa04d7d2b3e45a86e898de310809
 
 Sets the name of the fertilized field. 
 
+Sets the name of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}.
+
 
 \begin{DoxyParams}{Parameters}
-{\em unit\+Name} & The name to set. \\
+{\em unit\+Name} & The name to set.\\
+\hline
+\end{DoxyParams}
+Updates the name of the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}} and outputs a message about the change. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The new name to set for the \mbox{\hyperlink{classFertilizedField}{Fertilized\+Field}}. \\
 \hline
 \end{DoxyParams}
 

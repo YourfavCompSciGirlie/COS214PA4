@@ -139,6 +139,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default constructor for <a class="el" href="classFloodedSoil.html" title="Concrete state class representing a flooded soil state.">FloodedSoil</a>. </p>
+<p>Constructs a new <a class="el" href="classFloodedSoil.html" title="Concrete state class representing a flooded soil state.">FloodedSoil</a>.</p>
+<p>Initializes the <a class="el" href="classFloodedSoil.html" title="Concrete state class representing a flooded soil state.">FloodedSoil</a> with a message indicating it is saturated and unyielding. </p>
 
 </div>
 </div>
@@ -158,6 +160,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor for <a class="el" href="classFloodedSoil.html" title="Concrete state class representing a flooded soil state.">FloodedSoil</a>. </p>
+<p>Destructs the <a class="el" href="classFloodedSoil.html" title="Concrete state class representing a flooded soil state.">FloodedSoil</a>.</p>
+<p>Outputs a message when the <a class="el" href="classFloodedSoil.html" title="Concrete state class representing a flooded soil state.">FloodedSoil</a> is destroyed, indicating it is waterlogged. </p>
 
 </div>
 </div>
@@ -186,7 +190,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the name of the soil state. </p>
-<dl class="section return"><dt>Returns</dt><dd>A string representing the name of the soil state. </dd></dl>
+<p>Gets the name of the <a class="el" href="classFloodedSoil.html" title="Concrete state class representing a flooded soil state.">FloodedSoil</a> state.</p>
+<dl class="section return"><dt>Returns</dt><dd>A string representing the name of the soil state.</dd>
+<dd>
+string The name of the soil state, which is "Flooded". </dd></dl>
 
 <p>Implements <a class="el" href="classSoilState.html#abb74dcac07f24949223eb4446fb536b3">SoilState</a>.</p>
 
@@ -216,7 +223,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Harvests crops from the soil. </p>
-<dl class="section return"><dt>Returns</dt><dd>An integer representing the amount of crops harvested. </dd></dl>
+<p>Harvests crops from the <a class="el" href="classFloodedSoil.html" title="Concrete state class representing a flooded soil state.">FloodedSoil</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>An integer representing the amount of crops harvested.</dd></dl>
+<p>Indicates that the waterlogged soil yields no crops and returns 0.</p>
+<dl class="section return"><dt>Returns</dt><dd>int The amount of crops harvested, which is 0. </dd></dl>
 
 <p>Implements <a class="el" href="classSoilState.html#a6a80c2ce33212e9fe574374aaa284f19">SoilState</a>.</p>
 
@@ -246,6 +256,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles the rain event, which may affect the soil state. This method may transition the soil to a different state depending on the system's rules. </p>
+<p>Simulates the effect of rain on the <a class="el" href="classFloodedSoil.html" title="Concrete state class representing a flooded soil state.">FloodedSoil</a>.</p>
+<p>Since the soil is already drenched, additional rain deepens the flood but does not change the state. </p>
 
 <p>Implements <a class="el" href="classSoilState.html#a57b6a5f4f5d26bd2f7e291cd26a505b8">SoilState</a>.</p>
 

@@ -123,6 +123,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a <a class="el" href="classNotificationSystem.html" title="Implements the Subject role in the Observer design pattern.">NotificationSystem</a> object. </p>
+<p>Constructor for the <a class="el" href="classNotificationSystem.html" title="Implements the Subject role in the Observer design pattern.">NotificationSystem</a> class.</p>
+<p>Initializes the <a class="el" href="classNotificationSystem.html" title="Implements the Subject role in the Observer design pattern.">NotificationSystem</a> with a message indicating its readiness to manage notifications. </p>
 
 </div>
 </div>
@@ -142,6 +144,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor for <a class="el" href="classNotificationSystem.html" title="Implements the Subject role in the Observer design pattern.">NotificationSystem</a>. </p>
+<p>Destructor for the <a class="el" href="classNotificationSystem.html" title="Implements the Subject role in the Observer design pattern.">NotificationSystem</a> class.</p>
+<p>Cleans up the <a class="el" href="classNotificationSystem.html" title="Implements the Subject role in the Observer design pattern.">NotificationSystem</a> with a message indicating its shutdown. </p>
 
 </div>
 </div>
@@ -163,9 +167,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds an observer to the notification system. </p>
+<p>Adds a <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> to the notification system.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">truck</td><td>A pointer to a <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> object to be added to the observer list. </td></tr>
+    <tr><td class="paramname">truck</td><td>A pointer to a <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> object to be added to the observer list.</td></tr>
+    <tr><td class="paramname">truck</td><td>Pointer to the <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> object to be added as an observer. </td></tr>
   </table>
   </dd>
 </dl>
@@ -188,7 +194,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Notifies all observers of a general event. </p>
-<p>This method calls the <code>callTruck()</code> method of all registered <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> observers. </p>
+<p>Notifies all registered <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> observers.</p>
+<p>This method calls the <code>callTruck()</code> method of all registered <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> observers.</p>
+<p>Calls the startEngine method on all <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> objects currently registered as observers. </p>
 
 </div>
 </div>
@@ -208,7 +216,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Notifies all observers when fertilizer is needed. </p>
-<p>This method is used to alert trucks that fertilization is required on the farm. </p>
+<p>Notifies all registered <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> observers that fertilizer is needed.</p>
+<p>This method is used to alert trucks that fertilization is required on the farm.</p>
+<p>Calls the notifyAll method to alert all trucks that the soil is dry. </p>
 
 </div>
 </div>
@@ -228,7 +238,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Notifies all observers when storage capacity is reached. </p>
-<p>This method alerts trucks when the farm's storage capacity is full and crops need to be transported. </p>
+<p>Notifies all registered <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> observers that storage capacity is reached.</p>
+<p>This method alerts trucks when the farm's storage capacity is full and crops need to be transported.</p>
+<p>Calls the notifyAll method to alert all trucks that the storage capacity is nearing its limit. </p>
 
 </div>
 </div>
@@ -249,9 +261,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Removes an observer from the notification system. </p>
+<p>Removes a <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> from the notification system.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">truck</td><td>A pointer to a <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> object to be removed from the observer list. </td></tr>
+    <tr><td class="paramname">truck</td><td>A pointer to a <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> object to be removed from the observer list.</td></tr>
+    <tr><td class="paramname">truck</td><td>Pointer to the <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a> object to be removed from the observers list. </td></tr>
   </table>
   </dd>
 </dl>
