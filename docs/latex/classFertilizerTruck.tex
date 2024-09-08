@@ -2,6 +2,11 @@
 \label{classFertilizerTruck}\index{FertilizerTruck@{FertilizerTruck}}
 
 
+Concrete observer class for the Observer pattern, representing a type of truck used for fertilizer.  
+
+
+
+
 {\ttfamily \#include $<$Fertilizer\+Truck.\+h$>$}
 
 
@@ -16,14 +21,19 @@ Collaboration diagram for Fertilizer\+Truck\+:
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classFertilizerTruck_a2a6d7b020b6bca2692c5ec59b974e147}{start\+Engine}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Starts the engine of the fertilizer truck. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classFertilizerTruck_ac864fc30fd837dda68b79296feed08a7}{call\+Truck}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Calls the fertilizer truck for service or delivery. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classFertilizerTruck_a0dcd0333bb3b9247d685518c8650f4d9}{Fertilizer\+Truck}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classFertilizerTruck}{Fertilizer\+Truck}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classFertilizerTruck_ad8f1accd2148fc71530c5899ebea29de}{$\sim$\+Fertilizer\+Truck}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classFertilizerTruck}{Fertilizer\+Truck}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Concrete observer class for the Observer pattern, representing a type of truck used for fertilizer. 
+
+This class inherits from \mbox{\hyperlink{classTruck}{Truck}} and represents a fertilizer truck in the farm management system. It includes methods for starting the engine and calling the truck, specific to its role in the system. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classFertilizerTruck_a0dcd0333bb3b9247d685518c8650f4d9}\label{classFertilizerTruck_a0dcd0333bb3b9247d685518c8650f4d9}} 
@@ -32,11 +42,19 @@ void \mbox{\hyperlink{classFertilizerTruck_ac864fc30fd837dda68b79296feed08a7}{ca
 \doxysubsubsection{\texorpdfstring{FertilizerTruck()}{FertilizerTruck()}}
 {\footnotesize\ttfamily Fertilizer\+Truck\+::\+Fertilizer\+Truck (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Default constructor for \mbox{\hyperlink{classFertilizerTruck}{Fertilizer\+Truck}}. 
+
 \mbox{\Hypertarget{classFertilizerTruck_ad8f1accd2148fc71530c5899ebea29de}\label{classFertilizerTruck_ad8f1accd2148fc71530c5899ebea29de}} 
 \index{FertilizerTruck@{FertilizerTruck}!````~FertilizerTruck@{$\sim$FertilizerTruck}}
 \index{````~FertilizerTruck@{$\sim$FertilizerTruck}!FertilizerTruck@{FertilizerTruck}}
 \doxysubsubsection{\texorpdfstring{$\sim$FertilizerTruck()}{~FertilizerTruck()}}
 {\footnotesize\ttfamily Fertilizer\+Truck\+::$\sim$\+Fertilizer\+Truck (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classFertilizerTruck}{Fertilizer\+Truck}}. 
 
 
 
@@ -49,6 +67,10 @@ void \mbox{\hyperlink{classFertilizerTruck_ac864fc30fd837dda68b79296feed08a7}{ca
 
 
 
+Calls the fertilizer truck for service or delivery. 
+
+
+
 Implements \mbox{\hyperlink{classTruck_a730583405d6ac826f386a77dd5bd3877}{Truck}}.
 
 \mbox{\Hypertarget{classFertilizerTruck_a2a6d7b020b6bca2692c5ec59b974e147}\label{classFertilizerTruck_a2a6d7b020b6bca2692c5ec59b974e147}} 
@@ -56,6 +78,10 @@ Implements \mbox{\hyperlink{classTruck_a730583405d6ac826f386a77dd5bd3877}{Truck}
 \index{startEngine@{startEngine}!FertilizerTruck@{FertilizerTruck}}
 \doxysubsubsection{\texorpdfstring{startEngine()}{startEngine()}}
 {\footnotesize\ttfamily void Fertilizer\+Truck\+::start\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Starts the engine of the fertilizer truck. 
 
 
 

@@ -3,17 +3,17 @@ digraph "Farmland.h"
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="Farmland.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="Farmland.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Class implementation for Component 1 - Composite (Composite) and Class implementation for Component 5..."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
-  Node2 [label="FarmUnit.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FarmUnit_8h.html",tooltip=" "];
+  Node2 [label="FarmUnit.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FarmUnit_8h.html",tooltip="Class definition for Component 1 - Composite (Component) and Component 5 - Iterator (Aggregate)"];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
   Node3 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
   Node4 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
-  Node5 [label="Truck.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Truck_8h.html",tooltip=" "];
+  Node5 [label="Truck.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Truck_8h.html",tooltip="Class definition for Component 4 - Observer (Observer)"];
   Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
-  Node6 [label="FarmIterator.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FarmIterator_8h.html",tooltip=" "];
+  Node6 [label="FarmIterator.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FarmIterator_8h.html",tooltip="Class definition for Component 5 - Iterator (Iterator)"];
   Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];

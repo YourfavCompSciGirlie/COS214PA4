@@ -67,65 +67,76 @@ $(function() {
 <div class="contents">
 <a href="ExtraBarn_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Class defintion for Component 3 - Decorator (ConcreteDecorator)</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef EXTRABARN_H</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define EXTRABARN_H</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CropField_8h.html">CropField.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CropFieldDecorator_8h.html">CropFieldDecorator.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef EXTRABARN_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define EXTRABARN_H</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classExtraBarn.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classExtraBarn.html">ExtraBarn</a> : <span class="keyword">public</span> <a class="code" href="classCropFieldDecorator.html">CropFieldDecorator</a> {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classCropField.html">CropField</a>* field;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">int</span> extraStorageCapacity;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">string</span> name;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classExtraBarn.html">ExtraBarn</a>(<a class="code" href="classCropField.html">CropField</a>* field, <span class="keywordtype">int</span> extraCapacity);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        ~<a class="code" href="classExtraBarn.html">ExtraBarn</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> increaseProduction();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">void</span> harvest();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">int</span> getLeftoverCapacity();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> buyTruck(<a class="code" href="classTruck.html">Truck</a>* truck);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">void</span> sellTruck(<a class="code" href="classTruck.html">Truck</a>* truck);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CropField_8h.html">CropField.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CropFieldDecorator_8h.html">CropFieldDecorator.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classExtraBarn.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classExtraBarn.html">ExtraBarn</a> : <span class="keyword">public</span> <a class="code" href="classCropFieldDecorator.html">CropFieldDecorator</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classCropField.html">CropField</a>* field; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">int</span> extraStorageCapacity; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">int</span> getTotalCapacity();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">string</span> getCropType();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">string</span> getSoilStateName();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">int</span> getCurrentAmount();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> setCurrentAmount(<span class="keywordtype">int</span> amount);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">// Iterator pattern methods</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        vector&lt;FarmUnit*&gt; getSubUnits();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classFarmIterator.html">FarmIterator</a>* createBFSIterator();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classFarmIterator.html">FarmIterator</a>* createDFSIterator();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">// Set and get the name of the farm unit</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> setName(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; unitName);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">string</span> getName() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">// Composite pattern methods</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> add(<a class="code" href="classFarmUnit.html">FarmUnit</a>* unit);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> remove(<a class="code" href="classFarmUnit.html">FarmUnit</a>* unit);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EXTRABARN_H</span></div>
-<div class="ttc" id="aCropFieldDecorator_8h_html"><div class="ttname"><a href="CropFieldDecorator_8h.html">CropFieldDecorator.h</a></div></div>
-<div class="ttc" id="aCropField_8h_html"><div class="ttname"><a href="CropField_8h.html">CropField.h</a></div></div>
-<div class="ttc" id="aclassCropFieldDecorator_html"><div class="ttname"><a href="classCropFieldDecorator.html">CropFieldDecorator</a></div><div class="ttdef"><b>Definition:</b> CropFieldDecorator.h:8</div></div>
-<div class="ttc" id="aclassCropField_html"><div class="ttname"><a href="classCropField.html">CropField</a></div><div class="ttdoc">Represents a crop field unit in the farm system.</div><div class="ttdef"><b>Definition:</b> CropField.h:31</div></div>
-<div class="ttc" id="aclassExtraBarn_html"><div class="ttname"><a href="classExtraBarn.html">ExtraBarn</a></div><div class="ttdef"><b>Definition:</b> ExtraBarn.h:13</div></div>
-<div class="ttc" id="aclassFarmIterator_html"><div class="ttname"><a href="classFarmIterator.html">FarmIterator</a></div><div class="ttdef"><b>Definition:</b> FarmIterator.h:8</div></div>
-<div class="ttc" id="aclassFarmUnit_html"><div class="ttname"><a href="classFarmUnit.html">FarmUnit</a></div><div class="ttdef"><b>Definition:</b> FarmUnit.h:17</div></div>
-<div class="ttc" id="aclassTruck_html"><div class="ttname"><a href="classTruck.html">Truck</a></div><div class="ttdef"><b>Definition:</b> Truck.h:9</div></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">string</span> name;  </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classExtraBarn.html">ExtraBarn</a>(<a class="code" href="classCropField.html">CropField</a>* field, <span class="keywordtype">int</span> extraCapacity);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        ~<a class="code" href="classExtraBarn.html">ExtraBarn</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> increaseProduction();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> harvest();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">int</span> getLeftoverCapacity();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> buyTruck(<a class="code" href="classTruck.html">Truck</a>* truck);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> sellTruck(<a class="code" href="classTruck.html">Truck</a>* truck);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">int</span> getTotalCapacity();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">string</span> getCropType();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">string</span> getSoilStateName();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">int</span> getCurrentAmount();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">void</span> setCurrentAmount(<span class="keywordtype">int</span> amount);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="comment">// Iterator pattern methods</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"></span>        vector&lt;FarmUnit*&gt; getSubUnits();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="classFarmIterator.html">FarmIterator</a>* createBFSIterator();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="classFarmIterator.html">FarmIterator</a>* createDFSIterator();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="comment">// Set and get the name of the farm unit</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment"></span>        <span class="keywordtype">void</span> setName(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; unitName);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordtype">string</span> getName() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="comment">// Composite pattern methods</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment"></span>        <span class="keywordtype">void</span> add(<a class="code" href="classFarmUnit.html">FarmUnit</a>* unit);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordtype">void</span> remove(<a class="code" href="classFarmUnit.html">FarmUnit</a>* unit);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;};</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EXTRABARN_H</span></div>
+<div class="ttc" id="aCropFieldDecorator_8h_html"><div class="ttname"><a href="CropFieldDecorator_8h.html">CropFieldDecorator.h</a></div><div class="ttdoc">Class definition for Component 3 - Decorator (Decorator)</div></div>
+<div class="ttc" id="aCropField_8h_html"><div class="ttname"><a href="CropField_8h.html">CropField.h</a></div><div class="ttdoc">Class definition for Component 1 - Composite (Leaf), Class definition for Component 2 - State (Contex...</div></div>
+<div class="ttc" id="aclassCropFieldDecorator_html"><div class="ttname"><a href="classCropFieldDecorator.html">CropFieldDecorator</a></div><div class="ttdoc">Abstract base class for CropField decorators that adds additional functionality to CropField objects.</div><div class="ttdef"><b>Definition:</b> CropFieldDecorator.h:21</div></div>
+<div class="ttc" id="aclassCropField_html"><div class="ttname"><a href="classCropField.html">CropField</a></div><div class="ttdoc">Represents a crop field unit in the farm system.</div><div class="ttdef"><b>Definition:</b> CropField.h:36</div></div>
+<div class="ttc" id="aclassExtraBarn_html"><div class="ttname"><a href="classExtraBarn.html">ExtraBarn</a></div><div class="ttdoc">A decorator class that adds extra storage capacity to a CropField.</div><div class="ttdef"><b>Definition:</b> ExtraBarn.h:26</div></div>
+<div class="ttc" id="aclassFarmIterator_html"><div class="ttname"><a href="classFarmIterator.html">FarmIterator</a></div><div class="ttdoc">Abstract class representing the Iterator for traversing FarmUnits.</div><div class="ttdef"><b>Definition:</b> FarmIterator.h:21</div></div>
+<div class="ttc" id="aclassFarmUnit_html"><div class="ttname"><a href="classFarmUnit.html">FarmUnit</a></div><div class="ttdoc">Abstract class representing a unit in the farm.</div><div class="ttdef"><b>Definition:</b> FarmUnit.h:31</div></div>
+<div class="ttc" id="aclassTruck_html"><div class="ttname"><a href="classTruck.html">Truck</a></div><div class="ttdoc">Abstract base class for trucks.</div><div class="ttdef"><b>Definition:</b> Truck.h:22</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

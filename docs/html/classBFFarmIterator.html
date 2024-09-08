@@ -109,8 +109,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae1628064f6c743db33d210156daea50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classFarmIterator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classFarmIterator')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classFarmIterator.html">FarmIterator</a></td></tr>
 <tr class="memitem:a26019e86acfe3d108f93add302e39d7b inherit pub_methods_classFarmIterator"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFarmIterator.html#a26019e86acfe3d108f93add302e39d7b">FarmIterator</a> ()</td></tr>
+<tr class="memdesc:a26019e86acfe3d108f93add302e39d7b inherit pub_methods_classFarmIterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classFarmIterator.html" title="Abstract class representing the Iterator for traversing FarmUnits.">FarmIterator</a>.  <a href="classFarmIterator.html#a26019e86acfe3d108f93add302e39d7b">More...</a><br /></td></tr>
 <tr class="separator:a26019e86acfe3d108f93add302e39d7b inherit pub_methods_classFarmIterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c9347b1de4f5dd2ee929e016f23a5f1 inherit pub_methods_classFarmIterator"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFarmIterator.html#a4c9347b1de4f5dd2ee929e016f23a5f1">~FarmIterator</a> ()</td></tr>
+<tr class="memdesc:a4c9347b1de4f5dd2ee929e016f23a5f1 inherit pub_methods_classFarmIterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for <a class="el" href="classFarmIterator.html" title="Abstract class representing the Iterator for traversing FarmUnits.">FarmIterator</a>.  <a href="classFarmIterator.html#a4c9347b1de4f5dd2ee929e016f23a5f1">More...</a><br /></td></tr>
 <tr class="separator:a4c9347b1de4f5dd2ee929e016f23a5f1 inherit pub_methods_classFarmIterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -172,9 +174,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor that initializes the iterator with the root farm unit. </p>
+<p>Parameterized constructor for <a class="el" href="classBFFarmIterator.html" title="Concrete iterator implementing Breadth-First Traversal for farm units.">BFFarmIterator</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">rootFarm</td><td>Pointer to the root farm unit for the BFS traversal. </td></tr>
+    <tr><td class="paramname">rootFarm</td><td>Pointer to the root farm unit for the BFS traversal.</td></tr>
+    <tr><td class="paramname">rootFarm</td><td>The root farm unit to start the BFS from. </td></tr>
   </table>
   </dd>
 </dl>
@@ -206,7 +210,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the current farm unit in the traversal. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the current farm unit. </dd></dl>
+<p>Returns the current farm unit in the BFS.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the current farm unit.</dd>
+<dd>
+FarmUnit* The current farm unit. </dd></dl>
 
 <p>Implements <a class="el" href="classFarmIterator.html#a5776ade70077fd0e4d2f300b287a1342">FarmIterator</a>.</p>
 
@@ -236,7 +243,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Starts the BFS traversal and returns the first farm unit. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the first farm unit in the traversal. </dd></dl>
+<p>Returns the first farm unit in the BFS.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the first farm unit in the traversal.</dd>
+<dd>
+FarmUnit* The first farm unit. </dd></dl>
 
 <p>Implements <a class="el" href="classFarmIterator.html#a7fab61ea47a49997b64833934a3e194c">FarmIterator</a>.</p>
 
@@ -266,7 +276,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if the traversal is complete. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if there are no more farm units to visit, false otherwise. </dd></dl>
+<p>Checks if the BFS is done.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if there are no more farm units to visit, false otherwise.</dd>
+<dd>
+bool True if the BFS is done, false otherwise. </dd></dl>
 
 <p>Implements <a class="el" href="classFarmIterator.html#ae46182184982f10b72418424b0c22959">FarmIterator</a>.</p>
 
@@ -296,7 +309,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Moves to the next farm unit in the BFS traversal. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the next farm unit in the traversal. </dd></dl>
+<p>Moves to the next farm unit in the BFS.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the next farm unit in the traversal.</dd>
+<dd>
+FarmUnit* The next farm unit. </dd></dl>
 
 <p>Implements <a class="el" href="classFarmIterator.html#afc74989768dfe051db0ed1181dcbcb34">FarmIterator</a>.</p>
 

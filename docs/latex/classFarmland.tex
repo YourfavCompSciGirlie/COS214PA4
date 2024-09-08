@@ -76,7 +76,9 @@ The \mbox{\hyperlink{classFarmland}{Farmland}} class implements the Composite pa
 
 Default constructor for \mbox{\hyperlink{classFarmland}{Farmland}}. 
 
-\mbox{\Hypertarget{classFarmland_adbce7e18a2917deece97f01e35714af4}\label{classFarmland_adbce7e18a2917deece97f01e35714af4}} 
+Constructs a new \mbox{\hyperlink{classFarmland}{Farmland}} object.
+
+Initializes a new instance of \mbox{\hyperlink{classFarmland}{Farmland}}, creating a container for farm units. \mbox{\Hypertarget{classFarmland_adbce7e18a2917deece97f01e35714af4}\label{classFarmland_adbce7e18a2917deece97f01e35714af4}} 
 \index{Farmland@{Farmland}!````~Farmland@{$\sim$Farmland}}
 \index{````~Farmland@{$\sim$Farmland}!Farmland@{Farmland}}
 \doxysubsubsection{\texorpdfstring{$\sim$Farmland()}{~Farmland()}}
@@ -86,7 +88,9 @@ Default constructor for \mbox{\hyperlink{classFarmland}{Farmland}}.
 
 Destructor for \mbox{\hyperlink{classFarmland}{Farmland}}. 
 
+Destroys the \mbox{\hyperlink{classFarmland}{Farmland}} object.
 
+Cleans up the \mbox{\hyperlink{classFarmland}{Farmland}} and all associated farm units. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classFarmland_a41c40ee771c3b4fff18e8908c062b0d3}\label{classFarmland_a41c40ee771c3b4fff18e8908c062b0d3}} 
@@ -99,9 +103,13 @@ Destructor for \mbox{\hyperlink{classFarmland}{Farmland}}.
 
 Adds a child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to the \mbox{\hyperlink{classFarmland}{Farmland}}. 
 
+Adds a farm unit to the \mbox{\hyperlink{classFarmland}{Farmland}}.
+
 
 \begin{DoxyParams}{Parameters}
-{\em unit} & A pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be added. \\
+{\em unit} & A pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be added.\\
+\hline
+{\em unit} & Pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be added. \\
 \hline
 \end{DoxyParams}
 
@@ -118,9 +126,13 @@ Implements \mbox{\hyperlink{classFarmUnit_a13923b257012a31a9ca67f22598e4347}{Far
 
 Adds a truck to the notification system. 
 
+Purchases a truck and assigns it to the farm units in the \mbox{\hyperlink{classFarmland}{Farmland}}.
+
 
 \begin{DoxyParams}{Parameters}
-{\em truck} & A pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be added. \\
+{\em truck} & A pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be added.\\
+\hline
+{\em truck} & Pointer to the \mbox{\hyperlink{classTruck}{Truck}} to be bought. \\
 \hline
 \end{DoxyParams}
 
@@ -137,8 +149,12 @@ Implements \mbox{\hyperlink{classFarmUnit_ac0565356da2cc0e863e30f665a95c236}{Far
 
 Creates a Breadth-\/\+First Search (BFS) iterator for the \mbox{\hyperlink{classFarmland}{Farmland}}. 
 
+Creates a breadth-\/first search iterator for the \mbox{\hyperlink{classFarmland}{Farmland}}.
+
 \begin{DoxyReturn}{Returns}
-A pointer to the BFS iterator. 
+A pointer to the BFS iterator.
+
+Farm\+Iterator$\ast$ A pointer to a new \mbox{\hyperlink{classBFFarmIterator}{BFFarm\+Iterator}} object. 
 \end{DoxyReturn}
 
 
@@ -154,8 +170,12 @@ Implements \mbox{\hyperlink{classFarmUnit_a92c1628b0e297ea97121b48cd3355c09}{Far
 
 Creates a Depth-\/\+First Search (DFS) iterator for the \mbox{\hyperlink{classFarmland}{Farmland}}. 
 
+Creates a depth-\/first search iterator for the \mbox{\hyperlink{classFarmland}{Farmland}}.
+
 \begin{DoxyReturn}{Returns}
-A pointer to the DFS iterator. 
+A pointer to the DFS iterator.
+
+Farm\+Iterator$\ast$ A pointer to a new \mbox{\hyperlink{classDFFarmIterator}{DFFarm\+Iterator}} object. 
 \end{DoxyReturn}
 
 
@@ -171,8 +191,12 @@ Implements \mbox{\hyperlink{classFarmUnit_aef3e9a6d04ac8aa1cd828433b974a37e}{Far
 
 Gets the crop type of the farmland. 
 
+Gets the crop type of the \mbox{\hyperlink{classFarmland}{Farmland}}.
+
 \begin{DoxyReturn}{Returns}
-The crop type as a string. 
+The crop type as a string.
+
+std\+::string The crop type, which is \char`\"{}\+Mixed\char`\"{} for \mbox{\hyperlink{classFarmland}{Farmland}}. 
 \end{DoxyReturn}
 
 
@@ -188,8 +212,12 @@ Implements \mbox{\hyperlink{classFarmUnit_add66c341a2010e7f0491196b19d63c35}{Far
 
 Gets the current amount of resources in the \mbox{\hyperlink{classFarmland}{Farmland}}. 
 
+Gets the current amount of crops in the \mbox{\hyperlink{classFarmland}{Farmland}}.
+
 \begin{DoxyReturn}{Returns}
-The current amount as an integer. 
+The current amount as an integer.
+
+int The sum of the current amounts in all farm units. 
 \end{DoxyReturn}
 
 
@@ -205,8 +233,12 @@ Implements \mbox{\hyperlink{classFarmUnit_a65bf5424abc22955aac85233275e72f8}{Far
 
 Gets the leftover capacity in the \mbox{\hyperlink{classFarmland}{Farmland}}. 
 
+Gets the leftover capacity of the \mbox{\hyperlink{classFarmland}{Farmland}}.
+
 \begin{DoxyReturn}{Returns}
-The leftover capacity as an integer. 
+The leftover capacity as an integer.
+
+int The total capacity minus the current amount of crops. 
 \end{DoxyReturn}
 
 
@@ -223,7 +255,9 @@ Implements \mbox{\hyperlink{classFarmUnit_afcff64a7e13d0682b57d2da35c70a3ee}{Far
 Gets the name of the \mbox{\hyperlink{classFarmland}{Farmland}}. 
 
 \begin{DoxyReturn}{Returns}
-The name of the \mbox{\hyperlink{classFarmland}{Farmland}} as a string. 
+The name of the \mbox{\hyperlink{classFarmland}{Farmland}} as a string.
+
+std\+::string The name of the \mbox{\hyperlink{classFarmland}{Farmland}}. 
 \end{DoxyReturn}
 
 
@@ -239,8 +273,12 @@ Implements \mbox{\hyperlink{classFarmUnit_a609f48740a45829170b708386c1f1e64}{Far
 
 Gets the name of the soil state of the farmland. 
 
+Gets the soil state name of the \mbox{\hyperlink{classFarmland}{Farmland}}.
+
 \begin{DoxyReturn}{Returns}
-The soil state name as a string. 
+The soil state name as a string.
+
+std\+::string The soil state, which is \char`\"{}\+Mixed\char`\"{} for \mbox{\hyperlink{classFarmland}{Farmland}}. 
 \end{DoxyReturn}
 
 
@@ -256,8 +294,12 @@ Implements \mbox{\hyperlink{classFarmUnit_a5a4dd34e283ed90d1f710072cbddaa01}{Far
 
 Gets the child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} objects contained within this \mbox{\hyperlink{classFarmland}{Farmland}}. 
 
+Gets the list of sub-\/units (farm units) in the \mbox{\hyperlink{classFarmland}{Farmland}}.
+
 \begin{DoxyReturn}{Returns}
-A vector of pointers to the child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} objects. 
+A vector of pointers to the child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} objects.
+
+std\+::vector$<$\+Farm\+Unit$\ast$$>$ A vector containing pointers to the sub-\/units. 
 \end{DoxyReturn}
 
 
@@ -273,8 +315,12 @@ Implements \mbox{\hyperlink{classFarmUnit_a29356181ac3c11890ae60b6827e430fe}{Far
 
 Gets the total capacity of the farmland. 
 
+Gets the total storage capacity of the \mbox{\hyperlink{classFarmland}{Farmland}}.
+
 \begin{DoxyReturn}{Returns}
-The total capacity of the farmland. 
+The total capacity of the farmland.
+
+int The sum of the capacities of all farm units in the \mbox{\hyperlink{classFarmland}{Farmland}}. 
 \end{DoxyReturn}
 
 
@@ -290,6 +336,8 @@ Implements \mbox{\hyperlink{classFarmUnit_adcf972c220e9b3eebb2b94d9c6bec321}{Far
 
 Harvests crops from the \mbox{\hyperlink{classFarmland}{Farmland}}. 
 
+Harvests all crops from the \mbox{\hyperlink{classFarmland}{Farmland}}.
+
 This method is applicable to the Decorator pattern but may not have an effect in \mbox{\hyperlink{classFarmland}{Farmland}}. 
 
 Implements \mbox{\hyperlink{classFarmUnit_a277e393e05439c80ad61ce6145d46002}{Farm\+Unit}}.
@@ -303,6 +351,8 @@ Implements \mbox{\hyperlink{classFarmUnit_a277e393e05439c80ad61ce6145d46002}{Far
 
 
 Increases production capacity for the \mbox{\hyperlink{classFarmland}{Farmland}}. 
+
+Increases the production of all farm units in the \mbox{\hyperlink{classFarmland}{Farmland}}.
 
 This method is applicable to the Decorator pattern but may not have an effect in \mbox{\hyperlink{classFarmland}{Farmland}}. 
 
@@ -318,9 +368,13 @@ Implements \mbox{\hyperlink{classFarmUnit_a317de75b254d4f88980841dbbaca3e05}{Far
 
 Removes a child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} from the \mbox{\hyperlink{classFarmland}{Farmland}}. 
 
+Removes a farm unit from the \mbox{\hyperlink{classFarmland}{Farmland}}.
+
 
 \begin{DoxyParams}{Parameters}
-{\em unit} & A pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be removed. \\
+{\em unit} & A pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be removed.\\
+\hline
+{\em unit} & Pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be removed. \\
 \hline
 \end{DoxyParams}
 
@@ -337,9 +391,13 @@ Implements \mbox{\hyperlink{classFarmUnit_ab5dec88c0ffb58f4cfb2815c9b6cba2c}{Far
 
 Removes a truck from the notification system. 
 
+Sells a truck from the farm units in the \mbox{\hyperlink{classFarmland}{Farmland}}.
+
 
 \begin{DoxyParams}{Parameters}
-{\em truck} & A pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be removed. \\
+{\em truck} & A pointer to the \mbox{\hyperlink{classTruck}{Truck}} object to be removed.\\
+\hline
+{\em truck} & Pointer to the \mbox{\hyperlink{classTruck}{Truck}} to be sold. \\
 \hline
 \end{DoxyParams}
 
@@ -356,9 +414,18 @@ Implements \mbox{\hyperlink{classFarmUnit_a382d18736aea94cf4a73db54d7461746}{Far
 
 Sets the current amount of resources in the \mbox{\hyperlink{classFarmland}{Farmland}}. 
 
+Sets the current amount of crops in the \mbox{\hyperlink{classFarmland}{Farmland}}.
+
 
 \begin{DoxyParams}{Parameters}
-{\em amount} & The amount to set. \\
+{\em amount} & The amount to set.\\
+\hline
+\end{DoxyParams}
+Distributes the specified amount across all farm units, up to their capacities.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The total amount to be set across the \mbox{\hyperlink{classFarmland}{Farmland}}. \\
 \hline
 \end{DoxyParams}
 
@@ -377,7 +444,9 @@ Sets the name of the \mbox{\hyperlink{classFarmland}{Farmland}}.
 
 
 \begin{DoxyParams}{Parameters}
-{\em unit\+Name} & The name to set. \\
+{\em unit\+Name} & The name to set.\\
+\hline
+{\em unit\+Name} & The name to be assigned to the \mbox{\hyperlink{classFarmland}{Farmland}}. \\
 \hline
 \end{DoxyParams}
 

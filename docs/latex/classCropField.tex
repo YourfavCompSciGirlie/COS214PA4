@@ -96,13 +96,26 @@ Default constructor for \mbox{\hyperlink{classCropField}{Crop\+Field}}.
 
 Parameterized constructor for \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
 
+Constructor for the \mbox{\hyperlink{classCropField}{Crop\+Field}} class.
+
 
 \begin{DoxyParams}{Parameters}
 {\em crop\+Type} & Type of crop grown in the field. \\
 \hline
 {\em total\+Capacity} & Total capacity of the crop field. \\
 \hline
-{\em initial\+State} & Initial soil state of the field. \\
+{\em initial\+State} & Initial soil state of the field.\\
+\hline
+\end{DoxyParams}
+Initializes a crop field with the specified crop type, total capacity, and initial soil state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em crop\+Type} & The type of crop in the field. \\
+\hline
+{\em total\+Capacity} & The total capacity of the field. \\
+\hline
+{\em initial\+State} & The initial soil state of the field. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classCropField_a3650366847c5ab679905acc348593112}\label{classCropField_a3650366847c5ab679905acc348593112}} 
@@ -115,7 +128,7 @@ Parameterized constructor for \mbox{\hyperlink{classCropField}{Crop\+Field}}.
 
 Destructor for \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
 
-
+Destructor for the \mbox{\hyperlink{classCropField}{Crop\+Field}} class. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classCropField_a398d73cbf2c6cf57d23404ea20cefbb8}\label{classCropField_a398d73cbf2c6cf57d23404ea20cefbb8}} 
@@ -128,9 +141,18 @@ Destructor for \mbox{\hyperlink{classCropField}{Crop\+Field}}.
 
 Adds a new farm unit to the crop field. 
 
+Adds a sub-\/unit to the crop field.
+
 
 \begin{DoxyParams}{Parameters}
-{\em unit} & Pointer to the farm unit to be added. \\
+{\em unit} & Pointer to the farm unit to be added.\\
+\hline
+\end{DoxyParams}
+Note\+: \mbox{\hyperlink{classCropField}{Crop\+Field}} does not support adding sub-\/units.
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & The sub-\/unit to be added. \\
 \hline
 \end{DoxyParams}
 
@@ -147,9 +169,13 @@ Implements \mbox{\hyperlink{classFarmUnit_a13923b257012a31a9ca67f22598e4347}{Far
 
 Purchases a truck for the crop field. 
 
+Registers a truck as an observer to the crop field.
+
 
 \begin{DoxyParams}{Parameters}
-{\em truck} & Pointer to the truck to be purchased. \\
+{\em truck} & Pointer to the truck to be purchased.\\
+\hline
+{\em truck} & The truck to be added as an observer. \\
 \hline
 \end{DoxyParams}
 
@@ -166,8 +192,12 @@ Implements \mbox{\hyperlink{classFarmUnit_ac0565356da2cc0e863e30f665a95c236}{Far
 
 Creates a Breadth-\/\+First Search iterator for the crop field. 
 
+Creates a Breadth-\/\+First Search (BFS) iterator for the crop field.
+
 \begin{DoxyReturn}{Returns}
-Pointer to the BFS iterator. 
+Pointer to the BFS iterator.
+
+A pointer to a BFS iterator. 
 \end{DoxyReturn}
 
 
@@ -183,8 +213,12 @@ Implements \mbox{\hyperlink{classFarmUnit_a92c1628b0e297ea97121b48cd3355c09}{Far
 
 Creates a Depth-\/\+First Search iterator for the crop field. 
 
+Creates a Depth-\/\+First Search (DFS) iterator for the crop field.
+
 \begin{DoxyReturn}{Returns}
-Pointer to the DFS iterator. 
+Pointer to the DFS iterator.
+
+A pointer to a DFS iterator. 
 \end{DoxyReturn}
 
 
@@ -200,8 +234,12 @@ Implements \mbox{\hyperlink{classFarmUnit_aef3e9a6d04ac8aa1cd828433b974a37e}{Far
 
 Gets the type of crop grown in the field. 
 
+Gets the type of crop in the field.
+
 \begin{DoxyReturn}{Returns}
-The type of crop. 
+The type of crop.
+
+The type of crop in the field. 
 \end{DoxyReturn}
 
 
@@ -218,7 +256,9 @@ Implements \mbox{\hyperlink{classFarmUnit_add66c341a2010e7f0491196b19d63c35}{Far
 Gets the current amount of crops in the field. 
 
 \begin{DoxyReturn}{Returns}
-The current crop amount. 
+The current crop amount.
+
+The current amount of crops in the field. 
 \end{DoxyReturn}
 
 
@@ -235,7 +275,9 @@ Implements \mbox{\hyperlink{classFarmUnit_a65bf5424abc22955aac85233275e72f8}{Far
 Gets the leftover capacity of the crop field. 
 
 \begin{DoxyReturn}{Returns}
-The leftover capacity. 
+The leftover capacity.
+
+The leftover capacity of the crop field. 
 \end{DoxyReturn}
 
 
@@ -268,8 +310,12 @@ Implements \mbox{\hyperlink{classFarmUnit_a609f48740a45829170b708386c1f1e64}{Far
 
 Provides access to the current soil state. 
 
+Gets the current soil state of the crop field.
+
 \begin{DoxyReturn}{Returns}
-Pointer to the current soil state. 
+Pointer to the current soil state.
+
+The current soil state of the crop field. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classCropField_aae62374e9a1dc8cbf9e0fb2780892c13}\label{classCropField_aae62374e9a1dc8cbf9e0fb2780892c13}} 
 \index{CropField@{CropField}!getSoilStateName@{getSoilStateName}}
@@ -298,8 +344,12 @@ Implements \mbox{\hyperlink{classFarmUnit_a5a4dd34e283ed90d1f710072cbddaa01}{Far
 
 Gets the list of sub-\/units of the crop field. 
 
+Gets the sub-\/units of the crop field (if any).
+
 \begin{DoxyReturn}{Returns}
-A vector containing pointers to sub-\/units. 
+A vector containing pointers to sub-\/units.
+
+A vector of pointers to sub-\/units. 
 \end{DoxyReturn}
 
 
@@ -332,7 +382,7 @@ Implements \mbox{\hyperlink{classFarmUnit_adcf972c220e9b3eebb2b94d9c6bec321}{Far
 
 Harvests crops (decorator pattern method). 
 
-
+Harvests crops from the field. 
 
 Implements \mbox{\hyperlink{classFarmUnit_a277e393e05439c80ad61ce6145d46002}{Farm\+Unit}}.
 
@@ -346,8 +396,12 @@ Implements \mbox{\hyperlink{classFarmUnit_a277e393e05439c80ad61ce6145d46002}{Far
 
 Harvests the crops from the field. 
 
+Harvests crops from the field based on the current soil state.
+
 \begin{DoxyReturn}{Returns}
-The number of crops harvested. 
+The number of crops harvested.
+
+The amount of crops harvested. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classCropField_a2f6a9dff3a8749114782e6cb9aad29ea}\label{classCropField_a2f6a9dff3a8749114782e6cb9aad29ea}} 
 \index{CropField@{CropField}!increaseProduction@{increaseProduction}}
@@ -359,7 +413,7 @@ The number of crops harvested.
 
 Increases the production of crops. 
 
-
+Increases production in the crop field. 
 
 Implements \mbox{\hyperlink{classFarmUnit_a317de75b254d4f88980841dbbaca3e05}{Farm\+Unit}}.
 
@@ -373,7 +427,7 @@ Implements \mbox{\hyperlink{classFarmUnit_a317de75b254d4f88980841dbbaca3e05}{Far
 
 Simulates rainfall and triggers soil state transitions. 
 
-\mbox{\Hypertarget{classCropField_a521956d9962c0b253a1a308916fb7d9d}\label{classCropField_a521956d9962c0b253a1a308916fb7d9d}} 
+Simulates rain, affecting the soil state. \mbox{\Hypertarget{classCropField_a521956d9962c0b253a1a308916fb7d9d}\label{classCropField_a521956d9962c0b253a1a308916fb7d9d}} 
 \index{CropField@{CropField}!remove@{remove}}
 \index{remove@{remove}!CropField@{CropField}}
 \doxysubsubsection{\texorpdfstring{remove()}{remove()}}
@@ -383,9 +437,18 @@ Simulates rainfall and triggers soil state transitions.
 
 Removes a farm unit from the crop field. 
 
+Removes a sub-\/unit from the crop field.
+
 
 \begin{DoxyParams}{Parameters}
-{\em unit} & Pointer to the farm unit to be removed. \\
+{\em unit} & Pointer to the farm unit to be removed.\\
+\hline
+\end{DoxyParams}
+Note\+: \mbox{\hyperlink{classCropField}{Crop\+Field}} does not support removing sub-\/units.
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & The sub-\/unit to be removed. \\
 \hline
 \end{DoxyParams}
 
@@ -402,9 +465,13 @@ Implements \mbox{\hyperlink{classFarmUnit_ab5dec88c0ffb58f4cfb2815c9b6cba2c}{Far
 
 Sells a truck from the crop field. 
 
+Removes a truck as an observer from the crop field.
+
 
 \begin{DoxyParams}{Parameters}
-{\em truck} & Pointer to the truck to be sold. \\
+{\em truck} & Pointer to the truck to be sold.\\
+\hline
+{\em truck} & The truck to be removed as an observer. \\
 \hline
 \end{DoxyParams}
 
@@ -423,7 +490,14 @@ Sets the current amount of crops in the field.
 
 
 \begin{DoxyParams}{Parameters}
-{\em amount} & The new current amount of crops. \\
+{\em amount} & The new current amount of crops.\\
+\hline
+\end{DoxyParams}
+Ensures that the amount does not exceed the field\textquotesingle{}s total capacity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of crops to be set. \\
 \hline
 \end{DoxyParams}
 
@@ -442,7 +516,9 @@ Sets the name of the crop field.
 
 
 \begin{DoxyParams}{Parameters}
-{\em unit\+Name} & The name to be set for the crop field. \\
+{\em unit\+Name} & The name to be set for the crop field.\\
+\hline
+{\em unit\+Name} & The name to be assigned to the crop field. \\
 \hline
 \end{DoxyParams}
 
@@ -461,7 +537,9 @@ Sets a new soil state for the crop field.
 
 
 \begin{DoxyParams}{Parameters}
-{\em new\+State} & Pointer to the new soil state. \\
+{\em new\+State} & Pointer to the new soil state.\\
+\hline
+{\em new\+State} & The new soil state to be applied to the field. \\
 \hline
 \end{DoxyParams}
 

@@ -67,32 +67,36 @@ $(function() {
 <div class="contents">
 <a href="FarmIterator_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Class definition for Component 5 - Iterator (Iterator)</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef FARMITERATOR_H</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define FARMITERATOR_H</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span><a class="code" href="classFarmUnit.html">FarmUnit</a>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classFarmIterator.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classFarmIterator.html">FarmIterator</a> {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="classFarmIterator.html#a26019e86acfe3d108f93add302e39d7b">FarmIterator</a>();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classFarmIterator.html#a4c9347b1de4f5dd2ee929e016f23a5f1">~FarmIterator</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classFarmIterator.html#a7fab61ea47a49997b64833934a3e194c">   14</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classFarmUnit.html">FarmUnit</a>* <a class="code" href="classFarmIterator.html#a7fab61ea47a49997b64833934a3e194c">firstFarm</a>() = 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classFarmIterator.html#afc74989768dfe051db0ed1181dcbcb34">   15</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classFarmUnit.html">FarmUnit</a>* <a class="code" href="classFarmIterator.html#afc74989768dfe051db0ed1181dcbcb34">next</a>() = 0;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classFarmIterator.html#ae46182184982f10b72418424b0c22959">   16</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classFarmIterator.html#ae46182184982f10b72418424b0c22959">isDone</a>() = 0;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classFarmIterator.html#a5776ade70077fd0e4d2f300b287a1342">   17</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classFarmUnit.html">FarmUnit</a>* <a class="code" href="classFarmIterator.html#a5776ade70077fd0e4d2f300b287a1342">currentFarm</a>() = 0;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif </span></div>
-<div class="ttc" id="aclassFarmIterator_html"><div class="ttname"><a href="classFarmIterator.html">FarmIterator</a></div><div class="ttdef"><b>Definition:</b> FarmIterator.h:8</div></div>
-<div class="ttc" id="aclassFarmIterator_html_a26019e86acfe3d108f93add302e39d7b"><div class="ttname"><a href="classFarmIterator.html#a26019e86acfe3d108f93add302e39d7b">FarmIterator::FarmIterator</a></div><div class="ttdeci">FarmIterator()</div><div class="ttdef"><b>Definition:</b> FarmIterator.cpp:7</div></div>
-<div class="ttc" id="aclassFarmIterator_html_a4c9347b1de4f5dd2ee929e016f23a5f1"><div class="ttname"><a href="classFarmIterator.html#a4c9347b1de4f5dd2ee929e016f23a5f1">FarmIterator::~FarmIterator</a></div><div class="ttdeci">virtual ~FarmIterator()</div><div class="ttdef"><b>Definition:</b> FarmIterator.cpp:12</div></div>
-<div class="ttc" id="aclassFarmIterator_html_a5776ade70077fd0e4d2f300b287a1342"><div class="ttname"><a href="classFarmIterator.html#a5776ade70077fd0e4d2f300b287a1342">FarmIterator::currentFarm</a></div><div class="ttdeci">virtual FarmUnit * currentFarm()=0</div></div>
-<div class="ttc" id="aclassFarmIterator_html_a7fab61ea47a49997b64833934a3e194c"><div class="ttname"><a href="classFarmIterator.html#a7fab61ea47a49997b64833934a3e194c">FarmIterator::firstFarm</a></div><div class="ttdeci">virtual FarmUnit * firstFarm()=0</div></div>
-<div class="ttc" id="aclassFarmIterator_html_ae46182184982f10b72418424b0c22959"><div class="ttname"><a href="classFarmIterator.html#ae46182184982f10b72418424b0c22959">FarmIterator::isDone</a></div><div class="ttdeci">virtual bool isDone()=0</div></div>
-<div class="ttc" id="aclassFarmIterator_html_afc74989768dfe051db0ed1181dcbcb34"><div class="ttname"><a href="classFarmIterator.html#afc74989768dfe051db0ed1181dcbcb34">FarmIterator::next</a></div><div class="ttdeci">virtual FarmUnit * next()=0</div></div>
-<div class="ttc" id="aclassFarmUnit_html"><div class="ttname"><a href="classFarmUnit.html">FarmUnit</a></div><div class="ttdef"><b>Definition:</b> FarmUnit.h:17</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef FARMITERATOR_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define FARMITERATOR_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="classFarmUnit.html">FarmUnit</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classFarmIterator.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classFarmIterator.html">FarmIterator</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classFarmIterator.html#a26019e86acfe3d108f93add302e39d7b">FarmIterator</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classFarmIterator.html#a4c9347b1de4f5dd2ee929e016f23a5f1">~FarmIterator</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classFarmIterator.html#a7fab61ea47a49997b64833934a3e194c">   38</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classFarmUnit.html">FarmUnit</a>* <a class="code" href="classFarmIterator.html#a7fab61ea47a49997b64833934a3e194c">firstFarm</a>() = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classFarmIterator.html#afc74989768dfe051db0ed1181dcbcb34">   44</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classFarmUnit.html">FarmUnit</a>* <a class="code" href="classFarmIterator.html#afc74989768dfe051db0ed1181dcbcb34">next</a>() = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classFarmIterator.html#ae46182184982f10b72418424b0c22959">   50</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classFarmIterator.html#ae46182184982f10b72418424b0c22959">isDone</a>() = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classFarmIterator.html#a5776ade70077fd0e4d2f300b287a1342">   56</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classFarmUnit.html">FarmUnit</a>* <a class="code" href="classFarmIterator.html#a5776ade70077fd0e4d2f300b287a1342">currentFarm</a>() = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif </span></div>
+<div class="ttc" id="aclassFarmIterator_html"><div class="ttname"><a href="classFarmIterator.html">FarmIterator</a></div><div class="ttdoc">Abstract class representing the Iterator for traversing FarmUnits.</div><div class="ttdef"><b>Definition:</b> FarmIterator.h:21</div></div>
+<div class="ttc" id="aclassFarmIterator_html_a26019e86acfe3d108f93add302e39d7b"><div class="ttname"><a href="classFarmIterator.html#a26019e86acfe3d108f93add302e39d7b">FarmIterator::FarmIterator</a></div><div class="ttdeci">FarmIterator()</div><div class="ttdoc">Constructor for FarmIterator.</div><div class="ttdef"><b>Definition:</b> FarmIterator.cpp:14</div></div>
+<div class="ttc" id="aclassFarmIterator_html_a4c9347b1de4f5dd2ee929e016f23a5f1"><div class="ttname"><a href="classFarmIterator.html#a4c9347b1de4f5dd2ee929e016f23a5f1">FarmIterator::~FarmIterator</a></div><div class="ttdeci">virtual ~FarmIterator()</div><div class="ttdoc">Virtual destructor for FarmIterator.</div><div class="ttdef"><b>Definition:</b> FarmIterator.cpp:23</div></div>
+<div class="ttc" id="aclassFarmIterator_html_a5776ade70077fd0e4d2f300b287a1342"><div class="ttname"><a href="classFarmIterator.html#a5776ade70077fd0e4d2f300b287a1342">FarmIterator::currentFarm</a></div><div class="ttdeci">virtual FarmUnit * currentFarm()=0</div><div class="ttdoc">Returns the current FarmUnit being traversed.</div></div>
+<div class="ttc" id="aclassFarmIterator_html_a7fab61ea47a49997b64833934a3e194c"><div class="ttname"><a href="classFarmIterator.html#a7fab61ea47a49997b64833934a3e194c">FarmIterator::firstFarm</a></div><div class="ttdeci">virtual FarmUnit * firstFarm()=0</div><div class="ttdoc">Returns the first FarmUnit in the traversal.</div></div>
+<div class="ttc" id="aclassFarmIterator_html_ae46182184982f10b72418424b0c22959"><div class="ttname"><a href="classFarmIterator.html#ae46182184982f10b72418424b0c22959">FarmIterator::isDone</a></div><div class="ttdeci">virtual bool isDone()=0</div><div class="ttdoc">Checks if the iterator has finished traversing all FarmUnits.</div></div>
+<div class="ttc" id="aclassFarmIterator_html_afc74989768dfe051db0ed1181dcbcb34"><div class="ttname"><a href="classFarmIterator.html#afc74989768dfe051db0ed1181dcbcb34">FarmIterator::next</a></div><div class="ttdeci">virtual FarmUnit * next()=0</div><div class="ttdoc">Moves the iterator to the next FarmUnit in the traversal.</div></div>
+<div class="ttc" id="aclassFarmUnit_html"><div class="ttname"><a href="classFarmUnit.html">FarmUnit</a></div><div class="ttdoc">Abstract class representing a unit in the farm.</div><div class="ttdef"><b>Definition:</b> FarmUnit.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

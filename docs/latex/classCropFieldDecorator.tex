@@ -2,6 +2,11 @@
 \label{classCropFieldDecorator}\index{CropFieldDecorator@{CropFieldDecorator}}
 
 
+Abstract base class for \mbox{\hyperlink{classCropField}{Crop\+Field}} decorators that adds additional functionality to \mbox{\hyperlink{classCropField}{Crop\+Field}} objects.  
+
+
+
+
 {\ttfamily \#include $<$Crop\+Field\+Decorator.\+h$>$}
 
 
@@ -16,55 +21,60 @@ Collaboration diagram for Crop\+Field\+Decorator\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classCropFieldDecorator_afa03c7b4e024a84aa0e91f7903f6bdbe}{Crop\+Field\+Decorator}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classCropFieldDecorator}{Crop\+Field\+Decorator}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classCropFieldDecorator_ac533e87092cb597efa60512741272d66}{Crop\+Field\+Decorator}} (\mbox{\hyperlink{classCropField}{Crop\+Field}} $\ast$\mbox{\hyperlink{classCropFieldDecorator_a255ecbd872a6168c716a2d44ffd00d82}{field}})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor that accepts a \mbox{\hyperlink{classCropField}{Crop\+Field}} object to wrap. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classCropFieldDecorator_af2fef14abf9cde549569fd62f6eeeaeb}{$\sim$\+Crop\+Field\+Decorator}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \mbox{\hyperlink{classCropFieldDecorator}{Crop\+Field\+Decorator}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classCropFieldDecorator_a9a6efc93d1e709d61ebd26c3f20dfd50}{increase\+Production}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to increase production capacity of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classCropFieldDecorator_a4720ecc82e1bfbeec90adf1758942862}{harvest}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to harvest crops from the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{classCropFieldDecorator_affc1ca780dacfa6c6cf6c407e8038530}{get\+Leftover\+Capacity}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to get the leftover capacity of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{classCropFieldDecorator_a6a531ad6ad93b90e2af159afe75216b9}{get\+Total\+Capacity}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to get the total capacity of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
 virtual string \mbox{\hyperlink{classCropFieldDecorator_aff7e4b010c38aa771612e2164efbdc69}{get\+Crop\+Type}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to get the crop type of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
 virtual string \mbox{\hyperlink{classCropFieldDecorator_a5deb76caf68bddb98f9de7b168776efc}{get\+Soil\+State\+Name}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to get the name of the soil state of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classCropFieldDecorator_a3e3eb3d49b405b0873fd495e6b6a2c07}{buy\+Truck}} (\mbox{\hyperlink{classTruck}{Truck}} $\ast$truck)=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to add a truck for the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}} (Observer pattern). \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classCropFieldDecorator_a0960e3671a8bc5aced5daa1ae79e7a5c}{sell\+Truck}} (\mbox{\hyperlink{classTruck}{Truck}} $\ast$truck)=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to remove a truck from the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}} (Observer pattern). \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{classCropFieldDecorator_a36d1170fccf678969fa1a3f134b819d8}{get\+Current\+Amount}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to get the current amount of crops in the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classCropFieldDecorator_aa04d7d2b3e45a86e898de310809342e6}{set\+Current\+Amount}} (int amount)=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to set the current amount of crops in the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classCropFieldDecorator_a188698549df53d4587c40d7a3bbe1bef}{add}} (\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$unit)=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to add a child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} (Composite pattern). \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classCropFieldDecorator_a1e1299a75830401e6be3467721b8ef09}{remove}} (\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$unit)=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to remove a child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} (Composite pattern). \end{DoxyCompactList}\item 
 virtual vector$<$ \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ $>$ \mbox{\hyperlink{classCropFieldDecorator_a54d9b39d1523eed43933f94574c856f5}{get\+Sub\+Units}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to get the subunits of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ \mbox{\hyperlink{classCropFieldDecorator_a9bc99d14bfcb405e6168355e92bda57e}{create\+BFSIterator}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to create a BFS iterator for the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}} $\ast$ \mbox{\hyperlink{classCropFieldDecorator_a5be101141927dae4815a1b9b9e3d55b6}{create\+DFSIterator}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to create a DFS iterator for the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classCropFieldDecorator_afd1d10fd95540677e1bad1fb22c27d55}{set\+Name}} (const string \&unit\+Name)=0
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method to set the name of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\item 
 virtual string \mbox{\hyperlink{classCropFieldDecorator_a1fcb8066e5dc52d90e631115abc44d48}{get\+Name}} () const =0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Abstract method to get the name of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classCropField}{Crop\+Field}} $\ast$ \mbox{\hyperlink{classCropFieldDecorator_a255ecbd872a6168c716a2d44ffd00d82}{field}}
-\item 
+\begin{DoxyCompactList}\small\item\em Wrapped \mbox{\hyperlink{classCropField}{Crop\+Field}} object. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{classCropFieldDecorator_a4bea6f445f4a6188cfe5298d5cce5ab7}{name}}
-\item 
+\begin{DoxyCompactList}\small\item\em Name of the decorated farm unit. \end{DoxyCompactList}\item 
 vector$<$ \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ $>$ \mbox{\hyperlink{classCropFieldDecorator_adeddb27a12e6019a32f1f7e29b93860a}{units}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Stores child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} objects (Composite pattern) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Abstract base class for \mbox{\hyperlink{classCropField}{Crop\+Field}} decorators that adds additional functionality to \mbox{\hyperlink{classCropField}{Crop\+Field}} objects. 
+
+This class implements the Decorator design pattern. It wraps a \mbox{\hyperlink{classCropField}{Crop\+Field}} object and allows for additional behavior to be added without modifying the \mbox{\hyperlink{classCropField}{Crop\+Field}} class itself. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classCropFieldDecorator_afa03c7b4e024a84aa0e91f7903f6bdbe}\label{classCropFieldDecorator_afa03c7b4e024a84aa0e91f7903f6bdbe}} 
@@ -73,12 +83,29 @@ vector$<$ \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ $>$ \mbox{\hyperli
 \doxysubsubsection{\texorpdfstring{CropFieldDecorator()}{CropFieldDecorator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Crop\+Field\+Decorator\+::\+Crop\+Field\+Decorator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classCropFieldDecorator_ac533e87092cb597efa60512741272d66}\label{classCropFieldDecorator_ac533e87092cb597efa60512741272d66}} 
+
+
+Default constructor for \mbox{\hyperlink{classCropFieldDecorator}{Crop\+Field\+Decorator}}. 
+
+Default constructor. Initializes the decorator with no attached \mbox{\hyperlink{classCropField}{Crop\+Field}}. \mbox{\Hypertarget{classCropFieldDecorator_ac533e87092cb597efa60512741272d66}\label{classCropFieldDecorator_ac533e87092cb597efa60512741272d66}} 
 \index{CropFieldDecorator@{CropFieldDecorator}!CropFieldDecorator@{CropFieldDecorator}}
 \index{CropFieldDecorator@{CropFieldDecorator}!CropFieldDecorator@{CropFieldDecorator}}
 \doxysubsubsection{\texorpdfstring{CropFieldDecorator()}{CropFieldDecorator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Crop\+Field\+Decorator\+::\+Crop\+Field\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCropField}{Crop\+Field}} $\ast$}]{field }\end{DoxyParamCaption})}
 
+
+
+Constructor that accepts a \mbox{\hyperlink{classCropField}{Crop\+Field}} object to wrap. 
+
+Constructor that attaches the decorator to a specific \mbox{\hyperlink{classCropField}{Crop\+Field}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & The \mbox{\hyperlink{classCropField}{Crop\+Field}} object to be decorated.\\
+\hline
+{\em field} & Pointer to the \mbox{\hyperlink{classCropField}{Crop\+Field}} to be decorated. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classCropFieldDecorator_af2fef14abf9cde549569fd62f6eeeaeb}\label{classCropFieldDecorator_af2fef14abf9cde549569fd62f6eeeaeb}} 
 \index{CropFieldDecorator@{CropFieldDecorator}!````~CropFieldDecorator@{$\sim$CropFieldDecorator}}
 \index{````~CropFieldDecorator@{$\sim$CropFieldDecorator}!CropFieldDecorator@{CropFieldDecorator}}
@@ -87,6 +114,10 @@ vector$<$ \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ $>$ \mbox{\hyperli
 
 
 
+Virtual destructor for \mbox{\hyperlink{classCropFieldDecorator}{Crop\+Field\+Decorator}}. 
+
+Destructor. Cleans up the attached \mbox{\hyperlink{classCropField}{Crop\+Field}} if necessary. 
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classCropFieldDecorator_a188698549df53d4587c40d7a3bbe1bef}\label{classCropFieldDecorator_a188698549df53d4587c40d7a3bbe1bef}} 
 \index{CropFieldDecorator@{CropFieldDecorator}!add@{add}}
@@ -94,6 +125,15 @@ vector$<$ \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$ $>$ \mbox{\hyperli
 \doxysubsubsection{\texorpdfstring{add()}{add()}}
 {\footnotesize\ttfamily virtual void Crop\+Field\+Decorator\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
+Abstract method to add a child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} (Composite pattern). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & The \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be added. \\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{classFarmUnit_a13923b257012a31a9ca67f22598e4347}{Farm\+Unit}}.
@@ -110,6 +150,15 @@ Implemented in \mbox{\hyperlink{classFertilizedField_a86ef1c3dd6e8ddedb422e2aea4
 
 
 
+Abstract method to add a truck for the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}} (Observer pattern). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & The truck to be added. \\
+\hline
+\end{DoxyParams}
+
+
 Implements \mbox{\hyperlink{classFarmUnit_ac0565356da2cc0e863e30f665a95c236}{Farm\+Unit}}.
 
 
@@ -122,6 +171,13 @@ Implemented in \mbox{\hyperlink{classFertilizedField_a78f3e44bb8a7aed965ae816b99
 \doxysubsubsection{\texorpdfstring{createBFSIterator()}{createBFSIterator()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{classFarmIterator}{Farm\+Iterator}}$\ast$ Crop\+Field\+Decorator\+::create\+BFSIterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
+Abstract method to create a BFS iterator for the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to a BFS iterator. 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{classFarmUnit_a92c1628b0e297ea97121b48cd3355c09}{Farm\+Unit}}.
@@ -138,6 +194,13 @@ Implemented in \mbox{\hyperlink{classFertilizedField_a0e941a5657876ebf6e1dfc84a6
 
 
 
+Abstract method to create a DFS iterator for the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to a DFS iterator. 
+\end{DoxyReturn}
+
+
 Implements \mbox{\hyperlink{classFarmUnit_aef3e9a6d04ac8aa1cd828433b974a37e}{Farm\+Unit}}.
 
 
@@ -150,6 +213,13 @@ Implemented in \mbox{\hyperlink{classFertilizedField_a3b5afb50cfa81a9b64ba01fb19
 \doxysubsubsection{\texorpdfstring{getCropType()}{getCropType()}}
 {\footnotesize\ttfamily virtual string Crop\+Field\+Decorator\+::get\+Crop\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
+Abstract method to get the crop type of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+\begin{DoxyReturn}{Returns}
+The type of crops being grown in the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{classFarmUnit_add66c341a2010e7f0491196b19d63c35}{Farm\+Unit}}.
@@ -166,6 +236,13 @@ Implemented in \mbox{\hyperlink{classFertilizedField_a110dbbf6895a3d058e69bb9b31
 
 
 
+Abstract method to get the current amount of crops in the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+\begin{DoxyReturn}{Returns}
+The current amount of crops. 
+\end{DoxyReturn}
+
+
 Implements \mbox{\hyperlink{classFarmUnit_a65bf5424abc22955aac85233275e72f8}{Farm\+Unit}}.
 
 
@@ -178,6 +255,13 @@ Implemented in \mbox{\hyperlink{classFertilizedField_ad1c6dd0b10d0850f7c9c6d2d29
 \doxysubsubsection{\texorpdfstring{getLeftoverCapacity()}{getLeftoverCapacity()}}
 {\footnotesize\ttfamily virtual int Crop\+Field\+Decorator\+::get\+Leftover\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
+Abstract method to get the leftover capacity of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+\begin{DoxyReturn}{Returns}
+The amount of remaining capacity in the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{classFarmUnit_afcff64a7e13d0682b57d2da35c70a3ee}{Farm\+Unit}}.
@@ -194,6 +278,13 @@ Implemented in \mbox{\hyperlink{classFertilizedField_a7f9bea91beee215ea68ae368c4
 
 
 
+Abstract method to get the name of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+\begin{DoxyReturn}{Returns}
+The name of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+\end{DoxyReturn}
+
+
 Implements \mbox{\hyperlink{classFarmUnit_a609f48740a45829170b708386c1f1e64}{Farm\+Unit}}.
 
 
@@ -206,6 +297,13 @@ Implemented in \mbox{\hyperlink{classFertilizedField_aa97a16edc9a488249f596232dc
 \doxysubsubsection{\texorpdfstring{getSoilStateName()}{getSoilStateName()}}
 {\footnotesize\ttfamily virtual string Crop\+Field\+Decorator\+::get\+Soil\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
+Abstract method to get the name of the soil state of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+\begin{DoxyReturn}{Returns}
+The name of the soil state. 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{classFarmUnit_a5a4dd34e283ed90d1f710072cbddaa01}{Farm\+Unit}}.
@@ -222,6 +320,13 @@ Implemented in \mbox{\hyperlink{classFertilizedField_a264439051c8b26650cf7de0a08
 
 
 
+Abstract method to get the subunits of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+\begin{DoxyReturn}{Returns}
+A vector of pointers to the subunits. 
+\end{DoxyReturn}
+
+
 Implements \mbox{\hyperlink{classFarmUnit_a29356181ac3c11890ae60b6827e430fe}{Farm\+Unit}}.
 
 
@@ -236,6 +341,13 @@ Implemented in \mbox{\hyperlink{classFertilizedField_aa2c1fd581ae1a396ae40c04f2b
 
 
 
+Abstract method to get the total capacity of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+\begin{DoxyReturn}{Returns}
+The total capacity of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+\end{DoxyReturn}
+
+
 Implements \mbox{\hyperlink{classFarmUnit_adcf972c220e9b3eebb2b94d9c6bec321}{Farm\+Unit}}.
 
 
@@ -247,6 +359,10 @@ Implemented in \mbox{\hyperlink{classFertilizedField_a37c8fb72f35f91e3f9b2cb3d3c
 \index{harvest@{harvest}!CropFieldDecorator@{CropFieldDecorator}}
 \doxysubsubsection{\texorpdfstring{harvest()}{harvest()}}
 {\footnotesize\ttfamily virtual void Crop\+Field\+Decorator\+::harvest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Abstract method to harvest crops from the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
 
 
 
@@ -264,6 +380,10 @@ Implemented in \mbox{\hyperlink{classFertilizedField_add44b14f8e95fd44f74fa5497e
 
 
 
+Abstract method to increase production capacity of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+
+
 Implements \mbox{\hyperlink{classFarmUnit_a317de75b254d4f88980841dbbaca3e05}{Farm\+Unit}}.
 
 
@@ -276,6 +396,15 @@ Implemented in \mbox{\hyperlink{classFertilizedField_a30daada1613d1b164647c78636
 \doxysubsubsection{\texorpdfstring{remove()}{remove()}}
 {\footnotesize\ttfamily virtual void Crop\+Field\+Decorator\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
+Abstract method to remove a child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} (Composite pattern). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & The \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} to be removed. \\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{classFarmUnit_ab5dec88c0ffb58f4cfb2815c9b6cba2c}{Farm\+Unit}}.
@@ -292,6 +421,15 @@ Implemented in \mbox{\hyperlink{classFertilizedField_a7f3340b4ad8c08b3ca576d9544
 
 
 
+Abstract method to remove a truck from the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}} (Observer pattern). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & The truck to be removed. \\
+\hline
+\end{DoxyParams}
+
+
 Implements \mbox{\hyperlink{classFarmUnit_a382d18736aea94cf4a73db54d7461746}{Farm\+Unit}}.
 
 
@@ -306,6 +444,15 @@ Implemented in \mbox{\hyperlink{classFertilizedField_aef13e38b926511e6510ea29d8b
 
 
 
+Abstract method to set the current amount of crops in the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to set. \\
+\hline
+\end{DoxyParams}
+
+
 Implements \mbox{\hyperlink{classFarmUnit_ac3bfba7485281bd97686c4e80a1aedcd}{Farm\+Unit}}.
 
 
@@ -318,6 +465,15 @@ Implemented in \mbox{\hyperlink{classFertilizedField_a90bf69b115a0426b80c3302ab8
 \doxysubsubsection{\texorpdfstring{setName()}{setName()}}
 {\footnotesize\ttfamily virtual void Crop\+Field\+Decorator\+::set\+Name (\begin{DoxyParamCaption}\item[{const string \&}]{unit\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
+Abstract method to set the name of the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit\+Name} & The name to set for the decorated \mbox{\hyperlink{classCropField}{Crop\+Field}}. \\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{classFarmUnit_aa60881cb73f51b3975c03cd27ca7cf54}{Farm\+Unit}}.
@@ -335,17 +491,29 @@ Implemented in \mbox{\hyperlink{classFertilizedField_affca7cbe4b4389bc53f2303319
 \doxysubsubsection{\texorpdfstring{field}{field}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classCropField}{Crop\+Field}}$\ast$ Crop\+Field\+Decorator\+::field\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Wrapped \mbox{\hyperlink{classCropField}{Crop\+Field}} object. 
+
 \mbox{\Hypertarget{classCropFieldDecorator_a4bea6f445f4a6188cfe5298d5cce5ab7}\label{classCropFieldDecorator_a4bea6f445f4a6188cfe5298d5cce5ab7}} 
 \index{CropFieldDecorator@{CropFieldDecorator}!name@{name}}
 \index{name@{name}!CropFieldDecorator@{CropFieldDecorator}}
 \doxysubsubsection{\texorpdfstring{name}{name}}
 {\footnotesize\ttfamily string Crop\+Field\+Decorator\+::name\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Name of the decorated farm unit. 
+
 \mbox{\Hypertarget{classCropFieldDecorator_adeddb27a12e6019a32f1f7e29b93860a}\label{classCropFieldDecorator_adeddb27a12e6019a32f1f7e29b93860a}} 
 \index{CropFieldDecorator@{CropFieldDecorator}!units@{units}}
 \index{units@{units}!CropFieldDecorator@{CropFieldDecorator}}
 \doxysubsubsection{\texorpdfstring{units}{units}}
 {\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classFarmUnit}{Farm\+Unit}}$\ast$$>$ Crop\+Field\+Decorator\+::units\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores child \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} objects (Composite pattern) 
 
 
 

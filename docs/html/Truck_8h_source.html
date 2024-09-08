@@ -67,27 +67,29 @@ $(function() {
 <div class="contents">
 <a href="Truck_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Class definition for Component 4 - Observer (Observer)</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef TRUCK_H</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define TRUCK_H</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span><a class="code" href="classNotificationSystem.html">NotificationSystem</a>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classTruck.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTruck.html">Truck</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classTruck.html#afe887186d0490451a8ce4a3ef433dee3">~Truck</a>();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classTruck.html#a87e358bca8fe34e6299c6ff233afb08b">Truck</a>();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">//These ARE GOING TO BE IMPLEMENTED inside the trucks classes</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classTruck.html#a2d914b649a601c31fff420b90a51dc7f">   14</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classTruck.html#a2d914b649a601c31fff420b90a51dc7f">startEngine</a>() = 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classTruck.html#a730583405d6ac826f386a77dd5bd3877">   15</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classTruck.html#a730583405d6ac826f386a77dd5bd3877">callTruck</a> ()= 0;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassNotificationSystem_html"><div class="ttname"><a href="classNotificationSystem.html">NotificationSystem</a></div><div class="ttdoc">Implements the Subject role in the Observer design pattern.</div><div class="ttdef"><b>Definition:</b> NotificationSystem.h:20</div></div>
-<div class="ttc" id="aclassTruck_html"><div class="ttname"><a href="classTruck.html">Truck</a></div><div class="ttdef"><b>Definition:</b> Truck.h:9</div></div>
-<div class="ttc" id="aclassTruck_html_a2d914b649a601c31fff420b90a51dc7f"><div class="ttname"><a href="classTruck.html#a2d914b649a601c31fff420b90a51dc7f">Truck::startEngine</a></div><div class="ttdeci">virtual void startEngine()=0</div></div>
-<div class="ttc" id="aclassTruck_html_a730583405d6ac826f386a77dd5bd3877"><div class="ttname"><a href="classTruck.html#a730583405d6ac826f386a77dd5bd3877">Truck::callTruck</a></div><div class="ttdeci">virtual void callTruck()=0</div></div>
-<div class="ttc" id="aclassTruck_html_a87e358bca8fe34e6299c6ff233afb08b"><div class="ttname"><a href="classTruck.html#a87e358bca8fe34e6299c6ff233afb08b">Truck::Truck</a></div><div class="ttdeci">Truck()</div><div class="ttdef"><b>Definition:</b> Truck.cpp:10</div></div>
-<div class="ttc" id="aclassTruck_html_afe887186d0490451a8ce4a3ef433dee3"><div class="ttname"><a href="classTruck.html#afe887186d0490451a8ce4a3ef433dee3">Truck::~Truck</a></div><div class="ttdeci">virtual ~Truck()</div><div class="ttdef"><b>Definition:</b> Truck.cpp:15</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef TRUCK_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define TRUCK_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="classNotificationSystem.html">NotificationSystem</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classTruck.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTruck.html">Truck</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classTruck.html#afe887186d0490451a8ce4a3ef433dee3">~Truck</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classTruck.html#a87e358bca8fe34e6299c6ff233afb08b">Truck</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">//These ARE GOING TO BE IMPLEMENTED inside the trucks classes</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classTruck.html#a2d914b649a601c31fff420b90a51dc7f">   38</a></span>&#160;<span class="comment"></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classTruck.html#a2d914b649a601c31fff420b90a51dc7f">startEngine</a>() = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classTruck.html#a730583405d6ac826f386a77dd5bd3877">   44</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classTruck.html#a730583405d6ac826f386a77dd5bd3877">callTruck</a> ()= 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassNotificationSystem_html"><div class="ttname"><a href="classNotificationSystem.html">NotificationSystem</a></div><div class="ttdoc">Implements the Subject role in the Observer design pattern.</div><div class="ttdef"><b>Definition:</b> NotificationSystem.h:25</div></div>
+<div class="ttc" id="aclassTruck_html"><div class="ttname"><a href="classTruck.html">Truck</a></div><div class="ttdoc">Abstract base class for trucks.</div><div class="ttdef"><b>Definition:</b> Truck.h:22</div></div>
+<div class="ttc" id="aclassTruck_html_a2d914b649a601c31fff420b90a51dc7f"><div class="ttname"><a href="classTruck.html#a2d914b649a601c31fff420b90a51dc7f">Truck::startEngine</a></div><div class="ttdeci">virtual void startEngine()=0</div><div class="ttdoc">Starts the truck's engine. This method must be implemented in derived classes to provide specific eng...</div></div>
+<div class="ttc" id="aclassTruck_html_a730583405d6ac826f386a77dd5bd3877"><div class="ttname"><a href="classTruck.html#a730583405d6ac826f386a77dd5bd3877">Truck::callTruck</a></div><div class="ttdeci">virtual void callTruck()=0</div><div class="ttdoc">Calls the truck. This method must be implemented in derived classes to provide specific call function...</div></div>
+<div class="ttc" id="aclassTruck_html_a87e358bca8fe34e6299c6ff233afb08b"><div class="ttname"><a href="classTruck.html#a87e358bca8fe34e6299c6ff233afb08b">Truck::Truck</a></div><div class="ttdeci">Truck()</div><div class="ttdoc">Default constructor for Truck.</div><div class="ttdef"><b>Definition:</b> Truck.cpp:10</div></div>
+<div class="ttc" id="aclassTruck_html_afe887186d0490451a8ce4a3ef433dee3"><div class="ttname"><a href="classTruck.html#afe887186d0490451a8ce4a3ef433dee3">Truck::~Truck</a></div><div class="ttdeci">virtual ~Truck()</div><div class="ttdoc">Virtual destructor for Truck.</div><div class="ttdef"><b>Definition:</b> Truck.cpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

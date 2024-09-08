@@ -2,6 +2,11 @@
 \label{classFloodedSoil}\index{FloodedSoil@{FloodedSoil}}
 
 
+Concrete state class representing a flooded soil state.  
+
+
+
+
 {\ttfamily \#include $<$Flooded\+Soil.\+h$>$}
 
 
@@ -16,17 +21,22 @@ Collaboration diagram for Flooded\+Soil\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classFloodedSoil_ac013c6c45ecc62506de857d49d059590}{Flooded\+Soil}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classFloodedSoil_a9423ebb179229efedea6214cff61a126}{$\sim$\+Flooded\+Soil}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classFloodedSoil_a67020132fb97962e7509bf43363e9df1}{harvest\+Crops}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Harvests crops from the soil. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classFloodedSoil_a7f6dc00c1f4cc3c3889bd27d88ec5188}{rain}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Handles the rain event, which may affect the soil state. This method may transition the soil to a different state depending on the system\textquotesingle{}s rules. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{classFloodedSoil_ae018ee08286833cd79789607cebf330b}{get\+Name}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the name of the soil state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
+
+\doxysubsection{Detailed Description}
+Concrete state class representing a flooded soil state. 
+
+This class inherits from \mbox{\hyperlink{classSoilState}{Soil\+State}} and represents a state where the soil is flooded. It provides implementations for harvesting crops and handling rain events specific to this state. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classFloodedSoil_ac013c6c45ecc62506de857d49d059590}\label{classFloodedSoil_ac013c6c45ecc62506de857d49d059590}} 
@@ -35,11 +45,19 @@ string \mbox{\hyperlink{classFloodedSoil_ae018ee08286833cd79789607cebf330b}{get\
 \doxysubsubsection{\texorpdfstring{FloodedSoil()}{FloodedSoil()}}
 {\footnotesize\ttfamily Flooded\+Soil\+::\+Flooded\+Soil (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Default constructor for \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}}. 
+
 \mbox{\Hypertarget{classFloodedSoil_a9423ebb179229efedea6214cff61a126}\label{classFloodedSoil_a9423ebb179229efedea6214cff61a126}} 
 \index{FloodedSoil@{FloodedSoil}!````~FloodedSoil@{$\sim$FloodedSoil}}
 \index{````~FloodedSoil@{$\sim$FloodedSoil}!FloodedSoil@{FloodedSoil}}
 \doxysubsubsection{\texorpdfstring{$\sim$FloodedSoil()}{~FloodedSoil()}}
 {\footnotesize\ttfamily Flooded\+Soil\+::$\sim$\+Flooded\+Soil (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classFloodedSoil}{Flooded\+Soil}}. 
 
 
 
@@ -52,6 +70,13 @@ string \mbox{\hyperlink{classFloodedSoil_ae018ee08286833cd79789607cebf330b}{get\
 
 
 
+Gets the name of the soil state. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the soil state. 
+\end{DoxyReturn}
+
+
 Implements \mbox{\hyperlink{classSoilState_abb74dcac07f24949223eb4446fb536b3}{Soil\+State}}.
 
 \mbox{\Hypertarget{classFloodedSoil_a67020132fb97962e7509bf43363e9df1}\label{classFloodedSoil_a67020132fb97962e7509bf43363e9df1}} 
@@ -62,6 +87,13 @@ Implements \mbox{\hyperlink{classSoilState_abb74dcac07f24949223eb4446fb536b3}{So
 
 
 
+Harvests crops from the soil. 
+
+\begin{DoxyReturn}{Returns}
+An integer representing the amount of crops harvested. 
+\end{DoxyReturn}
+
+
 Implements \mbox{\hyperlink{classSoilState_a6a80c2ce33212e9fe574374aaa284f19}{Soil\+State}}.
 
 \mbox{\Hypertarget{classFloodedSoil_a7f6dc00c1f4cc3c3889bd27d88ec5188}\label{classFloodedSoil_a7f6dc00c1f4cc3c3889bd27d88ec5188}} 
@@ -69,6 +101,10 @@ Implements \mbox{\hyperlink{classSoilState_a6a80c2ce33212e9fe574374aaa284f19}{So
 \index{rain@{rain}!FloodedSoil@{FloodedSoil}}
 \doxysubsubsection{\texorpdfstring{rain()}{rain()}}
 {\footnotesize\ttfamily void Flooded\+Soil\+::rain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handles the rain event, which may affect the soil state. This method may transition the soil to a different state depending on the system\textquotesingle{}s rules. 
 
 
 

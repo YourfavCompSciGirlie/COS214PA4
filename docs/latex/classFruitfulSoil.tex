@@ -2,6 +2,11 @@
 \label{classFruitfulSoil}\index{FruitfulSoil@{FruitfulSoil}}
 
 
+Concrete state class representing a fruitful soil state.  
+
+
+
+
 {\ttfamily \#include $<$Fruitful\+Soil.\+h$>$}
 
 
@@ -16,17 +21,22 @@ Collaboration diagram for Fruitful\+Soil\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classFruitfulSoil_a1624f7de93bcca8e181e618921a40f68}{Fruitful\+Soil}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classFruitfulSoil_a1d6f303ead4c809ebda0a32e7229dbf9}{$\sim$\+Fruitful\+Soil}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classFruitfulSoil_a49c9d6a6815de4e9eb75f37c802dd8c4}{harvest\+Crops}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Harvests crops from the soil. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classFruitfulSoil_a56942389eb0450cbedcf54cf0efa4460}{rain}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Handles the rain event, which may affect the soil state. This method may transition the soil to a different state depending on the system\textquotesingle{}s rules. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{classFruitfulSoil_a3e517cb630da79141ca9bdd2b24dbef6}{get\+Name}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the name of the soil state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
+
+\doxysubsection{Detailed Description}
+Concrete state class representing a fruitful soil state. 
+
+This class inherits from \mbox{\hyperlink{classSoilState}{Soil\+State}} and represents a state where the soil is fruitful. It provides implementations for harvesting crops and handling rain events specific to this state. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classFruitfulSoil_a1624f7de93bcca8e181e618921a40f68}\label{classFruitfulSoil_a1624f7de93bcca8e181e618921a40f68}} 
@@ -35,11 +45,19 @@ string \mbox{\hyperlink{classFruitfulSoil_a3e517cb630da79141ca9bdd2b24dbef6}{get
 \doxysubsubsection{\texorpdfstring{FruitfulSoil()}{FruitfulSoil()}}
 {\footnotesize\ttfamily Fruitful\+Soil\+::\+Fruitful\+Soil (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Default constructor for \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}}. 
+
 \mbox{\Hypertarget{classFruitfulSoil_a1d6f303ead4c809ebda0a32e7229dbf9}\label{classFruitfulSoil_a1d6f303ead4c809ebda0a32e7229dbf9}} 
 \index{FruitfulSoil@{FruitfulSoil}!````~FruitfulSoil@{$\sim$FruitfulSoil}}
 \index{````~FruitfulSoil@{$\sim$FruitfulSoil}!FruitfulSoil@{FruitfulSoil}}
 \doxysubsubsection{\texorpdfstring{$\sim$FruitfulSoil()}{~FruitfulSoil()}}
 {\footnotesize\ttfamily Fruitful\+Soil\+::$\sim$\+Fruitful\+Soil (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classFruitfulSoil}{Fruitful\+Soil}}. 
 
 
 
@@ -52,6 +70,13 @@ string \mbox{\hyperlink{classFruitfulSoil_a3e517cb630da79141ca9bdd2b24dbef6}{get
 
 
 
+Gets the name of the soil state. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the soil state. 
+\end{DoxyReturn}
+
+
 Implements \mbox{\hyperlink{classSoilState_abb74dcac07f24949223eb4446fb536b3}{Soil\+State}}.
 
 \mbox{\Hypertarget{classFruitfulSoil_a49c9d6a6815de4e9eb75f37c802dd8c4}\label{classFruitfulSoil_a49c9d6a6815de4e9eb75f37c802dd8c4}} 
@@ -62,6 +87,13 @@ Implements \mbox{\hyperlink{classSoilState_abb74dcac07f24949223eb4446fb536b3}{So
 
 
 
+Harvests crops from the soil. 
+
+\begin{DoxyReturn}{Returns}
+An integer representing the amount of crops harvested. 
+\end{DoxyReturn}
+
+
 Implements \mbox{\hyperlink{classSoilState_a6a80c2ce33212e9fe574374aaa284f19}{Soil\+State}}.
 
 \mbox{\Hypertarget{classFruitfulSoil_a56942389eb0450cbedcf54cf0efa4460}\label{classFruitfulSoil_a56942389eb0450cbedcf54cf0efa4460}} 
@@ -69,6 +101,10 @@ Implements \mbox{\hyperlink{classSoilState_a6a80c2ce33212e9fe574374aaa284f19}{So
 \index{rain@{rain}!FruitfulSoil@{FruitfulSoil}}
 \doxysubsubsection{\texorpdfstring{rain()}{rain()}}
 {\footnotesize\ttfamily void Fruitful\+Soil\+::rain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handles the rain event, which may affect the soil state. This method may transition the soil to a different state depending on the system\textquotesingle{}s rules. 
 
 
 

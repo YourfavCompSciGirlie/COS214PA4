@@ -69,6 +69,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Abstract base class for trucks.  
+ <a href="classTruck.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Truck_8h_source.html">Truck.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Truck:</div>
@@ -79,15 +82,22 @@ Inheritance diagram for Truck:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afe887186d0490451a8ce4a3ef433dee3"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTruck.html#afe887186d0490451a8ce4a3ef433dee3">~Truck</a> ()</td></tr>
+<tr class="memdesc:afe887186d0490451a8ce4a3ef433dee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a>.  <a href="classTruck.html#afe887186d0490451a8ce4a3ef433dee3">More...</a><br /></td></tr>
 <tr class="separator:afe887186d0490451a8ce4a3ef433dee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87e358bca8fe34e6299c6ff233afb08b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTruck.html#a87e358bca8fe34e6299c6ff233afb08b">Truck</a> ()</td></tr>
+<tr class="memdesc:a87e358bca8fe34e6299c6ff233afb08b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a>.  <a href="classTruck.html#a87e358bca8fe34e6299c6ff233afb08b">More...</a><br /></td></tr>
 <tr class="separator:a87e358bca8fe34e6299c6ff233afb08b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d914b649a601c31fff420b90a51dc7f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTruck.html#a2d914b649a601c31fff420b90a51dc7f">startEngine</a> ()=0</td></tr>
+<tr class="memdesc:a2d914b649a601c31fff420b90a51dc7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the truck's engine. This method must be implemented in derived classes to provide specific engine start functionality.  <a href="classTruck.html#a2d914b649a601c31fff420b90a51dc7f">More...</a><br /></td></tr>
 <tr class="separator:a2d914b649a601c31fff420b90a51dc7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a730583405d6ac826f386a77dd5bd3877"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTruck.html#a730583405d6ac826f386a77dd5bd3877">callTruck</a> ()=0</td></tr>
+<tr class="memdesc:a730583405d6ac826f386a77dd5bd3877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the truck. This method must be implemented in derived classes to provide specific call functionality.  <a href="classTruck.html#a730583405d6ac826f386a77dd5bd3877">More...</a><br /></td></tr>
 <tr class="separator:a730583405d6ac826f386a77dd5bd3877"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract base class for trucks. </p>
+<p>This class defines the interface for different types of trucks. It provides methods for starting the engine and calling the truck, which will be implemented in derived classes. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afe887186d0490451a8ce4a3ef433dee3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe887186d0490451a8ce4a3ef433dee3">&#9670;&nbsp;</a></span>~Truck()</h2>
 
@@ -111,6 +121,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Virtual destructor for <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a>. </p>
+
 </div>
 </div>
 <a id="a87e358bca8fe34e6299c6ff233afb08b"></a>
@@ -127,6 +139,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Default constructor for <a class="el" href="classTruck.html" title="Abstract base class for trucks.">Truck</a>. </p>
 
 </div>
 </div>
@@ -154,6 +168,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Calls the truck. This method must be implemented in derived classes to provide specific call functionality. </p>
+
 <p>Implemented in <a class="el" href="classFertilizerTruck.html#ac864fc30fd837dda68b79296feed08a7">FertilizerTruck</a>, and <a class="el" href="classDeliveryTruck.html#a3c37020427f1031fe0dce721325dae1f">DeliveryTruck</a>.</p>
 
 </div>
@@ -180,6 +196,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Starts the truck's engine. This method must be implemented in derived classes to provide specific engine start functionality. </p>
 
 <p>Implemented in <a class="el" href="classFertilizerTruck.html#a2a6d7b020b6bca2692c5ec59b974e147">FertilizerTruck</a>, and <a class="el" href="classDeliveryTruck.html#a2cc9028a83027b4c364bd1fb705475cc">DeliveryTruck</a>.</p>
 

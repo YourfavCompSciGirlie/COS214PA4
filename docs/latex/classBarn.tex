@@ -76,9 +76,13 @@ The \mbox{\hyperlink{classBarn}{Barn}} class manages the storage of farm produce
 
 Constructs a new \mbox{\hyperlink{classBarn}{Barn}} object with a given capacity. 
 
+Constructs a \mbox{\hyperlink{classBarn}{Barn}} with a given total capacity.
+
 
 \begin{DoxyParams}{Parameters}
-{\em total\+Capacity} & The total storage capacity of the barn. \\
+{\em total\+Capacity} & The total storage capacity of the barn.\\
+\hline
+{\em total\+Capacity} & The total capacity of the barn. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classBarn_a24235aae94c8da869b27b02c07f2420e}\label{classBarn_a24235aae94c8da869b27b02c07f2420e}} 
@@ -91,7 +95,7 @@ Constructs a new \mbox{\hyperlink{classBarn}{Barn}} object with a given capacity
 
 Destructor for the \mbox{\hyperlink{classBarn}{Barn}} object. 
 
-
+Destroys the \mbox{\hyperlink{classBarn}{Barn}} object. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classBarn_a07e8528faba4def018a738164006c2bb}\label{classBarn_a07e8528faba4def018a738164006c2bb}} 
@@ -104,9 +108,13 @@ Destructor for the \mbox{\hyperlink{classBarn}{Barn}} object.
 
 Adds a farm unit to the barn. Not applicable to barns. 
 
+Adds a unit to the barn (not supported).
+
 
 \begin{DoxyParams}{Parameters}
-{\em unit} & Pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} being added. \\
+{\em unit} & Pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} being added.\\
+\hline
+{\em unit} & The unit to add. \\
 \hline
 \end{DoxyParams}
 
@@ -123,9 +131,13 @@ Implements \mbox{\hyperlink{classFarmUnit_a13923b257012a31a9ca67f22598e4347}{Far
 
 Buys a truck for logistics purposes. Generally not applicable for barns. 
 
+Placeholder method for buying a truck (not applicable to barns).
+
 
 \begin{DoxyParams}{Parameters}
-{\em truck} & Pointer to the \mbox{\hyperlink{classTruck}{Truck}} object being purchased. \\
+{\em truck} & Pointer to the \mbox{\hyperlink{classTruck}{Truck}} object being purchased.\\
+\hline
+{\em truck} & The truck to buy. \\
 \hline
 \end{DoxyParams}
 
@@ -142,8 +154,12 @@ Implements \mbox{\hyperlink{classFarmUnit_ac0565356da2cc0e863e30f665a95c236}{Far
 
 Creates a breadth-\/first search iterator for the farm. 
 
+Creates a breadth-\/first search iterator for the barn.
+
 \begin{DoxyReturn}{Returns}
-Farm\+Iterator$\ast$ Pointer to the BFS iterator. 
+Farm\+Iterator$\ast$ Pointer to the BFS iterator.
+
+Farm\+Iterator$\ast$ The BFS iterator. 
 \end{DoxyReturn}
 
 
@@ -159,8 +175,12 @@ Implements \mbox{\hyperlink{classFarmUnit_a92c1628b0e297ea97121b48cd3355c09}{Far
 
 Creates a depth-\/first search iterator for the farm. 
 
+Creates a depth-\/first search iterator for the barn.
+
 \begin{DoxyReturn}{Returns}
-Farm\+Iterator$\ast$ Pointer to the DFS iterator. 
+Farm\+Iterator$\ast$ Pointer to the DFS iterator.
+
+Farm\+Iterator$\ast$ The DFS iterator. 
 \end{DoxyReturn}
 
 
@@ -176,8 +196,12 @@ Implements \mbox{\hyperlink{classFarmUnit_aef3e9a6d04ac8aa1cd828433b974a37e}{Far
 
 Returns the crop type for this farm unit. Always returns \char`\"{}\+N/\+A\char`\"{} for a barn. 
 
+Returns the type of crop stored in the barn.
+
 \begin{DoxyReturn}{Returns}
-std\+::string \char`\"{}\+N/\+A\char`\"{} since barns do not store crops directly. 
+std\+::string \char`\"{}\+N/\+A\char`\"{} since barns do not store crops directly.
+
+std\+::string \char`\"{}\+N/\+A\char`\"{} as barns do not hold crops directly. 
 \end{DoxyReturn}
 
 
@@ -193,8 +217,12 @@ Implements \mbox{\hyperlink{classFarmUnit_add66c341a2010e7f0491196b19d63c35}{Far
 
 Gets the current amount of produce stored in the barn. 
 
+Returns the current amount of stored crops in the barn.
+
 \begin{DoxyReturn}{Returns}
-int The current amount stored in the barn. 
+int The current amount stored in the barn.
+
+int The current amount of stored crops. 
 \end{DoxyReturn}
 
 
@@ -210,8 +238,12 @@ Implements \mbox{\hyperlink{classFarmUnit_a65bf5424abc22955aac85233275e72f8}{Far
 
 Gets the remaining storage capacity in the barn. 
 
+Returns the leftover capacity of the barn.
+
 \begin{DoxyReturn}{Returns}
-int The remaining capacity available. 
+int The remaining capacity available.
+
+int The amount of space left in the barn. 
 \end{DoxyReturn}
 
 
@@ -244,8 +276,12 @@ Implements \mbox{\hyperlink{classFarmUnit_a609f48740a45829170b708386c1f1e64}{Far
 
 Returns the soil state for this farm unit. Always returns \char`\"{}\+N/\+A\char`\"{} for a barn. 
 
+Returns the name of the soil state.
+
 \begin{DoxyReturn}{Returns}
-std\+::string \char`\"{}\+N/\+A\char`\"{} since barns do not manage soil. 
+std\+::string \char`\"{}\+N/\+A\char`\"{} since barns do not manage soil.
+
+std\+::string \char`\"{}\+N/\+A\char`\"{} as barns do not have soil states. 
 \end{DoxyReturn}
 
 
@@ -261,8 +297,12 @@ Implements \mbox{\hyperlink{classFarmUnit_a5a4dd34e283ed90d1f710072cbddaa01}{Far
 
 Returns the sub-\/units of the farm. Not applicable for barns. 
 
+Returns the sub-\/units of the barn.
+
 \begin{DoxyReturn}{Returns}
-std\+::vector$<$\+Farm\+Unit$\ast$$>$ An empty vector as barns do not have sub-\/units. 
+std\+::vector$<$\+Farm\+Unit$\ast$$>$ An empty vector as barns do not have sub-\/units.
+
+std\+::vector$<$\+Farm\+Unit$\ast$$>$ An empty vector as barns don\textquotesingle{}t have sub-\/units. 
 \end{DoxyReturn}
 
 
@@ -277,6 +317,8 @@ Implements \mbox{\hyperlink{classFarmUnit_a29356181ac3c11890ae60b6827e430fe}{Far
 
 
 Gets the total storage capacity of the barn. 
+
+Returns the total capacity of the barn.
 
 \begin{DoxyReturn}{Returns}
 int The total capacity of the barn. 
@@ -295,7 +337,7 @@ Implements \mbox{\hyperlink{classFarmUnit_adcf972c220e9b3eebb2b94d9c6bec321}{Far
 
 Harvest crops, not applicable for a barn. 
 
-
+Placeholder method for harvesting (not applicable to barns). 
 
 Implements \mbox{\hyperlink{classFarmUnit_a277e393e05439c80ad61ce6145d46002}{Farm\+Unit}}.
 
@@ -309,7 +351,7 @@ Implements \mbox{\hyperlink{classFarmUnit_a277e393e05439c80ad61ce6145d46002}{Far
 
 Increases production, not applicable for a barn. 
 
-
+Placeholder method for increasing production (not applicable to barns). 
 
 Implements \mbox{\hyperlink{classFarmUnit_a317de75b254d4f88980841dbbaca3e05}{Farm\+Unit}}.
 
@@ -323,9 +365,13 @@ Implements \mbox{\hyperlink{classFarmUnit_a317de75b254d4f88980841dbbaca3e05}{Far
 
 Removes a farm unit from the barn. Not applicable to barns. 
 
+Removes a unit from the barn (not supported).
+
 
 \begin{DoxyParams}{Parameters}
-{\em unit} & Pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} being removed. \\
+{\em unit} & Pointer to the \mbox{\hyperlink{classFarmUnit}{Farm\+Unit}} being removed.\\
+\hline
+{\em unit} & The unit to remove. \\
 \hline
 \end{DoxyParams}
 
@@ -342,9 +388,13 @@ Implements \mbox{\hyperlink{classFarmUnit_ab5dec88c0ffb58f4cfb2815c9b6cba2c}{Far
 
 Sells a truck. Generally not applicable for barns. 
 
+Placeholder method for selling a truck (not applicable to barns).
+
 
 \begin{DoxyParams}{Parameters}
-{\em truck} & Pointer to the \mbox{\hyperlink{classTruck}{Truck}} object being sold. \\
+{\em truck} & Pointer to the \mbox{\hyperlink{classTruck}{Truck}} object being sold.\\
+\hline
+{\em truck} & The truck to sell. \\
 \hline
 \end{DoxyParams}
 
@@ -361,9 +411,13 @@ Implements \mbox{\hyperlink{classFarmUnit_a382d18736aea94cf4a73db54d7461746}{Far
 
 Sets the current amount of produce in the barn. 
 
+Sets the current amount of stored crops in the barn.
+
 
 \begin{DoxyParams}{Parameters}
-{\em amount} & The new amount of produce to set, must be within the barn\textquotesingle{}s capacity. \\
+{\em amount} & The new amount of produce to set, must be within the barn\textquotesingle{}s capacity.\\
+\hline
+{\em amount} & The amount to set. \\
 \hline
 \end{DoxyParams}
 
@@ -382,7 +436,9 @@ Sets the name of the barn.
 
 
 \begin{DoxyParams}{Parameters}
-{\em unit\+Name} & The name to set for the barn. \\
+{\em unit\+Name} & The name to set for the barn.\\
+\hline
+{\em name} & The name to set. \\
 \hline
 \end{DoxyParams}
 

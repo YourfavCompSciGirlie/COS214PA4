@@ -70,6 +70,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Abstract base class for representing different states of soil.  
+ <a href="classSoilState.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="SoilState_8h_source.html">SoilState.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SoilState:</div>
@@ -85,24 +88,34 @@ Collaboration diagram for SoilState:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3e090495e8579ce7bf4c16510194cd90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSoilState.html#a3e090495e8579ce7bf4c16510194cd90">SoilState</a> ()</td></tr>
+<tr class="memdesc:a3e090495e8579ce7bf4c16510194cd90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="classSoilState.html" title="Abstract base class for representing different states of soil.">SoilState</a>.  <a href="classSoilState.html#a3e090495e8579ce7bf4c16510194cd90">More...</a><br /></td></tr>
 <tr class="separator:a3e090495e8579ce7bf4c16510194cd90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a669eb5bfbadb6c5063a2a51c213a1c33"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSoilState.html#a669eb5bfbadb6c5063a2a51c213a1c33">~SoilState</a> ()</td></tr>
+<tr class="memdesc:a669eb5bfbadb6c5063a2a51c213a1c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for <a class="el" href="classSoilState.html" title="Abstract base class for representing different states of soil.">SoilState</a>.  <a href="classSoilState.html#a669eb5bfbadb6c5063a2a51c213a1c33">More...</a><br /></td></tr>
 <tr class="separator:a669eb5bfbadb6c5063a2a51c213a1c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a80c2ce33212e9fe574374aaa284f19"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSoilState.html#a6a80c2ce33212e9fe574374aaa284f19">harvestCrops</a> () const =0</td></tr>
+<tr class="memdesc:a6a80c2ce33212e9fe574374aaa284f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Harvests crops from the soil.  <a href="classSoilState.html#a6a80c2ce33212e9fe574374aaa284f19">More...</a><br /></td></tr>
 <tr class="separator:a6a80c2ce33212e9fe574374aaa284f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57b6a5f4f5d26bd2f7e291cd26a505b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSoilState.html#a57b6a5f4f5d26bd2f7e291cd26a505b8">rain</a> ()=0</td></tr>
+<tr class="memdesc:a57b6a5f4f5d26bd2f7e291cd26a505b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the rain event, which may affect the soil state. This method may trigger a transition to a different soil state.  <a href="classSoilState.html#a57b6a5f4f5d26bd2f7e291cd26a505b8">More...</a><br /></td></tr>
 <tr class="separator:a57b6a5f4f5d26bd2f7e291cd26a505b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb74dcac07f24949223eb4446fb536b3"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSoilState.html#abb74dcac07f24949223eb4446fb536b3">getName</a> () const =0</td></tr>
+<tr class="memdesc:abb74dcac07f24949223eb4446fb536b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the soil state.  <a href="classSoilState.html#abb74dcac07f24949223eb4446fb536b3">More...</a><br /></td></tr>
 <tr class="separator:abb74dcac07f24949223eb4446fb536b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e04330f821feaec0523ace45a02ca2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSoilState.html#a0e04330f821feaec0523ace45a02ca2b">setContext</a> (class <a class="el" href="classCropField.html">CropField</a> *<a class="el" href="classSoilState.html#a0ff50f950fa2edd27ef78b355da655c3">context</a>)</td></tr>
+<tr class="memdesc:a0e04330f821feaec0523ace45a02ca2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the context for the soil state.  <a href="classSoilState.html#a0e04330f821feaec0523ace45a02ca2b">More...</a><br /></td></tr>
 <tr class="separator:a0e04330f821feaec0523ace45a02ca2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a0ff50f950fa2edd27ef78b355da655c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCropField.html">CropField</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSoilState.html#a0ff50f950fa2edd27ef78b355da655c3">context</a></td></tr>
+<tr class="memdesc:a0ff50f950fa2edd27ef78b355da655c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the context (<a class="el" href="classCropField.html" title="Represents a crop field unit in the farm system.">CropField</a>) to manage state transitions.  <a href="classSoilState.html#a0ff50f950fa2edd27ef78b355da655c3">More...</a><br /></td></tr>
 <tr class="separator:a0ff50f950fa2edd27ef78b355da655c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract base class for representing different states of soil. </p>
+<p>This class serves as the base class for all concrete soil state classes. It defines the interface for interacting with different soil states and provides a mechanism for transitioning between states. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3e090495e8579ce7bf4c16510194cd90"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e090495e8579ce7bf4c16510194cd90">&#9670;&nbsp;</a></span>SoilState()</h2>
 
@@ -117,6 +130,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Default constructor for <a class="el" href="classSoilState.html" title="Abstract base class for representing different states of soil.">SoilState</a>. </p>
 
 </div>
 </div>
@@ -143,6 +158,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Virtual destructor for <a class="el" href="classSoilState.html" title="Abstract base class for representing different states of soil.">SoilState</a>. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -168,6 +185,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets the name of the soil state. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string representing the name of the soil state. </dd></dl>
 
 <p>Implemented in <a class="el" href="classFruitfulSoil.html#a3e517cb630da79141ca9bdd2b24dbef6">FruitfulSoil</a>, <a class="el" href="classFloodedSoil.html#ae018ee08286833cd79789607cebf330b">FloodedSoil</a>, and <a class="el" href="classDrySoil.html#af8214ecc1455e5caf46c758ca829a8c1">DrySoil</a>.</p>
 
@@ -196,6 +216,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Harvests crops from the soil. </p>
+<dl class="section return"><dt>Returns</dt><dd>An integer representing the amount of crops harvested. </dd></dl>
+
 <p>Implemented in <a class="el" href="classFruitfulSoil.html#a49c9d6a6815de4e9eb75f37c802dd8c4">FruitfulSoil</a>, <a class="el" href="classFloodedSoil.html#a67020132fb97962e7509bf43363e9df1">FloodedSoil</a>, and <a class="el" href="classDrySoil.html#ac89e5d19265d4bd11cb46e1aba9fa214">DrySoil</a>.</p>
 
 </div>
@@ -223,6 +246,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Handles the rain event, which may affect the soil state. This method may trigger a transition to a different soil state. </p>
+
 <p>Implemented in <a class="el" href="classFruitfulSoil.html#a56942389eb0450cbedcf54cf0efa4460">FruitfulSoil</a>, <a class="el" href="classFloodedSoil.html#a7f6dc00c1f4cc3c3889bd27d88ec5188">FloodedSoil</a>, and <a class="el" href="classDrySoil.html#acd2186aa4038cd458f15a71eec9656e1">DrySoil</a>.</p>
 
 </div>
@@ -242,6 +267,14 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the context for the soil state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>Pointer to the <a class="el" href="classCropField.html" title="Represents a crop field unit in the farm system.">CropField</a> object that manages state transitions. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -265,6 +298,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Pointer to the context (<a class="el" href="classCropField.html" title="Represents a crop field unit in the farm system.">CropField</a>) to manage state transitions. </p>
 
 </div>
 </div>
